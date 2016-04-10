@@ -10,6 +10,7 @@ using System.Security;
 using System.DirectoryServices.AccountManagement;
 using System.Security.Principal;
 using System.Text.RegularExpressions;
+using ProcedureTest.Classes;
 
 namespace ProcedureTest
 {
@@ -17,13 +18,10 @@ namespace ProcedureTest
     {
         static void Main(string[] args)
         {
-            
-            string test = "Noureddine dah";
-            Regex r = new Regex(@"^[a-zA-Z\s,]*$");
-            if (r.IsMatch(test))
-            {
-                Console.WriteLine("true");
-            }
+
+
+            PDFGenerator pdfDoc = new PDFGenerator(10,10,40,40);
+            pdfDoc.createPdfDeviation();
 
             Console.Read();
         }

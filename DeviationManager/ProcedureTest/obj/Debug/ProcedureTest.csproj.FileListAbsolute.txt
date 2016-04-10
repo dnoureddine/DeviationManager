@@ -13,4 +13,7 @@ C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\obj
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.pdb
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin\Debug\ProcedureTest.exe
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin\Debug\ProcedureTest.pdb
-C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.csprojResolveAssemblyReference.cache
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin\Debug\itextsharp.dll
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin\Debug\BouncyCastle.Crypto.pdb
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin\Debug\itextsharp.xml
