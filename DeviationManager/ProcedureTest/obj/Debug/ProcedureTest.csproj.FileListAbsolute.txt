@@ -1,0 +1,16 @@
+C:\Users\dnoureddin\Documents\Visual Studio 2013\Projects\DeviationManager\ProcedureTest\bin\Debug\ProcedureTest.exe.config
+C:\Users\dnoureddin\Documents\Visual Studio 2013\Projects\DeviationManager\ProcedureTest\bin\Debug\ProcedureTest.exe
+C:\Users\dnoureddin\Documents\Visual Studio 2013\Projects\DeviationManager\ProcedureTest\bin\Debug\ProcedureTest.pdb
+C:\Users\dnoureddin\Documents\Visual Studio 2013\Projects\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.csprojResolveAssemblyReference.cache
+C:\Users\dnoureddin\Documents\Visual Studio 2013\Projects\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.exe
+C:\Users\dnoureddin\Documents\Visual Studio 2013\Projects\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.pdb
+C:\Users\dnoureddin\Documents\Visual Studio 2013\Projects\DeviationManager\ProcedureTest\obj\Debug\Interop.Microsoft.Office.Interop.OutlookViewCtl.dll
+C:\Users\dnoureddin\Documents\Visual Studio 2013\Projects\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.csproj.ResolveComReference.cache
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin\Debug\ProcedureTest.exe.config
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\obj\Debug\Interop.Microsoft.Office.Interop.OutlookViewCtl.dll
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.csproj.ResolveComReference.cache
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.exe
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.pdb
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin\Debug\ProcedureTest.exe
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin\Debug\ProcedureTest.pdb
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.csprojResolveAssemblyReference.cache
