@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Office.Interop.Outlook;
 using OutlookApp = Microsoft.Office.Interop.Outlook.Application;
 using System.Security;
@@ -20,7 +19,7 @@ namespace ProcedureTest
         {
 
 
-            PDFGenerator pdfDoc = new PDFGenerator(10,10,40,40);
+            PDFDeviationGenerator pdfDoc = new PDFDeviationGenerator(25,25,40,40);
             pdfDoc.createPdfDeviation();
 
             Console.Read();
