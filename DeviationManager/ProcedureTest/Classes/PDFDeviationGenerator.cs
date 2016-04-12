@@ -12,11 +12,15 @@ namespace ProcedureTest.Classes
     {
         private Document doc;
         private Font normal ;
+        private Font normalBold;
+        private Font small;
 
         public PDFDeviationGenerator(int x1,int x2,int x3,int x4)
         {
             doc = new Document(PageSize.A4, x1, x2, x3, x4);
             normal = FontFactory.GetFont("Arial", 7, BaseColor.BLACK);
+            normalBold = FontFactory.GetFont("Arial", 7, Font.BOLD);
+            small = FontFactory.GetFont("Arial",5);
         }
 
 
@@ -188,8 +192,134 @@ namespace ProcedureTest.Classes
             this.addTableCell(table, "PERIOD FOR DEVIATION /or PERMANENT(shift / week / etc)", normal, 3, 0, "#0095ff");
 
             // Period deviation value  cell
-            this.addTableCell(table, "", normal, 4, 0);
+            this.addTableCell(table, ".................", normal, 4, 0);
 
+
+            // DENTFY THE FIRST AND LAST PART NUMBER  FOR DEVIATION  ... cell
+            this.addTableCell(table, "IDENTFY THE FIRST AND LAST PART NUMBER  FOR DEVIATION OR IDENTIFY ALTERNATIVE IDENTIFICATION METHOD (For example circle on base of tank - include photo, diagram where applicable)", normal, 7, 0, "#0095ff");
+
+
+            // DENTFY THE FIRST AND LAST PART NUMBER  FOR DEVIATION value  ... cell
+            this.addTableCell(table, ".................\n .....................\n .....................\n ..................... \n .....................", normal, 7, 0);
+
+
+            return table;
+        }
+
+
+        /********   add Aprovement to Deivation pdf ****/
+        private PdfPTable createApprovementPdf(PdfPTable table)
+        {
+
+            // Approval cell
+            this.addTableCell(table, "APPROVAL", normalBold, 1, 1, "#0095ff");
+
+            // Name cell
+            this.addTableCell(table, "NAME", normalBold, 1, 1, "#0095ff");
+
+            // Approve cell
+            this.addTableCell(table, "APPROVE", normalBold, 1, 1, "#0095ff");
+
+            // Reject cell
+            this.addTableCell(table, "REJECT", normalBold, 1, 1, "#0095ff");
+
+            // Comments cell
+            this.addTableCell(table, "COMMENTS", normalBold, 1, 1, "#0095ff");
+
+            // Signed cell
+            this.addTableCell(table, "SIGNED", normalBold, 1, 1, "#0095ff");
+
+            // Signed cell
+            this.addTableCell(table, "SIGNED", normalBold, 1, 1, "#0095ff");
+
+            //loop add Approvement values
+            for (int i = 0; i < 4; i++)
+            {
+                // Approval cell
+                this.addTableCell(table, "..........", normal, 1, 0);
+
+                // Name cell
+                this.addTableCell(table, "..........", normal, 1, 0);
+
+                // Approve cell
+                this.addTableCell(table, "..........", normal, 1, 0);
+
+                // Reject cell
+                this.addTableCell(table, "..........", normal, 1, 0);
+
+                // Comments cell
+                this.addTableCell(table, "..........", normal, 1, 0);
+
+                // Signed cell
+                this.addTableCell(table, "..........", normal, 1, 0);
+
+                // Signed cell
+                this.addTableCell(table, "..........", normal, 1, 0);
+            }
+
+            return table;
+        }
+
+
+
+        /******** add other(the last part of the deviation)  ****/
+        private PdfPTable createDeviationOtherOneTablePdf(PdfPTable table)
+        {
+            // Head cell
+            this.addTableCell(table, "REGIONAL QUALITY DIRECTOR APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT.", normalBold, 6, 0, "#FF0000");
+
+            // Yes/No value cell
+            this.addTableCell(table, "........", normal, 1, 0, "#ff9933");
+
+            // Request Approved value cell
+            this.addTableCell(table, "REQUEST APPROVED", small, 1, 0);
+
+            // Request Approved value value cell
+            this.addTableCell(table, ".........", small, 1, 0);
+
+            // Name cell
+            this.addTableCell(table, "NAME", small, 1, 0);
+
+            // Name value cell
+            this.addTableCell(table, "............", small, 4, 0);
+
+            // REQUEST REJECTED cell
+            this.addTableCell(table, "REQUEST REJECTED", small, 1, 0);
+
+            // REQUEST REJECTED value value cell
+            this.addTableCell(table, ".........", small, 1, 0);
+
+            // SIGNATURE cell
+            this.addTableCell(table, "SIGNATURE", small, 1, 0);
+
+            // SIGNATURE value cell
+            this.addTableCell(table, "............", small, 4, 0);
+
+            // DATE cell
+            this.addTableCell(table, "DATE", small, 1, 0);
+
+            // DATEvalue value cell
+            this.addTableCell(table, ".........", small, 1, 0);
+
+            // POSITION cell
+            this.addTableCell(table, "POSITION", small, 1, 0);
+
+            // POSITION value cell
+            this.addTableCell(table, "............", small, 4, 0);
+
+
+
+            return table;
+        }
+
+
+        /***** add All approvement table   ****/
+        private PdfPTable createAllApprovementTablePdf(PdfPTable table)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                this.createDeviationOtherOneTablePdf(table);
+            }
 
             return table;
         }
@@ -205,6 +335,13 @@ namespace ProcedureTest.Classes
 
             //create deviation page content
             this.createDeviationContent(table);
+
+            //Add approvement Group part to the document
+            this.createApprovementPdf(table);
+
+
+            //Add Approvement table 
+            this.createAllApprovementTablePdf(table);
 
             // close the document and save it
             doc.Add(table);
