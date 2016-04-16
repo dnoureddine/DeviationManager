@@ -11,11 +11,32 @@ namespace DeviationManager.Model
     public class Autorisation
     {
 
+        private DeviationModel deviationModel;
+
+        public Autorisation()
+        {
+            deviationModel = new DeviationModel();
+        }
+
+
+        //the USER cann update the Deviation if he WROTE IT: output: null if must not, Deviation object if is allowed
+        public Deviation canUpdateDeviation(String deviationRef)
+        {
+            Deviation deviation = deviationModel.getDeviationWithRef(deviationRef);
+            if (deviation.signature == deviationModel.getUserNameFromActiveDirectory())
+            {
+                return deviation;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         /******** make sure if the current user can create deviation ***/
         public bool canCreateDeviation(User user)
         {
-            DeviationModel model = new DeviationModel();
-            var approvementGroups = model.listApprovementGroup();
+            var approvementGroups = deviationModel.listApprovementGroup();
             bool canCreateDeviation = false;
 
             foreach (var approvementGroup in approvementGroups)

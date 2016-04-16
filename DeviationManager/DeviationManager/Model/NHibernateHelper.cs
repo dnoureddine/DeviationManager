@@ -32,7 +32,7 @@ public class NHibernateHelper
                       m.FluentMappings
                           .AddFromAssemblyOf<DeviationMap>())
             .ExposeConfiguration(cfg => new SchemaExport(cfg)
-                                            .Create(true,true))
+                                            .Create(false, false))
             .BuildSessionFactory();
     }
 

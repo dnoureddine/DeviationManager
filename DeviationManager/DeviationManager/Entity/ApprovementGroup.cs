@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
@@ -11,6 +12,7 @@ namespace DeviationManager.Entity
         public virtual String liblle { get; set; }
         public virtual String role { get; set; }
 
+        [Browsable(false)]
         public virtual IList<Approvement> approvements { get; set; }
 
 

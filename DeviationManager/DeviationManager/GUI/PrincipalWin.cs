@@ -18,13 +18,13 @@ namespace DeviationManager.GUI
 
         private void saveDeviationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveDeviation saveDeviation = new SaveDeviation();
+            SaveDeviation saveDeviation = new SaveDeviation("newDeviation");
             saveDeviation.Show();
         }
 
         private void saveApprovementGroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ApprovementGroup approvementGroup = new ApprovementGroup();
+            ApprovementGroupGUI approvementGroup = new ApprovementGroupGUI();
             approvementGroup.Show();
         }
 

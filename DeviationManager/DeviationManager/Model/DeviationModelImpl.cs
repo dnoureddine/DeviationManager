@@ -1,4 +1,5 @@
 ﻿using DeviationManager.Entity;
+using NHibernate.Criterion;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,21 @@ namespace DeviationManager.Model
             }
         }
 
+
+        /************* Get Deviation using Deviation Ref  ****/
+        public Deviation getDeviationWithRef(String deviationRef)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var deviation = session.CreateCriteria(typeof(Deviation))
+                        .Add(Restrictions.Eq("deviationRef", deviationRef))
+                        .UniqueResult<Deviation>();
+                    return deviation;
+                }
+            }
+        }
 
         /*********************** Get a Deviation *****************************/
         public Deviation getDeviation(int deviationId)
@@ -90,15 +106,24 @@ namespace DeviationManager.Model
 
 
         /****************** close Deviation ****************/
-        public void closeDeviation(Deviation deviation)
+        public String closeDeviation(String deviationRef)
         {
             using (var session = NHibernateHelper.OpenSession())
             {
                 using (var transaction = session.BeginTransaction())
                 {
-                    deviation.status = "closed";
-                    session.Merge(deviation);
-                    transaction.Commit();
+                    Deviation deviation = this.getDeviationWithRef(deviationRef);
+                    if (deviation != null)
+                    {
+                        deviation.status = "closed";
+                        session.Merge(deviation);
+                        transaction.Commit();
+                        return "closed";
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 }
             }
         }
@@ -250,6 +275,45 @@ namespace DeviationManager.Model
         }
 
 
+        //***************
+        /************************* List all Derivation **********************************/
+        public ApprovementGroup getApprovementGroup(Approvement approvement)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var approvementLazy = session.Get<Approvement>(approvement.approvementId);
+                    return approvement.approvementGroup;
+                }
+            }
+        }
+
+        //delete attachemnt
+        public bool deleteAttachment(String fileNameDB)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var attachment = session.CreateCriteria(typeof(Attachments))
+                        .Add(Restrictions.Eq("fileNameDb", fileNameDB))
+                        .UniqueResult<Attachments>();
+
+                    if (attachment != null)
+                    {
+                        session.Delete(attachment);
+                        transaction.Commit();
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
         /*****   get user name from ative directory for signature *****/
         public String getUserNameFromActiveDirectory()
         {
@@ -258,9 +322,24 @@ namespace DeviationManager.Model
         }
 
 
+        //verify if the deviation is closed
+        public bool isDeviationClosed(Deviation deviation)
+        {
+            if (deviation.status == "closed")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+
+
+
         /******____class   */
 
-
-      
     }
 }

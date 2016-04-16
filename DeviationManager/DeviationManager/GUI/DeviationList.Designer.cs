@@ -30,7 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeviationList));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.DeviationDataGridView = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -42,16 +43,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.deviationNO = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.showDeviation = new System.Windows.Forms.Button();
+            this.Filter = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeviationDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.showDeviation);
             this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.DeviationDataGridView);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.groupBox1);
@@ -61,24 +64,37 @@
             this.panel1.Size = new System.Drawing.Size(964, 610);
             this.panel1.TabIndex = 0;
             // 
-            // dataGridView1
+            // button3
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 145);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(941, 449);
-            this.dataGridView1.TabIndex = 3;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(831, 95);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(122, 29);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "Close Deviation";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.closeDeviation_Click);
+            // 
+            // DeviationDataGridView
+            // 
+            this.DeviationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DeviationDataGridView.Location = new System.Drawing.Point(12, 163);
+            this.DeviationDataGridView.Name = "DeviationDataGridView";
+            this.DeviationDataGridView.Size = new System.Drawing.Size(941, 431);
+            this.DeviationDataGridView.TabIndex = 3;
             // 
             // button2
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(831, 64);
+            this.button2.Location = new System.Drawing.Point(831, 59);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 36);
+            this.button2.Size = new System.Drawing.Size(122, 30);
             this.button2.TabIndex = 2;
             this.button2.Text = "Edit Deviation";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.editDeviation_Click);
             // 
             // button1
             // 
@@ -86,13 +102,15 @@
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(828, 22);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 36);
+            this.button1.Size = new System.Drawing.Size(125, 31);
             this.button1.TabIndex = 1;
             this.button1.Text = "Add Deviation";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.addNewDeviation_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Filter);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.comboBox2);
@@ -103,7 +121,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(810, 127);
+            this.groupBox1.Size = new System.Drawing.Size(810, 145);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter";
@@ -130,9 +148,9 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
-            "RED",
-            "YELLOW",
-            "GREEN"});
+            "Specification",
+            "Process",
+            "Documentation"});
             this.comboBox2.Location = new System.Drawing.Point(542, 67);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(246, 21);
@@ -188,16 +206,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "DEVIATION NO :";
             // 
-            // button3
+            // showDeviation
             // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(831, 103);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 36);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Delete Deviation";
-            this.button3.UseVisualStyleBackColor = true;
+            this.showDeviation.Image = ((System.Drawing.Image)(resources.GetObject("showDeviation.Image")));
+            this.showDeviation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.showDeviation.Location = new System.Drawing.Point(831, 130);
+            this.showDeviation.Name = "showDeviation";
+            this.showDeviation.Size = new System.Drawing.Size(122, 27);
+            this.showDeviation.TabIndex = 5;
+            this.showDeviation.Text = "Show Deviation";
+            this.showDeviation.UseVisualStyleBackColor = true;
+            this.showDeviation.Click += new System.EventHandler(this.showDeviation_Click);
+            // 
+            // Filter
+            // 
+            this.Filter.Image = ((System.Drawing.Image)(resources.GetObject("Filter.Image")));
+            this.Filter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Filter.Location = new System.Drawing.Point(666, 107);
+            this.Filter.Name = "Filter";
+            this.Filter.Size = new System.Drawing.Size(122, 32);
+            this.Filter.TabIndex = 9;
+            this.Filter.Text = "Filter Deviation";
+            this.Filter.UseVisualStyleBackColor = true;
             // 
             // DeviationList
             // 
@@ -205,10 +235,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 610);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "DeviationList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "List Deviation";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DeviationDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -229,7 +261,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DeviationDataGridView;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button showDeviation;
+        private System.Windows.Forms.Button Filter;
     }
 }

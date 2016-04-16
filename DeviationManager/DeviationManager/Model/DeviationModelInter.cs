@@ -11,13 +11,15 @@ namespace DeviationManager.Model
          Deviation addDeviation(Deviation deviation);
          IList<Deviation> listDeviations();
          Deviation getDeviation(int deviationId);
+         Deviation getDeviationWithRef(String deviationRef);
          void deleteDeviation(int deviationId);
          void updateDeviation(Deviation deviation);
-         void closeDeviation(Deviation deviation);
+         String closeDeviation(String DeviationRef);
          void extendDeviation(Deviation deviation);
          void setIsPrintedDeviation(Deviation deviation);
          void rejectDeviation(Deviation deviation);
          String getUserNameFromActiveDirectory();
+         bool isDeviationClosed(Deviation deviation);
 
 
          ApprovementGroup addApprovementGroup(ApprovementGroup approvementGroupe);

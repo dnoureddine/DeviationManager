@@ -60,8 +60,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\EmailSender.cs" />
     <Compile Include="Classes\ExcelDeviationGenerator.cs" />
     <Compile Include="Classes\PDFDeviationGenerator.cs" />
+    <Compile Include="Classes\UploadFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

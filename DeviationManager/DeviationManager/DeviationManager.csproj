@@ -42,6 +42,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -50,6 +51,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -88,21 +90,28 @@
   <ItemGroup>
     <Compile Include="Entity\Approvement.cs" />
     <Compile Include="Entity\ApprovementGroup.cs" />
+    <Compile Include="Entity\Attachments.cs" />
     <Compile Include="Entity\Deviation.cs" />
     <Compile Include="Entity\OtherApprovement.cs" />
     <Compile Include="Entity\Reason.cs" />
     <Compile Include="Entity\User.cs" />
-    <Compile Include="GUI\ApprovementGroup.cs">
+    <Compile Include="GUI\ApprovementGroupGUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\ApprovementGroup.Designer.cs">
-      <DependentUpon>ApprovementGroup.cs</DependentUpon>
+    <Compile Include="GUI\ApprovementGroupGUI.Designer.cs">
+      <DependentUpon>ApprovementGroupGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\DeviationList.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\DeviationList.Designer.cs">
       <DependentUpon>DeviationList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EmailGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EmailGUI.Designer.cs">
+      <DependentUpon>EmailGUI.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\PrincipalWin.cs">
       <SubType>Form</SubType>
@@ -116,8 +125,15 @@
     <Compile Include="GUI\SaveDeviation.Designer.cs">
       <DependentUpon>SaveDeviation.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ShowDiagramms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ShowDiagramms.Designer.cs">
+      <DependentUpon>ShowDiagramms.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mappings\ApprovementGroupMap.cs" />
     <Compile Include="Mappings\ApprovementMap.cs" />
+    <Compile Include="Mappings\AttachmentsMap.cs" />
     <Compile Include="Mappings\DeviationMap.cs" />
     <Compile Include="Mappings\ReasonMap.cs" />
     <Compile Include="Model\Autorisation.cs" />
@@ -127,6 +143,7 @@
     <Compile Include="Model\FormValidation.cs" />
     <Compile Include="Model\NHibernateHelper.cs" />
     <Compile Include="Model\Printer.cs" />
+    <Compile Include="Model\UploadFile.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -171,17 +188,23 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="GUI\ApprovementGroup.resx">
-      <DependentUpon>ApprovementGroup.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\ApprovementGroupGUI.resx">
+      <DependentUpon>ApprovementGroupGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DeviationList.resx">
       <DependentUpon>DeviationList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EmailGUI.resx">
+      <DependentUpon>EmailGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\PrincipalWin.resx">
       <DependentUpon>PrincipalWin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SaveDeviation.resx">
       <DependentUpon>SaveDeviation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ShowDiagramms.resx">
+      <DependentUpon>ShowDiagramms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

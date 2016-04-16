@@ -19,6 +19,9 @@ namespace DeviationManagerTest
 
             Deviation dev = new Deviation();
 
+            dev.deviationRef = "2016-01";
+            dev.requestedBy = "Noureddine";
+
             Reason reason = new Reason();
             Reason reason2 = new Reason();
 
@@ -59,9 +62,15 @@ namespace DeviationManagerTest
 
             ApprovementGroup approvementGroup1 = new ApprovementGroup { liblle = "Operations Mgr", role = "Operations Mgr" };
             ApprovementGroup approvementGroup2 = new ApprovementGroup { liblle = "Engineering Mgr", role = "Engineering Mgr" };
+            ApprovementGroup approvementGroup3 = new ApprovementGroup { liblle = "Quality Engineer", role = "Quality Engineer" };
+            ApprovementGroup approvementGroup4 = new ApprovementGroup { liblle = "General/Plant Manager", role = "General/Plant Manager" };
+            ApprovementGroup approvementGroup5 = new ApprovementGroup { liblle = "Quality Manager", role = "Quality Manager" };
 
             model.addApprovementGroup(approvementGroup1);
             model.addApprovementGroup(approvementGroup2);
+            model.addApprovementGroup(approvementGroup3);
+            model.addApprovementGroup(approvementGroup4);
+            model.addApprovementGroup(approvementGroup5);
 
             var approvementGroups = model.listApprovementGroup();
             Assert.IsTrue(approvementGroups.Count>0);

@@ -33,6 +33,9 @@ namespace DeviationManager.Mappings
 
             HasMany(x => x.approvements).Not.LazyLoad()
                 .Cascade.All();
+
+            HasMany(x => x.attachements).Not.LazyLoad()
+               .Cascade.All();
         }
     }
 }

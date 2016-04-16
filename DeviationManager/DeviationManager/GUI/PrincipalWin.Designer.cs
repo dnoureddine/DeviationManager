@@ -85,7 +85,7 @@
             // listDeviationsToolStripMenuItem
             // 
             this.listDeviationsToolStripMenuItem.Name = "listDeviationsToolStripMenuItem";
-            this.listDeviationsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.listDeviationsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.listDeviationsToolStripMenuItem.Text = "List deviations";
             this.listDeviationsToolStripMenuItem.Click += new System.EventHandler(this.listDeviationsToolStripMenuItem_Click);
             // 
@@ -103,6 +103,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PrincipalWin";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Deviation Manager";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

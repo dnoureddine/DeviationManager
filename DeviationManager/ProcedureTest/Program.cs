@@ -19,8 +19,13 @@ namespace ProcedureTest
         {
 
 
+            /*
             PDFDeviationGenerator pdfDoc = new PDFDeviationGenerator(25,25,45,45);
             pdfDoc.createPdfDeviation();
+            */
+
+            EmailSender email = new EmailSender();
+            email.sendEmail();
 
             Console.Read();
         }
