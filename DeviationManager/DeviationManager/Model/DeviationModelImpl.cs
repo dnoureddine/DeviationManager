@@ -1,4 +1,5 @@
 ﻿using DeviationManager.Entity;
+using NHibernate;
 using NHibernate.Criterion;
 using System;
 using System.Collections.Generic;
@@ -43,16 +44,22 @@ namespace DeviationManager.Model
         /************* Get Deviation using Deviation Ref  ****/
         public Deviation getDeviationWithRef(String deviationRef)
         {
-            using (var session = NHibernateHelper.OpenSession())
+            try
             {
-                using (var transaction = session.BeginTransaction())
-                {
-                    var deviation = session.CreateCriteria(typeof(Deviation))
-                        .Add(Restrictions.Eq("deviationRef", deviationRef))
-                        .UniqueResult<Deviation>();
-                    return deviation;
-                }
+                var session = NHibernateHelper.OpenSession();
+                var transaction = session.BeginTransaction();
+
+                var deviation = session.CreateCriteria(typeof(Deviation))
+                    .Add(Restrictions.Eq("deviationRef", deviationRef))
+                    .UniqueResult<Deviation>();
+
+                return deviation;
             }
+            catch(Exception ex){
+                return null;
+            }
+               
+                   
         }
 
         /*********************** Get a Deviation *****************************/
@@ -238,7 +245,6 @@ namespace DeviationManager.Model
                 }
             }
         }
-
 
 
         /************* get Deviation nombe *********/

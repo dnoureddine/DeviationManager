@@ -16,6 +16,8 @@ namespace DeviationManager.Mappings
             Map(x => x.liblle);
             Map(x => x.role);
 
+            HasMany(x => x.approvements).Not.LazyLoad()
+                .Cascade.All();
         }
     }
 }

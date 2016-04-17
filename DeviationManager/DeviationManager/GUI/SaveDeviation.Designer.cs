@@ -101,15 +101,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.yesNoReginal = new System.Windows.Forms.ComboBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.approventGroupDataGrid = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.approval = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.approve = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.reject = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.signed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.approvementGroupDataGrid = new System.Windows.Forms.DataGridView();
             this.closeDeviation = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -160,6 +152,15 @@
             this.deviationNO = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.approval = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.approve = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.reject = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.signed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valid = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deviationHeadPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -173,7 +174,7 @@
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.approventGroupDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.approvementGroupDataGrid)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uploadFileDataGridView)).BeginInit();
             this.groupBox5.SuspendLayout();
@@ -918,7 +919,7 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.approventGroupDataGrid);
+            this.groupBox7.Controls.Add(this.approvementGroupDataGrid);
             this.groupBox7.Location = new System.Drawing.Point(15, 917);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(894, 181);
@@ -926,10 +927,10 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Approvement";
             // 
-            // approventGroupDataGrid
+            // approvementGroupDataGrid
             // 
-            this.approventGroupDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.approventGroupDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.approvementGroupDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.approvementGroupDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.approval,
             this.name,
@@ -937,61 +938,13 @@
             this.reject,
             this.signed,
             this.date,
-            this.comments});
-            this.approventGroupDataGrid.Location = new System.Drawing.Point(16, 32);
-            this.approventGroupDataGrid.Name = "approventGroupDataGrid";
-            this.approventGroupDataGrid.Size = new System.Drawing.Size(864, 132);
-            this.approventGroupDataGrid.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.Width = 40;
-            // 
-            // approval
-            // 
-            this.approval.HeaderText = "Approval";
-            this.approval.Name = "approval";
-            this.approval.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
-            // 
-            // approve
-            // 
-            this.approve.HeaderText = "Approve";
-            this.approve.Name = "approve";
-            this.approve.Width = 60;
-            // 
-            // reject
-            // 
-            this.reject.HeaderText = "Reject";
-            this.reject.Name = "reject";
-            this.reject.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.reject.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.reject.Width = 60;
-            // 
-            // signed
-            // 
-            this.signed.HeaderText = "Signed";
-            this.signed.Name = "signed";
-            this.signed.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.signed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.signed.Width = 60;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "Date";
-            this.date.Name = "date";
-            // 
-            // comments
-            // 
-            this.comments.HeaderText = "Comments";
-            this.comments.Name = "comments";
-            this.comments.Width = 360;
+            this.comments,
+            this.valid});
+            this.approvementGroupDataGrid.Location = new System.Drawing.Point(16, 32);
+            this.approvementGroupDataGrid.Name = "approvementGroupDataGrid";
+            this.approvementGroupDataGrid.Size = new System.Drawing.Size(864, 132);
+            this.approvementGroupDataGrid.TabIndex = 0;
+            this.approvementGroupDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.approvementGroupDataGrid_CellContentClick);
             // 
             // closeDeviation
             // 
@@ -1270,7 +1223,6 @@
             this.DeviationPrint.TabIndex = 7;
             this.DeviationPrint.Text = "Print";
             this.DeviationPrint.UseVisualStyleBackColor = true;
-            this.DeviationPrint.Click += new System.EventHandler(this.DeviationPrint_Click);
             // 
             // groupBox2
             // 
@@ -1507,6 +1459,68 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 40;
+            // 
+            // approval
+            // 
+            this.approval.HeaderText = "Approval";
+            this.approval.Name = "approval";
+            this.approval.ReadOnly = true;
+            this.approval.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            // 
+            // approve
+            // 
+            this.approve.HeaderText = "Approve";
+            this.approve.Name = "approve";
+            this.approve.Width = 60;
+            // 
+            // reject
+            // 
+            this.reject.HeaderText = "Reject";
+            this.reject.Name = "reject";
+            this.reject.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.reject.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.reject.Width = 60;
+            // 
+            // signed
+            // 
+            this.signed.HeaderText = "Signed";
+            this.signed.Name = "signed";
+            this.signed.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.signed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.signed.Width = 60;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Date";
+            this.date.Name = "date";
+            this.date.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.date.Width = 80;
+            // 
+            // comments
+            // 
+            this.comments.HeaderText = "Comments";
+            this.comments.Name = "comments";
+            this.comments.Width = 300;
+            // 
+            // valid
+            // 
+            this.valid.HeaderText = "OK";
+            this.valid.Name = "valid";
+            this.valid.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.valid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.valid.Width = 40;
+            // 
             // SaveDeviation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1543,7 +1557,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.approventGroupDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.approvementGroupDataGrid)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uploadFileDataGridView)).EndInit();
@@ -1606,7 +1620,7 @@
         private System.Windows.Forms.DateTimePicker pSecondDate;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.DataGridView approventGroupDataGrid;
+        private System.Windows.Forms.DataGridView approvementGroupDataGrid;
         private System.Windows.Forms.Button DeviationSave;
         private System.Windows.Forms.Button DeviationPrint;
         private System.Windows.Forms.Button closeDeviation;
@@ -1677,14 +1691,6 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.ComboBox yesNoManufactEng;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn approval;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn approve;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn reject;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn signed;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn comments;
         private System.Windows.Forms.Button deleteDocument;
         private System.Windows.Forms.Button addDocument;
         private System.Windows.Forms.Button downloadDocument;
@@ -1693,5 +1699,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fileNameUploadDocument;
         private System.Windows.Forms.DataGridViewTextBoxColumn fileSaveUploadDocument;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateUploadFile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn approval;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn approve;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn reject;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn signed;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comments;
+        private System.Windows.Forms.DataGridViewButtonColumn valid;
     }
 }

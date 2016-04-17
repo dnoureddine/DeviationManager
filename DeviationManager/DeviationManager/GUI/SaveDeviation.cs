@@ -14,11 +14,13 @@ namespace DeviationManager.GUI
     public partial class SaveDeviation : Form
     {
         private DeviationModel deviationModel;
+        private String actionType;
 
         public SaveDeviation(String actionType)
         {
             InitializeComponent();
             deviationModel = new DeviationModel();
+            this.actionType = actionType;
 
             initialize();
             if (actionType == "newDeviation")
@@ -38,10 +40,10 @@ namespace DeviationManager.GUI
             var approvementGroups = deviationModel.listApprovementGroup();
             foreach (var approvementGroup in approvementGroups)
             {
-                this.approventGroupDataGrid.Rows.Add(approvementGroup.approvalId,approvementGroup.liblle);
+                this.approvementGroupDataGrid.Rows.Add(approvementGroup.approvalId,approvementGroup.liblle);
             }
 
-            this.approventGroupDataGrid.AllowUserToAddRows = false;
+            this.approvementGroupDataGrid.AllowUserToAddRows = false;
 
             /******** set deviation Number *****/
             this.deviationNO.Text = deviationModel.getDeviationNumber();
@@ -151,7 +153,7 @@ namespace DeviationManager.GUI
 
             //add Approvement Groups
             IList<Approvement> listApprovements = new List<Approvement>();
-            foreach (DataGridViewRow row in this.approventGroupDataGrid.Rows)
+            foreach (DataGridViewRow row in this.approvementGroupDataGrid.Rows)
             {
                 int approvementGroupId =(int)row.Cells[0].Value;
                 if (approvementGroupId != 0)
@@ -188,7 +190,7 @@ namespace DeviationManager.GUI
         }
 
 
-        //shoe form to update deviation
+        //show form to update deviation
         public void updateDeviation(Deviation deviation)
         {
             this.deviationNO.Text = deviation.deviationRef;
@@ -222,17 +224,24 @@ namespace DeviationManager.GUI
             //set Approvement
             var approvements = deviation.approvements;
             foreach(var approvement in approvements){
-                if (deviationModel.getApprovementGroup(approvement) != null)
+                var approved = new CheckBox().Checked=approvement.approved;
+                var rejected = new CheckBox().Checked=approvement.rejected;
+                var signed = new CheckBox().Checked=approvement.signed;
+                var date = "";
+                if (approvement.date != null)
                 {
-                   // MessageBox.Show("Null");
+                    date = approvement.date.Value.ToString();
                 }
+
+       
+                this.approvementGroupDataGrid.Rows.Add(approvement.approvementId, approvement.approvementGroup.liblle, approvement.name, approved, rejected, signed, date,approvement.comment,"OK");
             }
 
 
 
             this.deviationSignature.Enabled = false;
             this.deviationNO.Enabled = false;
-            this.approventGroupDataGrid.AllowUserToAddRows = false;
+            this.approvementGroupDataGrid.AllowUserToAddRows = false;
             this.Show();
         }
 
@@ -244,7 +253,7 @@ namespace DeviationManager.GUI
 
             this.deviationSignature.Enabled = false;
             this.deviationNO.Enabled = false;
-            this.approventGroupDataGrid.AllowUserToAddRows = false;
+            this.approvementGroupDataGrid.AllowUserToAddRows = false;
             this.addDocument.Enabled = false;
             this.deleteDocument.Enabled = false;
             this.DeviationSave.Enabled = false;
@@ -300,7 +309,7 @@ namespace DeviationManager.GUI
             this.yesNoCustomer.SelectedIndex = 1;
         }
 
-
+        //***__ __***
         private void requestedBy_GotFocus(object sender, EventArgs e)
         {
 
@@ -319,11 +328,7 @@ namespace DeviationManager.GUI
             this.errorProvider1.SetError(this.reason1, "");
         }
 
-        private void DeviationPrint_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        //Close Deviation
         private void closeDeviation_Click(object sender, EventArgs e)
         {
             String deviationRef = this.deviationNO.Text;
@@ -411,25 +416,52 @@ namespace DeviationManager.GUI
         {
             if (this.uploadFileDataGridView.CurrentRow != null)
             {
-                UploadFile uploadFile = new UploadFile("u288026726", "alter6+");
-                String fileNameDB = this.uploadFileDataGridView.CurrentRow.Cells[1].Value.ToString();
-
-                //Delete File using FTP
-                String result= uploadFile.deleteFileFTP("ftp://31.170.165.123/" + fileNameDB);
-                if(result=="deleted"){
-                    //delete File in DB
-                    deviationModel.deleteAttachment(fileNameDB);
-
-                    //remove from DataGridView
-                    this.uploadFileDataGridView.Rows.RemoveAt(this.uploadFileDataGridView.CurrentRow.Index);
-                    MessageBox.Show("File Deleted !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
+                if (MessageBox.Show("Are Sure, You Wish to Delete This Attachment ?", "Delete Attachment", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    MessageBox.Show(result, "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UploadFile uploadFile = new UploadFile("u288026726", "alter6+");
+                    String fileNameDB = this.uploadFileDataGridView.CurrentRow.Cells[1].Value.ToString();
+
+                    //Delete File using FTP
+                    String result = uploadFile.deleteFileFTP("ftp://31.170.165.123/" + fileNameDB);
+                    if (result == "deleted")
+                    {
+                        //delete File in DB
+                        deviationModel.deleteAttachment(fileNameDB);
+
+                        //remove from DataGridView
+                        this.uploadFileDataGridView.Rows.RemoveAt(this.uploadFileDataGridView.CurrentRow.Index);
+                        MessageBox.Show("File Deleted !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(result, "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
 
             }
+        }
+
+
+        //make the approvement
+        private void approvementGroupDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.actionType == "newDeviation")
+            {
+                MessageBox.Show("You Can Not Make This Action Now, You Schould First Save The Deviation !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+
+                if (e.ColumnIndex == 8)
+                {
+                    //Get The Approvement ID
+                    var approvementID = (int)this.approvementGroupDataGrid.Rows[e.RowIndex].Cells[0].Value;
+                    MessageBox.Show("Hello Now You Can Make This Action");
+
+                }
+                
+            }
+           
         }
 
 

@@ -125,7 +125,7 @@ namespace DeviationManager.GUI
                 if (deviation != null)
                 {
                     //update Deviation
-                    SaveDeviation saveDeviation = new SaveDeviation("showDevition");
+                    SaveDeviation saveDeviation = new SaveDeviation("showDeviation");
                     saveDeviation.showDeviation(deviation);
                 }
                  
