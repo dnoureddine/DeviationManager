@@ -142,6 +142,7 @@
     <Compile Include="Model\EmailSender.cs" />
     <Compile Include="Model\FormValidation.cs" />
     <Compile Include="Model\NHibernateHelper.cs" />
+    <Compile Include="Model\PDFDeviationGenerator.cs" />
     <Compile Include="Model\Printer.cs" />
     <Compile Include="Model\UploadFile.cs" />
     <Compile Include="Program.cs" />

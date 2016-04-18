@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace DeviationManager.GUI
     {
         private DeviationModel deviationModel;
         private String actionType;
+        private Deviation deviation=null;
 
         public SaveDeviation(String actionType)
         {
@@ -60,7 +62,7 @@ namespace DeviationManager.GUI
 
 
         /*******   get Other Approvement to print ****/
-        public List<OtherApprovement> getOtherApprovementToPrint(){
+        public IList<OtherApprovement> getOtherApprovementToPrint(){
 
             OtherApprovement regionalQuality = new OtherApprovement
             {
@@ -239,7 +241,7 @@ namespace DeviationManager.GUI
             }
 
 
-
+            this.deviation = deviation;
             this.deviationSignature.Enabled = false;
             this.deviationNO.Enabled = false;
             this.approvementGroupDataGrid.AllowUserToAddRows = false;
@@ -259,12 +261,39 @@ namespace DeviationManager.GUI
             this.deleteDocument.Enabled = false;
             this.DeviationSave.Enabled = false;
             this.closeDeviation.Enabled = false;
+            this.deviation = deviation;
 
             this.Show();
 
         }
 
 
+        //Approvement validation
+        private String validateApprovement(DataGridViewRow row){
+
+            String isValid = "valid";
+
+            if (row.Cells[2].Value==null)
+            {
+                isValid = " Name Value Null, "; 
+            }
+            DataGridViewCheckBoxCell approved = (DataGridViewCheckBoxCell)row.Cells[3];
+            DataGridViewCheckBoxCell rejected = (DataGridViewCheckBoxCell)row.Cells[4];
+
+            if (((bool)approved.Value != true) && ((bool)rejected.Value != true))
+            {
+                if (isValid == "valid")
+                {
+                    isValid = " Yous Must Reject Or Approve The Deviation !";
+                }
+                else
+                {
+                    isValid = isValid + "And You Must Reject Or Approve The Deviation !";
+                }
+            }
+           
+            return isValid;
+        }
         /***********************    Events  **************************************************************************/
 
         private void saveDeviation_Click(object sender, EventArgs e)
@@ -457,12 +486,70 @@ namespace DeviationManager.GUI
                 {
                     //Get The Approvement ID
                     var approvementID = (int)this.approvementGroupDataGrid.Rows[e.RowIndex].Cells[0].Value;
-                    MessageBox.Show("Hello Now You Can Make This Action");
+                    String approvementValidation = this.validateApprovement((DataGridViewRow)this.approvementGroupDataGrid.Rows[e.RowIndex]);
+                    if (approvementValidation == "valid")
+                    {
+                        //make Sure that the user has the Right to set Approvement
+                        Autorisation aut = new Autorisation();
+                        String toApprove = aut.cannApprove(approvementID);
+                        if (toApprove == "canApprove")
+                        {
+                            //make the Approvement
+                            Approvement approvement = deviationModel.getApprovement(approvementID);
+                            if (approvement != null) {
+                                approvement.name = this.approvementGroupDataGrid.Rows[e.RowIndex].Cells[2].Value.ToString();
+                                approvement.approved = (bool)this.approvementGroupDataGrid.Rows[e.RowIndex].Cells[3].Value;
+                                approvement.rejected = (bool)this.approvementGroupDataGrid.Rows[e.RowIndex].Cells[4].Value;
+                                approvement.signed = (bool)this.approvementGroupDataGrid.Rows[e.RowIndex].Cells[5].Value;
+                                approvement.date = DateTime.Now;
+                                if (this.approvementGroupDataGrid.Rows[e.RowIndex].Cells[7].Value != null)
+                                {
+                                    approvement.comment = this.approvementGroupDataGrid.Rows[e.RowIndex].Cells[7].Value.ToString();
+                                }
+
+                                deviationModel.updateApprovement(approvement);
+                                MessageBox.Show("Your Approvement Was Succesfuly Done !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Action Failed." + toApprove, "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Some Inputs Are Required ." + approvementValidation, "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
 
                 }
                 
             }
            
+        }
+
+
+        //Print Deviation
+        private void DeviationPrint_Click(object sender, EventArgs e)
+        {
+            if (this.actionType == "newDeviation")
+            {
+                MessageBox.Show("You Can Not Make This Action Now, You Schould First Save The Deviation !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else{
+                FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
+                folderBrowser.Description = "Choose A Directory To Save Your File";
+
+                if (folderBrowser.ShowDialog() == DialogResult.OK)
+                {
+                    var pdfGenerator = new PDFDeviationGenerator(25, 25, 45, 45);
+                    String filePath = folderBrowser.SelectedPath;
+                    IList<OtherApprovement> otherApprovements = this.getOtherApprovementToPrint();
+                    String fileSave = pdfGenerator.createPdfDeviation(this.deviation, otherApprovements, filePath);
+
+                    Process.Start(fileSave);
+
+                }
+            }
         }
 
 

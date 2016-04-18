@@ -1,4 +1,8 @@
-﻿using System;
+﻿using DeviationManager.Entity;
+using iTextSharp.text;
+using iTextSharp.text.html;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -105,7 +109,7 @@ namespace DeviationManager.Model
         }
 
 
-        public PdfPTable createDeviationContent(PdfPTable table)
+        public PdfPTable createDeviationContent(PdfPTable table, Deviation deviation)
         {
             //Deviation No cell
             this.addTableCell(table, "DEVIATION NO:", normal, 1, 0);
@@ -117,40 +121,40 @@ namespace DeviationManager.Model
             this.addTableCell(table, "RISK CATEGORY:", normal, 2, 0);
 
             // Risk Category Value cell
-            this.addTableCell(table, "................", normal, 2, 0);
+            this.addTableCell(table,deviation.deviationRiskCategory, normal, 2, 0);
 
             // Requested by cell
             this.addTableCell(table, "REQUESTED BY:", normal, 1, 0);
 
             // Requested by value cell
-            this.addTableCell(table, "............", normal, 3, 0);
+            this.addTableCell(table, deviation.requestedBy, normal, 3, 0);
 
             // DATE cell
             this.addTableCell(table, "DATE:", normal, 1, 0);
 
             // DATE value cell
-            this.addTableCell(table, "...........", normal, 2, 0);
+            this.addTableCell(table, deviation.dateCreation.ToString(), normal, 2, 0);
 
             // Signature cell
             this.addTableCell(table, "SIGNATURE:", normal, 1, 0);
 
             //Signature value cell
-            this.addTableCell(table, "............", normal, 3, 0);
+            this.addTableCell(table, "", normal, 3, 0);
 
             // position cell
             this.addTableCell(table, "POSITION:", normal, 1, 0);
 
             // position value cell
-            this.addTableCell(table, "...........", normal, 2, 0);
+            this.addTableCell(table, deviation.position, normal, 2, 0);
 
             // deviation type cell
             this.addTableCell(table, "DEVIATION TYPE:", normal, 2, 0);
 
             // deviation type value cell
-            this.addTableCell(table, ".............", normal, 1, 0);
+            this.addTableCell(table, deviation.deviationType, normal, 1, 0);
 
             // Other Description value cell
-            this.addTableCell(table, "Other :................................", normal, 7, 0);
+            this.addTableCell(table, "Other : "+deviation.describeOtherType, normal, 7, 0);
 
             // Detail description of deviation cell
             this.addTableCell(table, "DETAILED DESCRIPTION OF DEVIATION (detail product name / procedure number / specification / etc)", normal, 7, 0);
@@ -162,34 +166,41 @@ namespace DeviationManager.Model
             this.addTableCell(table, "Detail Requested Condition", normal, 4, 1, "#0095ff");
 
             // Standard condition  value cell
-            this.addTableCell(table, ".................\n .....................\n .....................\n .....................\n .....................", normal, 3, 0);
+            this.addTableCell(table, deviation.detailRequestCondition, normal, 3, 0);
 
             // detail requested condition value  cell
-            this.addTableCell(table, ".................\n .....................\n .....................\n ..................... \n .....................", normal, 4, 0);
+            this.addTableCell(table, deviation.detailStandardCondition, normal, 4, 0);
 
             // 5 why cell
             this.addTableCell(table, "DETAIL 5 WHY TO SHOW REASON CHANGE FOR DEVIATION:", normal, 7, 0, "#0095ff");
 
             // why 1 cell
-            this.addTableCell(table, "WHY:", normal, 7, 0);
+            var reasons = deviation.reasons;
+            this.addTableCell(table, "WHY: " + reasons.ElementAt<Reason>(0).reason, normal, 7, 0);
 
             // why 2 cell
-            this.addTableCell(table, "WHY:", normal, 7, 0);
+            this.addTableCell(table, "WHY: " + reasons.ElementAt<Reason>(1).reason, normal, 7, 0);
 
             // why 3 cell
-            this.addTableCell(table, "WHY:", normal, 7, 0);
+            this.addTableCell(table, "WHY: " + reasons.ElementAt<Reason>(2).reason, normal, 7, 0);
 
             // why 4 cell
-            this.addTableCell(table, "WHY:", normal, 7, 0);
+            this.addTableCell(table, "WHY: " + reasons.ElementAt<Reason>(3).reason, normal, 7, 0);
 
             // why 5 cell
-            this.addTableCell(table, "WHY:", normal, 7, 0);
+            this.addTableCell(table, "WHY: " + reasons.ElementAt<Reason>(4).reason, normal, 7, 0);
 
             // Period deviation cell
             this.addTableCell(table, "PERIOD FOR DEVIATION /or PERMANENT(shift / week / etc)", normal, 3, 0, "#0095ff");
 
             // Period deviation value  cell
-            this.addTableCell(table, ".................", normal, 4, 0);
+            TimeSpan t = (TimeSpan)(deviation.endDatePeriod - deviation.startDatePeriod);
+            int countMinutes = (int)t.TotalMinutes;
+            int days = countMinutes / (24 * 60);
+            int hours = (countMinutes - (days * 24 * 60)) / 60;
+            int minutesnb = countMinutes - (days * 24 * 60) - (hours * 60);
+
+            this.addTableCell(table, days+" Days  "+hours+" Hours  "+minutesnb+" Minutes", normal, 4, 0);
 
 
             // DENTFY THE FIRST AND LAST PART NUMBER  FOR DEVIATION  ... cell
@@ -205,7 +216,7 @@ namespace DeviationManager.Model
 
 
         /********   add Aprovement to Deivation pdf ****/
-        private PdfPTable createApprovementPdf(PdfPTable table)
+        private PdfPTable createApprovementPdf(PdfPTable table, Deviation deviation)
         {
 
             // Approval cell
@@ -227,82 +238,85 @@ namespace DeviationManager.Model
             this.addTableCell(table, "SIGNED", normalBold, 1, 1, "#0095ff");
 
             // Signed cell
-            this.addTableCell(table, "SIGNED", normalBold, 1, 1, "#0095ff");
+            this.addTableCell(table, "DATE", normalBold, 1, 1, "#0095ff");
 
-            //loop add Approvement values
-            for (int i = 0; i < 4; i++)
-            {
-                // Approval cell
-                this.addTableCell(table, "..........", normal, 1, 0);
+            //Get All Approvement
+            var approvements = deviation.approvements;
+            foreach (var approvement in approvements)
+            {             
+                    // Approval cell
+                    this.addTableCell(table, approvement.approvementGroup.liblle, normal, 1, 0);
 
-                // Name cell
-                this.addTableCell(table, "..........", normal, 1, 0);
+                    // Name cell
+                    this.addTableCell(table, approvement.name, normal, 1, 0);
 
-                // Approve cell
-                this.addTableCell(table, "..........", normal, 1, 0);
+                    // Approve cell
+                    this.addTableCell(table, approvement.approved.ToString(), normal, 1, 0);
 
-                // Reject cell
-                this.addTableCell(table, "..........", normal, 1, 0);
+                    // Reject cell
+                    this.addTableCell(table, approvement.rejected.ToString(), normal, 1, 0);
 
-                // Comments cell
-                this.addTableCell(table, "..........", normal, 1, 0);
+                    // Comments cell
+                    this.addTableCell(table, approvement.comment, normal, 1, 0);
 
-                // Signed cell
-                this.addTableCell(table, "..........", normal, 1, 0);
+                    // Signed cell
+                    this.addTableCell(table, "", normal, 1, 0);
 
-                // Signed cell
-                this.addTableCell(table, "..........", normal, 1, 0);
+                    // date cell
+                    this.addTableCell(table, approvement.date.ToString(), normal, 1, 0);
+                
             }
 
+            
             return table;
         }
 
 
 
         /******** add other(the last part of the deviation)  ****/
-        private PdfPTable createDeviationOtherOneTablePdf(PdfPTable table)
+        private PdfPTable createDeviationOtherOneTablePdf(PdfPTable table, OtherApprovement otherApprovement)
         {
             // Head cell
-            this.addTableCell(table, "REGIONAL QUALITY DIRECTOR APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT.", normalBold, 6, 0, "#FF0000");
+            this.addTableCell(table, otherApprovement.title, normalBold, 6, 0, "#FF0000");
 
             // Yes/No value cell
-            this.addTableCell(table, "........", normal, 1, 0, "#ff9933");
+            this.addTableCell(table, otherApprovement.selectYesNo, normal, 1, 0, "#ff9933");
 
             // Request Approved value cell
             this.addTableCell(table, "REQUEST APPROVED", small, 1, 0);
 
             // Request Approved value value cell
-            this.addTableCell(table, ".........", small, 1, 0);
+            this.addTableCell(table, otherApprovement.requestApproved.ToString(), small, 1, 0);
 
             // Name cell
             this.addTableCell(table, "NAME", small, 1, 0);
 
             // Name value cell
-            this.addTableCell(table, "............", small, 4, 0);
+            this.addTableCell(table, otherApprovement.nameApproval, small, 4, 0);
 
             // REQUEST REJECTED cell
             this.addTableCell(table, "REQUEST REJECTED", small, 1, 0);
 
             // REQUEST REJECTED value value cell
-            this.addTableCell(table, ".........", small, 1, 0);
+            this.addTableCell(table, otherApprovement.requestRejected.ToString(), small, 1, 0);
 
             // SIGNATURE cell
             this.addTableCell(table, "SIGNATURE", small, 1, 0);
 
             // SIGNATURE value cell
-            this.addTableCell(table, "............", small, 4, 0);
+            this.addTableCell(table, otherApprovement.signatureApproval, small, 4, 0);
 
             // DATE cell
             this.addTableCell(table, "DATE", small, 1, 0);
 
             // DATEvalue value cell
-            this.addTableCell(table, ".........", small, 1, 0);
+            this.addTableCell(table, otherApprovement.date.ToString(), small, 1, 0);
 
             // POSITION cell
             this.addTableCell(table, "POSITION", small, 1, 0);
 
             // POSITION value cell
-            this.addTableCell(table, "............", small, 4, 0);
+            this.addTableCell(table, otherApprovement.positionApproval, small, 4, 0);
 
 
 
@@ -311,11 +325,11 @@ namespace DeviationManager.Model
 
 
         /***** add All approvement table   ****/
-        private PdfPTable createAllApprovementTablePdf(PdfPTable table)
+        private PdfPTable createAllApprovementTablePdf(PdfPTable table, IList<OtherApprovement> otherApprovements)
         {
-            for (int i = 0; i < 4; i++)
+            foreach (var otherApprovement in otherApprovements)
             {
-                this.createDeviationOtherOneTablePdf(table);
+                this.createDeviationOtherOneTablePdf(table, otherApprovement);
             }
 
             return table;
@@ -323,28 +337,29 @@ namespace DeviationManager.Model
 
 
         //to create the hole document
-        public void createPdfDeviation()
+        public String createPdfDeviation(Deviation deviation, IList<OtherApprovement> otherApprovements, String filePath)
         {
-
-            this.getPdfWriter("deviatiomdocument.pdf");
+            String fileSave = filePath + "/deviation" + deviation.deviationRef + "_" + DateTime.Now.Second.ToString() + ".pdf";
+            this.getPdfWriter(fileSave);
 
             //crate deviation page header
             PdfPTable table = this.generatePageHead();
 
             //create deviation page content
-            this.createDeviationContent(table);
+            this.createDeviationContent(table,deviation);
 
             //Add approvement Group part to the document
-            this.createApprovementPdf(table);
+            this.createApprovementPdf(table, deviation);
 
 
             //Add Approvement table 
-            this.createAllApprovementTablePdf(table);
+            this.createAllApprovementTablePdf(table, otherApprovements);
 
             // close the document and save it
             doc.Add(table);
             doc.Close();
 
+            return fileSave;
 
         }
 

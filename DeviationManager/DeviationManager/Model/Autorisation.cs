@@ -53,20 +53,29 @@ namespace DeviationManager.Model
 
 
         /***** make sure if the user is allowed to approve ****/
-        public bool cannApprove(User user, ApprovementGroup approvementGroup)
+        public String cannApprove(int approvementId)
         {
-            /** 1: make sure if the current user can create deviation ***/
-            bool canCreateDeviation = this.canCreateDeviation(user);
+            String toAmpprove = "canApprove";
 
-            /** 2: make sure that the user belong to the approvementGroup ***/
-            bool userBelongToApprovementGroup = false;
-            if (user.role == approvementGroup.role) userBelongToApprovementGroup = true;
+            Approvement approvement = deviationModel.getApprovement(approvementId);
+            if (approvement.deviation.status=="closed")
+            {
+                toAmpprove = "Deviation Was Already Closed";
+            }
+            if (approvement.signed)
+            {
+                if (toAmpprove == "canApprove")
+                {
+                    toAmpprove = " This Approvement Was Already Done, You Can Not Change IT !";
+                }
+                else
+                {
+                    toAmpprove = toAmpprove + ", This Approvement Was Already Done, You Can Not Change IT !";
+                }
+            }
 
-            /** 3: If the approvement already set, make sure that it belong to the user in order to update it  */
-
-
-
-            return canCreateDeviation || userBelongToApprovementGroup;
+           
+            return toAmpprove;
         }
 
         

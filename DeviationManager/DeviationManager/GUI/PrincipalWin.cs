@@ -14,6 +14,7 @@ namespace DeviationManager.GUI
         public PrincipalWin()
         {
             InitializeComponent();
+          
         }
 
         private void saveDeviationToolStripMenuItem_Click(object sender, EventArgs e)

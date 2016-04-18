@@ -387,7 +387,39 @@ namespace DeviationManager.Model
 
         }
 
+        /*********************** Get an Approvement *****************************/
+        public Approvement getApprovement(int approvementID)
+        {
+            try
+            {
+                var session = NHibernateHelper.OpenSession();
+                var transaction = session.BeginTransaction();
 
+                var approvement = session.Get<Approvement>(approvementID);
+                return approvement;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+               
+            
+        }
+
+
+        /****** update Approvement  ****/
+        public void updateApprovement(Approvement approvement)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.Merge(approvement);
+                    transaction.Commit();
+                }
+            }
+
+        }
 
         //***************
         /************************* List all Derivation **********************************/
