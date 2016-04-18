@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.imagePanel = new System.Windows.Forms.Panel();
+            this.imagePanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // imagePanel
@@ -37,16 +37,18 @@
             this.imagePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imagePanel.Location = new System.Drawing.Point(0, 0);
             this.imagePanel.Name = "imagePanel";
-            this.imagePanel.Size = new System.Drawing.Size(813, 512);
+            this.imagePanel.Size = new System.Drawing.Size(912, 555);
             this.imagePanel.TabIndex = 0;
             // 
             // ShowDiagramms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 512);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(912, 555);
             this.Controls.Add(this.imagePanel);
             this.Name = "ShowDiagramms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Show Diagramms";
             this.ResumeLayout(false);
 
@@ -54,6 +56,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel imagePanel;
+        private System.Windows.Forms.FlowLayoutPanel imagePanel;
+
+
+
     }
 }

@@ -179,6 +179,7 @@ namespace DeviationManager.GUI
                 attachement.fileName = row.Cells[0].Value.ToString();
                 attachement.fileNameDb = row.Cells[1].Value.ToString();
                 attachement.date = DateTime.Now;
+                attachement.liblle = row.Cells[3].Value.ToString();
 
                 listAttachments.Add(attachement);
             }
@@ -218,7 +219,7 @@ namespace DeviationManager.GUI
             var attachements = deviation.attachements;
             foreach (var attachment in attachements)
             {
-                this.uploadFileDataGridView.Rows.Add(attachment.fileName, attachment.fileNameDb, attachment.date.ToString());
+                this.uploadFileDataGridView.Rows.Add(attachment.fileName, attachment.fileNameDb, attachment.date.ToString(),attachment.liblle);
             }
 
             //set Approvement
@@ -402,12 +403,12 @@ namespace DeviationManager.GUI
             }
         }
 
-        //show diagramms of deviation in other Fen
+        //show diagramms of deviation in other Win
         private void button1_Click(object sender, EventArgs e)
         {
             String fileSave = this.uploadFileDataGridView.CurrentRow.Cells[1].Value.ToString();
 
-            ShowDiagramms showDiagramm = new ShowDiagramms("ftp://31.170.165.123/"+fileSave);
+            ShowDiagramms showDiagramm = new ShowDiagramms(this.uploadFileDataGridView);
             showDiagramm.Show();
         }
 

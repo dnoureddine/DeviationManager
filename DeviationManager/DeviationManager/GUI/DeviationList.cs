@@ -40,6 +40,14 @@ namespace DeviationManager.GUI
             this.DeviationDataGridView.DataSource = source;
         }
 
+        //update  Deviation List
+        private void updateDeviationList(IList<Deviation> listdeviations)
+        {
+            var source = new BindingSource();
+            source.DataSource = listdeviations;
+            this.DeviationDataGridView.DataSource = source;
+        }
+
         //DataGridViw Configuration
         private void DataViewConfiguration()
         {
@@ -52,7 +60,6 @@ namespace DeviationManager.GUI
             //evit user to add new colums
             this.DeviationDataGridView.AllowUserToAddRows = false;
         }
-
 
 
         /*************************** Event **********************************************************************/
@@ -132,7 +139,76 @@ namespace DeviationManager.GUI
             }
         }
 
+        //search deviation using deviation ref
+        private void deviationNO_TextChanged(object sender, EventArgs e)
+        {
+            if (this.likeSearch.Checked == false)
+            {
+                this.updateDeviationList(deviationModel.filterDeviationByRef(this.deviationNO.Text));
+            }
+        }
 
+        //search deviation using requested by
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (this.likeSearch.Checked == false)
+            {
+                this.updateDeviationList(deviationModel.filterDeviationByRequestedBy(this.requestedBy.Text));
+            }
+        }
+
+        //search deviation using rick category
+        private void riskCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (this.likeSearch.Checked == false)
+            {
+                this.updateDeviationList(deviationModel.filterDeviationByRiskCategory(this.riskCategory.SelectedItem.ToString()));
+            }
+        }
+
+
+        //search deviation using deviation type
+        private void deviationType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.likeSearch.Checked == false)
+            {
+                this.updateDeviationList(deviationModel.filterDeviationByDeviationType(this.deviationType.SelectedItem.ToString()));
+            }
+        }
+
+        //search deviation using all  properties
+        private void Filter_Click(object sender, EventArgs e)
+        {
+
+            String deviationRef = this.deviationNO.Text;
+            String requestedBy = this.requestedBy.Text;
+            String deviationType = "";
+            String deviationRiskCategory = "";
+            if (this.riskCategory.SelectedItem != null)
+            {
+                deviationRiskCategory = this.riskCategory.SelectedItem.ToString();
+            }
+            if (this.deviationType.SelectedItem != null)
+            {
+                deviationType = this.deviationType.SelectedItem.ToString();
+            }
+
+            var deviations = deviationModel.filterDeviationByAll(deviationRef, requestedBy, deviationRiskCategory, deviationType);
+            this.updateDeviationList(deviations);
+        }
+
+
+        //update deviations list
+        private void deviationListUpdate_Click(object sender, EventArgs e)
+        {
+            this.showDeviationList();
+        }
+
+
+
+
+        /**___________classs _____*****/
 
     }
 }

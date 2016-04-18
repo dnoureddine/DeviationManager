@@ -102,7 +102,7 @@ namespace DeviationManager.Model
         }
 
 
-        //get Image strem
+        //get Image stream
         public Stream getImageStream(String hostName)
         {
       
@@ -158,7 +158,7 @@ namespace DeviationManager.Model
             }
         }
 
-        //generate file name to difference between thems
+        //generate file name to save in the DB
         public String generateFileName(string fileName)
         {
             DateTime now = DateTime.Now;

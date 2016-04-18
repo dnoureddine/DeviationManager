@@ -102,13 +102,19 @@
             this.yesNoReginal = new System.Windows.Forms.ComboBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.approvementGroupDataGrid = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.approval = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.approve = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.reject = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.signed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valid = new System.Windows.Forms.DataGridViewButtonColumn();
             this.closeDeviation = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.uploadFileDataGridView = new System.Windows.Forms.DataGridView();
-            this.fileNameUploadDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileSaveUploadDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateUploadFile = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.downloadDocument = new System.Windows.Forms.Button();
             this.deleteDocument = new System.Windows.Forms.Button();
             this.addDocument = new System.Windows.Forms.Button();
@@ -152,15 +158,10 @@
             this.deviationNO = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.approval = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.approve = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.reject = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.signed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valid = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.fileSaveUploadDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileNameUploadDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateUploadFile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.attachmentliblle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deviationHeadPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -946,6 +947,68 @@
             this.approvementGroupDataGrid.TabIndex = 0;
             this.approvementGroupDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.approvementGroupDataGrid_CellContentClick);
             // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 40;
+            // 
+            // approval
+            // 
+            this.approval.HeaderText = "Approval";
+            this.approval.Name = "approval";
+            this.approval.ReadOnly = true;
+            this.approval.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            // 
+            // approve
+            // 
+            this.approve.HeaderText = "Approve";
+            this.approve.Name = "approve";
+            this.approve.Width = 60;
+            // 
+            // reject
+            // 
+            this.reject.HeaderText = "Reject";
+            this.reject.Name = "reject";
+            this.reject.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.reject.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.reject.Width = 60;
+            // 
+            // signed
+            // 
+            this.signed.HeaderText = "Signed";
+            this.signed.Name = "signed";
+            this.signed.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.signed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.signed.Width = 60;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Date";
+            this.date.Name = "date";
+            this.date.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.date.Width = 80;
+            // 
+            // comments
+            // 
+            this.comments.HeaderText = "Comments";
+            this.comments.Name = "comments";
+            this.comments.Width = 300;
+            // 
+            // valid
+            // 
+            this.valid.HeaderText = "OK";
+            this.valid.Name = "valid";
+            this.valid.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.valid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.valid.Width = 40;
+            // 
             // closeDeviation
             // 
             this.closeDeviation.Image = ((System.Drawing.Image)(resources.GetObject("closeDeviation.Image")));
@@ -997,31 +1060,14 @@
             this.uploadFileDataGridView.AllowUserToResizeRows = false;
             this.uploadFileDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.uploadFileDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fileNameUploadDocument,
             this.fileSaveUploadDocument,
-            this.dateUploadFile});
+            this.fileNameUploadDocument,
+            this.dateUploadFile,
+            this.attachmentliblle});
             this.uploadFileDataGridView.Location = new System.Drawing.Point(17, 89);
             this.uploadFileDataGridView.Name = "uploadFileDataGridView";
             this.uploadFileDataGridView.Size = new System.Drawing.Size(755, 168);
             this.uploadFileDataGridView.TabIndex = 12;
-            // 
-            // fileNameUploadDocument
-            // 
-            this.fileNameUploadDocument.HeaderText = "File Name";
-            this.fileNameUploadDocument.Name = "fileNameUploadDocument";
-            this.fileNameUploadDocument.Width = 300;
-            // 
-            // fileSaveUploadDocument
-            // 
-            this.fileSaveUploadDocument.HeaderText = "File Save";
-            this.fileSaveUploadDocument.Name = "fileSaveUploadDocument";
-            this.fileSaveUploadDocument.Width = 300;
-            // 
-            // dateUploadFile
-            // 
-            this.dateUploadFile.HeaderText = "Date";
-            this.dateUploadFile.Name = "dateUploadFile";
-            this.dateUploadFile.Width = 112;
             // 
             // downloadDocument
             // 
@@ -1459,67 +1505,29 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // id
+            // fileSaveUploadDocument
             // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 40;
+            this.fileSaveUploadDocument.HeaderText = "File Save";
+            this.fileSaveUploadDocument.Name = "fileSaveUploadDocument";
+            this.fileSaveUploadDocument.Width = 150;
             // 
-            // approval
+            // fileNameUploadDocument
             // 
-            this.approval.HeaderText = "Approval";
-            this.approval.Name = "approval";
-            this.approval.ReadOnly = true;
-            this.approval.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.fileNameUploadDocument.HeaderText = "File Name";
+            this.fileNameUploadDocument.Name = "fileNameUploadDocument";
+            this.fileNameUploadDocument.Width = 150;
             // 
-            // name
+            // dateUploadFile
             // 
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
+            this.dateUploadFile.HeaderText = "Date";
+            this.dateUploadFile.Name = "dateUploadFile";
+            this.dateUploadFile.Width = 112;
             // 
-            // approve
+            // attachmentliblle
             // 
-            this.approve.HeaderText = "Approve";
-            this.approve.Name = "approve";
-            this.approve.Width = 60;
-            // 
-            // reject
-            // 
-            this.reject.HeaderText = "Reject";
-            this.reject.Name = "reject";
-            this.reject.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.reject.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.reject.Width = 60;
-            // 
-            // signed
-            // 
-            this.signed.HeaderText = "Signed";
-            this.signed.Name = "signed";
-            this.signed.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.signed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.signed.Width = 60;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "Date";
-            this.date.Name = "date";
-            this.date.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.date.Width = 80;
-            // 
-            // comments
-            // 
-            this.comments.HeaderText = "Comments";
-            this.comments.Name = "comments";
-            this.comments.Width = 300;
-            // 
-            // valid
-            // 
-            this.valid.HeaderText = "OK";
-            this.valid.Name = "valid";
-            this.valid.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.valid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.valid.Width = 40;
+            this.attachmentliblle.HeaderText = "Legend";
+            this.attachmentliblle.Name = "attachmentliblle";
+            this.attachmentliblle.Width = 300;
             // 
             // SaveDeviation
             // 
@@ -1696,9 +1704,6 @@
         private System.Windows.Forms.Button downloadDocument;
         private System.Windows.Forms.DataGridView uploadFileDataGridView;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fileNameUploadDocument;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fileSaveUploadDocument;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateUploadFile;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn approval;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
@@ -1708,5 +1713,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn comments;
         private System.Windows.Forms.DataGridViewButtonColumn valid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fileSaveUploadDocument;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fileNameUploadDocument;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateUploadFile;
+        private System.Windows.Forms.DataGridViewTextBoxColumn attachmentliblle;
     }
 }

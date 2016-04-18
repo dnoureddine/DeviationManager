@@ -281,6 +281,114 @@ namespace DeviationManager.Model
         }
 
 
+        /****** search Deviation by devationRef */
+        public IList<Deviation> filterDeviationByRef(String refDev){
+
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var deviations = session.CreateCriteria(typeof(Deviation))
+                     .Add(Restrictions.Like("deviationRef", refDev, MatchMode.Anywhere))
+                     .List<Deviation>();
+
+                    return deviations;
+                }
+            }
+
+        }
+
+        /****** search Deviation by Requested by */
+        public IList<Deviation> filterDeviationByRequestedBy(String requestedBy)
+        {
+
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var deviations = session.CreateCriteria(typeof(Deviation))
+                     .Add(Restrictions.Like("requestedBy", requestedBy, MatchMode.Anywhere))
+                     .List<Deviation>();
+
+                    return deviations;
+                }
+            }
+
+        }
+
+        /****** search Deviation by Requested Rick category */
+        public IList<Deviation> filterDeviationByRiskCategory(String riskCategory)
+        {
+
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var deviations = session.CreateCriteria(typeof(Deviation))
+                     .Add(Restrictions.Eq("deviationRiskCategory", riskCategory))
+                     .List<Deviation>();
+
+                    return deviations;
+                }
+            }
+
+        }
+
+        /****** search Deviation by Deviation type */
+        public IList<Deviation> filterDeviationByDeviationType(String deviationType)
+        {
+
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var deviations = session.CreateCriteria(typeof(Deviation))
+                     .Add(Restrictions.Eq("deviationType", deviationType))
+                     .List<Deviation>();
+
+                    return deviations;
+                }
+            }
+
+        }
+
+        /****** search Deviation using all properties*/
+        public IList<Deviation> filterDeviationByAll(String deviationRef, String requestedBy, String deviationRiskCategory, String deviationType)
+        {
+
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var creteria  = session.CreateCriteria(typeof(Deviation));
+                    if (deviationRef != "")
+                    {
+                        creteria.Add(Restrictions.Eq("deviationRef", deviationRef));
+                    }
+                    if (requestedBy != "")
+                    {
+                        creteria.Add(Restrictions.Eq("requestedBy", requestedBy));
+                    }
+                    if (deviationRiskCategory != "")
+                    {
+                        creteria.Add(Restrictions.Eq("deviationRiskCategory", deviationRiskCategory));
+                    }
+                    if (deviationType != "")
+                    {
+                        creteria.Add(Restrictions.Eq("deviationType", deviationType));
+                    }
+
+
+                    var deviations= creteria.List<Deviation>();
+
+                    return deviations;
+                }
+            }
+
+        }
+
+
+
         //***************
         /************************* List all Derivation **********************************/
         public ApprovementGroup getApprovementGroup(Approvement approvement)

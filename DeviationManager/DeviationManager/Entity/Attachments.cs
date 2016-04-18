@@ -11,6 +11,7 @@ namespace DeviationManager.Entity
         public virtual String fileName { get; set; }
         public virtual String fileNameDb { get; set; }
         public virtual DateTime date { get; set; }
+        public virtual String liblle { get; set; }
 
         public virtual Deviation deviation { get; set; }
     }

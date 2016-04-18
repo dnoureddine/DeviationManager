@@ -16,6 +16,7 @@ namespace DeviationManager.Mappings
             Map(x => x.fileName);
             Map(x => x.fileNameDb);
             Map(x => x.date);
+            Map(x => x.liblle);
 
             References(x => x.deviation);
         }

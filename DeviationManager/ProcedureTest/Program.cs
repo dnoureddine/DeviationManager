@@ -10,6 +10,7 @@ using System.DirectoryServices.AccountManagement;
 using System.Security.Principal;
 using System.Text.RegularExpressions;
 using ProcedureTest.Classes;
+using System.IO;
 
 namespace ProcedureTest
 {
@@ -23,9 +24,7 @@ namespace ProcedureTest
             PDFDeviationGenerator pdfDoc = new PDFDeviationGenerator(25,25,45,45);
             pdfDoc.createPdfDeviation();
             */
-
-            EmailSender email = new EmailSender();
-            email.sendEmail();
+     
 
             Console.Read();
         }
