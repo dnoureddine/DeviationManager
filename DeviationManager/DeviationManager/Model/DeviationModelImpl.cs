@@ -123,6 +123,7 @@ namespace DeviationManager.Model
                     if (deviation != null)
                     {
                         deviation.status = "closed";
+                        deviation.dateClosed = DateTime.Now;
                         session.Merge(deviation);
                         transaction.Commit();
                         return "closed";
@@ -226,8 +227,6 @@ namespace DeviationManager.Model
         }
 
 
-
-
         /**** delete approvement group   ***/
         public void deleteApprovementGroup(int id)
         {
@@ -262,17 +261,23 @@ namespace DeviationManager.Model
                         deviation = session.CreateCriteria(typeof(Deviation)).List<Deviation>().Last();
                     }
 
-                    if (deviation != null)
+                    if (deviation == null)
                     {
-                        if(deviation.deviationId>9){
-                            return year+"-0"+deviation.deviationId + 1;
-                        }else{
-                            return year + "-" + deviation.deviationId + 1; 
-                        }
+                        return year + "-01";
+                      
                     }
                     else
                     {
-                        return year+"-01";
+                        int index = deviation.deviationId + 1;
+
+                        if (deviation.deviationId < 9)
+                        { 
+                            return year + "-0" + index;
+                        }
+                        else
+                        {
+                            return year + "-" + index;
+                        } 
                     }
                 }
             }

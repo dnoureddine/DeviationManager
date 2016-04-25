@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmailGUI));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.messageContent = new System.Windows.Forms.TextBox();
-            this.sendMessage = new System.Windows.Forms.Button();
             this.cancelSendEmail = new System.Windows.Forms.Button();
+            this.sendMessage = new System.Windows.Forms.Button();
+            this.messageContent = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,14 +47,17 @@
             this.panel1.Size = new System.Drawing.Size(971, 504);
             this.panel1.TabIndex = 0;
             // 
-            // messageContent
+            // cancelSendEmail
             // 
-            this.messageContent.Location = new System.Drawing.Point(12, 30);
-            this.messageContent.Multiline = true;
-            this.messageContent.Name = "messageContent";
-            this.messageContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.messageContent.Size = new System.Drawing.Size(934, 372);
-            this.messageContent.TabIndex = 0;
+            this.cancelSendEmail.Image = ((System.Drawing.Image)(resources.GetObject("cancelSendEmail.Image")));
+            this.cancelSendEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cancelSendEmail.Location = new System.Drawing.Point(715, 432);
+            this.cancelSendEmail.Name = "cancelSendEmail";
+            this.cancelSendEmail.Size = new System.Drawing.Size(95, 46);
+            this.cancelSendEmail.TabIndex = 2;
+            this.cancelSendEmail.Text = "Cancel";
+            this.cancelSendEmail.UseVisualStyleBackColor = true;
+            this.cancelSendEmail.Click += new System.EventHandler(this.cancelSendEmail_Click);
             // 
             // sendMessage
             // 
@@ -68,17 +71,14 @@
             this.sendMessage.UseVisualStyleBackColor = true;
             this.sendMessage.Click += new System.EventHandler(this.sendMessage_Click);
             // 
-            // cancelSendEmail
+            // messageContent
             // 
-            this.cancelSendEmail.Image = ((System.Drawing.Image)(resources.GetObject("cancelSendEmail.Image")));
-            this.cancelSendEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.cancelSendEmail.Location = new System.Drawing.Point(715, 432);
-            this.cancelSendEmail.Name = "cancelSendEmail";
-            this.cancelSendEmail.Size = new System.Drawing.Size(95, 46);
-            this.cancelSendEmail.TabIndex = 2;
-            this.cancelSendEmail.Text = "Cancel";
-            this.cancelSendEmail.UseVisualStyleBackColor = true;
-            this.cancelSendEmail.Click += new System.EventHandler(this.cancelSendEmail_Click);
+            this.messageContent.Location = new System.Drawing.Point(12, 30);
+            this.messageContent.Multiline = true;
+            this.messageContent.Name = "messageContent";
+            this.messageContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.messageContent.Size = new System.Drawing.Size(934, 372);
+            this.messageContent.TabIndex = 0;
             // 
             // EmailGUI
             // 
@@ -86,6 +86,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(971, 504);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "EmailGUI";
             this.Text = "EmailGUI";
             this.panel1.ResumeLayout(false);

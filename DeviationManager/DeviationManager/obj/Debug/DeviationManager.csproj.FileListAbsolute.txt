@@ -55,3 +55,14 @@ C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\DeviationManager.GUI.EmailGUI.resources
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\DeviationManager.csprojResolveAssemblyReference.cache
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\DeviationManager.GUI.ShowDiagramms.resources
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\bin\Debug\Interop.Cfx62ClientServer.dll
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\bin\Debug\Interop.ChartfxLib.dll
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\bin\Debug\Interop.StdType.dll
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\bin\Debug\AxInterop.Cfx62ClientServer.dll
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\bin\Debug\AxInterop.ChartfxLib.dll
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\Interop.Cfx62ClientServer.dll
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\Interop.ChartfxLib.dll
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\Interop.StdType.dll
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\AxInterop.Cfx62ClientServer.dll
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\AxInterop.ChartfxLib.dll
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\DeviationManager.csproj.ResolveComReference.cache

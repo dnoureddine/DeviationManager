@@ -34,5 +34,30 @@ namespace DeviationManager.GUI
             DeviationList deviationList = new DeviationList();
             deviationList.Show();
         }
+
+        private void greenDev_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void blueDev_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PrincipalWin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hELPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel13_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -10,54 +10,39 @@ namespace ProcedureTest.Classes
     public class EmailSender
     {
 
-        public void sendEmail()
+        public int sendEmail()
         {
             try{
 
                 PrincipalContext ctx = new PrincipalContext(ContextType.Domain, "eu.tiauto.com");
 
-
-                // define a "query-by-example" principal - here, we search for a GroupPrincipal 
-                GroupPrincipal qbeGroup = new GroupPrincipal(ctx);
-
-                // create your principal searcher passing in the QBE principal    
-                PrincipalSearcher srch = new PrincipalSearcher(qbeGroup);
-
-                // find all matches
-                int i = 0;
-                foreach (var found in srch.FindAll())
+                GroupPrincipal group = GroupPrincipal.FindByIdentity(ctx, "*ETT DR-Approval");
+                if (group != null)
                 {
-                    GroupPrincipal foundGroup = found as GroupPrincipal;
+                    PrincipalSearchResult<Principal> members = group.GetMembers();
 
-
-                    foreach (Principal p in foundGroup.GetMembers(true))
-                    {
-                        Console.WriteLine(p.Name);
-                    }
-
-                    i++;
-                    if (i == 14)
-                    {
-                        break;
-                    }
-                }
-
-                if (srch != null)
-                {
-                    Console.WriteLine("not nlll");
+                    return members.Count();
                 }
                 else
                 {
-                    Console.WriteLine("null");
+                    Console.WriteLine("Group mot fund");
+                    return 0;
                 }
+
+                
             }
             catch(DirectoryServicesCOMException dex){
                Console.WriteLine(dex.Message);
+               return 0;
             }
             
         }
 
 
+        public void getGroupMembers()
+        {
+            // ExpandGroupResults test;
+        }
 
 
 

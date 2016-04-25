@@ -47,6 +47,7 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(912, 555);
             this.Controls.Add(this.imagePanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "ShowDiagramms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Show Diagramms";

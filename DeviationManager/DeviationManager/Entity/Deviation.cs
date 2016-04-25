@@ -29,15 +29,17 @@ namespace DeviationManager.Entity
         public virtual String detailRequestCondition { get; set; }
         public virtual DateTime? startDatePeriod { get; set; }
         public virtual DateTime? endDatePeriod { get; set; }
-        public virtual DateTime? dateClosed { get; set; }
         [Browsable(false)]
         public virtual String status { get; set; }
         [Browsable(false)]
         public virtual Boolean isPrinted { get; set; }
+        public virtual DateTime? dateClosed { get; set; }
        
 
         public virtual IList<Reason> reasons { get;  set; }
+        [Browsable(false)]
         public virtual IList<Approvement> approvements { get;  set; }
+        [Browsable(false)]
         public virtual IList<Attachments> attachements { get; set; }
 
         public Deviation()
