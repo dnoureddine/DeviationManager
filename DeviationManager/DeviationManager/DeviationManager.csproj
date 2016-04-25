@@ -120,6 +120,12 @@
     <Compile Include="GUI\PrincipalWin.Designer.cs">
       <DependentUpon>PrincipalWin.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\RiskMatrix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\RiskMatrix.Designer.cs">
+      <DependentUpon>RiskMatrix.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\SaveDeviation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\PrincipalWin.resx">
       <DependentUpon>PrincipalWin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\RiskMatrix.resx">
+      <DependentUpon>RiskMatrix.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SaveDeviation.resx">
       <DependentUpon>SaveDeviation.cs</DependentUpon>

@@ -25,9 +25,7 @@ namespace ProcedureTest
             pdfDoc.createPdfDeviation();*/
 
             EmailSender email = new EmailSender();
-            int count = email.sendEmail();
-
-            Console.WriteLine("Count is :"+count);
+            email.sendEmail();
 
             Console.Read();
         }

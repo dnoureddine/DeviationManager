@@ -128,7 +128,10 @@ namespace DeviationManager.GUI
             Deviation deviation = new Deviation();
 
             deviation.deviationRef = this.deviationNO.Text;
-            deviation.deviationRiskCategory = this.riskCategory.SelectedItem.ToString();
+            if (this.riskCategory.SelectedItem != null)
+            {
+             deviation.deviationRiskCategory = this.riskCategory.SelectedItem.ToString();
+            }
             deviation.requestedBy = this.requestedBy.Text;
             deviation.dateCreation = this.deviationDateCreation.Value;
             deviation.position = this.position.Text;
@@ -139,6 +142,12 @@ namespace DeviationManager.GUI
             deviation.detailRequestCondition = this.detailRequestedDeviation.Text;
             deviation.startDatePeriod = this.pFirstDate.Value;
             deviation.endDatePeriod = this.pSecondDate.Value;
+            deviation.anlage = this.anlage.Text;
+            deviation.product = this.product.Text;
+            if (this.actionType == "newDeviation")
+            {
+                deviation.status = "Pending";
+            }
             
 
             //add Reasons
@@ -197,17 +206,23 @@ namespace DeviationManager.GUI
         public void updateDeviation(Deviation deviation)
         {
             this.deviationNO.Text = deviation.deviationRef;
-            this.riskCategory.SelectedText = deviation.deviationRiskCategory;
+            if (deviation.deviationRiskCategory != null && deviation.deviationRiskCategory != "")
+            {
+               this.riskCategory.SelectedItem = deviation.deviationRiskCategory;
+            }
             this.requestedBy.Text = deviation.requestedBy;
             this.deviationDateCreation.Value = (DateTime)deviation.dateCreation;
             this.position.Text=deviation.position;
-            this.deviationType.SelectedText=deviation.deviationType;
+            this.deviationType.SelectedItem=deviation.deviationType;
             this.deviationSignature.Text=deviation.signature;
             this.standardCondition.Text=deviation.detailStandardCondition;
             this.detailRequestedDeviation.Text=deviation.detailRequestCondition;
             this.pFirstDate.Value=(DateTime)deviation.startDatePeriod;
             this.pSecondDate.Value=(DateTime)deviation.endDatePeriod;
             this.deviationDescription.Text = deviation.describeOtherType;
+            this.anlage.Text = deviation.anlage;
+            this.product.Text = deviation.product;
+
 
             //set Resons
             var reasons = deviation.reasons;
@@ -301,9 +316,11 @@ namespace DeviationManager.GUI
             FormValidation formValidation = new FormValidation();
             bool requestedBy = formValidation.isTextBoxNotNull(this.requestedBy, errorProvider1);
             bool position = formValidation.isTextBoxNotNull(this.position, errorProvider1);
-            bool reason1 = formValidation.isTextBoxNotNull(this.reason1, errorProvider1);
+            bool standardCondition = formValidation.isTextBoxNotNull(this.standardCondition, errorProvider1);
+            bool detailRequestedDevV = formValidation.isTextBoxNotNull(this.detailRequestedDeviation, errorProvider1);
+            bool deviationType = formValidation.isItemFromComoBoxSelected(this.deviationType, errorProvider1);
 
-            if (requestedBy || position || reason1)
+            if (requestedBy || position || standardCondition || detailRequestedDevV || deviationType)
             {
                 Deviation deviation = this.getDeviationObject();
                 if (deviation.deviationId != 0)
@@ -331,8 +348,6 @@ namespace DeviationManager.GUI
         //initialize form
         private void initialize()
         {
-            this.riskCategory.SelectedIndex = 1;
-            this.deviationType.SelectedIndex = 1;
             this.yesNoReginal.SelectedIndex = 1;
             this.yesNoProductEng.SelectedIndex = 1;
             this.yesNoManufactEng.SelectedIndex = 1;
@@ -357,6 +372,29 @@ namespace DeviationManager.GUI
 
             this.errorProvider1.SetError(this.reason1, "");
         }
+
+        private void riskCategory_MouseClick(object sender, MouseEventArgs e)
+        {
+            RiskMatrix riskMatrix = new RiskMatrix(this.riskCategory);
+            riskMatrix.Show();
+        }
+
+        private void standardCondition_GotFocus(object sender, EventArgs e)
+        {
+            this.errorProvider1.SetError(this.standardCondition, "");
+        }
+
+        private void detailRequestedDeviation_GotFocus(object sender, EventArgs e)
+        {
+            this.errorProvider1.SetError(this.detailRequestedDeviation, "");
+        }
+
+        private void deviationType_SelectedValueChanged(object sender, EventArgs e)
+        {
+            this.errorProvider1.SetError(this.deviationType, "");
+        }
+
+
 
         //Close Deviation
         private void closeDeviation_Click(object sender, EventArgs e)

@@ -126,6 +126,7 @@ namespace DeviationManager.Model
                         deviation.dateClosed = DateTime.Now;
                         session.Merge(deviation);
                         transaction.Commit();
+
                         return "closed";
                     }
                     else
@@ -356,6 +357,61 @@ namespace DeviationManager.Model
             }
 
         }
+
+        /****** search Deviation by Deviation product */
+        public IList<Deviation> filterDeviationByPruduct(String product)
+        {
+
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var deviations = session.CreateCriteria(typeof(Deviation))
+                     .Add(Restrictions.Like("product", product, MatchMode.Anywhere))
+                     .List<Deviation>();
+
+                    return deviations;
+                }
+            }
+
+        }
+
+        /****** search Deviation by Deviation Anlage */
+        public IList<Deviation> filterDeviationByAnlage(String anlage)
+        {
+
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var deviations = session.CreateCriteria(typeof(Deviation))
+                     .Add(Restrictions.Like("anlage", anlage, MatchMode.Anywhere))
+                     .List<Deviation>();
+
+                    return deviations;
+                }
+            }
+
+        }
+
+        /****** search Deviation by date  span */
+        public IList<Deviation> filterDeviationByDateSpan(DateTime date1, DateTime date2)
+        {
+
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var deviations = session.CreateCriteria(typeof(Deviation))
+                     .Add(Restrictions.Between("dateCreation", date1, date2))
+                     .List<Deviation>();
+
+                    return deviations;
+                }
+            }
+
+        }
+
 
         /****** search Deviation using all properties*/
         public IList<Deviation> filterDeviationByAll(String deviationRef, String requestedBy, String deviationRiskCategory, String deviationType)

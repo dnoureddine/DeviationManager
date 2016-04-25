@@ -36,6 +36,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.deviationListUpdate = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.likeSearch = new System.Windows.Forms.CheckBox();
             this.Filter = new System.Windows.Forms.Button();
@@ -47,7 +48,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.deviationNO = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.deviationListUpdate = new System.Windows.Forms.Button();
+            this.anlage = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.product = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.date1 = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.date2 = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeviationDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -71,9 +79,9 @@
             // 
             this.showDeviation.Image = ((System.Drawing.Image)(resources.GetObject("showDeviation.Image")));
             this.showDeviation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.showDeviation.Location = new System.Drawing.Point(831, 130);
+            this.showDeviation.Location = new System.Drawing.Point(831, 193);
             this.showDeviation.Name = "showDeviation";
-            this.showDeviation.Size = new System.Drawing.Size(122, 27);
+            this.showDeviation.Size = new System.Drawing.Size(122, 52);
             this.showDeviation.TabIndex = 5;
             this.showDeviation.Text = "Show Deviation";
             this.showDeviation.UseVisualStyleBackColor = true;
@@ -83,9 +91,9 @@
             // 
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(831, 95);
+            this.button3.Location = new System.Drawing.Point(831, 136);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(122, 29);
+            this.button3.Size = new System.Drawing.Size(122, 54);
             this.button3.TabIndex = 4;
             this.button3.Text = "Close Deviation";
             this.button3.UseVisualStyleBackColor = true;
@@ -94,18 +102,18 @@
             // DeviationDataGridView
             // 
             this.DeviationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DeviationDataGridView.Location = new System.Drawing.Point(12, 163);
+            this.DeviationDataGridView.Location = new System.Drawing.Point(12, 253);
             this.DeviationDataGridView.Name = "DeviationDataGridView";
-            this.DeviationDataGridView.Size = new System.Drawing.Size(941, 431);
+            this.DeviationDataGridView.Size = new System.Drawing.Size(941, 341);
             this.DeviationDataGridView.TabIndex = 3;
             // 
             // button2
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(831, 59);
+            this.button2.Location = new System.Drawing.Point(831, 78);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(122, 30);
+            this.button2.Size = new System.Drawing.Size(122, 52);
             this.button2.TabIndex = 2;
             this.button2.Text = "Edit Deviation";
             this.button2.UseVisualStyleBackColor = true;
@@ -115,9 +123,9 @@
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(828, 22);
+            this.button1.Location = new System.Drawing.Point(831, 20);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 31);
+            this.button1.Size = new System.Drawing.Size(122, 52);
             this.button1.TabIndex = 1;
             this.button1.Text = "Add Deviation";
             this.button1.UseVisualStyleBackColor = true;
@@ -125,6 +133,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.date2);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.date1);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.product);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.anlage);
             this.groupBox1.Controls.Add(this.deviationListUpdate);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.likeSearch);
@@ -139,25 +155,37 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(810, 145);
+            this.groupBox1.Size = new System.Drawing.Size(810, 235);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Deviations Filter";
+            // 
+            // deviationListUpdate
+            // 
+            this.deviationListUpdate.Image = ((System.Drawing.Image)(resources.GetObject("deviationListUpdate.Image")));
+            this.deviationListUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.deviationListUpdate.Location = new System.Drawing.Point(542, 199);
+            this.deviationListUpdate.Name = "deviationListUpdate";
+            this.deviationListUpdate.Size = new System.Drawing.Size(102, 32);
+            this.deviationListUpdate.TabIndex = 12;
+            this.deviationListUpdate.Text = "Update";
+            this.deviationListUpdate.UseVisualStyleBackColor = true;
+            this.deviationListUpdate.Click += new System.EventHandler(this.deviationListUpdate_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 107);
+            this.label5.Location = new System.Drawing.Point(6, 199);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 15);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Label                :";
+            this.label5.Text = "Use All Inputs   :";
             // 
             // likeSearch
             // 
             this.likeSearch.AutoSize = true;
-            this.likeSearch.Location = new System.Drawing.Point(122, 109);
+            this.likeSearch.Location = new System.Drawing.Point(122, 201);
             this.likeSearch.Name = "likeSearch";
             this.likeSearch.Size = new System.Drawing.Size(15, 14);
             this.likeSearch.TabIndex = 10;
@@ -167,7 +195,7 @@
             // 
             this.Filter.Image = ((System.Drawing.Image)(resources.GetObject("Filter.Image")));
             this.Filter.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Filter.Location = new System.Drawing.Point(666, 107);
+            this.Filter.Location = new System.Drawing.Point(650, 199);
             this.Filter.Name = "Filter";
             this.Filter.Size = new System.Drawing.Size(122, 32);
             this.Filter.TabIndex = 9;
@@ -259,17 +287,78 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "DEVIATION NO :";
             // 
-            // deviationListUpdate
+            // anlage
             // 
-            this.deviationListUpdate.Image = ((System.Drawing.Image)(resources.GetObject("deviationListUpdate.Image")));
-            this.deviationListUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deviationListUpdate.Location = new System.Drawing.Point(558, 107);
-            this.deviationListUpdate.Name = "deviationListUpdate";
-            this.deviationListUpdate.Size = new System.Drawing.Size(102, 32);
-            this.deviationListUpdate.TabIndex = 12;
-            this.deviationListUpdate.Text = "Update";
-            this.deviationListUpdate.UseVisualStyleBackColor = true;
-            this.deviationListUpdate.Click += new System.EventHandler(this.deviationListUpdate_Click);
+            this.anlage.Location = new System.Drawing.Point(120, 114);
+            this.anlage.Multiline = true;
+            this.anlage.Name = "anlage";
+            this.anlage.Size = new System.Drawing.Size(260, 25);
+            this.anlage.TabIndex = 13;
+            this.anlage.TextChanged += new System.EventHandler(this.anlage_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 115);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 15);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Product            :";
+            // 
+            // product
+            // 
+            this.product.Location = new System.Drawing.Point(120, 158);
+            this.product.Multiline = true;
+            this.product.Name = "product";
+            this.product.Size = new System.Drawing.Size(260, 25);
+            this.product.TabIndex = 15;
+            this.product.TextChanged += new System.EventHandler(this.product_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 163);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 15);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Anlage              :";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // date1
+            // 
+            this.date1.Location = new System.Drawing.Point(542, 114);
+            this.date1.Name = "date1";
+            this.date1.Size = new System.Drawing.Size(246, 20);
+            this.date1.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(429, 114);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 15);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Date 1              :";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(429, 155);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(109, 15);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Date 2              :";
+            // 
+            // date2
+            // 
+            this.date2.Location = new System.Drawing.Point(542, 155);
+            this.date2.Name = "date2";
+            this.date2.Size = new System.Drawing.Size(246, 20);
+            this.date2.TabIndex = 19;
             // 
             // DeviationList
             // 
@@ -310,5 +399,13 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox likeSearch;
         private System.Windows.Forms.Button deviationListUpdate;
+        private System.Windows.Forms.DateTimePicker date1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox product;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox anlage;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker date2;
     }
 }

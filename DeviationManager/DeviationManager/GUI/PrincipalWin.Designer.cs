@@ -37,6 +37,7 @@
             this.listDeviationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hELPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.blueDev = new System.Windows.Forms.Label();
@@ -51,13 +52,13 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.newDevaition = new System.Windows.Forms.Button();
-            this.deviationList = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.deviationList = new System.Windows.Forms.Button();
+            this.newDevaition = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -69,7 +70,6 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,6 +141,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1196, 91);
             this.panel1.TabIndex = 1;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(24, 11);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(182, 71);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
             // 
             // panel3
             // 
@@ -298,14 +307,14 @@
             this.panel11.Size = new System.Drawing.Size(555, 349);
             this.panel11.TabIndex = 5;
             // 
-            // pictureBox4
+            // label1
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(24, 11);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(182, 71);
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(205, 136);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "statistische Grafiken ....";
             // 
             // panel2
             // 
@@ -319,15 +328,6 @@
             this.panel2.Size = new System.Drawing.Size(859, 480);
             this.panel2.TabIndex = 1;
             // 
-            // newDevaition
-            // 
-            this.newDevaition.Location = new System.Drawing.Point(28, 195);
-            this.newDevaition.Name = "newDevaition";
-            this.newDevaition.Size = new System.Drawing.Size(183, 64);
-            this.newDevaition.TabIndex = 6;
-            this.newDevaition.Text = "New Deviation";
-            this.newDevaition.UseVisualStyleBackColor = true;
-            // 
             // deviationList
             // 
             this.deviationList.Location = new System.Drawing.Point(30, 304);
@@ -336,15 +336,17 @@
             this.deviationList.TabIndex = 7;
             this.deviationList.Text = "Deviation List";
             this.deviationList.UseVisualStyleBackColor = true;
+            this.deviationList.Click += new System.EventHandler(this.deviationList_Click);
             // 
-            // label1
+            // newDevaition
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(205, 136);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "statistische Grafiken ....";
+            this.newDevaition.Location = new System.Drawing.Point(28, 195);
+            this.newDevaition.Name = "newDevaition";
+            this.newDevaition.Size = new System.Drawing.Size(183, 64);
+            this.newDevaition.TabIndex = 6;
+            this.newDevaition.Text = "New Deviation";
+            this.newDevaition.UseVisualStyleBackColor = true;
+            this.newDevaition.Click += new System.EventHandler(this.newDevaition_Click);
             // 
             // PrincipalWin
             // 
@@ -364,6 +366,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
@@ -379,7 +382,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

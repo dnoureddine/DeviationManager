@@ -66,3 +66,4 @@ C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\AxInterop.Cfx62ClientServer.dll
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\AxInterop.ChartfxLib.dll
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\DeviationManager.csproj.ResolveComReference.cache
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\DeviationManager.GUI.riskMatrix.resources

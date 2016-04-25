@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.DirectoryServices;
 using System.DirectoryServices.AccountManagement;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 
 namespace ProcedureTest.Classes
@@ -10,32 +11,34 @@ namespace ProcedureTest.Classes
     public class EmailSender
     {
 
-        public int sendEmail()
+        public void sendEmail()
         {
-            try{
+            string To = "dnoureddin@tiauto.com";
+            string From = "dnoureddin@tiauto.com";
+            string Subject = "The Email Attachment Extract Process is Complete.";
+            string Body = "The Email Attachment Extract Process is Complete. Please finish the Import process.";
 
-                PrincipalContext ctx = new PrincipalContext(ContextType.Domain, "eu.tiauto.com");
+            // create the email message
+            MailMessage completeMessage = new MailMessage(From, To, Subject, Body);
 
-                GroupPrincipal group = GroupPrincipal.FindByIdentity(ctx, "*ETT DR-Approval");
-                if (group != null)
-                {
-                    PrincipalSearchResult<Principal> members = group.GetMembers();
+            // create smtp client at mail server location
+            SmtpClient client = new SmtpClient("smtp.extranet.tiauto.com");
 
-                    return members.Count();
-                }
-                else
-                {
-                    Console.WriteLine("Group mot fund");
-                    return 0;
-                }
+       
 
-                
+            // add credentials
+            client.UseDefaultCredentials = true;
+
+            try
+            {
+                // send message
+                client.Send(completeMessage);
             }
-            catch(DirectoryServicesCOMException dex){
-               Console.WriteLine(dex.Message);
-               return 0;
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
-            
+
         }
 
 

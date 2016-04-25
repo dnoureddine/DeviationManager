@@ -23,6 +23,19 @@ namespace DeviationManager.Model
             }
         }
 
+        /******* validate the deviation form '=> true-->Combobox Item selected ## flase--->input not valid */
+        public bool isItemFromComoBoxSelected(ComboBox comboBox, ErrorProvider errorProvider)
+        {
+            if (comboBox.SelectedItem == null)
+            {
+                errorProvider.SetError(comboBox, "Item must be selected..!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
         /*** allow input only in letters, this method interact directry with the deviation form *****/
         public bool isOnlyCharecters(TextBox textBox, ErrorProvider errorProvider)

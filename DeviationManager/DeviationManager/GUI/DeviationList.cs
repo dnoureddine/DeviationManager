@@ -113,7 +113,15 @@ namespace DeviationManager.GUI
                 {
                     if (MessageBox.Show("Close Deviation Means You Will Not Be Able Later To Make Any Change On It, Are You Sure You Wish To Make This Action ?", "Close Deviation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        deviationModel.closeDeviation(deviationRef);
+                        String result = deviationModel.closeDeviation(deviationRef);
+                        if (result == "closed")
+                        {
+                            MessageBox.Show("The Deviation Was Succesfuly Closed.","Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error The Deviation Cloud Not Be Closed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
@@ -203,6 +211,29 @@ namespace DeviationManager.GUI
         private void deviationListUpdate_Click(object sender, EventArgs e)
         {
             this.showDeviationList();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //searching by Anlage
+        private void anlage_TextChanged(object sender, EventArgs e)
+        {
+            if (this.likeSearch.Checked == false)
+            {
+                this.updateDeviationList(deviationModel.filterDeviationByAnlage(this.anlage.Text));
+            }
+        }
+
+        //searching by product
+        private void product_TextChanged(object sender, EventArgs e)
+        {
+            if (this.likeSearch.Checked == false)
+            {
+                this.updateDeviationList(deviationModel.filterDeviationByPruduct(this.product.Text));
+            }
         }
 
 

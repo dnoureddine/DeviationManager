@@ -102,6 +102,15 @@
             this.yesNoReginal = new System.Windows.Forms.ComboBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.approvementGroupDataGrid = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.approval = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.approve = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.reject = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.signed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valid = new System.Windows.Forms.DataGridViewButtonColumn();
             this.closeDeviation = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -134,6 +143,10 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.detailRequestedDeviation = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.product = new System.Windows.Forms.TextBox();
+            this.anlage = new System.Windows.Forms.TextBox();
             this.standardCondition = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.deviationSignature = new System.Windows.Forms.TextBox();
@@ -153,15 +166,6 @@
             this.deviationNO = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.approval = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.approve = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.reject = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.signed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valid = new System.Windows.Forms.DataGridViewButtonColumn();
             this.deviationHeadPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -947,6 +951,69 @@
             this.approvementGroupDataGrid.TabIndex = 0;
             this.approvementGroupDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.approvementGroupDataGrid_CellContentClick);
             // 
+            // id
+            // 
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 40;
+            // 
+            // approval
+            // 
+            this.approval.HeaderText = "Approval";
+            this.approval.Name = "approval";
+            this.approval.ReadOnly = true;
+            this.approval.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            // 
+            // approve
+            // 
+            this.approve.HeaderText = "Approve";
+            this.approve.Name = "approve";
+            this.approve.Width = 60;
+            // 
+            // reject
+            // 
+            this.reject.HeaderText = "Reject";
+            this.reject.Name = "reject";
+            this.reject.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.reject.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.reject.Width = 60;
+            // 
+            // signed
+            // 
+            this.signed.HeaderText = "Signed";
+            this.signed.Name = "signed";
+            this.signed.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.signed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.signed.Width = 60;
+            // 
+            // date
+            // 
+            this.date.HeaderText = "Date";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            this.date.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.date.Width = 80;
+            // 
+            // comments
+            // 
+            this.comments.HeaderText = "Comments";
+            this.comments.Name = "comments";
+            this.comments.Width = 300;
+            // 
+            // valid
+            // 
+            this.valid.HeaderText = "OK";
+            this.valid.Name = "valid";
+            this.valid.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.valid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.valid.Width = 40;
+            // 
             // closeDeviation
             // 
             this.closeDeviation.Image = ((System.Drawing.Image)(resources.GetObject("closeDeviation.Image")));
@@ -1260,18 +1327,59 @@
             this.detailRequestedDeviation.Multiline = true;
             this.detailRequestedDeviation.Name = "detailRequestedDeviation";
             this.detailRequestedDeviation.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.detailRequestedDeviation.Size = new System.Drawing.Size(409, 153);
+            this.detailRequestedDeviation.Size = new System.Drawing.Size(394, 153);
             this.detailRequestedDeviation.TabIndex = 0;
+            this.detailRequestedDeviation.TextChanged += new System.EventHandler(this.detailRequestedDeviation_GotFocus);
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label46);
+            this.groupBox3.Controls.Add(this.label45);
+            this.groupBox3.Controls.Add(this.product);
+            this.groupBox3.Controls.Add(this.anlage);
             this.groupBox3.Controls.Add(this.standardCondition);
             this.groupBox3.Location = new System.Drawing.Point(11, 32);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(436, 178);
+            this.groupBox3.Size = new System.Drawing.Size(440, 178);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Standard Condition";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(9, 114);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(87, 15);
+            this.label46.TabIndex = 10;
+            this.label46.Text = "Anlage       : ";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(11, 145);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(88, 15);
+            this.label45.TabIndex = 9;
+            this.label45.Text = "Product      : ";
+            // 
+            // product
+            // 
+            this.product.Location = new System.Drawing.Point(101, 144);
+            this.product.Multiline = true;
+            this.product.Name = "product";
+            this.product.Size = new System.Drawing.Size(321, 25);
+            this.product.TabIndex = 7;
+            // 
+            // anlage
+            // 
+            this.anlage.Location = new System.Drawing.Point(101, 113);
+            this.anlage.Multiline = true;
+            this.anlage.Name = "anlage";
+            this.anlage.Size = new System.Drawing.Size(321, 25);
+            this.anlage.TabIndex = 6;
             // 
             // standardCondition
             // 
@@ -1279,8 +1387,9 @@
             this.standardCondition.Multiline = true;
             this.standardCondition.Name = "standardCondition";
             this.standardCondition.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.standardCondition.Size = new System.Drawing.Size(424, 153);
+            this.standardCondition.Size = new System.Drawing.Size(416, 88);
             this.standardCondition.TabIndex = 0;
+            this.standardCondition.TextChanged += new System.EventHandler(this.standardCondition_GotFocus);
             // 
             // groupBox1
             // 
@@ -1347,6 +1456,7 @@
             this.deviationType.Name = "deviationType";
             this.deviationType.Size = new System.Drawing.Size(319, 23);
             this.deviationType.TabIndex = 13;
+            this.deviationType.SelectedValueChanged += new System.EventHandler(this.deviationType_SelectedValueChanged);
             // 
             // label7
             // 
@@ -1434,6 +1544,7 @@
             this.riskCategory.Name = "riskCategory";
             this.riskCategory.Size = new System.Drawing.Size(317, 23);
             this.riskCategory.TabIndex = 3;
+            this.riskCategory.MouseClick += new System.Windows.Forms.MouseEventHandler(this.riskCategory_MouseClick);
             // 
             // label3
             // 
@@ -1467,69 +1578,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // id
-            // 
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 40;
-            // 
-            // approval
-            // 
-            this.approval.HeaderText = "Approval";
-            this.approval.Name = "approval";
-            this.approval.ReadOnly = true;
-            this.approval.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
-            // 
-            // approve
-            // 
-            this.approve.HeaderText = "Approve";
-            this.approve.Name = "approve";
-            this.approve.Width = 60;
-            // 
-            // reject
-            // 
-            this.reject.HeaderText = "Reject";
-            this.reject.Name = "reject";
-            this.reject.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.reject.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.reject.Width = 60;
-            // 
-            // signed
-            // 
-            this.signed.HeaderText = "Signed";
-            this.signed.Name = "signed";
-            this.signed.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.signed.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.signed.Width = 60;
-            // 
-            // date
-            // 
-            this.date.HeaderText = "Date";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            this.date.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.date.Width = 80;
-            // 
-            // comments
-            // 
-            this.comments.HeaderText = "Comments";
-            this.comments.Name = "comments";
-            this.comments.Width = 300;
-            // 
-            // valid
-            // 
-            this.valid.HeaderText = "OK";
-            this.valid.Name = "valid";
-            this.valid.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.valid.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.valid.Width = 40;
             // 
             // SaveDeviation
             // 
@@ -1719,5 +1767,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn comments;
         private System.Windows.Forms.DataGridViewButtonColumn valid;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.TextBox product;
+        private System.Windows.Forms.TextBox anlage;
     }
 }

@@ -26,6 +26,10 @@ namespace DeviationManager.Mappings
             Map(x => x.endDatePeriod);
             Map(x => x.status);
             Map(x => x.isPrinted);
+            Map(x => x.product);
+            Map(x => x.anlage);
+            Map(x => x.dateClosed);
+            
 
 
             HasMany(x => x.reasons).Not.LazyLoad()

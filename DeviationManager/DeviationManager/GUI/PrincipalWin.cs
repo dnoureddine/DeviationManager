@@ -59,5 +59,17 @@ namespace DeviationManager.GUI
         {
             
         }
+
+        private void newDevaition_Click(object sender, EventArgs e)
+        {
+            SaveDeviation addDeviation = new SaveDeviation("newDeviation");
+            addDeviation.Show();
+        }
+
+        private void deviationList_Click(object sender, EventArgs e)
+        {
+            DeviationList deviationList = new DeviationList();
+            deviationList.Show();
+        }
     }
 }
