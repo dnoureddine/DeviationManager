@@ -830,6 +830,7 @@
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(49, 43);
             this.panel15.TabIndex = 21;
+            this.panel15.Paint += new System.Windows.Forms.PaintEventHandler(this.panel15_Paint);
             this.panel15.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel15_MouseClick);
             // 
             // panel41
@@ -1169,6 +1170,8 @@
             this.ClientSize = new System.Drawing.Size(650, 300);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RiskMatrix";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Risk Matrix";

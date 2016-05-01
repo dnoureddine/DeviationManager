@@ -113,6 +113,8 @@
             this.valid = new System.Windows.Forms.DataGridViewButtonColumn();
             this.closeDeviation = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.pFirstTime = new System.Windows.Forms.DateTimePicker();
+            this.pSecondTime = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.uploadFileDataGridView = new System.Windows.Forms.DataGridView();
             this.fileSaveUploadDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -149,6 +151,9 @@
             this.anlage = new System.Windows.Forms.TextBox();
             this.standardCondition = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.riskCategory = new System.Windows.Forms.TextBox();
+            this.deviationTimeCreation = new System.Windows.Forms.DateTimePicker();
             this.deviationSignature = new System.Windows.Forms.TextBox();
             this.deviationDescription = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -161,11 +166,11 @@
             this.deviationDateCreation = new System.Windows.Forms.DateTimePicker();
             this.requestedBy = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.riskCategory = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.deviationNO = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button4 = new System.Windows.Forms.Button();
             this.deviationHeadPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -223,6 +228,7 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.DeviationSave);
             this.panel1.Controls.Add(this.groupBox8);
             this.panel1.Controls.Add(this.groupBox7);
@@ -1028,6 +1034,8 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.pFirstTime);
+            this.groupBox6.Controls.Add(this.pSecondTime);
             this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Controls.Add(this.uploadFileDataGridView);
             this.groupBox6.Controls.Add(this.downloadDocument);
@@ -1043,7 +1051,25 @@
             this.groupBox6.Size = new System.Drawing.Size(894, 273);
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Other";
+            this.groupBox6.Text = "Deviation Period";
+            // 
+            // pFirstTime
+            // 
+            this.pFirstTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.pFirstTime.Location = new System.Drawing.Point(322, 39);
+            this.pFirstTime.Name = "pFirstTime";
+            this.pFirstTime.ShowUpDown = true;
+            this.pFirstTime.Size = new System.Drawing.Size(91, 20);
+            this.pFirstTime.TabIndex = 15;
+            // 
+            // pSecondTime
+            // 
+            this.pSecondTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.pSecondTime.Location = new System.Drawing.Point(789, 39);
+            this.pSecondTime.Name = "pSecondTime";
+            this.pSecondTime.ShowUpDown = true;
+            this.pSecondTime.Size = new System.Drawing.Size(91, 20);
+            this.pSecondTime.TabIndex = 14;
             // 
             // button1
             // 
@@ -1148,7 +1174,7 @@
             // 
             this.pSecondDate.Location = new System.Drawing.Point(586, 39);
             this.pSecondDate.Name = "pSecondDate";
-            this.pSecondDate.Size = new System.Drawing.Size(294, 20);
+            this.pSecondDate.Size = new System.Drawing.Size(197, 20);
             this.pSecondDate.TabIndex = 6;
             // 
             // label15
@@ -1157,15 +1183,15 @@
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(463, 39);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(114, 15);
+            this.label15.Size = new System.Drawing.Size(94, 15);
             this.label15.TabIndex = 5;
-            this.label15.Text = "P. second date : ";
+            this.label15.Text = "Period End  : ";
             // 
             // pFirstDate
             // 
             this.pFirstDate.Location = new System.Drawing.Point(112, 39);
             this.pFirstDate.Name = "pFirstDate";
-            this.pFirstDate.Size = new System.Drawing.Size(305, 20);
+            this.pFirstDate.Size = new System.Drawing.Size(204, 20);
             this.pFirstDate.TabIndex = 4;
             // 
             // label14
@@ -1174,9 +1200,9 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(14, 39);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(92, 15);
+            this.label14.Size = new System.Drawing.Size(102, 15);
             this.label14.TabIndex = 3;
-            this.label14.Text = "P. first date : ";
+            this.label14.Text = "Period Begin : ";
             // 
             // groupBox5
             // 
@@ -1393,6 +1419,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label47);
+            this.groupBox1.Controls.Add(this.riskCategory);
+            this.groupBox1.Controls.Add(this.deviationTimeCreation);
             this.groupBox1.Controls.Add(this.deviationSignature);
             this.groupBox1.Controls.Add(this.deviationDescription);
             this.groupBox1.Controls.Add(this.label8);
@@ -1405,7 +1434,6 @@
             this.groupBox1.Controls.Add(this.deviationDateCreation);
             this.groupBox1.Controls.Add(this.requestedBy);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.riskCategory);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.deviationNO);
             this.groupBox1.Controls.Add(this.label2);
@@ -1416,6 +1444,36 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Deviation Infos";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(9, 140);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(84, 13);
+            this.label47.TabIndex = 18;
+            this.label47.Text = "Other( Optional) ";
+            // 
+            // riskCategory
+            // 
+            this.riskCategory.BackColor = System.Drawing.Color.White;
+            this.riskCategory.Location = new System.Drawing.Point(561, 25);
+            this.riskCategory.Multiline = true;
+            this.riskCategory.Name = "riskCategory";
+            this.riskCategory.ReadOnly = true;
+            this.riskCategory.Size = new System.Drawing.Size(318, 25);
+            this.riskCategory.TabIndex = 17;
+            this.riskCategory.Click += new System.EventHandler(this.riskCategory_Click);
+            // 
+            // deviationTimeCreation
+            // 
+            this.deviationTimeCreation.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.deviationTimeCreation.Location = new System.Drawing.Point(775, 57);
+            this.deviationTimeCreation.Name = "deviationTimeCreation";
+            this.deviationTimeCreation.ShowUpDown = true;
+            this.deviationTimeCreation.Size = new System.Drawing.Size(103, 21);
+            this.deviationTimeCreation.TabIndex = 8;
             // 
             // deviationSignature
             // 
@@ -1474,9 +1532,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(705, 124);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 15);
+            this.label6.Size = new System.Drawing.Size(105, 15);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Siganature       : ";
+            this.label6.Text = "Signature       : ";
             // 
             // position
             // 
@@ -1503,15 +1561,15 @@
             this.dateCreation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateCreation.Location = new System.Drawing.Point(454, 59);
             this.dateCreation.Name = "dateCreation";
-            this.dateCreation.Size = new System.Drawing.Size(113, 15);
+            this.dateCreation.Size = new System.Drawing.Size(105, 15);
             this.dateCreation.TabIndex = 7;
-            this.dateCreation.Text = "Date                 : ";
+            this.dateCreation.Text = "Date               : ";
             // 
             // deviationDateCreation
             // 
-            this.deviationDateCreation.Location = new System.Drawing.Point(560, 57);
+            this.deviationDateCreation.Location = new System.Drawing.Point(561, 57);
             this.deviationDateCreation.Name = "deviationDateCreation";
-            this.deviationDateCreation.Size = new System.Drawing.Size(317, 21);
+            this.deviationDateCreation.Size = new System.Drawing.Size(210, 21);
             this.deviationDateCreation.TabIndex = 6;
             // 
             // requestedBy
@@ -1532,19 +1590,6 @@
             this.label4.Size = new System.Drawing.Size(111, 15);
             this.label4.TabIndex = 4;
             this.label4.Text = "Requested By  : ";
-            // 
-            // riskCategory
-            // 
-            this.riskCategory.FormattingEnabled = true;
-            this.riskCategory.Items.AddRange(new object[] {
-            "RED",
-            "YELLOW",
-            "GREEN"});
-            this.riskCategory.Location = new System.Drawing.Point(560, 25);
-            this.riskCategory.Name = "riskCategory";
-            this.riskCategory.Size = new System.Drawing.Size(317, 23);
-            this.riskCategory.TabIndex = 3;
-            this.riskCategory.MouseClick += new System.Windows.Forms.MouseEventHandler(this.riskCategory_MouseClick);
             // 
             // label3
             // 
@@ -1578,6 +1623,17 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // button4
+            // 
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(481, 1762);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(110, 39);
+            this.button4.TabIndex = 8;
+            this.button4.Text = " Remind Group";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // SaveDeviation
             // 
@@ -1640,7 +1696,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox riskCategory;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox deviationNO;
         private System.Windows.Forms.Label label2;
@@ -1771,5 +1826,11 @@
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox product;
         private System.Windows.Forms.TextBox anlage;
+        private System.Windows.Forms.DateTimePicker deviationTimeCreation;
+        private System.Windows.Forms.DateTimePicker pFirstTime;
+        private System.Windows.Forms.DateTimePicker pSecondTime;
+        private System.Windows.Forms.TextBox riskCategory;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Button button4;
     }
 }

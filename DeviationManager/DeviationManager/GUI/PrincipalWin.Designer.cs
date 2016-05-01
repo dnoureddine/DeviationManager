@@ -40,22 +40,21 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.blueDev = new System.Windows.Forms.Label();
+            this.pendingDev = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.greenDev = new System.Windows.Forms.Label();
+            this.approvedDev = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.redDev = new System.Windows.Forms.Label();
+            this.rejectedDev = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.deviationList = new System.Windows.Forms.Button();
             this.newDevaition = new System.Windows.Forms.Button();
+            this.DeviationDataGridView = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -69,7 +68,7 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DeviationDataGridView)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,7 +128,6 @@
             this.hELPToolStripMenuItem.Name = "hELPToolStripMenuItem";
             this.hELPToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.hELPToolStripMenuItem.Text = "HELP";
-            this.hELPToolStripMenuItem.Click += new System.EventHandler(this.hELPToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -158,32 +156,36 @@
             this.panel3.Controls.Add(this.panel8);
             this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(3, 3);
+            this.panel3.Location = new System.Drawing.Point(140, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(852, 121);
+            this.panel3.Size = new System.Drawing.Size(999, 121);
             this.panel3.TabIndex = 3;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Gold;
-            this.panel8.Controls.Add(this.blueDev);
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel8.Controls.Add(this.pendingDev);
             this.panel8.Controls.Add(this.panel9);
-            this.panel8.Location = new System.Drawing.Point(332, 20);
+            this.panel8.Location = new System.Drawing.Point(373, 20);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(195, 66);
             this.panel8.TabIndex = 2;
+            this.panel8.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel8_MouseClick);
+            this.panel8.MouseEnter += new System.EventHandler(this.panel8_MouseEnter);
+            this.panel8.MouseLeave += new System.EventHandler(this.panel8_MouseLeave);
             // 
-            // blueDev
+            // pendingDev
             // 
-            this.blueDev.AutoSize = true;
-            this.blueDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.blueDev.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.blueDev.Location = new System.Drawing.Point(55, 21);
-            this.blueDev.Name = "blueDev";
-            this.blueDev.Size = new System.Drawing.Size(25, 25);
-            this.blueDev.TabIndex = 3;
-            this.blueDev.Text = "0";
-            this.blueDev.Click += new System.EventHandler(this.blueDev_Click);
+            this.pendingDev.AutoSize = true;
+            this.pendingDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pendingDev.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pendingDev.Location = new System.Drawing.Point(55, 21);
+            this.pendingDev.Name = "pendingDev";
+            this.pendingDev.Size = new System.Drawing.Size(25, 25);
+            this.pendingDev.TabIndex = 3;
+            this.pendingDev.Text = "0";
+            this.pendingDev.Click += new System.EventHandler(this.blueDev_Click);
             // 
             // panel9
             // 
@@ -211,24 +213,27 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.LimeGreen;
-            this.panel6.Controls.Add(this.greenDev);
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.approvedDev);
             this.panel6.Controls.Add(this.panel7);
-            this.panel6.Location = new System.Drawing.Point(46, 20);
+            this.panel6.Location = new System.Drawing.Point(74, 20);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(185, 66);
             this.panel6.TabIndex = 1;
+            this.panel6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel6_MouseClick);
+            this.panel6.MouseEnter += new System.EventHandler(this.panel6_MouseEnter);
+            this.panel6.MouseLeave += new System.EventHandler(this.panel6_MouseLeave);
             // 
-            // greenDev
+            // approvedDev
             // 
-            this.greenDev.AutoSize = true;
-            this.greenDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.greenDev.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.greenDev.Location = new System.Drawing.Point(50, 21);
-            this.greenDev.Name = "greenDev";
-            this.greenDev.Size = new System.Drawing.Size(25, 25);
-            this.greenDev.TabIndex = 2;
-            this.greenDev.Text = "0";
-            this.greenDev.Click += new System.EventHandler(this.greenDev_Click);
+            this.approvedDev.AutoSize = true;
+            this.approvedDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.approvedDev.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.approvedDev.Location = new System.Drawing.Point(50, 21);
+            this.approvedDev.Name = "approvedDev";
+            this.approvedDev.Size = new System.Drawing.Size(25, 25);
+            this.approvedDev.TabIndex = 2;
+            this.approvedDev.Text = "0";
             // 
             // panel7
             // 
@@ -256,23 +261,27 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Red;
-            this.panel4.Controls.Add(this.redDev);
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.rejectedDev);
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Location = new System.Drawing.Point(626, 20);
+            this.panel4.Location = new System.Drawing.Point(707, 20);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(181, 66);
             this.panel4.TabIndex = 0;
+            this.panel4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseClick);
+            this.panel4.MouseEnter += new System.EventHandler(this.panel4_MouseEnter);
+            this.panel4.MouseLeave += new System.EventHandler(this.panel4_MouseLeave);
             // 
-            // redDev
+            // rejectedDev
             // 
-            this.redDev.AutoSize = true;
-            this.redDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.redDev.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.redDev.Location = new System.Drawing.Point(47, 21);
-            this.redDev.Name = "redDev";
-            this.redDev.Size = new System.Drawing.Size(25, 25);
-            this.redDev.TabIndex = 3;
-            this.redDev.Text = "0";
+            this.rejectedDev.AutoSize = true;
+            this.rejectedDev.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rejectedDev.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rejectedDev.Location = new System.Drawing.Point(47, 21);
+            this.rejectedDev.Name = "rejectedDev";
+            this.rejectedDev.Size = new System.Drawing.Size(25, 25);
+            this.rejectedDev.TabIndex = 3;
+            this.rejectedDev.Text = "0";
             // 
             // panel5
             // 
@@ -297,42 +306,11 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel11.Controls.Add(this.label1);
-            this.panel11.Location = new System.Drawing.Point(300, 130);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(555, 349);
-            this.panel11.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(205, 136);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "statistische Grafiken ....";
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.deviationList);
-            this.panel2.Controls.Add(this.newDevaition);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.panel11);
-            this.panel2.Location = new System.Drawing.Point(176, 110);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(859, 480);
-            this.panel2.TabIndex = 1;
-            // 
             // deviationList
             // 
-            this.deviationList.Location = new System.Drawing.Point(30, 304);
+            this.deviationList.Location = new System.Drawing.Point(0, 69);
             this.deviationList.Name = "deviationList";
-            this.deviationList.Size = new System.Drawing.Size(183, 64);
+            this.deviationList.Size = new System.Drawing.Size(134, 55);
             this.deviationList.TabIndex = 7;
             this.deviationList.Text = "Deviation List";
             this.deviationList.UseVisualStyleBackColor = true;
@@ -340,19 +318,42 @@
             // 
             // newDevaition
             // 
-            this.newDevaition.Location = new System.Drawing.Point(28, 195);
+            this.newDevaition.Location = new System.Drawing.Point(0, 0);
             this.newDevaition.Name = "newDevaition";
-            this.newDevaition.Size = new System.Drawing.Size(183, 64);
+            this.newDevaition.Size = new System.Drawing.Size(134, 54);
             this.newDevaition.TabIndex = 6;
             this.newDevaition.Text = "New Deviation";
             this.newDevaition.UseVisualStyleBackColor = true;
             this.newDevaition.Click += new System.EventHandler(this.newDevaition_Click);
             // 
+            // DeviationDataGridView
+            // 
+            this.DeviationDataGridView.AllowUserToAddRows = false;
+            this.DeviationDataGridView.AllowUserToDeleteRows = false;
+            this.DeviationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DeviationDataGridView.Location = new System.Drawing.Point(0, 130);
+            this.DeviationDataGridView.Name = "DeviationDataGridView";
+            this.DeviationDataGridView.ReadOnly = true;
+            this.DeviationDataGridView.Size = new System.Drawing.Size(1142, 397);
+            this.DeviationDataGridView.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Controls.Add(this.DeviationDataGridView);
+            this.panel2.Controls.Add(this.deviationList);
+            this.panel2.Controls.Add(this.newDevaition);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Location = new System.Drawing.Point(25, 122);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1142, 530);
+            this.panel2.TabIndex = 8;
+            // 
             // PrincipalWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1196, 646);
+            this.ClientSize = new System.Drawing.Size(1196, 664);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -362,7 +363,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Deviation Manager";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.PrincipalWin_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -380,8 +380,7 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DeviationDataGridView)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -406,16 +405,15 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label greenDev;
+        private System.Windows.Forms.Label approvedDev;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label blueDev;
-        private System.Windows.Forms.Label redDev;
-        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Label pendingDev;
+        private System.Windows.Forms.Label rejectedDev;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button deviationList;
         private System.Windows.Forms.Button newDevaition;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView DeviationDataGridView;
+        private System.Windows.Forms.Panel panel2;
     }
 }

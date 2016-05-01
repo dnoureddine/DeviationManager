@@ -43,6 +43,52 @@ namespace DeviationManager.Entity
         public virtual IList<Attachments> attachements { get; set; }
 
 
+        public virtual String Approved
+        {
+            get
+            {
+                String isApproved = "Pending";
+                bool isRejected = false;
+                foreach (var approvement in approvements)
+                {
+                    if (approvement.rejected == true)
+                    {
+                        isRejected = true;
+                        break;
+                    }
+                }
+
+
+                if (isRejected)
+                {
+                    isApproved = "Rejected";
+                }
+                else 
+                {
+                    bool approved = true;
+                    foreach (var approvement in approvements)
+                    {
+                        if (approvement.approved == false)
+                        {
+                            approved = false;
+                            break;
+                        }
+                    }
+
+                    if (approved)
+                    {
+                        isApproved = "Approved";
+                    }
+                    else if (this.status == "closed")
+                    {
+                        isApproved = "Closed";
+                    }
+                }
+
+
+                return isApproved;
+            }
+        }
         public Deviation()
         {
             reasons= new List<Reason>();

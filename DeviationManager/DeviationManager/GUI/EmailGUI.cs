@@ -32,7 +32,41 @@ namespace DeviationManager.GUI
         //add deviation content to the email input
         private void generateEmailContent()
         {
-            this.messageContent.AppendText(this.deviation.deviationRef);
+            String emailSubject = "";
+
+            //generate email subject
+            if (this.deviation.product !="")
+            {
+                emailSubject = "New Deviation fürs Produkt : " + this.deviation.product;
+            }
+
+            if(this.deviation.anlage!="")
+            {
+                if (this.deviation.product != "")
+                {
+                    emailSubject = emailSubject + " / die Anlage : " + this.deviation.anlage;
+                }
+                else
+                {
+                    emailSubject = "New Deviation für die Anlage : " + this.deviation.anlage;
+                }
+            }
+
+            if (emailSubject == "")
+            {
+                emailSubject = "New Deviation";
+            }
+
+            this.subject.AppendText(emailSubject);
+
+            //generate the email body
+            this.messageContent.AppendText("\n Standard Condition : \n\n");
+            this.messageContent.AppendText(this.deviation.detailStandardCondition);
+
+            this.messageContent.AppendText("\n\n\n");
+
+            this.messageContent.AppendText("Detail Requested Condition : \n\n");
+            this.messageContent.AppendText(this.deviation.detailRequestCondition);
         }
 
 

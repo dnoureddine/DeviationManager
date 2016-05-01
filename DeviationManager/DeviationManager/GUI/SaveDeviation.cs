@@ -128,26 +128,33 @@ namespace DeviationManager.GUI
             Deviation deviation = new Deviation();
 
             deviation.deviationRef = this.deviationNO.Text;
-            if (this.riskCategory.SelectedItem != null)
-            {
-             deviation.deviationRiskCategory = this.riskCategory.SelectedItem.ToString();
-            }
+            deviation.deviationRiskCategory = this.riskCategory.Text;
             deviation.requestedBy = this.requestedBy.Text;
-            deviation.dateCreation = this.deviationDateCreation.Value;
             deviation.position = this.position.Text;
             deviation.deviationType = this.deviationType.SelectedItem.ToString();
             deviation.describeOtherType = this.deviationDescription.Text;
             deviation.signature = this.deviationSignature.Text;
             deviation.detailStandardCondition = this.standardCondition.Text;
             deviation.detailRequestCondition = this.detailRequestedDeviation.Text;
-            deviation.startDatePeriod = this.pFirstDate.Value;
-            deviation.endDatePeriod = this.pSecondDate.Value;
             deviation.anlage = this.anlage.Text;
             deviation.product = this.product.Text;
             if (this.actionType == "newDeviation")
             {
                 deviation.status = "Pending";
             }
+
+            DateTime deviationDateCreation = this.deviationDateCreation.Value;
+            DateTime deviationTimeCreation = this.deviationTimeCreation.Value;
+            deviation.dateCreation = new DateTime(deviationDateCreation.Year, deviationDateCreation.Month, deviationDateCreation.Day, deviationTimeCreation.Hour, deviationTimeCreation.Minute, deviationTimeCreation.Second);
+
+            DateTime pFirstDate = this.pFirstDate.Value;
+            DateTime pFirstTime = this.pFirstTime.Value;
+            deviation.startDatePeriod = new DateTime(pFirstDate.Year, pFirstDate.Month, pFirstDate.Day, pFirstTime.Hour, pFirstTime.Minute, pFirstTime.Second);
+
+            DateTime pSecondDate = this.pSecondDate.Value;
+            DateTime pSecondTime = this.pSecondTime.Value;
+            deviation.endDatePeriod = new DateTime(pSecondDate.Year, pSecondDate.Month, pSecondDate.Day, pSecondTime.Hour, pSecondTime.Minute, pSecondTime.Second);
+
             
 
             //add Reasons
@@ -190,8 +197,11 @@ namespace DeviationManager.GUI
                 attachement.fileName = row.Cells[0].Value.ToString();
                 attachement.fileNameDb = row.Cells[1].Value.ToString();
                 attachement.date = DateTime.Now;
-                attachement.liblle = row.Cells[3].Value.ToString();
-
+                if (row.Cells[3].Value != null)
+                {
+                    attachement.liblle = row.Cells[3].Value.ToString();
+                }
+                
                 listAttachments.Add(attachement);
             }
 
@@ -201,24 +211,74 @@ namespace DeviationManager.GUI
             return deviation;
         }
 
+        //update deviation object
+        private Deviation getDeviationObjectToUpdate()
+        {
+            if (this.deviation != null)
+            {
+                deviation.deviationRef = this.deviationNO.Text;
+                deviation.deviationRiskCategory = this.riskCategory.Text;
+                deviation.requestedBy = this.requestedBy.Text;
+                deviation.position = this.position.Text;
+                deviation.deviationType = this.deviationType.SelectedItem.ToString();
+                deviation.describeOtherType = this.deviationDescription.Text;
+                deviation.signature = this.deviationSignature.Text;
+                deviation.detailStandardCondition = this.standardCondition.Text;
+                deviation.detailRequestCondition = this.detailRequestedDeviation.Text;
+                deviation.anlage = this.anlage.Text;
+                deviation.product = this.product.Text;
+                if (this.actionType == "newDeviation")
+                {
+                    deviation.status = "Pending";
+                }
+
+                DateTime deviationDateCreation = this.deviationDateCreation.Value;
+                DateTime deviationTimeCreation = this.deviationTimeCreation.Value;
+                deviation.dateCreation = new DateTime(deviationDateCreation.Year, deviationDateCreation.Month, deviationDateCreation.Day, deviationTimeCreation.Hour, deviationTimeCreation.Minute, deviationTimeCreation.Second);
+
+                DateTime pFirstDate = this.pFirstDate.Value;
+                DateTime pFirstTime = this.pFirstTime.Value;
+                deviation.startDatePeriod = new DateTime(pFirstDate.Year, pFirstDate.Month, pFirstDate.Day, pFirstTime.Hour, pFirstTime.Minute, pFirstTime.Second);
+
+                DateTime pSecondDate = this.pSecondDate.Value;
+                DateTime pSecondTime = this.pSecondTime.Value;
+                deviation.endDatePeriod = new DateTime(pSecondDate.Year, pSecondDate.Month, pSecondDate.Day, pSecondTime.Hour, pSecondTime.Minute, pSecondTime.Second);
+
+
+
+                //add Reasons
+                IList<Reason> listReasons = new List<Reason>();
+                Reason reas1 = new Reason { reason = this.reason1.Text };
+                Reason reas2 = new Reason { reason = this.reason2.Text };
+                Reason reas3 = new Reason { reason = this.reason3.Text };
+                Reason reas4 = new Reason { reason = this.reason4.Text };
+                Reason reas5 = new Reason { reason = this.reason5.Text };
+                listReasons.Add(reas1); listReasons.Add(reas2); listReasons.Add(reas3);
+                listReasons.Add(reas4); listReasons.Add(reas5);
+                deviation.reasons = listReasons;
+
+            }
+
+            return this.deviation;
+        }
 
         //show form to update deviation
         public void updateDeviation(Deviation deviation)
         {
             this.deviationNO.Text = deviation.deviationRef;
-            if (deviation.deviationRiskCategory != null && deviation.deviationRiskCategory != "")
-            {
-               this.riskCategory.SelectedItem = deviation.deviationRiskCategory;
-            }
+            this.riskCategory.Text = deviation.deviationRiskCategory;           
             this.requestedBy.Text = deviation.requestedBy;
             this.deviationDateCreation.Value = (DateTime)deviation.dateCreation;
-            this.position.Text=deviation.position;
+            this.deviationTimeCreation.Value = (DateTime)deviation.dateCreation;
+            this.position.Text = deviation.position;
             this.deviationType.SelectedItem=deviation.deviationType;
             this.deviationSignature.Text=deviation.signature;
             this.standardCondition.Text=deviation.detailStandardCondition;
             this.detailRequestedDeviation.Text=deviation.detailRequestCondition;
-            this.pFirstDate.Value=(DateTime)deviation.startDatePeriod;
+            this.pFirstDate.Value = (DateTime)deviation.startDatePeriod;
+            this.pFirstTime.Value = (DateTime) deviation.startDatePeriod;
             this.pSecondDate.Value=(DateTime)deviation.endDatePeriod;
+            this.pSecondTime.Value = (DateTime)deviation.endDatePeriod; 
             this.deviationDescription.Text = deviation.describeOtherType;
             this.anlage.Text = deviation.anlage;
             this.product.Text = deviation.product;
@@ -281,8 +341,20 @@ namespace DeviationManager.GUI
             this.Show();
 
         }
+       
+        //validate deviation period
+        private int validateDeviationPeriod()
+        {
+            DateTime pFirstDate = this.pFirstDate.Value;
+            DateTime pFirstTime = this.pFirstTime.Value;
+            DateTime pFirstDateTime = new DateTime(pFirstDate.Year, pFirstDate.Month, pFirstDate.Day, pFirstTime.Hour, pFirstTime.Minute, pFirstTime.Second);
 
+            DateTime pSecondDate = this.pSecondDate.Value;
+            DateTime pSecondTime = this.pSecondTime.Value;
+            DateTime pSecondDateTime =  new DateTime(pSecondDate.Year, pSecondDate.Month, pSecondDate.Day, pSecondTime.Hour, pSecondTime.Minute, pSecondTime.Second);
 
+            return DateTime.Compare(pFirstDateTime, pSecondDateTime);
+        }
         //Approvement validation
         private String validateApprovement(DataGridViewRow row){
 
@@ -319,29 +391,46 @@ namespace DeviationManager.GUI
             bool standardCondition = formValidation.isTextBoxNotNull(this.standardCondition, errorProvider1);
             bool detailRequestedDevV = formValidation.isTextBoxNotNull(this.detailRequestedDeviation, errorProvider1);
             bool deviationType = formValidation.isItemFromComoBoxSelected(this.deviationType, errorProvider1);
+            int compareDeviationPeriod = this.validateDeviationPeriod();
 
-            if (requestedBy || position || standardCondition || detailRequestedDevV || deviationType)
+            if (requestedBy && position && standardCondition && detailRequestedDevV && deviationType && compareDeviationPeriod != 0 && compareDeviationPeriod < 0)
             {
                 Deviation deviation = this.getDeviationObject();
-                if (deviation.deviationId != 0)
+                if (this.actionType == "newDeviation")
                 {
-                    //update DEVIATION
-                    // before updating verify the Autorisation
-                }
-                else
-                {
+                  
                     //add a new Deviation
                     //verify if the user is one of the Group
                     //redirect the user to se the email content
-                    EmailGUI emailGUI = new EmailGUI(deviation,this);
+                    EmailGUI emailGUI = new EmailGUI(deviation, this);
                     emailGUI.Show();
-                    
+                }
+                else
+                {
+                    //update DEVIATION
+                    // before updating verify the Autorisation
+                    if (this.deviation != null)
+                    {
+                        deviationModel.updateDeviation(this.getDeviationObjectToUpdate());
+                        MessageBox.Show("The Deviation Was Successfly Updated.", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                
+                    }
+               
                 }
                 
             }
             else
             {
                 MessageBox.Show("The Form Inputs Are Not Valid !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (compareDeviationPeriod == 0)
+                {
+                    MessageBox.Show("The Deviation Period Has Not To Be Null!, You Can Choose Different Dates To Avoid This.", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (compareDeviationPeriod > 0)
+                {
+                    MessageBox.Show("The Deviation Period Has Not Valid !, The Input <<P.Second date>> Must Be Bigger Than the Input <<P.First date>>", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -373,11 +462,6 @@ namespace DeviationManager.GUI
             this.errorProvider1.SetError(this.reason1, "");
         }
 
-        private void riskCategory_MouseClick(object sender, MouseEventArgs e)
-        {
-            RiskMatrix riskMatrix = new RiskMatrix(this.riskCategory);
-            riskMatrix.Show();
-        }
 
         private void standardCondition_GotFocus(object sender, EventArgs e)
         {
@@ -590,6 +674,13 @@ namespace DeviationManager.GUI
             }
         }
 
+        // choose risk category 
+        private void riskCategory_Click(object sender, EventArgs e)
+        {
+            RiskMatrix riskMatrix = new RiskMatrix(this.riskCategory);
+            riskMatrix.ShowDialog();
+            riskCategory.Focus();
+        }
 
 
 

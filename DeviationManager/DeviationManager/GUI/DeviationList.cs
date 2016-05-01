@@ -193,6 +193,9 @@ namespace DeviationManager.GUI
             String requestedBy = this.requestedBy.Text;
             String deviationType = "";
             String deviationRiskCategory = "";
+            DateTime date1 = this.date1.Value;
+            DateTime date2 = this.date2.Value;
+
             if (this.riskCategory.SelectedItem != null)
             {
                 deviationRiskCategory = this.riskCategory.SelectedItem.ToString();
@@ -202,7 +205,7 @@ namespace DeviationManager.GUI
                 deviationType = this.deviationType.SelectedItem.ToString();
             }
 
-            var deviations = deviationModel.filterDeviationByAll(deviationRef, requestedBy, deviationRiskCategory, deviationType);
+            var deviations = deviationModel.filterDeviationByAll(deviationRef, requestedBy, deviationRiskCategory, deviationType, date1, date2);
             this.updateDeviationList(deviations);
         }
 

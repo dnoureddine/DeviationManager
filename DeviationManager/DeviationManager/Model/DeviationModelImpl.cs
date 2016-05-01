@@ -414,7 +414,7 @@ namespace DeviationManager.Model
 
 
         /****** search Deviation using all properties*/
-        public IList<Deviation> filterDeviationByAll(String deviationRef, String requestedBy, String deviationRiskCategory, String deviationType)
+        public IList<Deviation> filterDeviationByAll(String deviationRef, String requestedBy, String deviationRiskCategory, String deviationType, DateTime date1, DateTime date2)
         {
 
             using (var session = NHibernateHelper.OpenSession())
@@ -438,6 +438,11 @@ namespace DeviationManager.Model
                     {
                         creteria.Add(Restrictions.Eq("deviationType", deviationType));
                     }
+                    if (date1 != date2)
+                    {
+                        creteria.Add(Restrictions.Between("dateCreation", date1, date2));
+                    }
+
 
 
                     var deviations= creteria.List<Deviation>();
@@ -542,8 +547,72 @@ namespace DeviationManager.Model
             }
         }
 
+        
+        //List deviation on pending
+        public IList<Deviation> listPendingDeviation()
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var deviations = session.CreateCriteria(typeof(Deviation)).List<Deviation>();
+                    IList<Deviation> pendingDeviationList = new List<Deviation>();
+                    foreach (var deviation in deviations)
+                    {
+                        if (deviation.Approved == "Pending")
+                        {
+                            pendingDeviationList.Add(deviation);
+                        }
+                    }
 
+                    return pendingDeviationList;
+                }
+            }
+        }
 
+        //List deviation on Rejected
+        public IList<Deviation> listRejectedDeviation()
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var deviations = session.CreateCriteria(typeof(Deviation)).List<Deviation>();
+                    IList<Deviation> pendingDeviationList = new List<Deviation>();
+                    foreach (var deviation in deviations)
+                    {
+                        if (deviation.Approved == "Rejected" || deviation.Approved == "Closed")
+                        {
+                            pendingDeviationList.Add(deviation);
+                        }
+                    }
+
+                    return pendingDeviationList;
+                }
+            }
+        }
+
+        //List deviation on Approvde
+        public IList<Deviation> listApprovedDeviation()
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var deviations = session.CreateCriteria(typeof(Deviation)).List<Deviation>();
+                    IList<Deviation> pendingDeviationList = new List<Deviation>();
+                    foreach (var deviation in deviations)
+                    {
+                        if (deviation.Approved == "Approved")
+                        {
+                            pendingDeviationList.Add(deviation);
+                        }
+                    }
+
+                    return pendingDeviationList;
+                }
+            }
+        }
 
 
         /******____class   */

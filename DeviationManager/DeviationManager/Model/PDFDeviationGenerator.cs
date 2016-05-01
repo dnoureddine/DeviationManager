@@ -112,16 +112,16 @@ namespace DeviationManager.Model
         public PdfPTable createDeviationContent(PdfPTable table, Deviation deviation)
         {
             //Deviation No cell
-            this.addTableCell(table, "DEVIATION NO:", normal, 1, 0);
+            this.addTableCell(table, "DEVIATION NO:", normal, 1, 0, "#99ccff");
 
             //Deviation No Value cell
             this.addTableCell(table, "DR-", normal, 2, 0);
 
             // Risk Category cell
-            this.addTableCell(table, "RISK CATEGORY:", normal, 2, 0);
+            this.addTableCell(table, "RISK CATEGORY:", normal, 2, 0, "#99ccff");
 
             // Risk Category Value cell
-            this.addTableCell(table,deviation.deviationRiskCategory, normal, 2, 0);
+            this.addTableCell(table,deviation.deviationRiskCategory, normal, 2, 0, "#ff9900");
 
             // Requested by cell
             this.addTableCell(table, "REQUESTED BY:", normal, 1, 0);
@@ -148,10 +148,10 @@ namespace DeviationManager.Model
             this.addTableCell(table, deviation.position, normal, 2, 0);
 
             // deviation type cell
-            this.addTableCell(table, "DEVIATION TYPE:", normal, 2, 0);
+            this.addTableCell(table, "DEVIATION TYPE:", normal, 2, 0,"#99ccff");
 
             // deviation type value cell
-            this.addTableCell(table, deviation.deviationType, normal, 1, 0);
+            this.addTableCell(table, deviation.deviationType, normal, 1, 0,"#ff9900");
 
             // Other Description value cell
             this.addTableCell(table, "Other : "+deviation.describeOtherType, normal, 7, 0);
@@ -160,10 +160,10 @@ namespace DeviationManager.Model
             this.addTableCell(table, "DETAILED DESCRIPTION OF DEVIATION (detail product name / procedure number / specification / etc)", normal, 7, 0);
 
             // Standard condition cell
-            this.addTableCell(table, "Standard Condition", normal, 3, 1, "#0095ff");
+            this.addTableCell(table, "Standard Condition", normal, 3, 1, "#C4C7C3");
 
             // detail requested condition cell
-            this.addTableCell(table, "Detail Requested Condition", normal, 4, 1, "#0095ff");
+            this.addTableCell(table, "Detail Requested Condition", normal, 4, 1, "#C4C7C3");
 
             // Standard condition  value cell
             this.addTableCell(table, deviation.detailRequestCondition, normal, 3, 0);
@@ -172,7 +172,7 @@ namespace DeviationManager.Model
             this.addTableCell(table, deviation.detailStandardCondition, normal, 4, 0);
 
             // 5 why cell
-            this.addTableCell(table, "DETAIL 5 WHY TO SHOW REASON CHANGE FOR DEVIATION:", normal, 7, 0, "#0095ff");
+            this.addTableCell(table, "DETAIL 5 WHY TO SHOW REASON CHANGE FOR DEVIATION:", normal, 7, 0, "#C4C7C3");
 
             // why 1 cell
             var reasons = deviation.reasons;
@@ -191,7 +191,7 @@ namespace DeviationManager.Model
             this.addTableCell(table, "WHY: " + reasons.ElementAt<Reason>(4).reason, normal, 7, 0);
 
             // Period deviation cell
-            this.addTableCell(table, "PERIOD FOR DEVIATION /or PERMANENT(shift / week / etc)", normal, 3, 0, "#0095ff");
+            this.addTableCell(table, "PERIOD FOR DEVIATION /or PERMANENT(shift / week / etc)", normal, 3, 0, "#C4C7C3");
 
             // Period deviation value  cell
             TimeSpan t = (TimeSpan)(deviation.endDatePeriod - deviation.startDatePeriod);
@@ -204,7 +204,7 @@ namespace DeviationManager.Model
 
 
             // DENTFY THE FIRST AND LAST PART NUMBER  FOR DEVIATION  ... cell
-            this.addTableCell(table, "IDENTFY THE FIRST AND LAST PART NUMBER  FOR DEVIATION OR IDENTIFY ALTERNATIVE IDENTIFICATION METHOD (For example circle on base of tank - include photo, diagram where applicable)", normal, 7, 0, "#0095ff");
+            this.addTableCell(table, "IDENTFY THE FIRST AND LAST PART NUMBER  FOR DEVIATION OR IDENTIFY ALTERNATIVE IDENTIFICATION METHOD (For example circle on base of tank - include photo, diagram where applicable)", normal, 7, 0, "#C4C7C3");
 
 
             // DENTFY THE FIRST AND LAST PART NUMBER  FOR DEVIATION value  ... cell
@@ -220,25 +220,25 @@ namespace DeviationManager.Model
         {
 
             // Approval cell
-            this.addTableCell(table, "APPROVAL", normalBold, 1, 1, "#0095ff");
+            this.addTableCell(table, "APPROVAL", normalBold, 1, 1, "#99ccff");
 
             // Name cell
-            this.addTableCell(table, "NAME", normalBold, 1, 1, "#0095ff");
+            this.addTableCell(table, "NAME", normalBold, 1, 1, "#99ccff");
 
             // Approve cell
-            this.addTableCell(table, "APPROVE", normalBold, 1, 1, "#0095ff");
+            this.addTableCell(table, "APPROVE", normalBold, 1, 1, "#99ccff");
 
             // Reject cell
-            this.addTableCell(table, "REJECT", normalBold, 1, 1, "#0095ff");
+            this.addTableCell(table, "REJECT", normalBold, 1, 1, "#99ccff");
 
             // Comments cell
-            this.addTableCell(table, "COMMENTS", normalBold, 1, 1, "#0095ff");
+            this.addTableCell(table, "COMMENTS", normalBold, 1, 1, "#99ccff");
 
             // Signed cell
-            this.addTableCell(table, "SIGNED", normalBold, 1, 1, "#0095ff");
+            this.addTableCell(table, "SIGNED", normalBold, 1, 1, "#99ccff");
 
             // Signed cell
-            this.addTableCell(table, "DATE", normalBold, 1, 1, "#0095ff");
+            this.addTableCell(table, "DATE", normalBold, 1, 1, "#99ccff");
 
             //Get All Approvement
             var approvements = deviation.approvements;
@@ -280,7 +280,7 @@ namespace DeviationManager.Model
             this.addTableCell(table, otherApprovement.title, normalBold, 6, 0, "#FF0000");
 
             // Yes/No value cell
-            this.addTableCell(table, otherApprovement.selectYesNo, normal, 1, 0, "#ff9933");
+            this.addTableCell(table, otherApprovement.selectYesNo, normal, 1, 0, "#ff9900");
 
             // Request Approved value cell
             this.addTableCell(table, "REQUEST APPROVED", small, 1, 0);
