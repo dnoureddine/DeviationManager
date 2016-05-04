@@ -41,6 +41,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.liblle = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.groupEmail = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.approvementGroupsDataGridview)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -56,13 +58,13 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(684, 434);
+            this.panel1.Size = new System.Drawing.Size(684, 499);
             this.panel1.TabIndex = 0;
             // 
             // approvementGroupsDataGridview
             // 
             this.approvementGroupsDataGridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.approvementGroupsDataGridview.Location = new System.Drawing.Point(12, 159);
+            this.approvementGroupsDataGridview.Location = new System.Drawing.Point(12, 215);
             this.approvementGroupsDataGridview.Name = "approvementGroupsDataGridview";
             this.approvementGroupsDataGridview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.approvementGroupsDataGridview.Size = new System.Drawing.Size(660, 263);
@@ -73,7 +75,7 @@
             // 
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(490, 117);
+            this.button2.Location = new System.Drawing.Point(490, 153);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(182, 36);
             this.button2.TabIndex = 6;
@@ -107,6 +109,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Email);
+            this.groupBox1.Controls.Add(this.groupEmail);
             this.groupBox1.Controls.Add(this.idGroupeApprovement);
             this.groupBox1.Controls.Add(this.Id);
             this.groupBox1.Controls.Add(this.role);
@@ -115,7 +119,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(458, 141);
+            this.groupBox1.Size = new System.Drawing.Size(458, 177);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add new approvement Group";
@@ -178,11 +182,30 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Name  : ";
             // 
+            // groupEmail
+            // 
+            this.groupEmail.BackColor = System.Drawing.Color.White;
+            this.groupEmail.Location = new System.Drawing.Point(73, 146);
+            this.groupEmail.Multiline = true;
+            this.groupEmail.Name = "groupEmail";
+            this.groupEmail.Size = new System.Drawing.Size(308, 25);
+            this.groupEmail.TabIndex = 11;
+            // 
+            // Email
+            // 
+            this.Email.AutoSize = true;
+            this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email.Location = new System.Drawing.Point(6, 147);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(60, 15);
+            this.Email.TabIndex = 12;
+            this.Email.Text = "Email  : ";
+            // 
             // ApprovementGroupGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 434);
+            this.ClientSize = new System.Drawing.Size(684, 499);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -213,5 +236,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox idGroupeApprovement;
         private System.Windows.Forms.Label Id;
+        private System.Windows.Forms.Label Email;
+        private System.Windows.Forms.TextBox groupEmail;
     }
 }

@@ -16,6 +16,7 @@ namespace DeviationManager.GUI
         private Deviation deviation;
         private DeviationModel deviationModel;
         private SaveDeviation saveDeviation;
+        private EmailSender emailSender;
 
         public EmailGUI(Deviation deviation, SaveDeviation saveDeviation)
         {
@@ -23,6 +24,7 @@ namespace DeviationManager.GUI
             this.deviation = deviation;
             this.saveDeviation = saveDeviation;
             this.deviationModel = new DeviationModel();
+            emailSender = new EmailSender();
 
             //generate email Content from deviation
             this.generateEmailContent();
@@ -73,13 +75,29 @@ namespace DeviationManager.GUI
         /****************************** Event **************************************/
         private void sendMessage_Click(object sender, EventArgs e)
         {
+            if (this.subject.Text != "" && this.messageContent.Text != "")
+            {
+                String result = this.emailSender.sendEmailToAllGroups(this.subject.Text, this.messageContent.Text);
+                if (result == "sent")
+                {
+                    //Add the New deviation
+                    this.deviationModel.addDeviation(this.deviation);
 
-            //Add the New deviation
-            this.deviationModel.addDeviation(this.deviation);
-
-            MessageBox.Show("The Deviation Was Successfuly Added", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.saveDeviation.Close();
-            this.Close();
+                    MessageBox.Show("The Deviation Was Successfuly Added", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.saveDeviation.Close();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Erros, The Email Was Not Sent Try Again !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Inputs Are Missing !!", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
 
         private void cancelSendEmail_Click(object sender, EventArgs e)

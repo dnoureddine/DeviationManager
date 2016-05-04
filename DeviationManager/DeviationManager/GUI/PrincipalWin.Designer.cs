@@ -55,6 +55,8 @@
             this.newDevaition = new System.Windows.Forms.Button();
             this.DeviationDataGridView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.language = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -133,6 +135,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.language);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 24);
@@ -158,7 +161,7 @@
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Location = new System.Drawing.Point(140, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(999, 121);
+            this.panel3.Size = new System.Drawing.Size(999, 134);
             this.panel3.TabIndex = 3;
             // 
             // panel8
@@ -308,9 +311,9 @@
             // 
             // deviationList
             // 
-            this.deviationList.Location = new System.Drawing.Point(0, 69);
+            this.deviationList.Location = new System.Drawing.Point(0, 46);
             this.deviationList.Name = "deviationList";
-            this.deviationList.Size = new System.Drawing.Size(134, 55);
+            this.deviationList.Size = new System.Drawing.Size(134, 42);
             this.deviationList.TabIndex = 7;
             this.deviationList.Text = "Deviation List";
             this.deviationList.UseVisualStyleBackColor = true;
@@ -320,7 +323,7 @@
             // 
             this.newDevaition.Location = new System.Drawing.Point(0, 0);
             this.newDevaition.Name = "newDevaition";
-            this.newDevaition.Size = new System.Drawing.Size(134, 54);
+            this.newDevaition.Size = new System.Drawing.Size(134, 42);
             this.newDevaition.TabIndex = 6;
             this.newDevaition.Text = "New Deviation";
             this.newDevaition.UseVisualStyleBackColor = true;
@@ -331,15 +334,16 @@
             this.DeviationDataGridView.AllowUserToAddRows = false;
             this.DeviationDataGridView.AllowUserToDeleteRows = false;
             this.DeviationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DeviationDataGridView.Location = new System.Drawing.Point(0, 130);
+            this.DeviationDataGridView.Location = new System.Drawing.Point(0, 143);
             this.DeviationDataGridView.Name = "DeviationDataGridView";
             this.DeviationDataGridView.ReadOnly = true;
-            this.DeviationDataGridView.Size = new System.Drawing.Size(1142, 397);
+            this.DeviationDataGridView.Size = new System.Drawing.Size(1142, 384);
             this.DeviationDataGridView.TabIndex = 2;
             // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.DeviationDataGridView);
             this.panel2.Controls.Add(this.deviationList);
             this.panel2.Controls.Add(this.newDevaition);
@@ -348,6 +352,28 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1142, 530);
             this.panel2.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(134, 43);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Update";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // language
+            // 
+            this.language.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.language.FormattingEnabled = true;
+            this.language.Items.AddRange(new object[] {
+            "English",
+            "Deutsch"});
+            this.language.Location = new System.Drawing.Point(1043, 37);
+            this.language.Name = "language";
+            this.language.Size = new System.Drawing.Size(140, 21);
+            this.language.TabIndex = 1;
             // 
             // PrincipalWin
             // 
@@ -415,5 +441,7 @@
         private System.Windows.Forms.Button newDevaition;
         private System.Windows.Forms.DataGridView DeviationDataGridView;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox language;
     }
 }

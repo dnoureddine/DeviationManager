@@ -16,7 +16,7 @@ namespace DeviationManager.Mappings
             Map(x => x.deviationRef);
             Map(x => x.deviationRiskCategory);
             Map(x => x.requestedBy);
-           // Map(x => x.position);
+            Map(x => x.position);
             Map(x => x.dateCreation);
             Map(x => x.signature);
             Map(x => x.deviationType);

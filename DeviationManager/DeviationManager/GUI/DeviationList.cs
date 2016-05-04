@@ -15,6 +15,7 @@ namespace DeviationManager.GUI
     {
         private DeviationModel deviationModel;
         private Autorisation autorisation;
+        private EmailSender emailSender;
 
         public DeviationList()
         {
@@ -22,6 +23,7 @@ namespace DeviationManager.GUI
 
             deviationModel = new DeviationModel();
             autorisation = new Autorisation();
+            emailSender = new EmailSender();
             //DataGridViw Configuration
             this.DataViewConfiguration();
 
@@ -240,6 +242,27 @@ namespace DeviationManager.GUI
         }
 
 
+        //send email to groups who they 
+        private void sendMessage_Click(object sender, EventArgs e)
+        {
+            if (this.DeviationDataGridView.CurrentRow != null)
+            {
+                String deviationRef = this.DeviationDataGridView.CurrentRow.Cells[0].Value.ToString();
+                Deviation deviation = autorisation.canUpdateDeviation(deviationRef);
+                if (deviation != null)
+                {
+                    //send email to Groups that they did not yet approve
+                    var result = this.emailSender.sentEmailToGroups(deviation);
+                    if (result == "sent")
+                    {
+                        MessageBox.Show("An Email has been sent !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+            }
+
+        }
+        
 
 
         /**___________classs _____*****/

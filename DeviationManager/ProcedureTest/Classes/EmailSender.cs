@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.DirectoryServices;
 using System.DirectoryServices.AccountManagement;
 using System.Linq;
@@ -25,7 +26,16 @@ namespace ProcedureTest.Classes
         {
             try
             {
+                //if Outlook is not open start it and wait
+                Process[] pName = Process.GetProcessesByName("OUTLOOK");
+                if (pName.Length == 0)
+                {
+                    // Open Outlook anew.
+                    System.Diagnostics.Process.Start("OUTLOOK.EXE");
+                    System.Threading.Thread.Sleep(2000);
+                }
 
+                //****
                 Microsoft.Office.Interop.Outlook.Application app = new Microsoft.Office.Interop.Outlook.Application();
                 Microsoft.Office.Interop.Outlook.MailItem mailItem = (Microsoft.Office.Interop.Outlook.MailItem)app.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olMailItem);
 
@@ -57,25 +67,40 @@ namespace ProcedureTest.Classes
 
         public void sendEamilUsingSmptp(){
 
-            System.Net.Mail.MailMessage message = new System.Net.Mail.MailMessage();
+            try
+            {
 
-            message.To.Add("dnoureddin@de.tiauto.com");
-            message.From = new System.Net.Mail.MailAddress("dnoureddin@de.tiauto.com");
+                SmtpClient client = new SmtpClient("smtp.extranet.tiauto.com");
+                client.EnableSsl = true;
+                client.Timeout = 100000;
 
-            message.Subject = "This is the Subject line";
-            message.Body = "This is the message body";
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.UseDefaultCredentials = true;
 
-            System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.extranet.tiauto.com");
-            smtp.UseDefaultCredentials = false;
+                client.Credentials = new NetworkCredential("deviationemailkomponent", "DevKom#01");
+                MailMessage msg = new MailMessage();
 
-            smtp.Credentials = new System.Net.NetworkCredential("dnoureddin", "DevKom#01");
+                msg.To.Add("dnoureddin@tiauto.com");
+                msg.From = new MailAddress("dnoureddin@tiauto.com");
 
-            smtp.Send(message);
-            Console.WriteLine("Done");
+                msg.Subject = "Test";
+                msg.Body = "bla bla bla bla";
+
+                client.Send(msg);
+
+                Console.WriteLine("Done");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
 
         }
 
-        public void sendEmailSmtp()
+
+
+        public void sendEmailSmtpGmail()
         {
 
             try
@@ -97,13 +122,14 @@ namespace ProcedureTest.Classes
                 msg.Body = "bla bla bla bla";
 
                 client.Send(msg);
+
+                Console.WriteLine("Done");
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
             
-            Console.WriteLine("Hello World");
         }
 
 

@@ -17,3 +17,7 @@ C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin\Debug\ExcelLibrary.dll
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin\Debug\Interop.Microsoft.Office.Interop.OutlookViewCtl.dll
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.csprojResolveAssemblyReference.cache
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin\Debug\ProcedureTest.exe.manifest
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin\Debug\ProcedureTest.application
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.exe.manifest
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.application

@@ -15,6 +15,7 @@ namespace DeviationManager.Mappings
             Id(x => x.approvalId);
             Map(x => x.liblle);
             Map(x => x.role);
+            Map(x => x.groupEmail);
 
             HasMany(x => x.approvements).Not.LazyLoad()
                 .Cascade.All();

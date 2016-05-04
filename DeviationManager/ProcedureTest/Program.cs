@@ -11,6 +11,8 @@ using System.Security.Principal;
 using System.Text.RegularExpressions;
 using ProcedureTest.Classes;
 using System.IO;
+using System.Diagnostics;
+using System.Threading;
 
 namespace ProcedureTest
 {
@@ -24,10 +26,10 @@ namespace ProcedureTest
             PDFDeviationGenerator pdfDoc = new PDFDeviationGenerator(25,25,45,45);
             pdfDoc.createPdfDeviation();*/
             //mailItem.To = "*ETT DeviationReport-Approval";
-
+            
             EmailSender email = new EmailSender();
             //String result = email.sendEmail("Ici le sujet", "Ici le corps du message", "dnoureddin@de.tiauto.com");
-            email.sendEmailSmtp();
+            email.sendEmail("Test","Test","dnoureddin@de.tiauto.com");
 
             Console.Read();
         }

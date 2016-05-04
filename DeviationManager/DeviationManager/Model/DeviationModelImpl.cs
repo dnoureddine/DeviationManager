@@ -200,7 +200,7 @@ namespace DeviationManager.Model
         }
 
 
-        /***************** get an approvement group */
+        /*************** get an approvement group */
         public ApprovementGroup getApprovementGroup(int id)
         {
             using (var session = NHibernateHelper.OpenSession())
@@ -213,6 +213,20 @@ namespace DeviationManager.Model
             }
         }
 
+
+        /***** update approvement group *****/
+        public void updateApprovementGroup(ApprovementGroup approvementGr)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.Merge(approvementGr);
+                    transaction.Commit();
+                }
+            }
+        }
+         
 
         /************* get list approvement group  *************/
         public IList<ApprovementGroup> listApprovementGroup()

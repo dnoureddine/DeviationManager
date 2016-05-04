@@ -36,8 +36,21 @@ namespace DeviationManager.GUI
             {
                 if (this.idGroupeApprovement.Text != "")
                 {
-                    //update Approvement Group
+                    //update Approment Group
+                    int id = int.Parse(this.idGroupeApprovement.Text);
+                    ApprovementGroup approvementGr = deviationModel.getApprovementGroup(id);
 
+                    approvementGr.liblle = this.liblle.Text;
+                    approvementGr.role = this.role.Text;
+                    approvementGr.groupEmail = this.groupEmail.Text;
+
+                    deviationModel.updateApprovementGroup(approvementGr);
+
+                    MessageBox.Show("Approvement Group was successfully updated !");
+
+                    //reload the Approvement group list
+                    this.showApprovementGroupList();
+                    
                 }
                 else
                 {
@@ -45,6 +58,7 @@ namespace DeviationManager.GUI
                     ApprovementGroup approvementGroup = new ApprovementGroup();
                     approvementGroup.liblle = this.liblle.Text;
                     approvementGroup.role = this.role.Text;
+                    approvementGroup.groupEmail = this.groupEmail.Text;
                     deviationModel.addApprovementGroup(approvementGroup);
 
                     MessageBox.Show("Approvement Group was successfully added !");
@@ -63,6 +77,7 @@ namespace DeviationManager.GUI
             this.idGroupeApprovement.Text = "";
             this.liblle.Text = "";
             this.role.Text = "";
+            this.groupEmail.Text = "";
         }
 
         private void approvementGroupsDataGridview_SelectionChanged(object sender, EventArgs e)
@@ -70,6 +85,7 @@ namespace DeviationManager.GUI
             this.idGroupeApprovement.Text = this.approvementGroupsDataGridview.CurrentRow.Cells[0].Value.ToString();
             this.liblle.Text = this.approvementGroupsDataGridview.CurrentRow.Cells[1].Value.ToString();
             this.role.Text = this.approvementGroupsDataGridview.CurrentRow.Cells[2].Value.ToString();
+            this.groupEmail.Text = this.approvementGroupsDataGridview.CurrentRow.Cells[3].Value.ToString();
         }
 
         private void deleteApprovementGroup_Click(object sender, EventArgs e)

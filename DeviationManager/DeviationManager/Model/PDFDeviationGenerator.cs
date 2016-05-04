@@ -21,7 +21,7 @@ namespace DeviationManager.Model
             doc = new Document(PageSize.A4, x1, x2, x3, x4);
             normal = FontFactory.GetFont("Arial", 7, BaseColor.BLACK);
             normalBold = FontFactory.GetFont("Arial", 7, Font.BOLD);
-            small = FontFactory.GetFont("Arial", 5);
+            small = FontFactory.GetFont("Arial", 7);
         }
 
 
@@ -40,9 +40,21 @@ namespace DeviationManager.Model
         {
             PdfPCell cell = new PdfPCell(new Phrase(text, font));
             cell.Colspan = collapse;
-            cell.Padding = 8;
+            cell.Padding = 4;
             cell.HorizontalAlignment = allignement;
             table.AddCell(cell);
+        }
+
+        //add table Cell with image
+        private  void addTableCell(PdfPTable table){
+            Image crossImg = Image.GetInstance("cross.PNG");
+            crossImg.ScaleAbsolute(6,6);
+
+            PdfPCell cross = new PdfPCell(crossImg);
+            cross.HorizontalAlignment = 1;
+            cross.Padding = 4;
+            table.AddCell(cross);
+
         }
 
         //add table cell
@@ -52,7 +64,7 @@ namespace DeviationManager.Model
             BaseColor cellBackColor = WebColors.GetRGBColor(color);
             cell.BackgroundColor = cellBackColor;
             cell.Colspan = collapse;
-            cell.Padding = 8;
+            cell.Padding = 4;
             cell.HorizontalAlignment = allignement;
             table.AddCell(cell);
         }
@@ -64,13 +76,12 @@ namespace DeviationManager.Model
             PdfPTable table = new PdfPTable(7);
             table.WidthPercentage = 100;
 
-            Image logoIm = Image.GetInstance("logo.png");
-            PdfPCell logo = new PdfPCell();
+            Image logoIm = Image.GetInstance("logo.PNG");
+            PdfPCell logo = new PdfPCell(logoIm);
             logo.FixedHeight = 50f;
             logo.Colspan = 2;
             logo.Padding = 4;
             logo.HorizontalAlignment = 1;
-            logo.AddElement(logoIm);
             table.AddCell(logo);
 
             //Title  cell
@@ -244,6 +255,7 @@ namespace DeviationManager.Model
             var approvements = deviation.approvements;
             foreach (var approvement in approvements)
             {             
+                      
                     // Approval cell
                     this.addTableCell(table, approvement.approvementGroup.liblle, normal, 1, 0);
 
@@ -251,16 +263,37 @@ namespace DeviationManager.Model
                     this.addTableCell(table, approvement.name, normal, 1, 0);
 
                     // Approve cell
-                    this.addTableCell(table, approvement.approved.ToString(), normal, 1, 0);
+                    if (approvement.approved)
+                    {
+                        this.addTableCell(table);
+                    }
+                    else
+                    {
+                        this.addTableCell(table,"", normal, 1, 0);
+                    }
 
                     // Reject cell
-                    this.addTableCell(table, approvement.rejected.ToString(), normal, 1, 0);
+                    if (approvement.rejected)
+                    {
+                        this.addTableCell(table);
+                    }
+                    else
+                    {
+                        this.addTableCell(table, "", normal, 1, 0);
+                    }
 
                     // Comments cell
                     this.addTableCell(table, approvement.comment, normal, 1, 0);
 
                     // Signed cell
-                    this.addTableCell(table, "", normal, 1, 0);
+                    if (approvement.signed)
+                    {
+                        this.addTableCell(table);
+                    }
+                    else
+                    {
+                        this.addTableCell(table, "", normal, 1, 0);
+                    }
 
                     // date cell
                     this.addTableCell(table, approvement.date.ToString(), normal, 1, 0);
@@ -286,7 +319,14 @@ namespace DeviationManager.Model
             this.addTableCell(table, "REQUEST APPROVED", small, 1, 0);
 
             // Request Approved value value cell
-            this.addTableCell(table, otherApprovement.requestApproved.ToString(), small, 1, 0);
+            if (otherApprovement.requestApproved)
+            {
+                this.addTableCell(table);
+            }
+            else
+            {
+                this.addTableCell(table, "", small, 1, 0);
+            }
 
             // Name cell
             this.addTableCell(table, "NAME", small, 1, 0);
@@ -298,7 +338,14 @@ namespace DeviationManager.Model
             this.addTableCell(table, "REQUEST REJECTED", small, 1, 0);
 
             // REQUEST REJECTED value value cell
-            this.addTableCell(table, otherApprovement.requestRejected.ToString(), small, 1, 0);
+            if (otherApprovement.requestRejected)
+            {
+                this.addTableCell(table);
+            }
+            else
+            {
+                this.addTableCell(table, "", small, 1, 0);
+            }
 
             // SIGNATURE cell
             this.addTableCell(table, "SIGNATURE", small, 1, 0);

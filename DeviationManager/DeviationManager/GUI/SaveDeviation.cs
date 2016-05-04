@@ -7,6 +7,8 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Windows.Forms;
 
@@ -17,11 +19,13 @@ namespace DeviationManager.GUI
         private DeviationModel deviationModel;
         private String actionType;
         private Deviation deviation=null;
+        private EmailSender emailSender;
 
         public SaveDeviation(String actionType)
         {
             InitializeComponent();
             deviationModel = new DeviationModel();
+            emailSender = new EmailSender();
             this.actionType = actionType;
 
             initialize();
@@ -441,6 +445,14 @@ namespace DeviationManager.GUI
             this.yesNoProductEng.SelectedIndex = 1;
             this.yesNoManufactEng.SelectedIndex = 1;
             this.yesNoCustomer.SelectedIndex = 1;
+
+            //language
+            Assembly a = Assembly.Load("DeviationManager");
+            ResourceManager rm = new ResourceManager("DeviationManager.Lang.language_en", a);
+           
+            //set labels
+
+
         }
 
         //***__ __***
@@ -680,6 +692,31 @@ namespace DeviationManager.GUI
             RiskMatrix riskMatrix = new RiskMatrix(this.riskCategory);
             riskMatrix.ShowDialog();
             riskCategory.Focus();
+        }
+
+
+        //Remind Groups
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+            if (this.actionType == "newDeviation")
+            {
+                MessageBox.Show("You Can Not Make This Action Now, You Schould First Save The Deviation !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                Deviation deviation = deviationModel.getDeviationWithRef(this.deviationNO.Text);
+                if (deviation != null)
+                {
+                    //send email to Groups that they did not yet approve
+                    var result = this.emailSender.sentEmailToGroups(deviation);
+                    if (result == "sent")
+                    {
+                        MessageBox.Show("An Email has been sent !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }  
+            }
+
         }
 
 

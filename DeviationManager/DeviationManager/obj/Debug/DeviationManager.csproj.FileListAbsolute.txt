@@ -67,3 +67,6 @@ C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\AxInterop.ChartfxLib.dll
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\DeviationManager.csproj.ResolveComReference.cache
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\DeviationManager.GUI.riskMatrix.resources
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\bin\Debug\Microsoft.Office.Interop.Outlook.dll
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\DeviationManager.Lang.language_en.resources
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\DeviationManager.Lang.language_de.resources

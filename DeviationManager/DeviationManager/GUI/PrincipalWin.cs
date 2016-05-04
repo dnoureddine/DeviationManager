@@ -35,6 +35,8 @@ namespace DeviationManager.GUI
             var source = new BindingSource();
             source.DataSource = deviations;
             this.DeviationDataGridView.DataSource = source;
+
+            this.language.SelectedIndex = 1;
         }
 
         private void saveDeviationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -130,6 +132,15 @@ namespace DeviationManager.GUI
         private void panel4_MouseLeave(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Default;
+        }
+
+        //update list
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var deviations = deviationModel.listPendingDeviation();
+            var source = new BindingSource();
+            source.DataSource = deviations;
+            this.DeviationDataGridView.DataSource = source;
         }
 
       

@@ -34,8 +34,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.logoBox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.DeviationSave = new System.Windows.Forms.Button();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.lothers = new System.Windows.Forms.GroupBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.positionCustomer = new System.Windows.Forms.TextBox();
             this.signatureCustomer = new System.Windows.Forms.TextBox();
@@ -100,7 +101,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.yesNoReginal = new System.Windows.Forms.ComboBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.lapprovement = new System.Windows.Forms.GroupBox();
             this.approvementGroupDataGrid = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.approval = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,7 +113,7 @@
             this.comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valid = new System.Windows.Forms.DataGridViewButtonColumn();
             this.closeDeviation = new System.Windows.Forms.Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.lperiodDevation = new System.Windows.Forms.GroupBox();
             this.pFirstTime = new System.Windows.Forms.DateTimePicker();
             this.pSecondTime = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
@@ -126,55 +127,54 @@
             this.addDocument = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.pSecondDate = new System.Windows.Forms.DateTimePicker();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lperiodEnd = new System.Windows.Forms.Label();
             this.pFirstDate = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lperiodBegin = new System.Windows.Forms.Label();
+            this.lwhyBox = new System.Windows.Forms.GroupBox();
             this.reason5 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lwhy5 = new System.Windows.Forms.Label();
             this.reason4 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lwhy4 = new System.Windows.Forms.Label();
             this.reason3 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lwhy3 = new System.Windows.Forms.Label();
             this.reason2 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lwhy2 = new System.Windows.Forms.Label();
             this.reason1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lwhy1 = new System.Windows.Forms.Label();
             this.DeviationPrint = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.ldetailDescOfDev = new System.Windows.Forms.GroupBox();
+            this.ldetailRequestCondition = new System.Windows.Forms.GroupBox();
             this.detailRequestedDeviation = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
+            this.lstandardCondition = new System.Windows.Forms.GroupBox();
+            this.lmachine = new System.Windows.Forms.Label();
+            this.lproduct = new System.Windows.Forms.Label();
             this.product = new System.Windows.Forms.TextBox();
             this.anlage = new System.Windows.Forms.TextBox();
             this.standardCondition = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label47 = new System.Windows.Forms.Label();
+            this.lDeviationInfo = new System.Windows.Forms.GroupBox();
+            this.loptional = new System.Windows.Forms.Label();
             this.riskCategory = new System.Windows.Forms.TextBox();
             this.deviationTimeCreation = new System.Windows.Forms.DateTimePicker();
             this.deviationSignature = new System.Windows.Forms.TextBox();
             this.deviationDescription = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.ldescription = new System.Windows.Forms.Label();
             this.deviationType = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.ldeviationType = new System.Windows.Forms.Label();
+            this.lsignature = new System.Windows.Forms.Label();
             this.position = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dateCreation = new System.Windows.Forms.Label();
+            this.lposition = new System.Windows.Forms.Label();
+            this.ldateCreation = new System.Windows.Forms.Label();
             this.deviationDateCreation = new System.Windows.Forms.DateTimePicker();
             this.requestedBy = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lrequestedBy = new System.Windows.Forms.Label();
+            this.lrisckCategroy = new System.Windows.Forms.Label();
             this.deviationNO = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.ldeviationNo = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button4 = new System.Windows.Forms.Button();
             this.deviationHeadPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.panel1.SuspendLayout();
-            this.groupBox8.SuspendLayout();
+            this.lothers.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -183,15 +183,15 @@
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox7.SuspendLayout();
+            this.lapprovement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.approvementGroupDataGrid)).BeginInit();
-            this.groupBox6.SuspendLayout();
+            this.lperiodDevation.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uploadFileDataGridView)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.lwhyBox.SuspendLayout();
+            this.ldetailDescOfDev.SuspendLayout();
+            this.ldetailRequestCondition.SuspendLayout();
+            this.lstandardCondition.SuspendLayout();
+            this.lDeviationInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -230,18 +230,30 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.DeviationSave);
-            this.panel1.Controls.Add(this.groupBox8);
-            this.panel1.Controls.Add(this.groupBox7);
+            this.panel1.Controls.Add(this.lothers);
+            this.panel1.Controls.Add(this.lapprovement);
             this.panel1.Controls.Add(this.closeDeviation);
-            this.panel1.Controls.Add(this.groupBox6);
-            this.panel1.Controls.Add(this.groupBox5);
+            this.panel1.Controls.Add(this.lperiodDevation);
+            this.panel1.Controls.Add(this.lwhyBox);
             this.panel1.Controls.Add(this.DeviationPrint);
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Controls.Add(this.ldetailDescOfDev);
+            this.panel1.Controls.Add(this.lDeviationInfo);
             this.panel1.Location = new System.Drawing.Point(-3, 89);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(936, 1804);
             this.panel1.TabIndex = 1;
+            // 
+            // button4
+            // 
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(481, 1762);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(110, 39);
+            this.button4.TabIndex = 8;
+            this.button4.Text = " Remind Group";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // DeviationSave
             // 
@@ -255,18 +267,18 @@
             this.DeviationSave.UseVisualStyleBackColor = true;
             this.DeviationSave.Click += new System.EventHandler(this.saveDeviation_Click);
             // 
-            // groupBox8
+            // lothers
             // 
-            this.groupBox8.Controls.Add(this.panel8);
-            this.groupBox8.Controls.Add(this.panel6);
-            this.groupBox8.Controls.Add(this.panel4);
-            this.groupBox8.Controls.Add(this.panel3);
-            this.groupBox8.Location = new System.Drawing.Point(15, 1113);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(894, 638);
-            this.groupBox8.TabIndex = 5;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "groupBox8";
+            this.lothers.Controls.Add(this.panel8);
+            this.lothers.Controls.Add(this.panel6);
+            this.lothers.Controls.Add(this.panel4);
+            this.lothers.Controls.Add(this.panel3);
+            this.lothers.Location = new System.Drawing.Point(15, 1113);
+            this.lothers.Name = "lothers";
+            this.lothers.Size = new System.Drawing.Size(894, 638);
+            this.lothers.TabIndex = 5;
+            this.lothers.TabStop = false;
+            this.lothers.Text = "Others";
             // 
             // panel8
             // 
@@ -928,15 +940,15 @@
             this.yesNoReginal.Size = new System.Drawing.Size(60, 21);
             this.yesNoReginal.TabIndex = 0;
             // 
-            // groupBox7
+            // lapprovement
             // 
-            this.groupBox7.Controls.Add(this.approvementGroupDataGrid);
-            this.groupBox7.Location = new System.Drawing.Point(15, 917);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(894, 181);
-            this.groupBox7.TabIndex = 4;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Approvement";
+            this.lapprovement.Controls.Add(this.approvementGroupDataGrid);
+            this.lapprovement.Location = new System.Drawing.Point(15, 917);
+            this.lapprovement.Name = "lapprovement";
+            this.lapprovement.Size = new System.Drawing.Size(894, 181);
+            this.lapprovement.TabIndex = 4;
+            this.lapprovement.TabStop = false;
+            this.lapprovement.Text = "Approvement";
             // 
             // approvementGroupDataGrid
             // 
@@ -1032,26 +1044,26 @@
             this.closeDeviation.UseVisualStyleBackColor = true;
             this.closeDeviation.Click += new System.EventHandler(this.closeDeviation_Click);
             // 
-            // groupBox6
+            // lperiodDevation
             // 
-            this.groupBox6.Controls.Add(this.pFirstTime);
-            this.groupBox6.Controls.Add(this.pSecondTime);
-            this.groupBox6.Controls.Add(this.button1);
-            this.groupBox6.Controls.Add(this.uploadFileDataGridView);
-            this.groupBox6.Controls.Add(this.downloadDocument);
-            this.groupBox6.Controls.Add(this.deleteDocument);
-            this.groupBox6.Controls.Add(this.addDocument);
-            this.groupBox6.Controls.Add(this.label16);
-            this.groupBox6.Controls.Add(this.pSecondDate);
-            this.groupBox6.Controls.Add(this.label15);
-            this.groupBox6.Controls.Add(this.pFirstDate);
-            this.groupBox6.Controls.Add(this.label14);
-            this.groupBox6.Location = new System.Drawing.Point(15, 638);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(894, 273);
-            this.groupBox6.TabIndex = 3;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Deviation Period";
+            this.lperiodDevation.Controls.Add(this.pFirstTime);
+            this.lperiodDevation.Controls.Add(this.pSecondTime);
+            this.lperiodDevation.Controls.Add(this.button1);
+            this.lperiodDevation.Controls.Add(this.uploadFileDataGridView);
+            this.lperiodDevation.Controls.Add(this.downloadDocument);
+            this.lperiodDevation.Controls.Add(this.deleteDocument);
+            this.lperiodDevation.Controls.Add(this.addDocument);
+            this.lperiodDevation.Controls.Add(this.label16);
+            this.lperiodDevation.Controls.Add(this.pSecondDate);
+            this.lperiodDevation.Controls.Add(this.lperiodEnd);
+            this.lperiodDevation.Controls.Add(this.pFirstDate);
+            this.lperiodDevation.Controls.Add(this.lperiodBegin);
+            this.lperiodDevation.Location = new System.Drawing.Point(15, 638);
+            this.lperiodDevation.Name = "lperiodDevation";
+            this.lperiodDevation.Size = new System.Drawing.Size(894, 273);
+            this.lperiodDevation.TabIndex = 3;
+            this.lperiodDevation.TabStop = false;
+            this.lperiodDevation.Text = "Deviation Period";
             // 
             // pFirstTime
             // 
@@ -1177,15 +1189,15 @@
             this.pSecondDate.Size = new System.Drawing.Size(197, 20);
             this.pSecondDate.TabIndex = 6;
             // 
-            // label15
+            // lperiodEnd
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(463, 39);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(94, 15);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Period End  : ";
+            this.lperiodEnd.AutoSize = true;
+            this.lperiodEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lperiodEnd.Location = new System.Drawing.Point(463, 39);
+            this.lperiodEnd.Name = "lperiodEnd";
+            this.lperiodEnd.Size = new System.Drawing.Size(94, 15);
+            this.lperiodEnd.TabIndex = 5;
+            this.lperiodEnd.Text = "Period End  : ";
             // 
             // pFirstDate
             // 
@@ -1194,34 +1206,34 @@
             this.pFirstDate.Size = new System.Drawing.Size(204, 20);
             this.pFirstDate.TabIndex = 4;
             // 
-            // label14
+            // lperiodBegin
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(14, 39);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(102, 15);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Period Begin : ";
+            this.lperiodBegin.AutoSize = true;
+            this.lperiodBegin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lperiodBegin.Location = new System.Drawing.Point(14, 39);
+            this.lperiodBegin.Name = "lperiodBegin";
+            this.lperiodBegin.Size = new System.Drawing.Size(102, 15);
+            this.lperiodBegin.TabIndex = 3;
+            this.lperiodBegin.Text = "Period Begin : ";
             // 
-            // groupBox5
+            // lwhyBox
             // 
-            this.groupBox5.Controls.Add(this.reason5);
-            this.groupBox5.Controls.Add(this.label13);
-            this.groupBox5.Controls.Add(this.reason4);
-            this.groupBox5.Controls.Add(this.label12);
-            this.groupBox5.Controls.Add(this.reason3);
-            this.groupBox5.Controls.Add(this.label11);
-            this.groupBox5.Controls.Add(this.reason2);
-            this.groupBox5.Controls.Add(this.label10);
-            this.groupBox5.Controls.Add(this.reason1);
-            this.groupBox5.Controls.Add(this.label9);
-            this.groupBox5.Location = new System.Drawing.Point(15, 434);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(894, 198);
-            this.groupBox5.TabIndex = 2;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "5 Why to schow reason change for deviation";
+            this.lwhyBox.Controls.Add(this.reason5);
+            this.lwhyBox.Controls.Add(this.lwhy5);
+            this.lwhyBox.Controls.Add(this.reason4);
+            this.lwhyBox.Controls.Add(this.lwhy4);
+            this.lwhyBox.Controls.Add(this.reason3);
+            this.lwhyBox.Controls.Add(this.lwhy3);
+            this.lwhyBox.Controls.Add(this.reason2);
+            this.lwhyBox.Controls.Add(this.lwhy2);
+            this.lwhyBox.Controls.Add(this.reason1);
+            this.lwhyBox.Controls.Add(this.lwhy1);
+            this.lwhyBox.Location = new System.Drawing.Point(15, 434);
+            this.lwhyBox.Name = "lwhyBox";
+            this.lwhyBox.Size = new System.Drawing.Size(894, 198);
+            this.lwhyBox.TabIndex = 2;
+            this.lwhyBox.TabStop = false;
+            this.lwhyBox.Text = "5 Why to schow reason change for deviation";
             // 
             // reason5
             // 
@@ -1231,15 +1243,15 @@
             this.reason5.Size = new System.Drawing.Size(804, 25);
             this.reason5.TabIndex = 11;
             // 
-            // label13
+            // lwhy5
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(13, 162);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 15);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "Why  : ";
+            this.lwhy5.AutoSize = true;
+            this.lwhy5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lwhy5.Location = new System.Drawing.Point(13, 162);
+            this.lwhy5.Name = "lwhy5";
+            this.lwhy5.Size = new System.Drawing.Size(49, 15);
+            this.lwhy5.TabIndex = 10;
+            this.lwhy5.Text = "Why  : ";
             // 
             // reason4
             // 
@@ -1249,15 +1261,15 @@
             this.reason4.Size = new System.Drawing.Size(804, 25);
             this.reason4.TabIndex = 9;
             // 
-            // label12
+            // lwhy4
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(13, 131);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(49, 15);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "Why  : ";
+            this.lwhy4.AutoSize = true;
+            this.lwhy4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lwhy4.Location = new System.Drawing.Point(13, 131);
+            this.lwhy4.Name = "lwhy4";
+            this.lwhy4.Size = new System.Drawing.Size(49, 15);
+            this.lwhy4.TabIndex = 8;
+            this.lwhy4.Text = "Why  : ";
             // 
             // reason3
             // 
@@ -1267,15 +1279,15 @@
             this.reason3.Size = new System.Drawing.Size(804, 25);
             this.reason3.TabIndex = 7;
             // 
-            // label11
+            // lwhy3
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(13, 100);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(49, 15);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Why  : ";
+            this.lwhy3.AutoSize = true;
+            this.lwhy3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lwhy3.Location = new System.Drawing.Point(13, 100);
+            this.lwhy3.Name = "lwhy3";
+            this.lwhy3.Size = new System.Drawing.Size(49, 15);
+            this.lwhy3.TabIndex = 6;
+            this.lwhy3.Text = "Why  : ";
             // 
             // reason2
             // 
@@ -1285,15 +1297,15 @@
             this.reason2.Size = new System.Drawing.Size(804, 25);
             this.reason2.TabIndex = 5;
             // 
-            // label10
+            // lwhy2
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(13, 69);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(49, 15);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Why  : ";
+            this.lwhy2.AutoSize = true;
+            this.lwhy2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lwhy2.Location = new System.Drawing.Point(13, 69);
+            this.lwhy2.Name = "lwhy2";
+            this.lwhy2.Size = new System.Drawing.Size(49, 15);
+            this.lwhy2.TabIndex = 4;
+            this.lwhy2.Text = "Why  : ";
             // 
             // reason1
             // 
@@ -1304,15 +1316,15 @@
             this.reason1.TabIndex = 3;
             this.reason1.TextChanged += new System.EventHandler(this.reason1_GotFocus);
             // 
-            // label9
+            // lwhy1
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(13, 38);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 15);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Why  : ";
+            this.lwhy1.AutoSize = true;
+            this.lwhy1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lwhy1.Location = new System.Drawing.Point(13, 38);
+            this.lwhy1.Name = "lwhy1";
+            this.lwhy1.Size = new System.Drawing.Size(49, 15);
+            this.lwhy1.TabIndex = 2;
+            this.lwhy1.Text = "Why  : ";
             // 
             // DeviationPrint
             // 
@@ -1326,26 +1338,26 @@
             this.DeviationPrint.UseVisualStyleBackColor = true;
             this.DeviationPrint.Click += new System.EventHandler(this.DeviationPrint_Click);
             // 
-            // groupBox2
+            // ldetailDescOfDev
             // 
-            this.groupBox2.Controls.Add(this.groupBox4);
-            this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Location = new System.Drawing.Point(15, 211);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(894, 217);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Detailed Description of Deviation";
+            this.ldetailDescOfDev.Controls.Add(this.ldetailRequestCondition);
+            this.ldetailDescOfDev.Controls.Add(this.lstandardCondition);
+            this.ldetailDescOfDev.Location = new System.Drawing.Point(15, 211);
+            this.ldetailDescOfDev.Name = "ldetailDescOfDev";
+            this.ldetailDescOfDev.Size = new System.Drawing.Size(894, 217);
+            this.ldetailDescOfDev.TabIndex = 1;
+            this.ldetailDescOfDev.TabStop = false;
+            this.ldetailDescOfDev.Text = "Detailed Description of Deviation";
             // 
-            // groupBox4
+            // ldetailRequestCondition
             // 
-            this.groupBox4.Controls.Add(this.detailRequestedDeviation);
-            this.groupBox4.Location = new System.Drawing.Point(457, 32);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(421, 178);
-            this.groupBox4.TabIndex = 2;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Detail  Request Condition";
+            this.ldetailRequestCondition.Controls.Add(this.detailRequestedDeviation);
+            this.ldetailRequestCondition.Location = new System.Drawing.Point(457, 32);
+            this.ldetailRequestCondition.Name = "ldetailRequestCondition";
+            this.ldetailRequestCondition.Size = new System.Drawing.Size(421, 178);
+            this.ldetailRequestCondition.TabIndex = 2;
+            this.ldetailRequestCondition.TabStop = false;
+            this.ldetailRequestCondition.Text = "Detail  Request Condition";
             // 
             // detailRequestedDeviation
             // 
@@ -1357,39 +1369,39 @@
             this.detailRequestedDeviation.TabIndex = 0;
             this.detailRequestedDeviation.TextChanged += new System.EventHandler(this.detailRequestedDeviation_GotFocus);
             // 
-            // groupBox3
+            // lstandardCondition
             // 
-            this.groupBox3.Controls.Add(this.label46);
-            this.groupBox3.Controls.Add(this.label45);
-            this.groupBox3.Controls.Add(this.product);
-            this.groupBox3.Controls.Add(this.anlage);
-            this.groupBox3.Controls.Add(this.standardCondition);
-            this.groupBox3.Location = new System.Drawing.Point(11, 32);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(440, 178);
-            this.groupBox3.TabIndex = 1;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Standard Condition";
+            this.lstandardCondition.Controls.Add(this.lmachine);
+            this.lstandardCondition.Controls.Add(this.lproduct);
+            this.lstandardCondition.Controls.Add(this.product);
+            this.lstandardCondition.Controls.Add(this.anlage);
+            this.lstandardCondition.Controls.Add(this.standardCondition);
+            this.lstandardCondition.Location = new System.Drawing.Point(11, 32);
+            this.lstandardCondition.Name = "lstandardCondition";
+            this.lstandardCondition.Size = new System.Drawing.Size(440, 178);
+            this.lstandardCondition.TabIndex = 1;
+            this.lstandardCondition.TabStop = false;
+            this.lstandardCondition.Text = "Standard Condition";
             // 
-            // label46
+            // lmachine
             // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(9, 114);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(87, 15);
-            this.label46.TabIndex = 10;
-            this.label46.Text = "Anlage       : ";
+            this.lmachine.AutoSize = true;
+            this.lmachine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lmachine.Location = new System.Drawing.Point(9, 114);
+            this.lmachine.Name = "lmachine";
+            this.lmachine.Size = new System.Drawing.Size(90, 15);
+            this.lmachine.TabIndex = 10;
+            this.lmachine.Text = "Machine     : ";
             // 
-            // label45
+            // lproduct
             // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(11, 145);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(88, 15);
-            this.label45.TabIndex = 9;
-            this.label45.Text = "Product      : ";
+            this.lproduct.AutoSize = true;
+            this.lproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lproduct.Location = new System.Drawing.Point(11, 145);
+            this.lproduct.Name = "lproduct";
+            this.lproduct.Size = new System.Drawing.Size(88, 15);
+            this.lproduct.TabIndex = 9;
+            this.lproduct.Text = "Product      : ";
             // 
             // product
             // 
@@ -1417,43 +1429,43 @@
             this.standardCondition.TabIndex = 0;
             this.standardCondition.TextChanged += new System.EventHandler(this.standardCondition_GotFocus);
             // 
-            // groupBox1
+            // lDeviationInfo
             // 
-            this.groupBox1.Controls.Add(this.label47);
-            this.groupBox1.Controls.Add(this.riskCategory);
-            this.groupBox1.Controls.Add(this.deviationTimeCreation);
-            this.groupBox1.Controls.Add(this.deviationSignature);
-            this.groupBox1.Controls.Add(this.deviationDescription);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.deviationType);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.position);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.dateCreation);
-            this.groupBox1.Controls.Add(this.deviationDateCreation);
-            this.groupBox1.Controls.Add(this.requestedBy);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.deviationNO);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(15, 3);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(894, 202);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Deviation Infos";
+            this.lDeviationInfo.Controls.Add(this.loptional);
+            this.lDeviationInfo.Controls.Add(this.riskCategory);
+            this.lDeviationInfo.Controls.Add(this.deviationTimeCreation);
+            this.lDeviationInfo.Controls.Add(this.deviationSignature);
+            this.lDeviationInfo.Controls.Add(this.deviationDescription);
+            this.lDeviationInfo.Controls.Add(this.ldescription);
+            this.lDeviationInfo.Controls.Add(this.deviationType);
+            this.lDeviationInfo.Controls.Add(this.ldeviationType);
+            this.lDeviationInfo.Controls.Add(this.lsignature);
+            this.lDeviationInfo.Controls.Add(this.position);
+            this.lDeviationInfo.Controls.Add(this.lposition);
+            this.lDeviationInfo.Controls.Add(this.ldateCreation);
+            this.lDeviationInfo.Controls.Add(this.deviationDateCreation);
+            this.lDeviationInfo.Controls.Add(this.requestedBy);
+            this.lDeviationInfo.Controls.Add(this.lrequestedBy);
+            this.lDeviationInfo.Controls.Add(this.lrisckCategroy);
+            this.lDeviationInfo.Controls.Add(this.deviationNO);
+            this.lDeviationInfo.Controls.Add(this.ldeviationNo);
+            this.lDeviationInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDeviationInfo.Location = new System.Drawing.Point(15, 3);
+            this.lDeviationInfo.Name = "lDeviationInfo";
+            this.lDeviationInfo.Size = new System.Drawing.Size(894, 202);
+            this.lDeviationInfo.TabIndex = 0;
+            this.lDeviationInfo.TabStop = false;
+            this.lDeviationInfo.Text = "Deviation Infos";
             // 
-            // label47
+            // loptional
             // 
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.Location = new System.Drawing.Point(9, 140);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(84, 13);
-            this.label47.TabIndex = 18;
-            this.label47.Text = "Other( Optional) ";
+            this.loptional.AutoSize = true;
+            this.loptional.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loptional.Location = new System.Drawing.Point(9, 140);
+            this.loptional.Name = "loptional";
+            this.loptional.Size = new System.Drawing.Size(84, 13);
+            this.loptional.TabIndex = 18;
+            this.loptional.Text = "Other( Optional) ";
             // 
             // riskCategory
             // 
@@ -1493,15 +1505,15 @@
             this.deviationDescription.Size = new System.Drawing.Size(581, 68);
             this.deviationDescription.TabIndex = 15;
             // 
-            // label8
+            // ldescription
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(5, 125);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 15);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Description      : ";
+            this.ldescription.AutoSize = true;
+            this.ldescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ldescription.Location = new System.Drawing.Point(5, 125);
+            this.ldescription.Name = "ldescription";
+            this.ldescription.Size = new System.Drawing.Size(112, 15);
+            this.ldescription.TabIndex = 14;
+            this.ldescription.Text = "Description      : ";
             // 
             // deviationType
             // 
@@ -1516,25 +1528,25 @@
             this.deviationType.TabIndex = 13;
             this.deviationType.SelectedValueChanged += new System.EventHandler(this.deviationType_SelectedValueChanged);
             // 
-            // label7
+            // ldeviationType
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(454, 88);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(113, 15);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Deviation Type : ";
+            this.ldeviationType.AutoSize = true;
+            this.ldeviationType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ldeviationType.Location = new System.Drawing.Point(454, 88);
+            this.ldeviationType.Name = "ldeviationType";
+            this.ldeviationType.Size = new System.Drawing.Size(113, 15);
+            this.ldeviationType.TabIndex = 12;
+            this.ldeviationType.Text = "Deviation Type : ";
             // 
-            // label6
+            // lsignature
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(705, 124);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 15);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Signature       : ";
+            this.lsignature.AutoSize = true;
+            this.lsignature.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsignature.Location = new System.Drawing.Point(705, 124);
+            this.lsignature.Name = "lsignature";
+            this.lsignature.Size = new System.Drawing.Size(105, 15);
+            this.lsignature.TabIndex = 10;
+            this.lsignature.Text = "Signature       : ";
             // 
             // position
             // 
@@ -1545,25 +1557,25 @@
             this.position.TabIndex = 9;
             this.position.TextChanged += new System.EventHandler(this.position_GotFocus);
             // 
-            // label5
+            // lposition
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 88);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 15);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Position           : ";
+            this.lposition.AutoSize = true;
+            this.lposition.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lposition.Location = new System.Drawing.Point(5, 88);
+            this.lposition.Name = "lposition";
+            this.lposition.Size = new System.Drawing.Size(111, 15);
+            this.lposition.TabIndex = 8;
+            this.lposition.Text = "Position           : ";
             // 
-            // dateCreation
+            // ldateCreation
             // 
-            this.dateCreation.AutoSize = true;
-            this.dateCreation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateCreation.Location = new System.Drawing.Point(454, 59);
-            this.dateCreation.Name = "dateCreation";
-            this.dateCreation.Size = new System.Drawing.Size(105, 15);
-            this.dateCreation.TabIndex = 7;
-            this.dateCreation.Text = "Date               : ";
+            this.ldateCreation.AutoSize = true;
+            this.ldateCreation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ldateCreation.Location = new System.Drawing.Point(454, 59);
+            this.ldateCreation.Name = "ldateCreation";
+            this.ldateCreation.Size = new System.Drawing.Size(105, 15);
+            this.ldateCreation.TabIndex = 7;
+            this.ldateCreation.Text = "Date               : ";
             // 
             // deviationDateCreation
             // 
@@ -1581,25 +1593,25 @@
             this.requestedBy.TabIndex = 5;
             this.requestedBy.TextChanged += new System.EventHandler(this.requestedBy_GotFocus);
             // 
-            // label4
+            // lrequestedBy
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(5, 59);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 15);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Requested By  : ";
+            this.lrequestedBy.AutoSize = true;
+            this.lrequestedBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lrequestedBy.Location = new System.Drawing.Point(5, 59);
+            this.lrequestedBy.Name = "lrequestedBy";
+            this.lrequestedBy.Size = new System.Drawing.Size(111, 15);
+            this.lrequestedBy.TabIndex = 4;
+            this.lrequestedBy.Text = "Requested By  : ";
             // 
-            // label3
+            // lrisckCategroy
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(454, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Risk Category  : ";
+            this.lrisckCategroy.AutoSize = true;
+            this.lrisckCategroy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lrisckCategroy.Location = new System.Drawing.Point(454, 28);
+            this.lrisckCategroy.Name = "lrisckCategroy";
+            this.lrisckCategroy.Size = new System.Drawing.Size(111, 15);
+            this.lrisckCategroy.TabIndex = 2;
+            this.lrisckCategroy.Text = "Risk Category  : ";
             // 
             // deviationNO
             // 
@@ -1610,30 +1622,19 @@
             this.deviationNO.Size = new System.Drawing.Size(315, 25);
             this.deviationNO.TabIndex = 1;
             // 
-            // label2
+            // ldeviationNo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "DEVIATION NO : ";
+            this.ldeviationNo.AutoSize = true;
+            this.ldeviationNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ldeviationNo.Location = new System.Drawing.Point(5, 28);
+            this.ldeviationNo.Name = "ldeviationNo";
+            this.ldeviationNo.Size = new System.Drawing.Size(114, 15);
+            this.ldeviationNo.TabIndex = 0;
+            this.ldeviationNo.Text = "DEVIATION NO : ";
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // button4
-            // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(481, 1762);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(110, 39);
-            this.button4.TabIndex = 8;
-            this.button4.Text = " Remind Group";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // SaveDeviation
             // 
@@ -1653,7 +1654,7 @@
             this.deviationHeadPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.groupBox8.ResumeLayout(false);
+            this.lothers.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
@@ -1670,20 +1671,20 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
+            this.lapprovement.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.approvementGroupDataGrid)).EndInit();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
+            this.lperiodDevation.ResumeLayout(false);
+            this.lperiodDevation.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uploadFileDataGridView)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.lwhyBox.ResumeLayout(false);
+            this.lwhyBox.PerformLayout();
+            this.ldetailDescOfDev.ResumeLayout(false);
+            this.ldetailRequestCondition.ResumeLayout(false);
+            this.ldetailRequestCondition.PerformLayout();
+            this.lstandardCondition.ResumeLayout(false);
+            this.lstandardCondition.PerformLayout();
+            this.lDeviationInfo.ResumeLayout(false);
+            this.lDeviationInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -1695,51 +1696,51 @@
         private System.Windows.Forms.PictureBox logoBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox lDeviationInfo;
+        private System.Windows.Forms.Label lrisckCategroy;
         private System.Windows.Forms.TextBox deviationNO;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label ldeviationNo;
         private System.Windows.Forms.DateTimePicker deviationDateCreation;
         private System.Windows.Forms.TextBox requestedBy;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lrequestedBy;
+        private System.Windows.Forms.Label lsignature;
         private System.Windows.Forms.TextBox position;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label dateCreation;
+        private System.Windows.Forms.Label lposition;
+        private System.Windows.Forms.Label ldateCreation;
         private System.Windows.Forms.TextBox deviationDescription;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label ldescription;
         private System.Windows.Forms.ComboBox deviationType;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label ldeviationType;
+        private System.Windows.Forms.GroupBox ldetailDescOfDev;
+        private System.Windows.Forms.GroupBox lstandardCondition;
+        private System.Windows.Forms.GroupBox ldetailRequestCondition;
         private System.Windows.Forms.TextBox detailRequestedDeviation;
         private System.Windows.Forms.TextBox standardCondition;
-        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox lwhyBox;
         private System.Windows.Forms.TextBox reason1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lwhy1;
         private System.Windows.Forms.TextBox reason5;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lwhy5;
         private System.Windows.Forms.TextBox reason4;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lwhy4;
         private System.Windows.Forms.TextBox reason3;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lwhy3;
         private System.Windows.Forms.TextBox reason2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label lwhy2;
+        private System.Windows.Forms.GroupBox lperiodDevation;
         private System.Windows.Forms.DateTimePicker pFirstDate;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lperiodBegin;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DateTimePicker pSecondDate;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label lperiodEnd;
+        private System.Windows.Forms.GroupBox lapprovement;
         private System.Windows.Forms.DataGridView approvementGroupDataGrid;
         private System.Windows.Forms.Button DeviationSave;
         private System.Windows.Forms.Button DeviationPrint;
         private System.Windows.Forms.Button closeDeviation;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox deviationSignature;
-        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox lothers;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label17;
@@ -1822,15 +1823,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn comments;
         private System.Windows.Forms.DataGridViewButtonColumn valid;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label lmachine;
+        private System.Windows.Forms.Label lproduct;
         private System.Windows.Forms.TextBox product;
         private System.Windows.Forms.TextBox anlage;
         private System.Windows.Forms.DateTimePicker deviationTimeCreation;
         private System.Windows.Forms.DateTimePicker pFirstTime;
         private System.Windows.Forms.DateTimePicker pSecondTime;
         private System.Windows.Forms.TextBox riskCategory;
-        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label loptional;
         private System.Windows.Forms.Button button4;
     }
 }
