@@ -28,7 +28,14 @@ namespace DeviationManager.GUI
             emailSender = new EmailSender();
             this.actionType = actionType;
 
+            //set  language
+            if (LanguageName.languageName != "DeviationManager.Lang.language_en")
+            {
+                this.setLanguage();
+            }
+
             initialize();
+
             if (actionType == "newDeviation")
             {
                 addApproval();
@@ -40,6 +47,89 @@ namespace DeviationManager.GUI
 
         /**************************************************************************************/
 
+        //set language
+        private void setLanguage()
+        {
+            LanguageModel languageModel = new LanguageModel();
+
+
+            this.lDeviationInfo.Text = languageModel.getString("lDeviationInfo");
+            this.ldeviationNo.Text = languageModel.getString("ldeviationNo");
+            this.lrequestedBy.Text = languageModel.getString("lrequestedBy");
+            this.lrisckCategroy.Text = languageModel.getString("lriskCategory");
+            this.ldateCreation.Text = languageModel.getString("ldateCreation");
+            this.lposition.Text = languageModel.getString("lposition");
+            this.ldeviationType.Text = languageModel.getString("ldeviationType");
+            this.ldescription.Text = languageModel.getString("ldescription");
+            this.lothers.Text = languageModel.getString("loptional");
+            this.lsignature.Text = languageModel.getString("lsignature");
+
+            this.ldetailDescOfDev.Text = languageModel.getString("ldetailDescOfDev"); 
+            this.lstandardCondition.Text = languageModel.getString("lstandardCondition");
+            this.ldetailRequestCondition.Text = languageModel.getString("ldetailRequestCondition");
+            this.lmachine.Text = languageModel.getString("lmachine");
+            this.lproduct.Text = languageModel.getString("lproduct");
+
+            this.lwhyBox.Text = languageModel.getString("lwhyBox");
+            this.lwhy1.Text = languageModel.getString("lwhy");
+            this.lwhy2.Text = languageModel.getString("lwhy");
+            this.lwhy3.Text = languageModel.getString("lwhy");
+            this.lwhy4.Text = languageModel.getString("lwhy");
+            this.lwhy5.Text = languageModel.getString("lwhy");
+
+            this.lperiodDevation.Text = languageModel.getString("lperiodDevation");
+            this.lperiodBegin.Text = languageModel.getString("lperiodBegin");
+            this.lperiodEnd.Text = languageModel.getString("lperiodEnd");
+            this.addDocument.Text = languageModel.getString("ladd");
+            this.downloadDocument.Text = languageModel.getString("ldowload");
+            this.deleteDocument.Text = languageModel.getString("ldelete");
+            //show digramms
+            this.button1.Text = languageModel.getString("lshow");
+            this.lAlternativeIdMethod.Text = languageModel.getString("lalternativeIdMethod");
+
+            this.lapprovement.Text = languageModel.getString("lapprovement");
+            this.lothers.Text = languageModel.getString("lothers");
+
+            this.DeviationSave.Text = languageModel.getString("lsave");
+            this.closeDeviation.Text = languageModel.getString("lclose");
+            this.DeviationPrint.Text = languageModel.getString("lprint");
+            this.button4.Text = languageModel.getString("lremindGroup");
+
+            this.lOtherBox1.Text = languageModel.getString("lothersBox1");
+            this.lOtherBox2.Text = languageModel.getString("lothersBox2");
+            this.lOtherBox3.Text = languageModel.getString("lothersBox3");
+            this.lOtherBox4.Text = languageModel.getString("lothersBox4");
+
+            this.ldateb1.Text = languageModel.getString("ldate");
+            this.lRequestedApprovedb1.Text = languageModel.getString("lrequestApproved");
+            this.lRequestRejectedb1.Text = languageModel.getString("lrequestedRejected");
+            this.lNameb1.Text = languageModel.getString("lname");
+            this.lSigantureb1.Text = languageModel.getString("lsignature");
+            this.lPositionb1.Text = languageModel.getString("lposition");
+
+            this.lDateb2.Text = languageModel.getString("ldate");
+            this.lRequestApprovedb2.Text = languageModel.getString("lrequestApproved");
+            this.lRequestRejectedb2.Text = languageModel.getString("lrequestedRejected");
+            this.lNameb2.Text = languageModel.getString("lname");
+            this.lSignatureb2.Text = languageModel.getString("lsignature");
+            this.lPositionb2.Text = languageModel.getString("lposition");
+
+            this.lDateb3.Text = languageModel.getString("ldate");
+            this.lRequestApprovedb3.Text = languageModel.getString("lrequestApproved");
+            this.lRequestRejectedb3.Text = languageModel.getString("lrequestedRejected");
+            this.lNameb3.Text = languageModel.getString("lname");
+            this.lSignatureb3.Text = languageModel.getString("lsignature");
+            this.lPositionb3.Text = languageModel.getString("lposition");
+
+            this.lDateb4.Text = languageModel.getString("ldate");
+            this.lRequestApprovedb4.Text = languageModel.getString("lrequestApproved");
+            this.lRequestRejected4.Text = languageModel.getString("lrequestedRejected");
+            this.lNameb4.Text = languageModel.getString("lname");
+            this.lSignatureb4.Text = languageModel.getString("lsignature");
+            this.lPositionb4.Text = languageModel.getString("lposition");
+
+
+        }
         /************* add Approval to Approvement Group **********/
         public void addApproval()
         {

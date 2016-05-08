@@ -41,65 +41,65 @@
             this.positionCustomer = new System.Windows.Forms.TextBox();
             this.signatureCustomer = new System.Windows.Forms.TextBox();
             this.nameCustomer = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
+            this.lPositionb4 = new System.Windows.Forms.Label();
+            this.lSignatureb4 = new System.Windows.Forms.Label();
+            this.lNameb4 = new System.Windows.Forms.Label();
             this.dateCustomer = new System.Windows.Forms.DateTimePicker();
             this.requestRejectedCustomer = new System.Windows.Forms.CheckBox();
             this.requestApprovedCustomer = new System.Windows.Forms.CheckBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
+            this.lDateb4 = new System.Windows.Forms.Label();
+            this.lRequestRejected4 = new System.Windows.Forms.Label();
+            this.lRequestApprovedb4 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.label44 = new System.Windows.Forms.Label();
+            this.lOtherBox4 = new System.Windows.Forms.Label();
             this.yesNoCustomer = new System.Windows.Forms.ComboBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.positionManufactEng = new System.Windows.Forms.TextBox();
             this.signatureManufactEng = new System.Windows.Forms.TextBox();
             this.nameManufactEng = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
+            this.lPositionb3 = new System.Windows.Forms.Label();
+            this.lSignatureb3 = new System.Windows.Forms.Label();
+            this.lNameb3 = new System.Windows.Forms.Label();
             this.dateManufactEng = new System.Windows.Forms.DateTimePicker();
             this.requestRejectedManufactEng = new System.Windows.Forms.CheckBox();
             this.requestedApprovedManufactEng = new System.Windows.Forms.CheckBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
+            this.lDateb3 = new System.Windows.Forms.Label();
+            this.lRequestRejectedb3 = new System.Windows.Forms.Label();
+            this.lRequestApprovedb3 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label37 = new System.Windows.Forms.Label();
+            this.lOtherBox3 = new System.Windows.Forms.Label();
             this.yesNoManufactEng = new System.Windows.Forms.ComboBox();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.lRequestApprovedb2 = new System.Windows.Forms.Panel();
             this.positionProductEng = new System.Windows.Forms.TextBox();
             this.signatureProductEng = new System.Windows.Forms.TextBox();
             this.nameProductEng = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lPositionb2 = new System.Windows.Forms.Label();
+            this.lSignatureb2 = new System.Windows.Forms.Label();
+            this.lNameb2 = new System.Windows.Forms.Label();
             this.dateProductEng = new System.Windows.Forms.DateTimePicker();
             this.requestRejectedProductEng = new System.Windows.Forms.CheckBox();
             this.requestApprovedProductEng = new System.Windows.Forms.CheckBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lDateb2 = new System.Windows.Forms.Label();
+            this.lRequestRejectedb2 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label30 = new System.Windows.Forms.Label();
+            this.lOtherBox2 = new System.Windows.Forms.Label();
             this.yesNoProductEng = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.positionRegional = new System.Windows.Forms.TextBox();
             this.signatureRegional = new System.Windows.Forms.TextBox();
             this.nameReginal = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.lPositionb1 = new System.Windows.Forms.Label();
+            this.lSigantureb1 = new System.Windows.Forms.Label();
+            this.lNameb1 = new System.Windows.Forms.Label();
             this.dateRegional = new System.Windows.Forms.DateTimePicker();
             this.requestRejectedRegional = new System.Windows.Forms.CheckBox();
             this.requestApprovedRegional = new System.Windows.Forms.CheckBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.ldateb1 = new System.Windows.Forms.Label();
+            this.lRequestRejectedb1 = new System.Windows.Forms.Label();
+            this.lRequestedApprovedb1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lOtherBox1 = new System.Windows.Forms.Label();
             this.yesNoReginal = new System.Windows.Forms.ComboBox();
             this.lapprovement = new System.Windows.Forms.GroupBox();
             this.approvementGroupDataGrid = new System.Windows.Forms.DataGridView();
@@ -125,7 +125,7 @@
             this.downloadDocument = new System.Windows.Forms.Button();
             this.deleteDocument = new System.Windows.Forms.Button();
             this.addDocument = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lAlternativeIdMethod = new System.Windows.Forms.Label();
             this.pSecondDate = new System.Windows.Forms.DateTimePicker();
             this.lperiodEnd = new System.Windows.Forms.Label();
             this.pFirstDate = new System.Windows.Forms.DateTimePicker();
@@ -179,7 +179,7 @@
             this.panel9.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.lRequestApprovedb2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -272,7 +272,7 @@
             // 
             this.lothers.Controls.Add(this.panel8);
             this.lothers.Controls.Add(this.panel6);
-            this.lothers.Controls.Add(this.panel4);
+            this.lothers.Controls.Add(this.lRequestApprovedb2);
             this.lothers.Controls.Add(this.panel3);
             this.lothers.Location = new System.Drawing.Point(15, 1113);
             this.lothers.Name = "lothers";
@@ -287,15 +287,15 @@
             this.panel8.Controls.Add(this.positionCustomer);
             this.panel8.Controls.Add(this.signatureCustomer);
             this.panel8.Controls.Add(this.nameCustomer);
-            this.panel8.Controls.Add(this.label38);
-            this.panel8.Controls.Add(this.label39);
-            this.panel8.Controls.Add(this.label40);
+            this.panel8.Controls.Add(this.lPositionb4);
+            this.panel8.Controls.Add(this.lSignatureb4);
+            this.panel8.Controls.Add(this.lNameb4);
             this.panel8.Controls.Add(this.dateCustomer);
             this.panel8.Controls.Add(this.requestRejectedCustomer);
             this.panel8.Controls.Add(this.requestApprovedCustomer);
-            this.panel8.Controls.Add(this.label41);
-            this.panel8.Controls.Add(this.label42);
-            this.panel8.Controls.Add(this.label43);
+            this.panel8.Controls.Add(this.lDateb4);
+            this.panel8.Controls.Add(this.lRequestRejected4);
+            this.panel8.Controls.Add(this.lRequestApprovedb4);
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Location = new System.Drawing.Point(13, 483);
             this.panel8.Name = "panel8";
@@ -329,35 +329,35 @@
             this.nameCustomer.Size = new System.Drawing.Size(352, 25);
             this.nameCustomer.TabIndex = 18;
             // 
-            // label38
+            // lPositionb4
             // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(409, 111);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(87, 15);
-            this.label38.TabIndex = 17;
-            this.label38.Text = "Position     : ";
+            this.lPositionb4.AutoSize = true;
+            this.lPositionb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPositionb4.Location = new System.Drawing.Point(409, 111);
+            this.lPositionb4.Name = "lPositionb4";
+            this.lPositionb4.Size = new System.Drawing.Size(87, 15);
+            this.lPositionb4.TabIndex = 17;
+            this.lPositionb4.Text = "Position     : ";
             // 
-            // label39
+            // lSignatureb4
             // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(409, 77);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(89, 15);
-            this.label39.TabIndex = 16;
-            this.label39.Text = "Siganture   : ";
+            this.lSignatureb4.AutoSize = true;
+            this.lSignatureb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lSignatureb4.Location = new System.Drawing.Point(409, 77);
+            this.lSignatureb4.Name = "lSignatureb4";
+            this.lSignatureb4.Size = new System.Drawing.Size(89, 15);
+            this.lSignatureb4.TabIndex = 16;
+            this.lSignatureb4.Text = "Siganture   : ";
             // 
-            // label40
+            // lNameb4
             // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(409, 43);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(89, 15);
-            this.label40.TabIndex = 15;
-            this.label40.Text = "Name         : ";
+            this.lNameb4.AutoSize = true;
+            this.lNameb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNameb4.Location = new System.Drawing.Point(409, 43);
+            this.lNameb4.Name = "lNameb4";
+            this.lNameb4.Size = new System.Drawing.Size(89, 15);
+            this.lNameb4.TabIndex = 15;
+            this.lNameb4.Text = "Name         : ";
             // 
             // dateCustomer
             // 
@@ -384,56 +384,56 @@
             this.requestApprovedCustomer.TabIndex = 12;
             this.requestApprovedCustomer.UseVisualStyleBackColor = true;
             // 
-            // label41
+            // lDateb4
             // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(5, 43);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(137, 15);
-            this.label41.TabIndex = 11;
-            this.label41.Text = "Date                       : ";
+            this.lDateb4.AutoSize = true;
+            this.lDateb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDateb4.Location = new System.Drawing.Point(5, 43);
+            this.lDateb4.Name = "lDateb4";
+            this.lDateb4.Size = new System.Drawing.Size(137, 15);
+            this.lDateb4.TabIndex = 11;
+            this.lDateb4.Text = "Date                       : ";
             // 
-            // label42
+            // lRequestRejected4
             // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(5, 111);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(140, 15);
-            this.label42.TabIndex = 10;
-            this.label42.Text = "Request rejected    : ";
+            this.lRequestRejected4.AutoSize = true;
+            this.lRequestRejected4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRequestRejected4.Location = new System.Drawing.Point(5, 111);
+            this.lRequestRejected4.Name = "lRequestRejected4";
+            this.lRequestRejected4.Size = new System.Drawing.Size(140, 15);
+            this.lRequestRejected4.TabIndex = 10;
+            this.lRequestRejected4.Text = "Request rejected    : ";
             // 
-            // label43
+            // lRequestApprovedb4
             // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(5, 77);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(139, 15);
-            this.label43.TabIndex = 9;
-            this.label43.Text = "Request approved  : ";
+            this.lRequestApprovedb4.AutoSize = true;
+            this.lRequestApprovedb4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRequestApprovedb4.Location = new System.Drawing.Point(5, 77);
+            this.lRequestApprovedb4.Name = "lRequestApprovedb4";
+            this.lRequestApprovedb4.Size = new System.Drawing.Size(139, 15);
+            this.lRequestApprovedb4.TabIndex = 9;
+            this.lRequestApprovedb4.Text = "Request approved  : ";
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel9.Controls.Add(this.label44);
+            this.panel9.Controls.Add(this.lOtherBox4);
             this.panel9.Controls.Add(this.yesNoCustomer);
             this.panel9.Location = new System.Drawing.Point(-3, -2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(864, 32);
             this.panel9.TabIndex = 0;
             // 
-            // label44
+            // lOtherBox4
             // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label44.Location = new System.Drawing.Point(3, 11);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(442, 13);
-            this.label44.TabIndex = 1;
-            this.label44.Text = "CUSTOMER APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT";
+            this.lOtherBox4.AutoSize = true;
+            this.lOtherBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lOtherBox4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lOtherBox4.Location = new System.Drawing.Point(3, 11);
+            this.lOtherBox4.Name = "lOtherBox4";
+            this.lOtherBox4.Size = new System.Drawing.Size(442, 13);
+            this.lOtherBox4.TabIndex = 1;
+            this.lOtherBox4.Text = "CUSTOMER APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT";
             // 
             // yesNoCustomer
             // 
@@ -452,15 +452,15 @@
             this.panel6.Controls.Add(this.positionManufactEng);
             this.panel6.Controls.Add(this.signatureManufactEng);
             this.panel6.Controls.Add(this.nameManufactEng);
-            this.panel6.Controls.Add(this.label31);
-            this.panel6.Controls.Add(this.label32);
-            this.panel6.Controls.Add(this.label33);
+            this.panel6.Controls.Add(this.lPositionb3);
+            this.panel6.Controls.Add(this.lSignatureb3);
+            this.panel6.Controls.Add(this.lNameb3);
             this.panel6.Controls.Add(this.dateManufactEng);
             this.panel6.Controls.Add(this.requestRejectedManufactEng);
             this.panel6.Controls.Add(this.requestedApprovedManufactEng);
-            this.panel6.Controls.Add(this.label34);
-            this.panel6.Controls.Add(this.label35);
-            this.panel6.Controls.Add(this.label36);
+            this.panel6.Controls.Add(this.lDateb3);
+            this.panel6.Controls.Add(this.lRequestRejectedb3);
+            this.panel6.Controls.Add(this.lRequestApprovedb3);
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Location = new System.Drawing.Point(15, 330);
             this.panel6.Name = "panel6";
@@ -494,35 +494,35 @@
             this.nameManufactEng.Size = new System.Drawing.Size(352, 25);
             this.nameManufactEng.TabIndex = 18;
             // 
-            // label31
+            // lPositionb3
             // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(409, 111);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(87, 15);
-            this.label31.TabIndex = 17;
-            this.label31.Text = "Position     : ";
+            this.lPositionb3.AutoSize = true;
+            this.lPositionb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPositionb3.Location = new System.Drawing.Point(409, 111);
+            this.lPositionb3.Name = "lPositionb3";
+            this.lPositionb3.Size = new System.Drawing.Size(87, 15);
+            this.lPositionb3.TabIndex = 17;
+            this.lPositionb3.Text = "Position     : ";
             // 
-            // label32
+            // lSignatureb3
             // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(409, 77);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(89, 15);
-            this.label32.TabIndex = 16;
-            this.label32.Text = "Siganture   : ";
+            this.lSignatureb3.AutoSize = true;
+            this.lSignatureb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lSignatureb3.Location = new System.Drawing.Point(409, 77);
+            this.lSignatureb3.Name = "lSignatureb3";
+            this.lSignatureb3.Size = new System.Drawing.Size(89, 15);
+            this.lSignatureb3.TabIndex = 16;
+            this.lSignatureb3.Text = "Siganture   : ";
             // 
-            // label33
+            // lNameb3
             // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(409, 43);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(89, 15);
-            this.label33.TabIndex = 15;
-            this.label33.Text = "Name         : ";
+            this.lNameb3.AutoSize = true;
+            this.lNameb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNameb3.Location = new System.Drawing.Point(409, 43);
+            this.lNameb3.Name = "lNameb3";
+            this.lNameb3.Size = new System.Drawing.Size(89, 15);
+            this.lNameb3.TabIndex = 15;
+            this.lNameb3.Text = "Name         : ";
             // 
             // dateManufactEng
             // 
@@ -549,56 +549,56 @@
             this.requestedApprovedManufactEng.TabIndex = 12;
             this.requestedApprovedManufactEng.UseVisualStyleBackColor = true;
             // 
-            // label34
+            // lDateb3
             // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(5, 43);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(137, 15);
-            this.label34.TabIndex = 11;
-            this.label34.Text = "Date                       : ";
+            this.lDateb3.AutoSize = true;
+            this.lDateb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDateb3.Location = new System.Drawing.Point(5, 43);
+            this.lDateb3.Name = "lDateb3";
+            this.lDateb3.Size = new System.Drawing.Size(137, 15);
+            this.lDateb3.TabIndex = 11;
+            this.lDateb3.Text = "Date                       : ";
             // 
-            // label35
+            // lRequestRejectedb3
             // 
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(5, 111);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(140, 15);
-            this.label35.TabIndex = 10;
-            this.label35.Text = "Request rejected    : ";
+            this.lRequestRejectedb3.AutoSize = true;
+            this.lRequestRejectedb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRequestRejectedb3.Location = new System.Drawing.Point(5, 111);
+            this.lRequestRejectedb3.Name = "lRequestRejectedb3";
+            this.lRequestRejectedb3.Size = new System.Drawing.Size(140, 15);
+            this.lRequestRejectedb3.TabIndex = 10;
+            this.lRequestRejectedb3.Text = "Request rejected    : ";
             // 
-            // label36
+            // lRequestApprovedb3
             // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(5, 77);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(139, 15);
-            this.label36.TabIndex = 9;
-            this.label36.Text = "Request approved  : ";
+            this.lRequestApprovedb3.AutoSize = true;
+            this.lRequestApprovedb3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRequestApprovedb3.Location = new System.Drawing.Point(5, 77);
+            this.lRequestApprovedb3.Name = "lRequestApprovedb3";
+            this.lRequestApprovedb3.Size = new System.Drawing.Size(139, 15);
+            this.lRequestApprovedb3.TabIndex = 9;
+            this.lRequestApprovedb3.Text = "Request approved  : ";
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel7.Controls.Add(this.label37);
+            this.panel7.Controls.Add(this.lOtherBox3);
             this.panel7.Controls.Add(this.yesNoManufactEng);
             this.panel7.Location = new System.Drawing.Point(-3, -2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(864, 32);
             this.panel7.TabIndex = 0;
             // 
-            // label37
+            // lOtherBox3
             // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label37.Location = new System.Drawing.Point(3, 11);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(574, 13);
-            this.label37.TabIndex = 1;
-            this.label37.Text = "MANUFACTURING ENGINEERING APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT.";
+            this.lOtherBox3.AutoSize = true;
+            this.lOtherBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lOtherBox3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lOtherBox3.Location = new System.Drawing.Point(3, 11);
+            this.lOtherBox3.Name = "lOtherBox3";
+            this.lOtherBox3.Size = new System.Drawing.Size(574, 13);
+            this.lOtherBox3.TabIndex = 1;
+            this.lOtherBox3.Text = "MANUFACTURING ENGINEERING APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT.";
             // 
             // yesNoManufactEng
             // 
@@ -611,26 +611,26 @@
             this.yesNoManufactEng.Size = new System.Drawing.Size(60, 21);
             this.yesNoManufactEng.TabIndex = 0;
             // 
-            // panel4
+            // lRequestApprovedb2
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel4.Controls.Add(this.positionProductEng);
-            this.panel4.Controls.Add(this.signatureProductEng);
-            this.panel4.Controls.Add(this.nameProductEng);
-            this.panel4.Controls.Add(this.label24);
-            this.panel4.Controls.Add(this.label25);
-            this.panel4.Controls.Add(this.label26);
-            this.panel4.Controls.Add(this.dateProductEng);
-            this.panel4.Controls.Add(this.requestRejectedProductEng);
-            this.panel4.Controls.Add(this.requestApprovedProductEng);
-            this.panel4.Controls.Add(this.label27);
-            this.panel4.Controls.Add(this.label28);
-            this.panel4.Controls.Add(this.label29);
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Location = new System.Drawing.Point(16, 177);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(863, 147);
-            this.panel4.TabIndex = 2;
+            this.lRequestApprovedb2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lRequestApprovedb2.Controls.Add(this.positionProductEng);
+            this.lRequestApprovedb2.Controls.Add(this.signatureProductEng);
+            this.lRequestApprovedb2.Controls.Add(this.nameProductEng);
+            this.lRequestApprovedb2.Controls.Add(this.lPositionb2);
+            this.lRequestApprovedb2.Controls.Add(this.lSignatureb2);
+            this.lRequestApprovedb2.Controls.Add(this.lNameb2);
+            this.lRequestApprovedb2.Controls.Add(this.dateProductEng);
+            this.lRequestApprovedb2.Controls.Add(this.requestRejectedProductEng);
+            this.lRequestApprovedb2.Controls.Add(this.requestApprovedProductEng);
+            this.lRequestApprovedb2.Controls.Add(this.lDateb2);
+            this.lRequestApprovedb2.Controls.Add(this.lRequestRejectedb2);
+            this.lRequestApprovedb2.Controls.Add(this.label29);
+            this.lRequestApprovedb2.Controls.Add(this.panel5);
+            this.lRequestApprovedb2.Location = new System.Drawing.Point(16, 177);
+            this.lRequestApprovedb2.Name = "lRequestApprovedb2";
+            this.lRequestApprovedb2.Size = new System.Drawing.Size(863, 147);
+            this.lRequestApprovedb2.TabIndex = 2;
             // 
             // positionProductEng
             // 
@@ -659,35 +659,35 @@
             this.nameProductEng.Size = new System.Drawing.Size(352, 25);
             this.nameProductEng.TabIndex = 18;
             // 
-            // label24
+            // lPositionb2
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(409, 111);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(87, 15);
-            this.label24.TabIndex = 17;
-            this.label24.Text = "Position     : ";
+            this.lPositionb2.AutoSize = true;
+            this.lPositionb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPositionb2.Location = new System.Drawing.Point(409, 111);
+            this.lPositionb2.Name = "lPositionb2";
+            this.lPositionb2.Size = new System.Drawing.Size(87, 15);
+            this.lPositionb2.TabIndex = 17;
+            this.lPositionb2.Text = "Position     : ";
             // 
-            // label25
+            // lSignatureb2
             // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(409, 77);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(89, 15);
-            this.label25.TabIndex = 16;
-            this.label25.Text = "Siganture   : ";
+            this.lSignatureb2.AutoSize = true;
+            this.lSignatureb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lSignatureb2.Location = new System.Drawing.Point(409, 77);
+            this.lSignatureb2.Name = "lSignatureb2";
+            this.lSignatureb2.Size = new System.Drawing.Size(89, 15);
+            this.lSignatureb2.TabIndex = 16;
+            this.lSignatureb2.Text = "Siganture   : ";
             // 
-            // label26
+            // lNameb2
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(409, 43);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(89, 15);
-            this.label26.TabIndex = 15;
-            this.label26.Text = "Name         : ";
+            this.lNameb2.AutoSize = true;
+            this.lNameb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNameb2.Location = new System.Drawing.Point(409, 43);
+            this.lNameb2.Name = "lNameb2";
+            this.lNameb2.Size = new System.Drawing.Size(89, 15);
+            this.lNameb2.TabIndex = 15;
+            this.lNameb2.Text = "Name         : ";
             // 
             // dateProductEng
             // 
@@ -714,25 +714,25 @@
             this.requestApprovedProductEng.TabIndex = 12;
             this.requestApprovedProductEng.UseVisualStyleBackColor = true;
             // 
-            // label27
+            // lDateb2
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(5, 43);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(137, 15);
-            this.label27.TabIndex = 11;
-            this.label27.Text = "Date                       : ";
+            this.lDateb2.AutoSize = true;
+            this.lDateb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lDateb2.Location = new System.Drawing.Point(5, 43);
+            this.lDateb2.Name = "lDateb2";
+            this.lDateb2.Size = new System.Drawing.Size(137, 15);
+            this.lDateb2.TabIndex = 11;
+            this.lDateb2.Text = "Date                       : ";
             // 
-            // label28
+            // lRequestRejectedb2
             // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(5, 111);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(140, 15);
-            this.label28.TabIndex = 10;
-            this.label28.Text = "Request rejected    : ";
+            this.lRequestRejectedb2.AutoSize = true;
+            this.lRequestRejectedb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRequestRejectedb2.Location = new System.Drawing.Point(5, 111);
+            this.lRequestRejectedb2.Name = "lRequestRejectedb2";
+            this.lRequestRejectedb2.Size = new System.Drawing.Size(140, 15);
+            this.lRequestRejectedb2.TabIndex = 10;
+            this.lRequestRejectedb2.Text = "Request rejected    : ";
             // 
             // label29
             // 
@@ -747,23 +747,23 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel5.Controls.Add(this.label30);
+            this.panel5.Controls.Add(this.lOtherBox2);
             this.panel5.Controls.Add(this.yesNoProductEng);
             this.panel5.Location = new System.Drawing.Point(-3, -2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(864, 32);
             this.panel5.TabIndex = 0;
             // 
-            // label30
+            // lOtherBox2
             // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label30.Location = new System.Drawing.Point(3, 11);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(523, 13);
-            this.label30.TabIndex = 1;
-            this.label30.Text = "PRODUCT ENGINEERING APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT";
+            this.lOtherBox2.AutoSize = true;
+            this.lOtherBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lOtherBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lOtherBox2.Location = new System.Drawing.Point(3, 11);
+            this.lOtherBox2.Name = "lOtherBox2";
+            this.lOtherBox2.Size = new System.Drawing.Size(523, 13);
+            this.lOtherBox2.TabIndex = 1;
+            this.lOtherBox2.Text = "PRODUCT ENGINEERING APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT";
             // 
             // yesNoProductEng
             // 
@@ -782,15 +782,15 @@
             this.panel3.Controls.Add(this.positionRegional);
             this.panel3.Controls.Add(this.signatureRegional);
             this.panel3.Controls.Add(this.nameReginal);
-            this.panel3.Controls.Add(this.label23);
-            this.panel3.Controls.Add(this.label22);
-            this.panel3.Controls.Add(this.label21);
+            this.panel3.Controls.Add(this.lPositionb1);
+            this.panel3.Controls.Add(this.lSigantureb1);
+            this.panel3.Controls.Add(this.lNameb1);
             this.panel3.Controls.Add(this.dateRegional);
             this.panel3.Controls.Add(this.requestRejectedRegional);
             this.panel3.Controls.Add(this.requestApprovedRegional);
-            this.panel3.Controls.Add(this.label20);
-            this.panel3.Controls.Add(this.label19);
-            this.panel3.Controls.Add(this.label18);
+            this.panel3.Controls.Add(this.ldateb1);
+            this.panel3.Controls.Add(this.lRequestRejectedb1);
+            this.panel3.Controls.Add(this.lRequestedApprovedb1);
             this.panel3.Controls.Add(this.panel2);
             this.panel3.Location = new System.Drawing.Point(17, 24);
             this.panel3.Name = "panel3";
@@ -824,35 +824,35 @@
             this.nameReginal.Size = new System.Drawing.Size(352, 25);
             this.nameReginal.TabIndex = 18;
             // 
-            // label23
+            // lPositionb1
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(409, 111);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(87, 15);
-            this.label23.TabIndex = 17;
-            this.label23.Text = "Position     : ";
+            this.lPositionb1.AutoSize = true;
+            this.lPositionb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lPositionb1.Location = new System.Drawing.Point(409, 111);
+            this.lPositionb1.Name = "lPositionb1";
+            this.lPositionb1.Size = new System.Drawing.Size(87, 15);
+            this.lPositionb1.TabIndex = 17;
+            this.lPositionb1.Text = "Position     : ";
             // 
-            // label22
+            // lSigantureb1
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(409, 77);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(89, 15);
-            this.label22.TabIndex = 16;
-            this.label22.Text = "Siganture   : ";
+            this.lSigantureb1.AutoSize = true;
+            this.lSigantureb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lSigantureb1.Location = new System.Drawing.Point(409, 77);
+            this.lSigantureb1.Name = "lSigantureb1";
+            this.lSigantureb1.Size = new System.Drawing.Size(89, 15);
+            this.lSigantureb1.TabIndex = 16;
+            this.lSigantureb1.Text = "Siganture   : ";
             // 
-            // label21
+            // lNameb1
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(409, 43);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(89, 15);
-            this.label21.TabIndex = 15;
-            this.label21.Text = "Name         : ";
+            this.lNameb1.AutoSize = true;
+            this.lNameb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lNameb1.Location = new System.Drawing.Point(409, 43);
+            this.lNameb1.Name = "lNameb1";
+            this.lNameb1.Size = new System.Drawing.Size(89, 15);
+            this.lNameb1.TabIndex = 15;
+            this.lNameb1.Text = "Name         : ";
             // 
             // dateRegional
             // 
@@ -879,56 +879,56 @@
             this.requestApprovedRegional.TabIndex = 12;
             this.requestApprovedRegional.UseVisualStyleBackColor = true;
             // 
-            // label20
+            // ldateb1
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(5, 43);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(137, 15);
-            this.label20.TabIndex = 11;
-            this.label20.Text = "Date                       : ";
+            this.ldateb1.AutoSize = true;
+            this.ldateb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ldateb1.Location = new System.Drawing.Point(5, 43);
+            this.ldateb1.Name = "ldateb1";
+            this.ldateb1.Size = new System.Drawing.Size(137, 15);
+            this.ldateb1.TabIndex = 11;
+            this.ldateb1.Text = "Date                       : ";
             // 
-            // label19
+            // lRequestRejectedb1
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(5, 111);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(140, 15);
-            this.label19.TabIndex = 10;
-            this.label19.Text = "Request rejected    : ";
+            this.lRequestRejectedb1.AutoSize = true;
+            this.lRequestRejectedb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRequestRejectedb1.Location = new System.Drawing.Point(5, 111);
+            this.lRequestRejectedb1.Name = "lRequestRejectedb1";
+            this.lRequestRejectedb1.Size = new System.Drawing.Size(140, 15);
+            this.lRequestRejectedb1.TabIndex = 10;
+            this.lRequestRejectedb1.Text = "Request rejected    : ";
             // 
-            // label18
+            // lRequestedApprovedb1
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(5, 77);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(139, 15);
-            this.label18.TabIndex = 9;
-            this.label18.Text = "Request approved  : ";
+            this.lRequestedApprovedb1.AutoSize = true;
+            this.lRequestedApprovedb1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRequestedApprovedb1.Location = new System.Drawing.Point(5, 77);
+            this.lRequestedApprovedb1.Name = "lRequestedApprovedb1";
+            this.lRequestedApprovedb1.Size = new System.Drawing.Size(139, 15);
+            this.lRequestedApprovedb1.TabIndex = 9;
+            this.lRequestedApprovedb1.Text = "Request approved  : ";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.lOtherBox1);
             this.panel2.Controls.Add(this.yesNoReginal);
             this.panel2.Location = new System.Drawing.Point(-3, -2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(864, 32);
             this.panel2.TabIndex = 0;
             // 
-            // label17
+            // lOtherBox1
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label17.Location = new System.Drawing.Point(3, 11);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(561, 13);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "REGIONAL QUALITY DIRECTOR APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT";
+            this.lOtherBox1.AutoSize = true;
+            this.lOtherBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lOtherBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lOtherBox1.Location = new System.Drawing.Point(3, 11);
+            this.lOtherBox1.Name = "lOtherBox1";
+            this.lOtherBox1.Size = new System.Drawing.Size(561, 13);
+            this.lOtherBox1.TabIndex = 1;
+            this.lOtherBox1.Text = "REGIONAL QUALITY DIRECTOR APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT";
             // 
             // yesNoReginal
             // 
@@ -1054,7 +1054,7 @@
             this.lperiodDevation.Controls.Add(this.downloadDocument);
             this.lperiodDevation.Controls.Add(this.deleteDocument);
             this.lperiodDevation.Controls.Add(this.addDocument);
-            this.lperiodDevation.Controls.Add(this.label16);
+            this.lperiodDevation.Controls.Add(this.lAlternativeIdMethod);
             this.lperiodDevation.Controls.Add(this.pSecondDate);
             this.lperiodDevation.Controls.Add(this.lperiodEnd);
             this.lperiodDevation.Controls.Add(this.pFirstDate);
@@ -1173,15 +1173,15 @@
             this.addDocument.UseVisualStyleBackColor = true;
             this.addDocument.Click += new System.EventHandler(this.addDocument_Click);
             // 
-            // label16
+            // lAlternativeIdMethod
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(14, 71);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(186, 15);
-            this.label16.TabIndex = 7;
-            this.label16.Text = "Alternative Identification Method :";
+            this.lAlternativeIdMethod.AutoSize = true;
+            this.lAlternativeIdMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAlternativeIdMethod.Location = new System.Drawing.Point(14, 71);
+            this.lAlternativeIdMethod.Name = "lAlternativeIdMethod";
+            this.lAlternativeIdMethod.Size = new System.Drawing.Size(186, 15);
+            this.lAlternativeIdMethod.TabIndex = 7;
+            this.lAlternativeIdMethod.Text = "Alternative Identification Method :";
             // 
             // pSecondDate
             // 
@@ -1664,8 +1664,8 @@
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.lRequestApprovedb2.ResumeLayout(false);
+            this.lRequestApprovedb2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -1731,7 +1731,7 @@
         private System.Windows.Forms.GroupBox lperiodDevation;
         private System.Windows.Forms.DateTimePicker pFirstDate;
         private System.Windows.Forms.Label lperiodBegin;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lAlternativeIdMethod;
         private System.Windows.Forms.DateTimePicker pSecondDate;
         private System.Windows.Forms.Label lperiodEnd;
         private System.Windows.Forms.GroupBox lapprovement;
@@ -1744,32 +1744,32 @@
         private System.Windows.Forms.GroupBox lothers;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lOtherBox1;
         private System.Windows.Forms.ComboBox yesNoReginal;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label ldateb1;
+        private System.Windows.Forms.Label lRequestRejectedb1;
+        private System.Windows.Forms.Label lRequestedApprovedb1;
+        private System.Windows.Forms.Label lPositionb1;
+        private System.Windows.Forms.Label lSigantureb1;
+        private System.Windows.Forms.Label lNameb1;
         private System.Windows.Forms.DateTimePicker dateRegional;
         private System.Windows.Forms.CheckBox requestRejectedRegional;
         private System.Windows.Forms.CheckBox requestApprovedRegional;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel lRequestApprovedb2;
         private System.Windows.Forms.TextBox positionProductEng;
         private System.Windows.Forms.TextBox signatureProductEng;
         private System.Windows.Forms.TextBox nameProductEng;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lPositionb2;
+        private System.Windows.Forms.Label lSignatureb2;
+        private System.Windows.Forms.Label lNameb2;
         private System.Windows.Forms.DateTimePicker dateProductEng;
         private System.Windows.Forms.CheckBox requestRejectedProductEng;
         private System.Windows.Forms.CheckBox requestApprovedProductEng;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lDateb2;
+        private System.Windows.Forms.Label lRequestRejectedb2;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lOtherBox2;
         private System.Windows.Forms.ComboBox yesNoProductEng;
         private System.Windows.Forms.TextBox positionRegional;
         private System.Windows.Forms.TextBox signatureRegional;
@@ -1778,33 +1778,33 @@
         private System.Windows.Forms.TextBox positionCustomer;
         private System.Windows.Forms.TextBox signatureCustomer;
         private System.Windows.Forms.TextBox nameCustomer;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label lPositionb4;
+        private System.Windows.Forms.Label lSignatureb4;
+        private System.Windows.Forms.Label lNameb4;
         private System.Windows.Forms.DateTimePicker dateCustomer;
         private System.Windows.Forms.CheckBox requestRejectedCustomer;
         private System.Windows.Forms.CheckBox requestApprovedCustomer;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label lDateb4;
+        private System.Windows.Forms.Label lRequestRejected4;
+        private System.Windows.Forms.Label lRequestApprovedb4;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label lOtherBox4;
         private System.Windows.Forms.ComboBox yesNoCustomer;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox positionManufactEng;
         private System.Windows.Forms.TextBox signatureManufactEng;
         private System.Windows.Forms.TextBox nameManufactEng;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label lPositionb3;
+        private System.Windows.Forms.Label lSignatureb3;
+        private System.Windows.Forms.Label lNameb3;
         private System.Windows.Forms.DateTimePicker dateManufactEng;
         private System.Windows.Forms.CheckBox requestRejectedManufactEng;
         private System.Windows.Forms.CheckBox requestedApprovedManufactEng;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label lDateb3;
+        private System.Windows.Forms.Label lRequestRejectedb3;
+        private System.Windows.Forms.Label lRequestApprovedb3;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label lOtherBox3;
         private System.Windows.Forms.ComboBox yesNoManufactEng;
         private System.Windows.Forms.Button deleteDocument;
         private System.Windows.Forms.Button addDocument;

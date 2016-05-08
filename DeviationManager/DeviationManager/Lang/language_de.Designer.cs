@@ -61,11 +61,20 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Beifügen.
+        ///   Looks up a localized string similar to Add.
         /// </summary>
         internal static string ladd {
             get {
                 return ResourceManager.GetString("ladd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alternative Identification Method .
+        /// </summary>
+        internal static string lalternativeIdMethod {
+            get {
+                return ResourceManager.GetString("lalternativeIdMethod", resourceCulture);
             }
         }
         
@@ -75,6 +84,24 @@ namespace DeviationManager.Lang {
         internal static string lapprovement {
             get {
                 return ResourceManager.GetString("lapprovement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        internal static string lclose {
+            get {
+                return ResourceManager.GetString("lclose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Created In.
+        /// </summary>
+        internal static string lcreatedIn {
+            get {
+                return ResourceManager.GetString("lcreatedIn", resourceCulture);
             }
         }
         
@@ -124,6 +151,15 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Detail Request Condition.
+        /// </summary>
+        internal static string ldetailRequestCondition {
+            get {
+                return ResourceManager.GetString("ldetailRequestCondition", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deviation Infos.
         /// </summary>
         internal static string lDeviationInfo {
@@ -133,7 +169,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Abweichungslist.
+        ///   Looks up a localized string similar to Abweichung List.
         /// </summary>
         internal static string ldeviationList {
             get {
@@ -187,7 +223,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Newe Abweichung.
+        ///   Looks up a localized string similar to Neue Abweichung.
         /// </summary>
         internal static string lnewDeviation {
             get {
@@ -201,6 +237,51 @@ namespace DeviationManager.Lang {
         internal static string loptional {
             get {
                 return ResourceManager.GetString("loptional", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Others.
+        /// </summary>
+        internal static string lothers {
+            get {
+                return ResourceManager.GetString("lothers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to REGIONAL QUALITY DIRECTOR APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT.
+        /// </summary>
+        internal static string lothersBox1 {
+            get {
+                return ResourceManager.GetString("lothersBox1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PRODUCT ENGINEERING APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT.
+        /// </summary>
+        internal static string lothersBox2 {
+            get {
+                return ResourceManager.GetString("lothersBox2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MANUFACTURING ENGINEERING APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT..
+        /// </summary>
+        internal static string lothersBox3 {
+            get {
+                return ResourceManager.GetString("lothersBox3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CUSTOMER APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT.
+        /// </summary>
+        internal static string lothersBox4 {
+            get {
+                return ResourceManager.GetString("lothersBox4", resourceCulture);
             }
         }
         
@@ -241,11 +322,38 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Print.
+        /// </summary>
+        internal static string lprint {
+            get {
+                return ResourceManager.GetString("lprint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Product.
         /// </summary>
         internal static string lproduct {
             get {
                 return ResourceManager.GetString("lproduct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ref.
+        /// </summary>
+        internal static string lref {
+            get {
+                return ResourceManager.GetString("lref", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remind Group.
+        /// </summary>
+        internal static string lremindGroup {
+            get {
+                return ResourceManager.GetString("lremindGroup", resourceCulture);
             }
         }
         
@@ -282,6 +390,15 @@ namespace DeviationManager.Lang {
         internal static string lriskCategory {
             get {
                 return ResourceManager.GetString("lriskCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        internal static string lsave {
+            get {
+                return ResourceManager.GetString("lsave", resourceCulture);
             }
         }
         

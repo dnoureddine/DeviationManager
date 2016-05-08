@@ -210,4 +210,43 @@
   <data name="lupdate" xml:space="preserve">
     <value>Update</value>
   </data>
+  <data name="lcreatedIn" xml:space="preserve">
+    <value>Created In</value>
+  </data>
+  <data name="lref" xml:space="preserve">
+    <value>Ref</value>
+  </data>
+  <data name="lalternativeIdMethod" xml:space="preserve">
+    <value>Alternative Identification Method </value>
+  </data>
+  <data name="lclose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="ldetailRequestCondition" xml:space="preserve">
+    <value>Detail Request Condition</value>
+  </data>
+  <data name="lothers" xml:space="preserve">
+    <value>Others</value>
+  </data>
+  <data name="lothersBox1" xml:space="preserve">
+    <value>REGIONAL QUALITY DIRECTOR APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT</value>
+  </data>
+  <data name="lothersBox2" xml:space="preserve">
+    <value>PRODUCT ENGINEERING APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT</value>
+  </data>
+  <data name="lothersBox3" xml:space="preserve">
+    <value>MANUFACTURING ENGINEERING APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT.</value>
+  </data>
+  <data name="lothersBox4" xml:space="preserve">
+    <value>CUSTOMER APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT</value>
+  </data>
+  <data name="lprint" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="lremindGroup" xml:space="preserve">
+    <value>Remind Group</value>
+  </data>
+  <data name="lsave" xml:space="preserve">
+    <value>Save</value>
+  </data>
 </root>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DeviationManager.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -8,6 +9,7 @@ namespace DeviationManager.Entity
 {
     public class Deviation
     {
+
         [Browsable(false)]
         public virtual int deviationId { get; protected set; }
 
@@ -52,6 +54,7 @@ namespace DeviationManager.Entity
         public virtual IList<Approvement> approvements { get;  set; }
         [Browsable(false)]
         public virtual IList<Attachments> attachements { get; set; }
+
 
 
         public virtual String Approved
@@ -105,6 +108,7 @@ namespace DeviationManager.Entity
             reasons= new List<Reason>();
             approvements = new List<Approvement>();
             attachements = new List<Attachments>();
+
         }
     }
 }

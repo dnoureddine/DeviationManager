@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcedureTest", "ProcedureT
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DeviationManagerSteup", "DeviationManagerSteup\DeviationManagerSteup.vdproj", "{9C9CA0D9-A30C-4B08-A62B-B339F9D69684}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupWizardDeviationRep", "SetupWizardDeviationRep\SetupWizardDeviationRep.vdproj", "{3F74B391-972A-4AE6-AD13-C7638F6EE081}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,8 @@ Global
 		{E5B37E3C-662B-49DE-B80C-126A3D6F67BD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9C9CA0D9-A30C-4B08-A62B-B339F9D69684}.Debug|Any CPU.ActiveCfg = Debug
 		{9C9CA0D9-A30C-4B08-A62B-B339F9D69684}.Release|Any CPU.ActiveCfg = Release
+		{3F74B391-972A-4AE6-AD13-C7638F6EE081}.Debug|Any CPU.ActiveCfg = Release
+		{3F74B391-972A-4AE6-AD13-C7638F6EE081}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
