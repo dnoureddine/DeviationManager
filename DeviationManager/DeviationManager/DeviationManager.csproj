@@ -149,9 +149,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Lang\language_en.Designer.cs">
+      <DependentUpon>language_en.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>language_en.resx</DependentUpon>
     </Compile>
     <Compile Include="Mappings\ApprovementGroupMap.cs" />
     <Compile Include="Mappings\ApprovementMap.cs" />
@@ -163,6 +163,8 @@
     <Compile Include="Model\DeviationModelInter.cs" />
     <Compile Include="Model\EmailSender.cs" />
     <Compile Include="Model\FormValidation.cs" />
+    <Compile Include="Model\LanguageModel.cs" />
+    <Compile Include="Model\LanguageName.cs" />
     <Compile Include="Model\NHibernateHelper.cs" />
     <Compile Include="Model\PDFDeviationGenerator.cs" />
     <Compile Include="Model\Printer.cs" />

@@ -33,6 +33,7 @@ namespace DeviationManager.Entity
         public virtual DateTime? startDatePeriod { get; set; }
         [DisplayName("End Period")]
         public virtual DateTime? endDatePeriod { get; set; }
+        [DisplayName("Status")]
         public virtual String status { get; set; }
         [Browsable(false)]
         public virtual Boolean isPrinted { get; set; }

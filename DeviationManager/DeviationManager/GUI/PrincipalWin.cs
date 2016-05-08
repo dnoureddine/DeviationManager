@@ -5,6 +5,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Windows.Forms;
 
@@ -37,6 +39,18 @@ namespace DeviationManager.GUI
             this.DeviationDataGridView.DataSource = source;
 
             this.language.SelectedIndex = 1;
+        }
+
+
+        //set lanague
+        private void setLanguage()
+        {
+            LanguageModel languageModel = new LanguageModel();
+
+            this.newDevaition.Text = languageModel.getString("lnewDeviation");
+            this.deviationList.Text = languageModel.getString("ldeviationList");
+            this.updateDeviation.Text = languageModel.getString("lupdate");
+
         }
 
         private void saveDeviationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -141,8 +155,26 @@ namespace DeviationManager.GUI
             var source = new BindingSource();
             source.DataSource = deviations;
             this.DeviationDataGridView.DataSource = source;
-        }
 
       
+        }
+
+        private void language_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            String languageName = this.language.SelectedItem.ToString();
+            if (languageName == "English")
+            {
+                LanguageName.languageName = "DeviationManager.Lang.language_en";
+            }
+            else if (languageName=="Deutsch")
+            {
+                LanguageName.languageName = "DeviationManager.Lang.language_de";
+            }
+            
+
+            //set Language
+            this.setLanguage();
+        }
     }
 }

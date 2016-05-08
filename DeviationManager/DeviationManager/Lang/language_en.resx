@@ -201,37 +201,13 @@
   <data name="lwhyBox" xml:space="preserve">
     <value>5 Why to schow reason change for deviation</value>
   </data>
-  <data name="laddDeviation" xml:space="preserve">
-    <value>Add Deviation</value>
+  <data name="ldeviationList" xml:space="preserve">
+    <value>Deviation List</value>
   </data>
-  <data name="lcloseDeviation" xml:space="preserve">
-    <value>Close Deviation</value>
-  </data>
-  <data name="ldate1" xml:space="preserve">
-    <value>Date 1</value>
-  </data>
-  <data name="ldate2" xml:space="preserve">
-    <value>Date 2</value>
-  </data>
-  <data name="ldeviationFilter" xml:space="preserve">
-    <value>Filter Deviations</value>
-  </data>
-  <data name="ldeviationFilterBox" xml:space="preserve">
-    <value>Deviations Filter</value>
-  </data>
-  <data name="leditDeviation" xml:space="preserve">
-    <value>Edit Deviation</value>
-  </data>
-  <data name="lremindGroup" xml:space="preserve">
-    <value>Remind Group</value>
-  </data>
-  <data name="lshowDeviation" xml:space="preserve">
-    <value>Show Deviation</value>
+  <data name="lnewDeviation" xml:space="preserve">
+    <value>New Deviation</value>
   </data>
   <data name="lupdate" xml:space="preserve">
     <value>Update</value>
-  </data>
-  <data name="luserAllIinputa" xml:space="preserve">
-    <value>Use All Inputs</value>
   </data>
 </root>

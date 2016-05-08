@@ -198,11 +198,12 @@
             // deviationHeadPanel
             // 
             this.deviationHeadPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.deviationHeadPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.deviationHeadPanel.Controls.Add(this.label1);
             this.deviationHeadPanel.Controls.Add(this.logoBox);
-            this.deviationHeadPanel.Location = new System.Drawing.Point(-3, 0);
+            this.deviationHeadPanel.Location = new System.Drawing.Point(-3, -5);
             this.deviationHeadPanel.Name = "deviationHeadPanel";
-            this.deviationHeadPanel.Size = new System.Drawing.Size(927, 73);
+            this.deviationHeadPanel.Size = new System.Drawing.Size(927, 78);
             this.deviationHeadPanel.TabIndex = 0;
             // 
             // label1
@@ -218,7 +219,7 @@
             // logoBox
             // 
             this.logoBox.Image = ((System.Drawing.Image)(resources.GetObject("logoBox.Image")));
-            this.logoBox.Location = new System.Drawing.Point(15, 3);
+            this.logoBox.Location = new System.Drawing.Point(14, 9);
             this.logoBox.Name = "logoBox";
             this.logoBox.Size = new System.Drawing.Size(181, 68);
             this.logoBox.TabIndex = 0;

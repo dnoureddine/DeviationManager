@@ -37,6 +37,7 @@
             this.listDeviationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hELPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.language = new System.Windows.Forms.ComboBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -55,8 +56,7 @@
             this.newDevaition = new System.Windows.Forms.Button();
             this.DeviationDataGridView = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.language = new System.Windows.Forms.ComboBox();
+            this.updateDeviation = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -142,6 +142,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1196, 91);
             this.panel1.TabIndex = 1;
+            // 
+            // language
+            // 
+            this.language.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.language.FormattingEnabled = true;
+            this.language.Items.AddRange(new object[] {
+            "English",
+            "Deutsch"});
+            this.language.Location = new System.Drawing.Point(1002, 37);
+            this.language.Name = "language";
+            this.language.Size = new System.Drawing.Size(181, 21);
+            this.language.TabIndex = 1;
+            this.language.SelectedIndexChanged += new System.EventHandler(this.language_SelectedIndexChanged);
             // 
             // pictureBox4
             // 
@@ -343,7 +356,7 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.updateDeviation);
             this.panel2.Controls.Add(this.DeviationDataGridView);
             this.panel2.Controls.Add(this.deviationList);
             this.panel2.Controls.Add(this.newDevaition);
@@ -353,27 +366,15 @@
             this.panel2.Size = new System.Drawing.Size(1142, 530);
             this.panel2.TabIndex = 8;
             // 
-            // button1
+            // updateDeviation
             // 
-            this.button1.Location = new System.Drawing.Point(0, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 43);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // language
-            // 
-            this.language.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.language.FormattingEnabled = true;
-            this.language.Items.AddRange(new object[] {
-            "English",
-            "Deutsch"});
-            this.language.Location = new System.Drawing.Point(1043, 37);
-            this.language.Name = "language";
-            this.language.Size = new System.Drawing.Size(140, 21);
-            this.language.TabIndex = 1;
+            this.updateDeviation.Location = new System.Drawing.Point(0, 94);
+            this.updateDeviation.Name = "updateDeviation";
+            this.updateDeviation.Size = new System.Drawing.Size(134, 43);
+            this.updateDeviation.TabIndex = 8;
+            this.updateDeviation.Text = "Update";
+            this.updateDeviation.UseVisualStyleBackColor = true;
+            this.updateDeviation.Click += new System.EventHandler(this.button1_Click);
             // 
             // PrincipalWin
             // 
@@ -441,7 +442,7 @@
         private System.Windows.Forms.Button newDevaition;
         private System.Windows.Forms.DataGridView DeviationDataGridView;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button updateDeviation;
         private System.Windows.Forms.ComboBox language;
     }
 }
