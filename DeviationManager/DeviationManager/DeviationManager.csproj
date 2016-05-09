@@ -97,6 +97,7 @@
     <Compile Include="Entity\Approvement.cs" />
     <Compile Include="Entity\ApprovementGroup.cs" />
     <Compile Include="Entity\Attachments.cs" />
+    <Compile Include="Entity\Connection.cs" />
     <Compile Include="Entity\Deviation.cs" />
     <Compile Include="Entity\OtherApprovement.cs" />
     <Compile Include="Entity\Reason.cs" />
@@ -106,6 +107,12 @@
     </Compile>
     <Compile Include="GUI\ApprovementGroupGUI.Designer.cs">
       <DependentUpon>ApprovementGroupGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\DeviationList.cs">
       <SubType>Form</SubType>
@@ -118,6 +125,12 @@
     </Compile>
     <Compile Include="GUI\EmailGUI.Designer.cs">
       <DependentUpon>EmailGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Connection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Connection.Designer.cs">
+      <DependentUpon>Connection.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\PrincipalWin.cs">
       <SubType>Form</SubType>
@@ -156,6 +169,7 @@
     <Compile Include="Mappings\ApprovementGroupMap.cs" />
     <Compile Include="Mappings\ApprovementMap.cs" />
     <Compile Include="Mappings\AttachmentsMap.cs" />
+    <Compile Include="Mappings\ConnectionMap.cs" />
     <Compile Include="Mappings\DeviationMap.cs" />
     <Compile Include="Mappings\ReasonMap.cs" />
     <Compile Include="Model\Autorisation.cs" />
@@ -215,6 +229,12 @@
   <ItemGroup>
     <EmbeddedResource Include="GUI\ApprovementGroupGUI.resx">
       <DependentUpon>ApprovementGroupGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Connection.resx">
+      <DependentUpon>Connection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\DeviationList.resx">
       <DependentUpon>DeviationList.cs</DependentUpon>

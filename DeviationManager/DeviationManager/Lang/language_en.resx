@@ -249,4 +249,37 @@
   <data name="lsave" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="laddDeviation" xml:space="preserve">
+    <value>Add Deviation</value>
+  </data>
+  <data name="lcloseDeviation" xml:space="preserve">
+    <value>Close Deviation</value>
+  </data>
+  <data name="ldate1" xml:space="preserve">
+    <value>Date 1</value>
+  </data>
+  <data name="ldate2" xml:space="preserve">
+    <value>Date 2</value>
+  </data>
+  <data name="leditDeviation" xml:space="preserve">
+    <value>Edit Deviation</value>
+  </data>
+  <data name="lfilterDeviation" xml:space="preserve">
+    <value>Filter Deviations</value>
+  </data>
+  <data name="lshowDeviation" xml:space="preserve">
+    <value>Show Deviation</value>
+  </data>
+  <data name="luseAllInputs" xml:space="preserve">
+    <value>Use All Inputs</value>
+  </data>
+  <data name="lemail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="lid" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="lrole" xml:space="preserve">
+    <value>Role</value>
+  </data>
 </root>

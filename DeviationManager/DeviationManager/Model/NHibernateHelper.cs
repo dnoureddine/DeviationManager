@@ -23,11 +23,14 @@ public class NHibernateHelper
     {
         _sessionFactory = Fluently.Configure()
             .Database(MsSqlConfiguration.MsSql2008
-             .ConnectionString(
-              @"Data Source=(LocalDB)\v11.0;AttachDbFilename=c:\Users\dnoureddin\Documents\Visual Studio 2013\Projects\DeviationManager\DeviationManager\DeviationManager.mdf;
-		      Integrated Security=True") // Modify your ConnectionString
 
-                .ShowSql()
+                .ConnectionString(c => c
+                                .Server("10.104.17.57")
+                                .Database("DevReport")
+                                .Username("Visuuser")
+                                .Password("Monaco-91")
+              )
+              .ShowSql()
 
             )
             .Mappings(m =>

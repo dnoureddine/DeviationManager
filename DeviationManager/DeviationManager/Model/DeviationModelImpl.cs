@@ -629,6 +629,96 @@ namespace DeviationManager.Model
         }
 
 
+        //add a password 
+        public bool addPassword(Connection conn)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    session.Save(conn);
+                    transaction.Commit();
+                }
+            }
+
+            return true;
+        }
+
+        //update passwor 
+        public bool updatePassword(String oldpassword, String newPasssword)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    Connection conn = this.getPassword();
+                    if (conn != null)
+                    {
+                        if (conn.password.Equals(oldpassword))
+                        {
+                            conn.password = newPasssword;
+
+                            session.Merge(conn);
+                            transaction.Commit();
+
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            return true;
+        }
+
+        //get password 
+        public Connection getPassword()
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var connection = session.CreateCriteria(typeof(Connection)).List<Connection>();
+                    if (connection.Count > 1)
+                    {
+                       return session.CreateCriteria(typeof(Connection)).List<Connection>().First<Connection>();
+                    }
+                    else
+                    {
+                        return session.CreateCriteria(typeof(Connection)).UniqueResult<Connection>();
+                    }
+
+                }
+            }
+        }
+
+        //verify password 
+        public bool verifyPassword(String password)
+        {
+
+            Connection conn = this.getPassword();
+            if (conn != null)
+            {
+                if (password.Equals(conn.password))
+                {
+                    return true;
+                }else
+                {
+                    return false;
+                }
+            }else
+            {
+                return false;
+            }
+        }
+
         /******____class   */
 
     }

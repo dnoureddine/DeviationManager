@@ -118,31 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ladd" xml:space="preserve">
-    <value>Add</value>
+    <value>Hinzufügen</value>
   </data>
   <data name="ldate" xml:space="preserve">
-    <value>Date</value>
+    <value>Datum</value>
   </data>
   <data name="ldateCreation" xml:space="preserve">
-    <value>Date</value>
+    <value>Datum</value>
   </data>
   <data name="ldelete" xml:space="preserve">
-    <value>Delete</value>
+    <value>löschen</value>
   </data>
   <data name="ldescription" xml:space="preserve">
-    <value>Description</value>
+    <value>Beschreibung</value>
   </data>
   <data name="ldetailDescOfDev" xml:space="preserve">
-    <value>Detailed Description of Deviation</value>
+    <value>Detaillierte Beschreibung der Abweichung</value>
   </data>
   <data name="lDeviationInfo" xml:space="preserve">
-    <value>Deviation Infos</value>
+    <value>Informationen der Abweichung</value>
   </data>
   <data name="ldeviationNo" xml:space="preserve">
-    <value>Deviation No</value>
+    <value>Abweichung Nu.</value>
   </data>
   <data name="ldeviationType" xml:space="preserve">
-    <value>Deviation Type</value>
+    <value>Art der Abweichung</value>
   </data>
   <data name="ldowload" xml:space="preserve">
     <value>Download</value>
@@ -151,58 +151,58 @@
     <value>Name</value>
   </data>
   <data name="loptional" xml:space="preserve">
-    <value>Other( Optional)</value>
+    <value>Weitere (Optional)</value>
   </data>
   <data name="lposition" xml:space="preserve">
     <value>Position</value>
   </data>
   <data name="lrequestApproved" xml:space="preserve">
-    <value>Requested Approved</value>
+    <value>Anfrage genehmigt</value>
   </data>
   <data name="lrequestedBy" xml:space="preserve">
-    <value>Requested By</value>
+    <value>Angefragt von</value>
   </data>
   <data name="lrequestedRejected" xml:space="preserve">
-    <value>Request Rejeceted</value>
+    <value>Anfrage abgelehnt</value>
   </data>
   <data name="lriskCategory" xml:space="preserve">
-    <value>Risk Category</value>
+    <value>Risikokategorie</value>
   </data>
   <data name="lshow" xml:space="preserve">
-    <value>Show</value>
+    <value>Anzeigen</value>
   </data>
   <data name="lsignature" xml:space="preserve">
-    <value>Signature</value>
+    <value>Unterschrift</value>
   </data>
   <data name="lstandardCondition" xml:space="preserve">
-    <value>Standad Condition</value>
+    <value>Sollvorgabe</value>
   </data>
   <data name="lapprovement" xml:space="preserve">
-    <value>Approvement</value>
+    <value>Freigabe</value>
   </data>
   <data name="lmachine" xml:space="preserve">
-    <value>Machine</value>
+    <value>Anlage</value>
   </data>
   <data name="lperiodBegin" xml:space="preserve">
-    <value>Period Begin </value>
+    <value>Beginn (der Abweichung)</value>
   </data>
   <data name="lperiodDevation" xml:space="preserve">
-    <value>Deviation Period</value>
+    <value>Abweichungsdauer</value>
   </data>
   <data name="lperiodEnd" xml:space="preserve">
-    <value>Period End</value>
+    <value>Ende (der Abweichung)</value>
   </data>
   <data name="lproduct" xml:space="preserve">
-    <value>Product</value>
+    <value>Produkt</value>
   </data>
   <data name="lwhy" xml:space="preserve">
-    <value>Why</value>
+    <value>Warum</value>
   </data>
   <data name="lwhyBox" xml:space="preserve">
-    <value>5 Why to schow reason change for deviation</value>
+    <value>5  Why um die Ursache des Problems zu finden bzw. aufzuzeigen</value>
   </data>
   <data name="ldeviationList" xml:space="preserve">
-    <value>Abweichung List</value>
+    <value>Abweichungliste</value>
   </data>
   <data name="lnewDeviation" xml:space="preserve">
     <value>Neue Abweichung</value>
@@ -211,42 +211,66 @@
     <value>Update</value>
   </data>
   <data name="lcreatedIn" xml:space="preserve">
-    <value>Created In</value>
+    <value>Erstellt in</value>
   </data>
   <data name="lref" xml:space="preserve">
     <value>Ref</value>
   </data>
   <data name="lalternativeIdMethod" xml:space="preserve">
-    <value>Alternative Identification Method </value>
+    <value>Alternative Identifikationsmethode</value>
   </data>
   <data name="lclose" xml:space="preserve">
-    <value>Close</value>
+    <value>Schließen</value>
   </data>
   <data name="ldetailRequestCondition" xml:space="preserve">
-    <value>Detail Request Condition</value>
+    <value>Detaillierte Anfragebedingungen</value>
   </data>
   <data name="lothers" xml:space="preserve">
-    <value>Others</value>
+    <value>Weitere</value>
   </data>
   <data name="lothersBox1" xml:space="preserve">
-    <value>REGIONAL QUALITY DIRECTOR APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT</value>
+    <value>Freigabe Regionaler Qualitätsdirektor: Bezugnehmend auf FTDS-BM-P-008</value>
   </data>
   <data name="lothersBox2" xml:space="preserve">
-    <value>PRODUCT ENGINEERING APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT</value>
+    <value>Freigabe Produktengineering: Bezugnehmend auf FTDS-BM-P-008</value>
   </data>
   <data name="lothersBox3" xml:space="preserve">
-    <value>MANUFACTURING ENGINEERING APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT.</value>
+    <value>Freigabe Produktengineering: Bezugnehmend auf FTDS-BM-P-008</value>
   </data>
   <data name="lothersBox4" xml:space="preserve">
-    <value>CUSTOMER APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT</value>
+    <value>Freigabe Kunde: Bezugnehmend auf FTDS-BM-P-008</value>
   </data>
   <data name="lprint" xml:space="preserve">
-    <value>Print</value>
+    <value>Ausdrucken</value>
   </data>
   <data name="lremindGroup" xml:space="preserve">
-    <value>Remind Group</value>
+    <value>Gruppe erinnern</value>
   </data>
   <data name="lsave" xml:space="preserve">
-    <value>Save</value>
+    <value>Speichern</value>
+  </data>
+  <data name="laddDeviation" xml:space="preserve">
+    <value>Deviation erstellen</value>
+  </data>
+  <data name="lcloseDeviation" xml:space="preserve">
+    <value>Deviation schließen</value>
+  </data>
+  <data name="ldate1" xml:space="preserve">
+    <value>Datum 1</value>
+  </data>
+  <data name="ldate2" xml:space="preserve">
+    <value>Datum 2</value>
+  </data>
+  <data name="leditDeviation" xml:space="preserve">
+    <value>Deviation überarbeiten</value>
+  </data>
+  <data name="lfilterDeviation" xml:space="preserve">
+    <value>Deviation filtern</value>
+  </data>
+  <data name="lshowDeviation" xml:space="preserve">
+    <value>Deviation anzeigen</value>
+  </data>
+  <data name="luseAllInputs" xml:space="preserve">
+    <value>Nutze alle Angaben</value>
   </data>
 </root>

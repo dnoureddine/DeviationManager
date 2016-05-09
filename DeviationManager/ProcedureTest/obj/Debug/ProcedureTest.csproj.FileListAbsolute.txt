@@ -21,3 +21,5 @@ C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\bin\Debug\ProcedureTest.application
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.exe.manifest
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.application
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.lange.resources
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\ProcedureTest\obj\Debug\ProcedureTest.csproj.GenerateResource.Cache

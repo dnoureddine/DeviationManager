@@ -70,6 +70,15 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Deviation.
+        /// </summary>
+        internal static string laddDeviation {
+            get {
+                return ResourceManager.GetString("laddDeviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alternative Identification Method .
         /// </summary>
         internal static string lalternativeIdMethod {
@@ -97,6 +106,15 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close Deviation.
+        /// </summary>
+        internal static string lcloseDeviation {
+            get {
+                return ResourceManager.GetString("lcloseDeviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Created In.
         /// </summary>
         internal static string lcreatedIn {
@@ -111,6 +129,24 @@ namespace DeviationManager.Lang {
         internal static string ldate {
             get {
                 return ResourceManager.GetString("ldate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date 1.
+        /// </summary>
+        internal static string ldate1 {
+            get {
+                return ResourceManager.GetString("ldate1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date 2.
+        /// </summary>
+        internal static string ldate2 {
+            get {
+                return ResourceManager.GetString("ldate2", resourceCulture);
             }
         }
         
@@ -201,6 +237,42 @@ namespace DeviationManager.Lang {
         internal static string ldowload {
             get {
                 return ResourceManager.GetString("ldowload", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Deviation.
+        /// </summary>
+        internal static string leditDeviation {
+            get {
+                return ResourceManager.GetString("leditDeviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string lemail {
+            get {
+                return ResourceManager.GetString("lemail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Filter Deviations.
+        /// </summary>
+        internal static string lfilterDeviation {
+            get {
+                return ResourceManager.GetString("lfilterDeviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ID.
+        /// </summary>
+        internal static string lid {
+            get {
+                return ResourceManager.GetString("lid", resourceCulture);
             }
         }
         
@@ -394,6 +466,15 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Role.
+        /// </summary>
+        internal static string lrole {
+            get {
+                return ResourceManager.GetString("lrole", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save.
         /// </summary>
         internal static string lsave {
@@ -408,6 +489,15 @@ namespace DeviationManager.Lang {
         internal static string lshow {
             get {
                 return ResourceManager.GetString("lshow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Deviation.
+        /// </summary>
+        internal static string lshowDeviation {
+            get {
+                return ResourceManager.GetString("lshowDeviation", resourceCulture);
             }
         }
         
@@ -435,6 +525,15 @@ namespace DeviationManager.Lang {
         internal static string lupdate {
             get {
                 return ResourceManager.GetString("lupdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use All Inputs.
+        /// </summary>
+        internal static string luseAllInputs {
+            get {
+                return ResourceManager.GetString("luseAllInputs", resourceCulture);
             }
         }
         

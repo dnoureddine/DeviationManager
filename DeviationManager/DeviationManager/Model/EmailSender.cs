@@ -72,11 +72,16 @@ namespace DeviationManager.Model
             var groupsEmail = this.getGroupsEmail();
             foreach (var groupEmail in groupsEmail)
             {
-                var res = this.sendEmail(subject, body, groupEmail);
-                if (res != "sent")
+
+                string[] tabEmails = groupEmail.Split('/');
+                foreach(var email in tabEmails)
                 {
-                    result = res;
-                    break;
+                    var res = this.sendEmail(subject, body, email);
+                    if (res != "sent")
+                    {
+                        result = res;
+                        break;
+                    }
                 }
             }
 
@@ -118,11 +123,15 @@ namespace DeviationManager.Model
                 foreach (var groupEmail in groupsEmail)
                 {
 
-                    var res = this.sendEmail(subject, body, groupEmail);
-                    if (res != "sent")
+                    string[] tabEmails = groupEmail.Split('/');
+                    foreach (var email in tabEmails)
                     {
-                        result = res;
-                        break;
+                        var res = this.sendEmail(subject, body, email);
+                        if (res != "sent")
+                        {
+                            result = res;
+                            break;
+                        }
                     }
                 }
 

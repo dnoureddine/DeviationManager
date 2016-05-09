@@ -61,7 +61,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add.
+        ///   Looks up a localized string similar to Hinzufügen.
         /// </summary>
         internal static string ladd {
             get {
@@ -70,7 +70,16 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Alternative Identification Method .
+        ///   Looks up a localized string similar to Deviation erstellen.
+        /// </summary>
+        internal static string laddDeviation {
+            get {
+                return ResourceManager.GetString("laddDeviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alternative Identifikationsmethode.
         /// </summary>
         internal static string lalternativeIdMethod {
             get {
@@ -79,7 +88,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Approvement.
+        ///   Looks up a localized string similar to Freigabe.
         /// </summary>
         internal static string lapprovement {
             get {
@@ -88,7 +97,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Close.
+        ///   Looks up a localized string similar to Schließen.
         /// </summary>
         internal static string lclose {
             get {
@@ -97,7 +106,16 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Created In.
+        ///   Looks up a localized string similar to Deviation schließen.
+        /// </summary>
+        internal static string lcloseDeviation {
+            get {
+                return ResourceManager.GetString("lcloseDeviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Erstellt in.
         /// </summary>
         internal static string lcreatedIn {
             get {
@@ -106,7 +124,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date.
+        ///   Looks up a localized string similar to Datum.
         /// </summary>
         internal static string ldate {
             get {
@@ -115,7 +133,25 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Date.
+        ///   Looks up a localized string similar to Datum 1.
+        /// </summary>
+        internal static string ldate1 {
+            get {
+                return ResourceManager.GetString("ldate1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Datum 2.
+        /// </summary>
+        internal static string ldate2 {
+            get {
+                return ResourceManager.GetString("ldate2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Datum.
         /// </summary>
         internal static string ldateCreation {
             get {
@@ -124,7 +160,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Delete.
+        ///   Looks up a localized string similar to löschen.
         /// </summary>
         internal static string ldelete {
             get {
@@ -133,7 +169,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Description.
+        ///   Looks up a localized string similar to Beschreibung.
         /// </summary>
         internal static string ldescription {
             get {
@@ -142,7 +178,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Detailed Description of Deviation.
+        ///   Looks up a localized string similar to Detaillierte Beschreibung der Abweichung.
         /// </summary>
         internal static string ldetailDescOfDev {
             get {
@@ -151,7 +187,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Detail Request Condition.
+        ///   Looks up a localized string similar to Detaillierte Anfragebedingungen.
         /// </summary>
         internal static string ldetailRequestCondition {
             get {
@@ -160,7 +196,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deviation Infos.
+        ///   Looks up a localized string similar to Informationen der Abweichung.
         /// </summary>
         internal static string lDeviationInfo {
             get {
@@ -169,7 +205,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Abweichung List.
+        ///   Looks up a localized string similar to Abweichungliste.
         /// </summary>
         internal static string ldeviationList {
             get {
@@ -178,7 +214,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deviation No.
+        ///   Looks up a localized string similar to Abweichung Nu..
         /// </summary>
         internal static string ldeviationNo {
             get {
@@ -187,7 +223,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deviation Type.
+        ///   Looks up a localized string similar to Art der Abweichung.
         /// </summary>
         internal static string ldeviationType {
             get {
@@ -205,7 +241,25 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Machine.
+        ///   Looks up a localized string similar to Deviation überarbeiten.
+        /// </summary>
+        internal static string leditDeviation {
+            get {
+                return ResourceManager.GetString("leditDeviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deviation filtern.
+        /// </summary>
+        internal static string lfilterDeviation {
+            get {
+                return ResourceManager.GetString("lfilterDeviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Anlage.
         /// </summary>
         internal static string lmachine {
             get {
@@ -232,7 +286,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Other( Optional).
+        ///   Looks up a localized string similar to Weitere (Optional).
         /// </summary>
         internal static string loptional {
             get {
@@ -241,7 +295,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Others.
+        ///   Looks up a localized string similar to Weitere.
         /// </summary>
         internal static string lothers {
             get {
@@ -250,7 +304,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to REGIONAL QUALITY DIRECTOR APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT.
+        ///   Looks up a localized string similar to Freigabe Regionaler Qualitätsdirektor: Bezugnehmend auf FTDS-BM-P-008.
         /// </summary>
         internal static string lothersBox1 {
             get {
@@ -259,7 +313,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PRODUCT ENGINEERING APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT.
+        ///   Looks up a localized string similar to Freigabe Produktengineering: Bezugnehmend auf FTDS-BM-P-008.
         /// </summary>
         internal static string lothersBox2 {
             get {
@@ -268,7 +322,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to MANUFACTURING ENGINEERING APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT..
+        ///   Looks up a localized string similar to Freigabe Produktengineering: Bezugnehmend auf FTDS-BM-P-008.
         /// </summary>
         internal static string lothersBox3 {
             get {
@@ -277,7 +331,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to CUSTOMER APPROVAL:  REFER TO FTDS-BM-P-008  FOR REQUIREMENT.
+        ///   Looks up a localized string similar to Freigabe Kunde: Bezugnehmend auf FTDS-BM-P-008.
         /// </summary>
         internal static string lothersBox4 {
             get {
@@ -286,7 +340,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Period Begin .
+        ///   Looks up a localized string similar to Beginn (der Abweichung).
         /// </summary>
         internal static string lperiodBegin {
             get {
@@ -295,7 +349,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Deviation Period.
+        ///   Looks up a localized string similar to Abweichungsdauer.
         /// </summary>
         internal static string lperiodDevation {
             get {
@@ -304,7 +358,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Period End.
+        ///   Looks up a localized string similar to Ende (der Abweichung).
         /// </summary>
         internal static string lperiodEnd {
             get {
@@ -322,7 +376,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Print.
+        ///   Looks up a localized string similar to Ausdrucken.
         /// </summary>
         internal static string lprint {
             get {
@@ -331,7 +385,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Product.
+        ///   Looks up a localized string similar to Produkt.
         /// </summary>
         internal static string lproduct {
             get {
@@ -349,7 +403,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Remind Group.
+        ///   Looks up a localized string similar to Gruppe erinnern.
         /// </summary>
         internal static string lremindGroup {
             get {
@@ -358,7 +412,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Requested Approved.
+        ///   Looks up a localized string similar to Anfrage genehmigt.
         /// </summary>
         internal static string lrequestApproved {
             get {
@@ -367,7 +421,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Requested By.
+        ///   Looks up a localized string similar to Angefragt von.
         /// </summary>
         internal static string lrequestedBy {
             get {
@@ -376,7 +430,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Request Rejeceted.
+        ///   Looks up a localized string similar to Anfrage abgelehnt.
         /// </summary>
         internal static string lrequestedRejected {
             get {
@@ -385,7 +439,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Risk Category.
+        ///   Looks up a localized string similar to Risikokategorie.
         /// </summary>
         internal static string lriskCategory {
             get {
@@ -394,7 +448,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save.
+        ///   Looks up a localized string similar to Speichern.
         /// </summary>
         internal static string lsave {
             get {
@@ -403,7 +457,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show.
+        ///   Looks up a localized string similar to Anzeigen.
         /// </summary>
         internal static string lshow {
             get {
@@ -412,7 +466,16 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Signature.
+        ///   Looks up a localized string similar to Deviation anzeigen.
+        /// </summary>
+        internal static string lshowDeviation {
+            get {
+                return ResourceManager.GetString("lshowDeviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unterschrift.
         /// </summary>
         internal static string lsignature {
             get {
@@ -421,7 +484,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Standad Condition.
+        ///   Looks up a localized string similar to Sollvorgabe.
         /// </summary>
         internal static string lstandardCondition {
             get {
@@ -439,7 +502,16 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Why.
+        ///   Looks up a localized string similar to Nutze alle Angaben.
+        /// </summary>
+        internal static string luseAllInputs {
+            get {
+                return ResourceManager.GetString("luseAllInputs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warum.
         /// </summary>
         internal static string lwhy {
             get {
@@ -448,7 +520,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 5 Why to schow reason change for deviation.
+        ///   Looks up a localized string similar to 5  Why um die Ursache des Problems zu finden bzw. aufzuzeigen.
         /// </summary>
         internal static string lwhyBox {
             get {

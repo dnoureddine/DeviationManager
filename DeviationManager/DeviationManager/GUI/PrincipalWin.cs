@@ -61,8 +61,8 @@ namespace DeviationManager.GUI
 
         private void saveApprovementGroupToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ApprovementGroupGUI approvementGroup = new ApprovementGroupGUI();
-            approvementGroup.Show();
+            Connection conn = new Connection();
+            conn.Show();
         }
 
         private void listDeviationsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -156,7 +156,11 @@ namespace DeviationManager.GUI
             source.DataSource = deviations;
             this.DeviationDataGridView.DataSource = source;
 
-      
+
+            this.approvedDev.Text = this.deviationModel.listApprovedDeviation().Count + "";
+            this.pendingDev.Text = this.deviationModel.listPendingDeviation().Count + "";
+            this.rejectedDev.Text = this.deviationModel.listRejectedDeviation().Count + "";
+
         }
 
         private void language_SelectedIndexChanged(object sender, EventArgs e)

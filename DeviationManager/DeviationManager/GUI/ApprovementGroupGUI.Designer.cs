@@ -35,14 +35,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.idGroupeApprovement = new System.Windows.Forms.TextBox();
-            this.Id = new System.Windows.Forms.Label();
-            this.role = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.liblle = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lEmail = new System.Windows.Forms.Label();
             this.groupEmail = new System.Windows.Forms.TextBox();
-            this.Email = new System.Windows.Forms.Label();
+            this.idGroupeApprovement = new System.Windows.Forms.TextBox();
+            this.lId = new System.Windows.Forms.Label();
+            this.role = new System.Windows.Forms.TextBox();
+            this.lRole = new System.Windows.Forms.Label();
+            this.liblle = new System.Windows.Forms.TextBox();
+            this.lName = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.approvementGroupsDataGridview)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -109,20 +109,39 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Email);
+            this.groupBox1.Controls.Add(this.lEmail);
             this.groupBox1.Controls.Add(this.groupEmail);
             this.groupBox1.Controls.Add(this.idGroupeApprovement);
-            this.groupBox1.Controls.Add(this.Id);
+            this.groupBox1.Controls.Add(this.lId);
             this.groupBox1.Controls.Add(this.role);
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lRole);
             this.groupBox1.Controls.Add(this.liblle);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lName);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(458, 177);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add new approvement Group";
+            // 
+            // lEmail
+            // 
+            this.lEmail.AutoSize = true;
+            this.lEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lEmail.Location = new System.Drawing.Point(6, 147);
+            this.lEmail.Name = "lEmail";
+            this.lEmail.Size = new System.Drawing.Size(60, 15);
+            this.lEmail.TabIndex = 12;
+            this.lEmail.Text = "Email  : ";
+            // 
+            // groupEmail
+            // 
+            this.groupEmail.BackColor = System.Drawing.Color.White;
+            this.groupEmail.Location = new System.Drawing.Point(73, 146);
+            this.groupEmail.Multiline = true;
+            this.groupEmail.Name = "groupEmail";
+            this.groupEmail.Size = new System.Drawing.Size(308, 25);
+            this.groupEmail.TabIndex = 11;
             // 
             // idGroupeApprovement
             // 
@@ -134,15 +153,15 @@
             this.idGroupeApprovement.Size = new System.Drawing.Size(308, 25);
             this.idGroupeApprovement.TabIndex = 10;
             // 
-            // Id
+            // lId
             // 
-            this.Id.AutoSize = true;
-            this.Id.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Id.Location = new System.Drawing.Point(6, 20);
-            this.Id.Name = "Id";
-            this.Id.Size = new System.Drawing.Size(61, 15);
-            this.Id.TabIndex = 9;
-            this.Id.Text = "ID        : ";
+            this.lId.AutoSize = true;
+            this.lId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lId.Location = new System.Drawing.Point(6, 20);
+            this.lId.Name = "lId";
+            this.lId.Size = new System.Drawing.Size(61, 15);
+            this.lId.TabIndex = 9;
+            this.lId.Text = "ID        : ";
             // 
             // role
             // 
@@ -153,15 +172,15 @@
             this.role.Size = new System.Drawing.Size(308, 25);
             this.role.TabIndex = 8;
             // 
-            // label1
+            // lRole
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 106);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 15);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Role    : ";
+            this.lRole.AutoSize = true;
+            this.lRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRole.Location = new System.Drawing.Point(6, 106);
+            this.lRole.Name = "lRole";
+            this.lRole.Size = new System.Drawing.Size(61, 15);
+            this.lRole.TabIndex = 7;
+            this.lRole.Text = "Role    : ";
             // 
             // liblle
             // 
@@ -172,34 +191,15 @@
             this.liblle.Size = new System.Drawing.Size(308, 25);
             this.liblle.TabIndex = 6;
             // 
-            // label4
+            // lName
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 61);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 15);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Name  : ";
-            // 
-            // groupEmail
-            // 
-            this.groupEmail.BackColor = System.Drawing.Color.White;
-            this.groupEmail.Location = new System.Drawing.Point(73, 146);
-            this.groupEmail.Multiline = true;
-            this.groupEmail.Name = "groupEmail";
-            this.groupEmail.Size = new System.Drawing.Size(308, 25);
-            this.groupEmail.TabIndex = 11;
-            // 
-            // Email
-            // 
-            this.Email.AutoSize = true;
-            this.Email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email.Location = new System.Drawing.Point(6, 147);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(60, 15);
-            this.Email.TabIndex = 12;
-            this.Email.Text = "Email  : ";
+            this.lName.AutoSize = true;
+            this.lName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lName.Location = new System.Drawing.Point(6, 61);
+            this.lName.Name = "lName";
+            this.lName.Size = new System.Drawing.Size(61, 15);
+            this.lName.TabIndex = 5;
+            this.lName.Text = "Name  : ";
             // 
             // ApprovementGroupGUI
             // 
@@ -226,17 +226,17 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lName;
         private System.Windows.Forms.TextBox liblle;
         private System.Windows.Forms.TextBox role;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lRole;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView approvementGroupsDataGridview;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox idGroupeApprovement;
-        private System.Windows.Forms.Label Id;
-        private System.Windows.Forms.Label Email;
+        private System.Windows.Forms.Label lId;
+        private System.Windows.Forms.Label lEmail;
         private System.Windows.Forms.TextBox groupEmail;
     }
 }

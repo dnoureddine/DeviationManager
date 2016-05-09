@@ -47,6 +47,17 @@ namespace DeviationManager.Model
             table.AddCell(cell);
         }
 
+        //add table cell for page foot
+        private void addTableCellForPageFoot(PdfPTable table, String text, Font font, int collapse, int allignement)
+        {
+            PdfPCell cell = new PdfPCell(new Phrase(text, font));
+            cell.Colspan = collapse;
+            cell.Padding = 4;
+            cell.Border = 0;
+            cell.HorizontalAlignment = allignement;
+            table.AddCell(cell);
+        }
+
         //add table Cell with image
         private  void addTableCell(PdfPTable table){
             Image crossImg = Image.GetInstance("cross.PNG");
@@ -206,14 +217,9 @@ namespace DeviationManager.Model
             // Period deviation cell
             this.addTableCell(table, "Zeitraum für Abweichung(Schicht / Woche / usw.)", normal, 3, 0, "#C4C7C3");
 
-            // Period deviation value  cell
-            TimeSpan t = (TimeSpan)(deviation.endDatePeriod - deviation.startDatePeriod);
-            int countMinutes = (int)t.TotalMinutes;
-            int days = countMinutes / (24 * 60);
-            int hours = (countMinutes - (days * 24 * 60)) / 60;
-            int minutesnb = countMinutes - (days * 24 * 60) - (hours * 60);
+            // Period deviation value  cell           
 
-            this.addTableCell(table, days+" Days  "+hours+" Hours  "+minutesnb+" Minutes", normal, 4, 0);
+            this.addTableCell(table, "From: "+deviation.endDatePeriod.ToString()+"  To: "+deviation.startDatePeriod, normal, 4, 0);
 
 
             // DENTFY THE FIRST AND LAST PART NUMBER  FOR DEVIATION  ... cell
@@ -221,7 +227,7 @@ namespace DeviationManager.Model
 
 
             // DENTFY THE FIRST AND LAST PART NUMBER  FOR DEVIATION value  ... cell
-            this.addTableCell(table, ".................\n .....................\n .....................\n ..................... \n .....................", normal, 7, 0);
+            this.addTableCell(table, "", normal, 7, 0);
 
 
             return table;
@@ -385,6 +391,21 @@ namespace DeviationManager.Model
         }
 
 
+        //add the page foot
+        private PdfPTable addPageFoot(Deviation deviation)
+        {
+            PdfPTable table = new PdfPTable(3);
+            table.WidthPercentage = 100;
+
+            DateTime date = DateTime.Now;
+
+            this.addTableCellForPageFoot(table, "Erstellt:A.Manow", small, 1, 0);
+            this.addTableCellForPageFoot(table, "Augabe D / "+date.ToString(), small, 1, 0);
+            this.addTableCellForPageFoot(table, deviation.deviationRef, small, 1, 2);
+
+            return table;
+        }
+
         //to create the hole document
         public String createPdfDeviation(Deviation deviation, IList<OtherApprovement> otherApprovements, String filePath)
         {
@@ -404,8 +425,14 @@ namespace DeviationManager.Model
             //Add Approvement table 
             this.createAllApprovementTablePdf(table, otherApprovements);
 
+            //add page foot
+            PdfPTable foot = this.addPageFoot(deviation);
+            foot.SpacingBefore = 10;
+
             // close the document and save it
             doc.Add(table);
+            doc.Add(foot);
+
             doc.Close();
 
             return fileSave;

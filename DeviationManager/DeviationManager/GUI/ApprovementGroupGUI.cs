@@ -30,6 +30,7 @@ namespace DeviationManager.GUI
 
 
 
+
         private void registerApprovementGroupe_Click(object sender, EventArgs e)
         {
             if (this.isValidateFrom())

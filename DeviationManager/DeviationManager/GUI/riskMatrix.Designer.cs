@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RiskMatrix));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel70 = new System.Windows.Forms.Panel();
@@ -117,6 +118,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel70.SuspendLayout();
@@ -137,15 +139,17 @@
             this.panel55.SuspendLayout();
             this.panel54.SuspendLayout();
             this.panel53.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(650, 300);
+            this.panel1.Size = new System.Drawing.Size(650, 600);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -241,19 +245,19 @@
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.Location = new System.Drawing.Point(7, 143);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(94, 13);
+            this.label19.Size = new System.Drawing.Size(93, 13);
             this.label19.TabIndex = 57;
-            this.label19.Text = "Product Quality";
+            this.label19.Text = "Produktqualität";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(20, 115);
+            this.label18.Location = new System.Drawing.Point(8, 115);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(60, 13);
+            this.label18.Size = new System.Drawing.Size(74, 13);
             this.label18.TabIndex = 56;
-            this.label18.Text = "Impact of";
+            this.label18.Text = "Einfluss Auf";
             // 
             // panel69
             // 
@@ -272,9 +276,9 @@
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.Location = new System.Drawing.Point(83, 11);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(357, 18);
+            this.label17.Size = new System.Drawing.Size(445, 18);
             this.label17.TabIndex = 56;
-            this.label17.Text = "<------------ Probability of Detection  ----------->";
+            this.label17.Text = "<------------ Wahrscheinlichkeit der Entdeckung  ----------->";
             // 
             // panel68
             // 
@@ -1163,11 +1167,20 @@
             this.panel4.TabIndex = 1;
             this.panel4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseClick);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(15, 316);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(608, 271);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // RiskMatrix
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 300);
+            this.ClientSize = new System.Drawing.Size(650, 600);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -1213,6 +1226,7 @@
             this.panel54.PerformLayout();
             this.panel53.ResumeLayout(false);
             this.panel53.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1308,5 +1322,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

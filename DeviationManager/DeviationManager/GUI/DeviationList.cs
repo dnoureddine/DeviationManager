@@ -30,8 +30,38 @@ namespace DeviationManager.GUI
             //show deviation list
             this.showDeviationList();
 
+            //set  language
+            if (LanguageName.languageName != "DeviationManager.Lang.language_en")
+            {
+                this.setLanguage();
+            }
+
         }
 
+
+        //set the language
+        private void setLanguage()
+        {
+            LanguageModel languageModel = new LanguageModel();
+
+            this.lDeviationNO.Text = languageModel.getString("ldeviationNo");
+            this.lRequestedBy.Text = languageModel.getString("lrequestedBy");
+            this.lProduct.Text = languageModel.getString("lproduct");
+            this.lRiskCategory.Text = languageModel.getString("lriskCategory");
+            this.lDeviationType.Text = languageModel.getString("ldeviationType");
+            this.lAnlage.Text = languageModel.getString("lmachine");
+            this.lDate1.Text = languageModel.getString("ldate1");
+            this.lDate2.Text = languageModel.getString("ldate2");
+            this.lUseAllInputs.Text = languageModel.getString("luseAllInputs");
+
+            this.deviationListUpdate.Text = languageModel.getString("lupdate");
+            this.Filter.Text = languageModel.getString("lfilterDeviation");
+            this.button1.Text = languageModel.getString("laddDeviation");
+            this.button2.Text = languageModel.getString("leditDeviation");
+            this.button3.Text = languageModel.getString("lcloseDeviation");
+            this.showDeviation.Text = languageModel.getString("lshowDeviation");
+            this.sendMessage.Text = languageModel.getString("lremindGroup");
+        }
 
         //show Deviation List
         private void showDeviationList()
