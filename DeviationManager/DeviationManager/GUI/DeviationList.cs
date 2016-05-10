@@ -171,11 +171,18 @@ namespace DeviationManager.GUI
                //The user can update the deviation if signature attribut of the deviation has the user name
                 if (deviation != null)
                 {
-                    //update Deviation
+                    //show Deviation
                     SaveDeviation saveDeviation = new SaveDeviation("showDeviation");
                     saveDeviation.showDeviation(deviation);
                 }
-                 
+                else
+                {
+                    MessageBox.Show("Deviation dos not exist!");
+                }
+
+            }else
+            {
+                MessageBox.Show("Please Choose a Deviation Before makimg this Action!");
             }
         }
 
