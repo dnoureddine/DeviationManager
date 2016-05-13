@@ -130,7 +130,7 @@
     <value>löschen</value>
   </data>
   <data name="ldescription" xml:space="preserve">
-    <value>Beschreibung</value>
+    <value>Weitere (optional)</value>
   </data>
   <data name="ldetailDescOfDev" xml:space="preserve">
     <value>Detaillierte Beschreibung der Abweichung</value>
@@ -139,7 +139,7 @@
     <value>Informationen der Abweichung</value>
   </data>
   <data name="ldeviationNo" xml:space="preserve">
-    <value>Abweichung Nu.</value>
+    <value>Abweichung Nr.</value>
   </data>
   <data name="ldeviationType" xml:space="preserve">
     <value>Art der Abweichung</value>
@@ -160,7 +160,7 @@
     <value>Anfrage genehmigt</value>
   </data>
   <data name="lrequestedBy" xml:space="preserve">
-    <value>Angefragt von</value>
+    <value>erstellt  von</value>
   </data>
   <data name="lrequestedRejected" xml:space="preserve">
     <value>Anfrage abgelehnt</value>
@@ -175,7 +175,7 @@
     <value>Unterschrift</value>
   </data>
   <data name="lstandardCondition" xml:space="preserve">
-    <value>Sollvorgabe</value>
+    <value>Beschreibung Sollzustand</value>
   </data>
   <data name="lapprovement" xml:space="preserve">
     <value>Freigabe</value>
@@ -217,28 +217,28 @@
     <value>Ref</value>
   </data>
   <data name="lalternativeIdMethod" xml:space="preserve">
-    <value>Alternative Identifikationsmethode</value>
+    <value>Anhang</value>
   </data>
   <data name="lclose" xml:space="preserve">
     <value>Schließen</value>
   </data>
   <data name="ldetailRequestCondition" xml:space="preserve">
-    <value>Detaillierte Anfragebedingungen</value>
+    <value>Beschreibung Istzustand</value>
   </data>
   <data name="lothers" xml:space="preserve">
     <value>Weitere</value>
   </data>
   <data name="lothersBox1" xml:space="preserve">
-    <value>Freigabe Regionaler Qualitätsdirektor: Bezugnehmend auf FTDS-BM-P-008</value>
+    <value>Freigabe Regional Quality Director: Bezugnehmend auf FTDS-BM-P-008</value>
   </data>
   <data name="lothersBox2" xml:space="preserve">
-    <value>Freigabe Produktengineering: Bezugnehmend auf FTDS-BM-P-008</value>
+    <value>Freigabe Product Engineering: Bezugnehmend auf FTDS-BM-P-008</value>
   </data>
   <data name="lothersBox3" xml:space="preserve">
-    <value>Freigabe Produktengineering: Bezugnehmend auf FTDS-BM-P-008</value>
+    <value>Freigabe Manufacturing Engineering (CCC Manager): Bezugnehmend auf FTDS-BM-P-008</value>
   </data>
   <data name="lothersBox4" xml:space="preserve">
-    <value>Freigabe Kunde: Bezugnehmend auf FTDS-BM-P-008</value>
+    <value>Freigabe Customer: Bezugnehmend auf FTDS-BM-P-008</value>
   </data>
   <data name="lprint" xml:space="preserve">
     <value>Ausdrucken</value>
@@ -272,5 +272,11 @@
   </data>
   <data name="luseAllInputs" xml:space="preserve">
     <value>Nutze alle Angaben</value>
+  </data>
+  <data name="laddNewDeviation" xml:space="preserve">
+    <value>Erstelle einen Deviation Report</value>
+  </data>
+  <data name="ldowonloadToolTip" xml:space="preserve">
+    <value>D</value>
   </data>
 </root>

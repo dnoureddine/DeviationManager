@@ -81,7 +81,7 @@
             this.requestApprovedProductEng = new System.Windows.Forms.CheckBox();
             this.lDateb2 = new System.Windows.Forms.Label();
             this.lRequestRejectedb2 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
+            this.lRequestedApprovedb2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lOtherBox2 = new System.Windows.Forms.Label();
             this.yesNoProductEng = new System.Windows.Forms.ComboBox();
@@ -625,7 +625,7 @@
             this.lRequestApprovedb2.Controls.Add(this.requestApprovedProductEng);
             this.lRequestApprovedb2.Controls.Add(this.lDateb2);
             this.lRequestApprovedb2.Controls.Add(this.lRequestRejectedb2);
-            this.lRequestApprovedb2.Controls.Add(this.label29);
+            this.lRequestApprovedb2.Controls.Add(this.lRequestedApprovedb2);
             this.lRequestApprovedb2.Controls.Add(this.panel5);
             this.lRequestApprovedb2.Location = new System.Drawing.Point(16, 177);
             this.lRequestApprovedb2.Name = "lRequestApprovedb2";
@@ -734,15 +734,15 @@
             this.lRequestRejectedb2.TabIndex = 10;
             this.lRequestRejectedb2.Text = "Request rejected    : ";
             // 
-            // label29
+            // lRequestedApprovedb2
             // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(5, 77);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(139, 15);
-            this.label29.TabIndex = 9;
-            this.label29.Text = "Request approved  : ";
+            this.lRequestedApprovedb2.AutoSize = true;
+            this.lRequestedApprovedb2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lRequestedApprovedb2.Location = new System.Drawing.Point(5, 77);
+            this.lRequestedApprovedb2.Name = "lRequestedApprovedb2";
+            this.lRequestedApprovedb2.Size = new System.Drawing.Size(139, 15);
+            this.lRequestedApprovedb2.TabIndex = 9;
+            this.lRequestedApprovedb2.Text = "Request approved  : ";
             // 
             // panel5
             // 
@@ -1064,7 +1064,7 @@
             this.lperiodDevation.Size = new System.Drawing.Size(894, 273);
             this.lperiodDevation.TabIndex = 3;
             this.lperiodDevation.TabStop = false;
-            this.lperiodDevation.Text = "Deviation Period";
+            this.lperiodDevation.Text = "Deviation Period and Attachement";
             // 
             // pFirstTime
             // 
@@ -1179,9 +1179,9 @@
             this.lAlternativeIdMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lAlternativeIdMethod.Location = new System.Drawing.Point(14, 71);
             this.lAlternativeIdMethod.Name = "lAlternativeIdMethod";
-            this.lAlternativeIdMethod.Size = new System.Drawing.Size(186, 15);
+            this.lAlternativeIdMethod.Size = new System.Drawing.Size(87, 15);
             this.lAlternativeIdMethod.TabIndex = 7;
-            this.lAlternativeIdMethod.Text = "Alternative Identification Method :";
+            this.lAlternativeIdMethod.Text = "Attachements :";
             // 
             // pSecondDate
             // 
@@ -1520,9 +1520,9 @@
             // 
             this.deviationType.FormattingEnabled = true;
             this.deviationType.Items.AddRange(new object[] {
-            "Specification",
-            "Process",
-            "Documentation"});
+            "Spezifikation",
+            "Prozess",
+            "Dokumentation"});
             this.deviationType.Location = new System.Drawing.Point(113, 131);
             this.deviationType.Name = "deviationType";
             this.deviationType.Size = new System.Drawing.Size(319, 23);
@@ -1647,7 +1647,6 @@
             this.Controls.Add(this.deviationHeadPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "SaveDeviation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Save Deviation";
@@ -1767,7 +1766,7 @@
         private System.Windows.Forms.CheckBox requestApprovedProductEng;
         private System.Windows.Forms.Label lDateb2;
         private System.Windows.Forms.Label lRequestRejectedb2;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label lRequestedApprovedb2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lOtherBox2;
         private System.Windows.Forms.ComboBox yesNoProductEng;

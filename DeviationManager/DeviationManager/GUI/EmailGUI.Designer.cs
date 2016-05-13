@@ -102,7 +102,7 @@
             this.MinimizeBox = false;
             this.Name = "EmailGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EmailGUI";
+            this.Text = "Email senden an die Verteilergruppen";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

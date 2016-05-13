@@ -39,14 +39,14 @@ namespace DeviationManager.GUI
             //generate email subject
             if (this.deviation.product !="")
             {
-                emailSubject = "New Deviation fürs Produkt : " + this.deviation.product;
+                emailSubject = "Neuer Deviation für das Produkt : " + this.deviation.product;
             }
 
             if(this.deviation.anlage!="")
             {
                 if (this.deviation.product != "")
                 {
-                    emailSubject = emailSubject + " / die Anlage : " + this.deviation.anlage;
+                    emailSubject = emailSubject + " / Anlage : " + this.deviation.anlage;
                 }
                 else
                 {
@@ -62,7 +62,7 @@ namespace DeviationManager.GUI
             this.subject.AppendText(emailSubject);
 
             //generate the email body
-            this.messageContent.AppendText("\n Standard Condition : \n\n");
+            this.messageContent.AppendText("\nStandard Condition : \n\n");
             this.messageContent.AppendText(this.deviation.detailStandardCondition);
 
             this.messageContent.AppendText("\n\n\n");

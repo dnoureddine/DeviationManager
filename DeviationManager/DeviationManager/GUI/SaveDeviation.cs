@@ -61,7 +61,7 @@ namespace DeviationManager.GUI
             this.lposition.Text = languageModel.getString("lposition");
             this.ldeviationType.Text = languageModel.getString("ldeviationType");
             this.ldescription.Text = languageModel.getString("ldescription");
-            this.lothers.Text = languageModel.getString("loptional");
+            this.lothers.Text = languageModel.getString("");
             this.lsignature.Text = languageModel.getString("lsignature");
 
             this.ldetailDescOfDev.Text = languageModel.getString("ldetailDescOfDev"); 
@@ -108,7 +108,7 @@ namespace DeviationManager.GUI
             this.lPositionb1.Text = languageModel.getString("lposition");
 
             this.lDateb2.Text = languageModel.getString("ldate");
-            this.lRequestApprovedb2.Text = languageModel.getString("lrequestApproved");
+            this.lRequestedApprovedb2.Text = languageModel.getString("lrequestApproved");
             this.lRequestRejectedb2.Text = languageModel.getString("lrequestedRejected");
             this.lNameb2.Text = languageModel.getString("lname");
             this.lSignatureb2.Text = languageModel.getString("lsignature");
