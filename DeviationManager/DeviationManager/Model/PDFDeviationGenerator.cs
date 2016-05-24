@@ -98,7 +98,7 @@ namespace DeviationManager.Model
             table.AddCell(logo);
 
             //Title  cell
-            this.addTableCell(table, "Deviation-Report / Abweichungerlaubnis", bigBold, 5, 1);
+            this.addTableCell(table, "Deviation-Report / Abweichungserlaubnis", bigBold, 5, 1);
 
             //Document Number  cell
             this.addTableCell(table, "Document Number: FTDS-BM-F-001", normal, 2, 0);
@@ -139,13 +139,26 @@ namespace DeviationManager.Model
             this.addTableCell(table, "ABWEICHUNG NR.:", normal, 1, 0, "#99ccff");
 
             //Deviation No Value cell
-            this.addTableCell(table, "DR-", normal, 2, 0);
+            this.addTableCell(table, "DR-"+deviation.deviationRef, normal, 2, 0);
 
             // Risk Category cell
-            this.addTableCell(table, "RISIKOKATEGOORIE:", normal, 2, 0, "#99ccff");
+            this.addTableCell(table, "RISIKOKATEGORIE / (circle relevant):", normal, 2, 0, "#99ccff");
 
             // Risk Category Value cell
-            this.addTableCell(table,deviation.deviationRiskCategory, normal, 2, 0, "#ff9900");
+            String riskCat = deviation.deviationRiskCategory;
+            String color = "";
+            if (riskCat == "GRÜN")
+            {
+                color = "green";
+            }else if (riskCat == "ROT")
+            {
+                color = "red";
+            }else if (riskCat == "GELB")
+            {
+                color = "yellow";
+            }
+
+            this.addTableCell(table,deviation.deviationRiskCategory, normal, 2, 0, color);
 
             // Requested by cell
             this.addTableCell(table, "ERSTELLT VON:", normal, 1, 0);
@@ -184,13 +197,31 @@ namespace DeviationManager.Model
             this.addTableCell(table, "DETAILED DESCRIPTION OF DEVIATION (detail product name / procedure number / specification / etc) \n Detaillierte Beschreibung der Abweichung ( Produkt Nr., Anweisungs Nr.:, Spezifikation, Verfahrensanweisungsnr., usw.)", normal, 7, 0);
 
             // Standard condition cell
-            this.addTableCell(table, "Vorgabe_ Beschreibung Sollzustand", normal, 3, 1, "#C4C7C3");
+            this.addTableCell(table, "Beschreibung Istzustand", normal, 3, 1, "#C4C7C3");
 
             // detail requested condition cell
-            this.addTableCell(table, "Beschreibung Abweichung _ Istzustand", normal, 4, 1, "#C4C7C3");
+            this.addTableCell(table, "Beschreibung Sollzustand", normal, 4, 1, "#C4C7C3");
 
             // Standard condition  value cell
-            this.addTableCell(table, deviation.detailRequestCondition, normal, 3, 0);
+            String productanlage = deviation.product;
+            if (productanlage != "")
+            {
+                if (deviation.anlage != "")
+                {
+                    productanlage = productanlage + " / Anlage " + deviation.anlage;
+                }
+            }
+            else
+            {
+                productanlage = deviation.anlage;
+            }
+
+            if (productanlage != "")
+            {
+                productanlage = productanlage + " ";
+            }
+
+            this.addTableCell(table, productanlage + deviation.detailRequestCondition, normal, 3, 0);
 
             // detail requested condition value  cell
             this.addTableCell(table, deviation.detailStandardCondition, normal, 4, 0);
@@ -219,7 +250,7 @@ namespace DeviationManager.Model
 
             // Period deviation value  cell           
 
-            this.addTableCell(table, "From: "+deviation.endDatePeriod.ToString()+"  To: "+deviation.startDatePeriod, normal, 4, 0);
+            this.addTableCell(table, "Von: "+deviation.startDatePeriod.ToString()+"  Bis: "+deviation.endDatePeriod.ToString(), normal, 4, 0);
 
 
             // DENTFY THE FIRST AND LAST PART NUMBER  FOR DEVIATION  ... cell
@@ -227,7 +258,7 @@ namespace DeviationManager.Model
 
 
             // DENTFY THE FIRST AND LAST PART NUMBER  FOR DEVIATION value  ... cell
-            this.addTableCell(table, "", normal, 7, 0);
+            this.addTableCell(table, deviation.barcode, normal, 7, 0);
 
 
             return table;
@@ -324,7 +355,7 @@ namespace DeviationManager.Model
             this.addTableCell(table, otherApprovement.selectYesNo, normal, 1, 0, "#ff9900");
 
             // Request Approved value cell
-            this.addTableCell(table, "REQUEST APPROVED \n Freigegeben", small, 1, 0);
+            this.addTableCell(table, "REQUEST APPROVED", small, 1, 0);
 
             // Request Approved value value cell
             if (otherApprovement.requestApproved)
@@ -343,7 +374,7 @@ namespace DeviationManager.Model
             this.addTableCell(table, otherApprovement.nameApproval, small, 4, 0);
 
             // REQUEST REJECTED cell
-            this.addTableCell(table, "REQUEST REJECTED \n Abgelehnt", small, 1, 0);
+            this.addTableCell(table, "REQUEST REJECTED", small, 1, 0);
 
             // REQUEST REJECTED value value cell
             if (otherApprovement.requestRejected)
@@ -397,10 +428,8 @@ namespace DeviationManager.Model
             PdfPTable table = new PdfPTable(3);
             table.WidthPercentage = 100;
 
-            DateTime date = DateTime.Now;
-
             this.addTableCellForPageFoot(table, "Erstellt:A.Manow", small, 1, 0);
-            this.addTableCellForPageFoot(table, "Augabe D / "+date.ToString(), small, 1, 0);
+            this.addTableCellForPageFoot(table, "Ausgabe D / 20.01.2016", small, 1, 0);
             this.addTableCellForPageFoot(table, deviation.deviationRef, small, 1, 2);
 
             return table;

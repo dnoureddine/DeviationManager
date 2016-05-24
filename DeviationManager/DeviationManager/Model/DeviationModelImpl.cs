@@ -27,14 +27,31 @@ namespace DeviationManager.Model
             return deviation;
         }
 
-        /************************* List all Derivation **********************************/
-        public IList<Deviation> listDeviations()
+        //get the Number of deviation
+        public long getAllDeviationNumber()
         {
             using (var session = NHibernateHelper.OpenSession())
             {
                 using (var transaction = session.BeginTransaction())
                 {
-                    var deviations = session.CreateCriteria(typeof(Deviation)).List<Deviation>();
+                    long count = (long)session.CreateQuery("select count(*) from Deviation").UniqueResult();
+                    return count;
+                }
+            }
+        }
+
+        /************************* List all Derivation **********************************/
+        public IList<Deviation> listDeviations(int n, int m)
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var deviations = session.CreateCriteria(typeof(Deviation))
+                                     .AddOrder(Order.Desc("deviationId"))
+                                     .SetFirstResult(n * m - m)
+                                     .SetMaxResults(n * m)
+                                     .List<Deviation>();
                     return deviations;
                 }
             }
@@ -309,7 +326,8 @@ namespace DeviationManager.Model
                 using (var transaction = session.BeginTransaction())
                 {
                     var deviations = session.CreateCriteria(typeof(Deviation))
-                     .Add(Restrictions.Like("deviationRef", refDev, MatchMode.Anywhere))
+                     .Add(Restrictions.Like("deviationRef", refDev, MatchMode.Start))
+                     .AddOrder(Order.Desc("deviationId"))
                      .List<Deviation>();
 
                     return deviations;
@@ -327,7 +345,8 @@ namespace DeviationManager.Model
                 using (var transaction = session.BeginTransaction())
                 {
                     var deviations = session.CreateCriteria(typeof(Deviation))
-                     .Add(Restrictions.Like("requestedBy", requestedBy, MatchMode.Anywhere))
+                     .Add(Restrictions.Like("requestedBy", requestedBy, MatchMode.Start))
+                     .AddOrder(Order.Desc("deviationId"))
                      .List<Deviation>();
 
                     return deviations;
@@ -346,6 +365,7 @@ namespace DeviationManager.Model
                 {
                     var deviations = session.CreateCriteria(typeof(Deviation))
                      .Add(Restrictions.Eq("deviationRiskCategory", riskCategory))
+                     .AddOrder(Order.Desc("deviationId"))
                      .List<Deviation>();
 
                     return deviations;
@@ -364,6 +384,7 @@ namespace DeviationManager.Model
                 {
                     var deviations = session.CreateCriteria(typeof(Deviation))
                      .Add(Restrictions.Eq("deviationType", deviationType))
+                     .AddOrder(Order.Desc("deviationId"))
                      .List<Deviation>();
 
                     return deviations;
@@ -381,7 +402,8 @@ namespace DeviationManager.Model
                 using (var transaction = session.BeginTransaction())
                 {
                     var deviations = session.CreateCriteria(typeof(Deviation))
-                     .Add(Restrictions.Like("product", product, MatchMode.Anywhere))
+                     .Add(Restrictions.Like("product", product, MatchMode.Start))
+                     .AddOrder(Order.Desc("deviationId"))
                      .List<Deviation>();
 
                     return deviations;
@@ -399,7 +421,8 @@ namespace DeviationManager.Model
                 using (var transaction = session.BeginTransaction())
                 {
                     var deviations = session.CreateCriteria(typeof(Deviation))
-                     .Add(Restrictions.Like("anlage", anlage, MatchMode.Anywhere))
+                     .Add(Restrictions.Like("anlage", anlage, MatchMode.Start))
+                     .AddOrder(Order.Desc("deviationId"))
                      .List<Deviation>();
 
                     return deviations;
@@ -418,6 +441,7 @@ namespace DeviationManager.Model
                 {
                     var deviations = session.CreateCriteria(typeof(Deviation))
                      .Add(Restrictions.Between("dateCreation", date1, date2))
+                     .AddOrder(Order.Desc("deviationId"))
                      .List<Deviation>();
 
                     return deviations;
@@ -459,7 +483,8 @@ namespace DeviationManager.Model
 
 
 
-                    var deviations= creteria.List<Deviation>();
+                    var deviations= creteria.AddOrder(Order.Desc("deviationId"))
+                                    .List<Deviation>();
 
                     return deviations;
                 }
@@ -569,11 +594,14 @@ namespace DeviationManager.Model
             {
                 using (var transaction = session.BeginTransaction())
                 {
-                    var deviations = session.CreateCriteria(typeof(Deviation)).List<Deviation>();
+                    var deviations = session.CreateCriteria(typeof(Deviation))
+                                     .AddOrder(Order.Desc("deviationId"))
+                                     .List<Deviation>();
+
                     IList<Deviation> pendingDeviationList = new List<Deviation>();
                     foreach (var deviation in deviations)
                     {
-                        if (deviation.Approved == "Pending")
+                        if (deviation.Freigabe == "Pending")
                         {
                             pendingDeviationList.Add(deviation);
                         }
@@ -591,11 +619,14 @@ namespace DeviationManager.Model
             {
                 using (var transaction = session.BeginTransaction())
                 {
-                    var deviations = session.CreateCriteria(typeof(Deviation)).List<Deviation>();
+                    var deviations = session.CreateCriteria(typeof(Deviation))
+                        .AddOrder(Order.Desc("deviationId"))
+                        .List<Deviation>();
+
                     IList<Deviation> pendingDeviationList = new List<Deviation>();
                     foreach (var deviation in deviations)
                     {
-                        if (deviation.Approved == "Rejected" || deviation.Approved == "Closed")
+                        if (deviation.Freigabe == "Rejected" || deviation.Freigabe == "Closed")
                         {
                             pendingDeviationList.Add(deviation);
                         }
@@ -613,11 +644,14 @@ namespace DeviationManager.Model
             {
                 using (var transaction = session.BeginTransaction())
                 {
-                    var deviations = session.CreateCriteria(typeof(Deviation)).List<Deviation>();
+                    var deviations = session.CreateCriteria(typeof(Deviation))
+                        .AddOrder(Order.Desc("deviationId"))
+                        .List<Deviation>();
+
                     IList<Deviation> pendingDeviationList = new List<Deviation>();
                     foreach (var deviation in deviations)
                     {
-                        if (deviation.Approved == "Approved")
+                        if (deviation.Freigabe == "Approved")
                         {
                             pendingDeviationList.Add(deviation);
                         }

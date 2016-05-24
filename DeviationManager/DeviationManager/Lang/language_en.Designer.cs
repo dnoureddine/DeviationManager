@@ -79,6 +79,15 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add New Deviation.
+        /// </summary>
+        internal static string laddNewDeviation {
+            get {
+                return ResourceManager.GetString("laddNewDeviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Alternative Identification Method .
         /// </summary>
         internal static string lalternativeIdMethod {

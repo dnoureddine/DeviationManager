@@ -28,22 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeviationList));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listdeviationNumber = new System.Windows.Forms.Label();
+            this.leftArrow = new System.Windows.Forms.Button();
+            this.rightArrow = new System.Windows.Forms.Button();
             this.sendMessage = new System.Windows.Forms.Button();
             this.showDeviation = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.DeviationDataGridView = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deviationAnzeigenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deviationÜberarbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deviationSchliessenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gruppeErinnernToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.ldeviationFilterBox = new System.Windows.Forms.GroupBox();
+            this.lartabweichung = new System.Windows.Forms.Label();
             this.lDate2 = new System.Windows.Forms.Label();
             this.date2 = new System.Windows.Forms.DateTimePicker();
             this.lDate1 = new System.Windows.Forms.Label();
             this.date1 = new System.Windows.Forms.DateTimePicker();
-            this.lAnlage = new System.Windows.Forms.Label();
-            this.product = new System.Windows.Forms.TextBox();
             this.lProduct = new System.Windows.Forms.Label();
+            this.product = new System.Windows.Forms.TextBox();
+            this.lAnlage = new System.Windows.Forms.Label();
             this.anlage = new System.Windows.Forms.TextBox();
             this.deviationListUpdate = new System.Windows.Forms.Button();
             this.lUseAllInputs = new System.Windows.Forms.Label();
@@ -59,11 +70,16 @@
             this.lDeviationNO = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeviationDataGridView)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.ldeviationFilterBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.listdeviationNumber);
+            this.panel1.Controls.Add(this.leftArrow);
+            this.panel1.Controls.Add(this.rightArrow);
             this.panel1.Controls.Add(this.sendMessage);
             this.panel1.Controls.Add(this.showDeviation);
             this.panel1.Controls.Add(this.button3);
@@ -74,8 +90,48 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1238, 653);
+            this.panel1.Size = new System.Drawing.Size(1238, 672);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 632);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(175, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Darstellung auf 200 Zeilen begrenzt";
+            // 
+            // listdeviationNumber
+            // 
+            this.listdeviationNumber.AutoSize = true;
+            this.listdeviationNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listdeviationNumber.ForeColor = System.Drawing.Color.Red;
+            this.listdeviationNumber.Location = new System.Drawing.Point(1014, 639);
+            this.listdeviationNumber.Name = "listdeviationNumber";
+            this.listdeviationNumber.Size = new System.Drawing.Size(103, 13);
+            this.listdeviationNumber.TabIndex = 14;
+            this.listdeviationNumber.Text = "1-200 von 48743";
+            // 
+            // leftArrow
+            // 
+            this.leftArrow.Image = ((System.Drawing.Image)(resources.GetObject("leftArrow.Image")));
+            this.leftArrow.Location = new System.Drawing.Point(1132, 632);
+            this.leftArrow.Name = "leftArrow";
+            this.leftArrow.Size = new System.Drawing.Size(44, 28);
+            this.leftArrow.TabIndex = 13;
+            this.leftArrow.UseVisualStyleBackColor = true;
+            this.leftArrow.Click += new System.EventHandler(this.leftArrow_Click);
+            // 
+            // rightArrow
+            // 
+            this.rightArrow.Image = ((System.Drawing.Image)(resources.GetObject("rightArrow.Image")));
+            this.rightArrow.Location = new System.Drawing.Point(1182, 632);
+            this.rightArrow.Name = "rightArrow";
+            this.rightArrow.Size = new System.Drawing.Size(45, 28);
+            this.rightArrow.TabIndex = 12;
+            this.rightArrow.UseVisualStyleBackColor = true;
+            this.rightArrow.Click += new System.EventHandler(this.rightArrow_Click);
             // 
             // sendMessage
             // 
@@ -115,11 +171,54 @@
             // 
             // DeviationDataGridView
             // 
+            this.DeviationDataGridView.AllowUserToAddRows = false;
+            this.DeviationDataGridView.AllowUserToDeleteRows = false;
             this.DeviationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DeviationDataGridView.ContextMenuStrip = this.contextMenuStrip1;
             this.DeviationDataGridView.Location = new System.Drawing.Point(12, 240);
+            this.DeviationDataGridView.MultiSelect = false;
             this.DeviationDataGridView.Name = "DeviationDataGridView";
+            this.DeviationDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DeviationDataGridView.Size = new System.Drawing.Size(1214, 384);
             this.DeviationDataGridView.TabIndex = 3;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deviationAnzeigenToolStripMenuItem,
+            this.deviationÜberarbeitenToolStripMenuItem,
+            this.deviationSchliessenToolStripMenuItem,
+            this.gruppeErinnernToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(195, 92);
+            // 
+            // deviationAnzeigenToolStripMenuItem
+            // 
+            this.deviationAnzeigenToolStripMenuItem.Name = "deviationAnzeigenToolStripMenuItem";
+            this.deviationAnzeigenToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.deviationAnzeigenToolStripMenuItem.Text = "Deviation  anzeigen";
+            this.deviationAnzeigenToolStripMenuItem.Click += new System.EventHandler(this.deviationAnzeigenToolStripMenuItem_Click);
+            // 
+            // deviationÜberarbeitenToolStripMenuItem
+            // 
+            this.deviationÜberarbeitenToolStripMenuItem.Name = "deviationÜberarbeitenToolStripMenuItem";
+            this.deviationÜberarbeitenToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.deviationÜberarbeitenToolStripMenuItem.Text = "Deviation überarbeiten";
+            this.deviationÜberarbeitenToolStripMenuItem.Click += new System.EventHandler(this.deviationÜberarbeitenToolStripMenuItem_Click);
+            // 
+            // deviationSchliessenToolStripMenuItem
+            // 
+            this.deviationSchliessenToolStripMenuItem.Name = "deviationSchliessenToolStripMenuItem";
+            this.deviationSchliessenToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.deviationSchliessenToolStripMenuItem.Text = "Deviation schliessen";
+            this.deviationSchliessenToolStripMenuItem.Click += new System.EventHandler(this.deviationSchliessenToolStripMenuItem_Click);
+            // 
+            // gruppeErinnernToolStripMenuItem
+            // 
+            this.gruppeErinnernToolStripMenuItem.Name = "gruppeErinnernToolStripMenuItem";
+            this.gruppeErinnernToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.gruppeErinnernToolStripMenuItem.Text = "Gruppe erinnern";
+            this.gruppeErinnernToolStripMenuItem.Click += new System.EventHandler(this.gruppeErinnernToolStripMenuItem_Click);
             // 
             // button2
             // 
@@ -147,13 +246,14 @@
             // 
             // ldeviationFilterBox
             // 
+            this.ldeviationFilterBox.Controls.Add(this.lartabweichung);
             this.ldeviationFilterBox.Controls.Add(this.lDate2);
             this.ldeviationFilterBox.Controls.Add(this.date2);
             this.ldeviationFilterBox.Controls.Add(this.lDate1);
             this.ldeviationFilterBox.Controls.Add(this.date1);
-            this.ldeviationFilterBox.Controls.Add(this.lAnlage);
-            this.ldeviationFilterBox.Controls.Add(this.product);
             this.ldeviationFilterBox.Controls.Add(this.lProduct);
+            this.ldeviationFilterBox.Controls.Add(this.product);
+            this.ldeviationFilterBox.Controls.Add(this.lAnlage);
             this.ldeviationFilterBox.Controls.Add(this.anlage);
             this.ldeviationFilterBox.Controls.Add(this.deviationListUpdate);
             this.ldeviationFilterBox.Controls.Add(this.lUseAllInputs);
@@ -174,6 +274,15 @@
             this.ldeviationFilterBox.TabStop = false;
             this.ldeviationFilterBox.Text = "Deviations Filter";
             // 
+            // lartabweichung
+            // 
+            this.lartabweichung.AutoSize = true;
+            this.lartabweichung.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lartabweichung.Location = new System.Drawing.Point(368, 86);
+            this.lartabweichung.Name = "lartabweichung";
+            this.lartabweichung.Size = new System.Drawing.Size(0, 15);
+            this.lartabweichung.TabIndex = 21;
+            // 
             // lDate2
             // 
             this.lDate2.AutoSize = true;
@@ -182,7 +291,7 @@
             this.lDate2.Name = "lDate2";
             this.lDate2.Size = new System.Drawing.Size(109, 15);
             this.lDate2.TabIndex = 20;
-            this.lDate2.Text = "Date 2              :";
+            this.lDate2.Text = "Date to             :";
             // 
             // date2
             // 
@@ -197,9 +306,9 @@
             this.lDate1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lDate1.Location = new System.Drawing.Point(707, 35);
             this.lDate1.Name = "lDate1";
-            this.lDate1.Size = new System.Drawing.Size(109, 15);
+            this.lDate1.Size = new System.Drawing.Size(110, 15);
             this.lDate1.TabIndex = 18;
-            this.lDate1.Text = "Date 1              :";
+            this.lDate1.Text = "Date from         :";
             // 
             // date1
             // 
@@ -208,42 +317,40 @@
             this.date1.Size = new System.Drawing.Size(219, 20);
             this.date1.TabIndex = 17;
             // 
-            // lAnlage
-            // 
-            this.lAnlage.AutoSize = true;
-            this.lAnlage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAnlage.Location = new System.Drawing.Point(368, 124);
-            this.lAnlage.Name = "lAnlage";
-            this.lAnlage.Size = new System.Drawing.Size(114, 15);
-            this.lAnlage.TabIndex = 16;
-            this.lAnlage.Text = "Machine            :";
-            this.lAnlage.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // product
-            // 
-            this.product.Location = new System.Drawing.Point(481, 120);
-            this.product.Multiline = true;
-            this.product.Name = "product";
-            this.product.Size = new System.Drawing.Size(210, 25);
-            this.product.TabIndex = 15;
-            this.product.TextChanged += new System.EventHandler(this.product_TextChanged);
-            // 
             // lProduct
             // 
             this.lProduct.AutoSize = true;
             this.lProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lProduct.Location = new System.Drawing.Point(6, 119);
+            this.lProduct.Location = new System.Drawing.Point(368, 124);
             this.lProduct.Name = "lProduct";
-            this.lProduct.Size = new System.Drawing.Size(108, 15);
-            this.lProduct.TabIndex = 14;
-            this.lProduct.Text = "Product            :";
+            this.lProduct.Size = new System.Drawing.Size(111, 15);
+            this.lProduct.TabIndex = 16;
+            this.lProduct.Text = "Anlage              :";
+            this.lProduct.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // product
+            // 
+            this.product.Location = new System.Drawing.Point(481, 120);
+            this.product.Name = "product";
+            this.product.Size = new System.Drawing.Size(210, 20);
+            this.product.TabIndex = 15;
+            this.product.TextChanged += new System.EventHandler(this.product_TextChanged);
+            // 
+            // lAnlage
+            // 
+            this.lAnlage.AutoSize = true;
+            this.lAnlage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lAnlage.Location = new System.Drawing.Point(6, 119);
+            this.lAnlage.Name = "lAnlage";
+            this.lAnlage.Size = new System.Drawing.Size(110, 15);
+            this.lAnlage.TabIndex = 14;
+            this.lAnlage.Text = "Machine           :";
             // 
             // anlage
             // 
             this.anlage.Location = new System.Drawing.Point(120, 118);
-            this.anlage.Multiline = true;
             this.anlage.Name = "anlage";
-            this.anlage.Size = new System.Drawing.Size(228, 25);
+            this.anlage.Size = new System.Drawing.Size(228, 20);
             this.anlage.TabIndex = 13;
             this.anlage.TextChanged += new System.EventHandler(this.anlage_TextChanged);
             // 
@@ -293,9 +400,8 @@
             // requestedBy
             // 
             this.requestedBy.Location = new System.Drawing.Point(122, 66);
-            this.requestedBy.Multiline = true;
             this.requestedBy.Name = "requestedBy";
-            this.requestedBy.Size = new System.Drawing.Size(226, 25);
+            this.requestedBy.Size = new System.Drawing.Size(226, 20);
             this.requestedBy.TabIndex = 8;
             this.requestedBy.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -313,9 +419,9 @@
             // 
             this.deviationType.FormattingEnabled = true;
             this.deviationType.Items.AddRange(new object[] {
-            "Specification",
-            "Process",
-            "Documentation"});
+            "Spezifikation",
+            "Prozess",
+            "Dokumentation"});
             this.deviationType.Location = new System.Drawing.Point(481, 71);
             this.deviationType.Name = "deviationType";
             this.deviationType.Size = new System.Drawing.Size(210, 21);
@@ -326,7 +432,7 @@
             // 
             this.lDeviationType.AutoSize = true;
             this.lDeviationType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lDeviationType.Location = new System.Drawing.Point(368, 73);
+            this.lDeviationType.Location = new System.Drawing.Point(368, 71);
             this.lDeviationType.Name = "lDeviationType";
             this.lDeviationType.Size = new System.Drawing.Size(113, 15);
             this.lDeviationType.TabIndex = 5;
@@ -336,9 +442,9 @@
             // 
             this.riskCategory.FormattingEnabled = true;
             this.riskCategory.Items.AddRange(new object[] {
-            "RED",
-            "YELLOW",
-            "GREEN"});
+            "ROT",
+            "GELB",
+            "GRÜN"});
             this.riskCategory.Location = new System.Drawing.Point(481, 30);
             this.riskCategory.Name = "riskCategory";
             this.riskCategory.Size = new System.Drawing.Size(210, 21);
@@ -357,10 +463,9 @@
             // 
             // deviationNO
             // 
-            this.deviationNO.Location = new System.Drawing.Point(122, 25);
-            this.deviationNO.Multiline = true;
+            this.deviationNO.Location = new System.Drawing.Point(122, 26);
             this.deviationNO.Name = "deviationNO";
-            this.deviationNO.Size = new System.Drawing.Size(226, 25);
+            this.deviationNO.Size = new System.Drawing.Size(226, 20);
             this.deviationNO.TabIndex = 2;
             this.deviationNO.TextChanged += new System.EventHandler(this.deviationNO_TextChanged);
             // 
@@ -378,16 +483,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 653);
+            this.ClientSize = new System.Drawing.Size(1238, 672);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DeviationList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "List Deviation";
+            this.Text = "Abweichungsliste";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DeviationDataGridView)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ldeviationFilterBox.ResumeLayout(false);
             this.ldeviationFilterBox.PerformLayout();
             this.ResumeLayout(false);
@@ -416,13 +523,23 @@
         private System.Windows.Forms.CheckBox likeSearch;
         private System.Windows.Forms.Button deviationListUpdate;
         private System.Windows.Forms.DateTimePicker date1;
-        private System.Windows.Forms.Label lAnlage;
-        private System.Windows.Forms.TextBox product;
         private System.Windows.Forms.Label lProduct;
+        private System.Windows.Forms.TextBox product;
+        private System.Windows.Forms.Label lAnlage;
         private System.Windows.Forms.TextBox anlage;
         private System.Windows.Forms.Label lDate1;
         private System.Windows.Forms.Label lDate2;
         private System.Windows.Forms.DateTimePicker date2;
         private System.Windows.Forms.Button sendMessage;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem deviationAnzeigenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deviationÜberarbeitenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deviationSchliessenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gruppeErinnernToolStripMenuItem;
+        private System.Windows.Forms.Label lartabweichung;
+        private System.Windows.Forms.Label listdeviationNumber;
+        private System.Windows.Forms.Button leftArrow;
+        private System.Windows.Forms.Button rightArrow;
+        private System.Windows.Forms.Label label1;
     }
 }

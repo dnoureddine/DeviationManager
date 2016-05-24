@@ -63,6 +63,6 @@ C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\DeviationManager.Lang.language_de.resources
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\bin\Debug\System.Windows.Forms.DataVisualization.dll
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\bin\Debug\stdole.dll
-C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\DeviationManager.csprojResolveAssemblyReference.cache
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\DeviationManager.GUI.ChangePassword.resources
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\DeviationManager.GUI.Connection.resources
+C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Debug\DeviationManager.csprojResolveAssemblyReference.cache

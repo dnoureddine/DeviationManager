@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Resources;
 using System.Text;
 using System.Windows.Forms;
+using System.DirectoryServices.AccountManagement;
 
 namespace DeviationManager.GUI
 {
@@ -42,6 +43,9 @@ namespace DeviationManager.GUI
                 setSignature();
             }
 
+            String username = System.DirectoryServices.AccountManagement.UserPrincipal.Current.DisplayName;
+            this.requestedBy.Text = username;
+
         }
 
 
@@ -52,6 +56,7 @@ namespace DeviationManager.GUI
         {
             LanguageModel languageModel = new LanguageModel();
 
+            this.laddNewDeviation.Text = languageModel.getString("laddNewDeviation");
 
             this.lDeviationInfo.Text = languageModel.getString("lDeviationInfo");
             this.ldeviationNo.Text = languageModel.getString("ldeviationNo");
@@ -63,6 +68,8 @@ namespace DeviationManager.GUI
             this.ldescription.Text = languageModel.getString("ldescription");
             this.lothers.Text = languageModel.getString("");
             this.lsignature.Text = languageModel.getString("lsignature");
+            this.lartabweichung.Text = languageModel.getString("lartabweichung");
+            this.loptional.Text = "";
 
             this.ldetailDescOfDev.Text = languageModel.getString("ldetailDescOfDev"); 
             this.lstandardCondition.Text = languageModel.getString("lstandardCondition");
@@ -230,6 +237,7 @@ namespace DeviationManager.GUI
             deviation.signature = this.deviationSignature.Text;
             deviation.detailStandardCondition = this.standardCondition.Text;
             deviation.detailRequestCondition = this.detailRequestedDeviation.Text;
+            deviation.barcode = this.barcode.Text;
             deviation.anlage = this.anlage.Text;
             deviation.product = this.product.Text;
             if (this.actionType == "newDeviation")
@@ -319,6 +327,7 @@ namespace DeviationManager.GUI
                 deviation.signature = this.deviationSignature.Text;
                 deviation.detailStandardCondition = this.standardCondition.Text;
                 deviation.detailRequestCondition = this.detailRequestedDeviation.Text;
+                deviation.barcode = this.barcode.Text;
                 deviation.anlage = this.anlage.Text;
                 deviation.product = this.product.Text;
                 if (this.actionType == "newDeviation")
@@ -374,6 +383,7 @@ namespace DeviationManager.GUI
             this.pSecondDate.Value=(DateTime)deviation.endDatePeriod;
             this.pSecondTime.Value = (DateTime)deviation.endDatePeriod; 
             this.deviationDescription.Text = deviation.describeOtherType;
+            this.barcode.Text = deviation.barcode;
             this.anlage.Text = deviation.anlage;
             this.product.Text = deviation.product;
 
@@ -646,6 +656,9 @@ namespace DeviationManager.GUI
                     if (result == "downloaded")
                     {
                         MessageBox.Show("File Downloaded !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        //show the file 
+                        Process.Start(saveDirectory + "/" + fileSave);
                     }
                     else
                     {

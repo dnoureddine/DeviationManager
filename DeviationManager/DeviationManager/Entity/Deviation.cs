@@ -13,13 +13,13 @@ namespace DeviationManager.Entity
         [Browsable(false)]
         public virtual int deviationId { get; protected set; }
 
-        [DisplayName("Ref")]
+        [DisplayName("Abweichung Nr")]
         public virtual String deviationRef { get; set; }
         [Browsable(false)]
         public virtual String deviationRiskCategory { get; set; }
-        [DisplayName("Requested By")]
+        [DisplayName("Erstellt von")]
         public virtual String requestedBy { get; set; }
-        [DisplayName("Created In")]
+        [DisplayName("Erstelldatum")]
         public virtual DateTime? dateCreation { get; set; }
         [Browsable(false)]
         public virtual String signature { get; set; }
@@ -31,22 +31,25 @@ namespace DeviationManager.Entity
         public virtual String describeOtherType { get; set; }
         [Browsable(false)]
         public virtual String detailRequestCondition { get; set; }
-        [DisplayName("Begin Period")]
+        [DisplayName("Abweichung von")]
         public virtual DateTime? startDatePeriod { get; set; }
-        [DisplayName("End Period")]
+        [DisplayName("Abweichung bis")]
         public virtual DateTime? endDatePeriod { get; set; }
-        [DisplayName("Status")]
+        [Browsable(false)]
         public virtual String status { get; set; }
         [Browsable(false)]
         public virtual Boolean isPrinted { get; set; }
-        [DisplayName("Closed In")]
+        [DisplayName("Geschlossen am")]
         public virtual DateTime? dateClosed { get; set; }
-        [DisplayName("Product")]
+        [DisplayName("Produkt")]
         public virtual String product { get; set; }
-        [DisplayName("Machine")]
+        [DisplayName("Anlage")]
         public virtual String anlage { get; set; }
-         [DisplayName("Reasons")]
+        [DisplayName("Sollvorgabe")]
         public virtual String detailStandardCondition { get; set; }
+        [Browsable(false)]
+        public virtual String barcode { get; set; }
+
 
         [Browsable(false)]
         public virtual IList<Reason> reasons { get;  set; }
@@ -56,8 +59,8 @@ namespace DeviationManager.Entity
         public virtual IList<Attachments> attachements { get; set; }
 
 
-
-        public virtual String Approved
+        [DisplayName("Freigabestatus")]
+        public virtual String Freigabe
         {
             get
             {

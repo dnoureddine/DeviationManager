@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrincipalWin));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,8 +56,22 @@
             this.deviationList = new System.Windows.Forms.Button();
             this.newDevaition = new System.Windows.Forms.Button();
             this.DeviationDataGridView = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.deviationAnzeigenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deviationÜberarbeitenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deviationSchliessenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gruppeErinnernToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.sendMessage = new System.Windows.Forms.Button();
+            this.listdeviationNumber = new System.Windows.Forms.Label();
+            this.showDeviation = new System.Windows.Forms.Button();
             this.updateDeviation = new System.Windows.Forms.Button();
+            this.closeDeviation = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.editDeviation = new System.Windows.Forms.Button();
+            this.addDeviation = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -71,6 +86,7 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeviationDataGridView)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,20 +110,20 @@
             this.saveApprovementGroupToolStripMenuItem});
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
             this.saveToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.saveToolStripMenuItem.Text = "SAVE";
+            this.saveToolStripMenuItem.Text = "Datei";
             // 
             // saveDeviationToolStripMenuItem
             // 
             this.saveDeviationToolStripMenuItem.Name = "saveDeviationToolStripMenuItem";
-            this.saveDeviationToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.saveDeviationToolStripMenuItem.Text = "Save Deviation";
+            this.saveDeviationToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.saveDeviationToolStripMenuItem.Text = "Neue Abweichung";
             this.saveDeviationToolStripMenuItem.Click += new System.EventHandler(this.saveDeviationToolStripMenuItem_Click);
             // 
             // saveApprovementGroupToolStripMenuItem
             // 
             this.saveApprovementGroupToolStripMenuItem.Name = "saveApprovementGroupToolStripMenuItem";
-            this.saveApprovementGroupToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.saveApprovementGroupToolStripMenuItem.Text = "Save approvement group";
+            this.saveApprovementGroupToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.saveApprovementGroupToolStripMenuItem.Text = "Neue Freigabegruppe";
             this.saveApprovementGroupToolStripMenuItem.Click += new System.EventHandler(this.saveApprovementGroupToolStripMenuItem_Click);
             // 
             // lISTToolStripMenuItem
@@ -115,21 +131,21 @@
             this.lISTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.listDeviationsToolStripMenuItem});
             this.lISTToolStripMenuItem.Name = "lISTToolStripMenuItem";
-            this.lISTToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.lISTToolStripMenuItem.Text = "LIST";
+            this.lISTToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.lISTToolStripMenuItem.Text = "Liste";
             // 
             // listDeviationsToolStripMenuItem
             // 
             this.listDeviationsToolStripMenuItem.Name = "listDeviationsToolStripMenuItem";
-            this.listDeviationsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.listDeviationsToolStripMenuItem.Text = "List deviations";
+            this.listDeviationsToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.listDeviationsToolStripMenuItem.Text = "Abweichungsliste";
             this.listDeviationsToolStripMenuItem.Click += new System.EventHandler(this.listDeviationsToolStripMenuItem_Click);
             // 
             // hELPToolStripMenuItem
             // 
             this.hELPToolStripMenuItem.Name = "hELPToolStripMenuItem";
-            this.hELPToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.hELPToolStripMenuItem.Text = "HELP";
+            this.hELPToolStripMenuItem.Size = new System.Drawing.Size(24, 20);
+            this.hELPToolStripMenuItem.Text = "?";
             // 
             // panel1
             // 
@@ -150,7 +166,7 @@
             this.language.Items.AddRange(new object[] {
             "English",
             "Deutsch"});
-            this.language.Location = new System.Drawing.Point(1002, 37);
+            this.language.Location = new System.Drawing.Point(1010, 39);
             this.language.Name = "language";
             this.language.Size = new System.Drawing.Size(181, 21);
             this.language.TabIndex = 1;
@@ -174,7 +190,7 @@
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Location = new System.Drawing.Point(140, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(999, 134);
+            this.panel3.Size = new System.Drawing.Size(1002, 134);
             this.panel3.TabIndex = 3;
             // 
             // panel8
@@ -187,6 +203,7 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(195, 66);
             this.panel8.TabIndex = 2;
+            this.toolTip.SetToolTip(this.panel8, "Die Liste der neuen Abweichungen");
             this.panel8.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel8_MouseClick);
             this.panel8.MouseEnter += new System.EventHandler(this.panel8_MouseEnter);
             this.panel8.MouseLeave += new System.EventHandler(this.panel8_MouseLeave);
@@ -236,6 +253,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(185, 66);
             this.panel6.TabIndex = 1;
+            this.toolTip.SetToolTip(this.panel6, "Die Liste der abgeschlossenen Abweichungen");
             this.panel6.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel6_MouseClick);
             this.panel6.MouseEnter += new System.EventHandler(this.panel6_MouseEnter);
             this.panel6.MouseLeave += new System.EventHandler(this.panel6_MouseLeave);
@@ -284,6 +302,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(181, 66);
             this.panel4.TabIndex = 0;
+            this.toolTip.SetToolTip(this.panel4, "Die Liste der abgelehnten Abweichungen");
             this.panel4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseClick);
             this.panel4.MouseEnter += new System.EventHandler(this.panel4_MouseEnter);
             this.panel4.MouseLeave += new System.EventHandler(this.panel4_MouseLeave);
@@ -324,9 +343,10 @@
             // 
             // deviationList
             // 
+            this.deviationList.ForeColor = System.Drawing.Color.Black;
             this.deviationList.Location = new System.Drawing.Point(0, 46);
             this.deviationList.Name = "deviationList";
-            this.deviationList.Size = new System.Drawing.Size(134, 42);
+            this.deviationList.Size = new System.Drawing.Size(134, 45);
             this.deviationList.TabIndex = 7;
             this.deviationList.Text = "Deviation List";
             this.deviationList.UseVisualStyleBackColor = true;
@@ -334,6 +354,7 @@
             // 
             // newDevaition
             // 
+            this.newDevaition.ForeColor = System.Drawing.Color.Black;
             this.newDevaition.Location = new System.Drawing.Point(0, 0);
             this.newDevaition.Name = "newDevaition";
             this.newDevaition.Size = new System.Drawing.Size(134, 42);
@@ -346,28 +367,114 @@
             // 
             this.DeviationDataGridView.AllowUserToAddRows = false;
             this.DeviationDataGridView.AllowUserToDeleteRows = false;
+            this.DeviationDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DeviationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DeviationDataGridView.ContextMenuStrip = this.contextMenuStrip1;
             this.DeviationDataGridView.Location = new System.Drawing.Point(0, 143);
+            this.DeviationDataGridView.MultiSelect = false;
             this.DeviationDataGridView.Name = "DeviationDataGridView";
             this.DeviationDataGridView.ReadOnly = true;
-            this.DeviationDataGridView.Size = new System.Drawing.Size(1142, 384);
+            this.DeviationDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DeviationDataGridView.Size = new System.Drawing.Size(1142, 359);
             this.DeviationDataGridView.TabIndex = 2;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deviationAnzeigenToolStripMenuItem,
+            this.deviationÜberarbeitenToolStripMenuItem,
+            this.deviationSchliessenToolStripMenuItem,
+            this.gruppeErinnernToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(195, 92);
+            // 
+            // deviationAnzeigenToolStripMenuItem
+            // 
+            this.deviationAnzeigenToolStripMenuItem.Name = "deviationAnzeigenToolStripMenuItem";
+            this.deviationAnzeigenToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.deviationAnzeigenToolStripMenuItem.Text = "Deviation Anzeigen";
+            this.deviationAnzeigenToolStripMenuItem.Click += new System.EventHandler(this.deviationAnzeigenToolStripMenuItem_Click);
+            // 
+            // deviationÜberarbeitenToolStripMenuItem
+            // 
+            this.deviationÜberarbeitenToolStripMenuItem.Name = "deviationÜberarbeitenToolStripMenuItem";
+            this.deviationÜberarbeitenToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.deviationÜberarbeitenToolStripMenuItem.Text = "Deviation überarbeiten";
+            this.deviationÜberarbeitenToolStripMenuItem.Click += new System.EventHandler(this.deviationÜberarbeitenToolStripMenuItem_Click);
+            // 
+            // deviationSchliessenToolStripMenuItem
+            // 
+            this.deviationSchliessenToolStripMenuItem.Name = "deviationSchliessenToolStripMenuItem";
+            this.deviationSchliessenToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.deviationSchliessenToolStripMenuItem.Text = "Deviation schliessen";
+            this.deviationSchliessenToolStripMenuItem.Click += new System.EventHandler(this.deviationSchliessenToolStripMenuItem_Click);
+            // 
+            // gruppeErinnernToolStripMenuItem
+            // 
+            this.gruppeErinnernToolStripMenuItem.Name = "gruppeErinnernToolStripMenuItem";
+            this.gruppeErinnernToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.gruppeErinnernToolStripMenuItem.Text = "Gruppe erinnern";
+            this.gruppeErinnernToolStripMenuItem.Click += new System.EventHandler(this.gruppeErinnernToolStripMenuItem_Click);
             // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.Controls.Add(this.sendMessage);
+            this.panel2.Controls.Add(this.listdeviationNumber);
+            this.panel2.Controls.Add(this.showDeviation);
             this.panel2.Controls.Add(this.updateDeviation);
+            this.panel2.Controls.Add(this.closeDeviation);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.editDeviation);
             this.panel2.Controls.Add(this.DeviationDataGridView);
+            this.panel2.Controls.Add(this.addDeviation);
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.deviationList);
             this.panel2.Controls.Add(this.newDevaition);
             this.panel2.Controls.Add(this.panel3);
-            this.panel2.Location = new System.Drawing.Point(25, 122);
+            this.panel2.Location = new System.Drawing.Point(25, 147);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1142, 530);
+            this.panel2.Size = new System.Drawing.Size(1142, 565);
             this.panel2.TabIndex = 8;
+            // 
+            // sendMessage
+            // 
+            this.sendMessage.Image = ((System.Drawing.Image)(resources.GetObject("sendMessage.Image")));
+            this.sendMessage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sendMessage.Location = new System.Drawing.Point(639, 509);
+            this.sendMessage.Name = "sendMessage";
+            this.sendMessage.Size = new System.Drawing.Size(128, 37);
+            this.sendMessage.TabIndex = 13;
+            this.sendMessage.Text = " Remind Group";
+            this.sendMessage.UseVisualStyleBackColor = true;
+            this.sendMessage.Click += new System.EventHandler(this.sendMessage_Click);
+            // 
+            // listdeviationNumber
+            // 
+            this.listdeviationNumber.AutoSize = true;
+            this.listdeviationNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listdeviationNumber.ForeColor = System.Drawing.Color.Red;
+            this.listdeviationNumber.Location = new System.Drawing.Point(926, 515);
+            this.listdeviationNumber.Name = "listdeviationNumber";
+            this.listdeviationNumber.Size = new System.Drawing.Size(103, 13);
+            this.listdeviationNumber.TabIndex = 11;
+            this.listdeviationNumber.Text = "1-200 von 48743";
+            // 
+            // showDeviation
+            // 
+            this.showDeviation.Image = ((System.Drawing.Image)(resources.GetObject("showDeviation.Image")));
+            this.showDeviation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.showDeviation.Location = new System.Drawing.Point(485, 509);
+            this.showDeviation.Name = "showDeviation";
+            this.showDeviation.Size = new System.Drawing.Size(148, 37);
+            this.showDeviation.TabIndex = 12;
+            this.showDeviation.Text = " Show Deviation";
+            this.showDeviation.UseVisualStyleBackColor = true;
+            this.showDeviation.Click += new System.EventHandler(this.showDeviation_Click);
             // 
             // updateDeviation
             // 
+            this.updateDeviation.ForeColor = System.Drawing.Color.Black;
             this.updateDeviation.Location = new System.Drawing.Point(0, 94);
             this.updateDeviation.Name = "updateDeviation";
             this.updateDeviation.Size = new System.Drawing.Size(134, 43);
@@ -376,14 +483,69 @@
             this.updateDeviation.UseVisualStyleBackColor = true;
             this.updateDeviation.Click += new System.EventHandler(this.button1_Click);
             // 
+            // closeDeviation
+            // 
+            this.closeDeviation.Image = ((System.Drawing.Image)(resources.GetObject("closeDeviation.Image")));
+            this.closeDeviation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.closeDeviation.Location = new System.Drawing.Point(330, 509);
+            this.closeDeviation.Name = "closeDeviation";
+            this.closeDeviation.Size = new System.Drawing.Size(149, 37);
+            this.closeDeviation.TabIndex = 11;
+            this.closeDeviation.Text = " Close Deviation";
+            this.closeDeviation.UseVisualStyleBackColor = true;
+            this.closeDeviation.Click += new System.EventHandler(this.closeDeviation_Click);
+            // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(1044, 508);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(44, 28);
+            this.button2.TabIndex = 10;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // editDeviation
+            // 
+            this.editDeviation.Image = ((System.Drawing.Image)(resources.GetObject("editDeviation.Image")));
+            this.editDeviation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.editDeviation.Location = new System.Drawing.Point(155, 509);
+            this.editDeviation.Name = "editDeviation";
+            this.editDeviation.Size = new System.Drawing.Size(169, 37);
+            this.editDeviation.TabIndex = 10;
+            this.editDeviation.Text = "Edit Deviation";
+            this.editDeviation.UseVisualStyleBackColor = true;
+            this.editDeviation.Click += new System.EventHandler(this.editDeviation_Click);
+            // 
+            // addDeviation
+            // 
+            this.addDeviation.Image = ((System.Drawing.Image)(resources.GetObject("addDeviation.Image")));
+            this.addDeviation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addDeviation.Location = new System.Drawing.Point(0, 508);
+            this.addDeviation.Name = "addDeviation";
+            this.addDeviation.Size = new System.Drawing.Size(149, 38);
+            this.addDeviation.TabIndex = 9;
+            this.addDeviation.Text = " Add Deviation";
+            this.addDeviation.UseVisualStyleBackColor = true;
+            this.addDeviation.Click += new System.EventHandler(this.addDeviation_Click);
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(1097, 508);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(45, 28);
+            this.button1.TabIndex = 9;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // PrincipalWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1196, 664);
+            this.ClientSize = new System.Drawing.Size(1196, 714);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PrincipalWin";
@@ -408,7 +570,9 @@
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeviationDataGridView)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,5 +608,19 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button updateDeviation;
         private System.Windows.Forms.ComboBox language;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem deviationAnzeigenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deviationÜberarbeitenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deviationSchliessenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gruppeErinnernToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label listdeviationNumber;
+        private System.Windows.Forms.Button sendMessage;
+        private System.Windows.Forms.Button showDeviation;
+        private System.Windows.Forms.Button closeDeviation;
+        private System.Windows.Forms.Button editDeviation;
+        private System.Windows.Forms.Button addDeviation;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

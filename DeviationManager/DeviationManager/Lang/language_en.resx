@@ -282,4 +282,7 @@
   <data name="lrole" xml:space="preserve">
     <value>Role</value>
   </data>
+  <data name="laddNewDeviation" xml:space="preserve">
+    <value>Add New Deviation</value>
+  </data>
 </root>

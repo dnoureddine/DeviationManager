@@ -136,13 +136,13 @@
     <value>Detaillierte Beschreibung der Abweichung</value>
   </data>
   <data name="lDeviationInfo" xml:space="preserve">
-    <value>Informationen der Abweichung</value>
+    <value>Informationen zur Abweichung</value>
   </data>
   <data name="ldeviationNo" xml:space="preserve">
     <value>Abweichung Nr.</value>
   </data>
   <data name="ldeviationType" xml:space="preserve">
-    <value>Art der Abweichung</value>
+    <value>Art der</value>
   </data>
   <data name="ldowload" xml:space="preserve">
     <value>Download</value>
@@ -151,7 +151,7 @@
     <value>Name</value>
   </data>
   <data name="loptional" xml:space="preserve">
-    <value>Weitere (Optional)</value>
+    <value />
   </data>
   <data name="lposition" xml:space="preserve">
     <value>Position</value>
@@ -160,7 +160,7 @@
     <value>Anfrage genehmigt</value>
   </data>
   <data name="lrequestedBy" xml:space="preserve">
-    <value>erstellt  von</value>
+    <value>Erstellt von</value>
   </data>
   <data name="lrequestedRejected" xml:space="preserve">
     <value>Anfrage abgelehnt</value>
@@ -202,7 +202,7 @@
     <value>5  Why um die Ursache des Problems zu finden bzw. aufzuzeigen</value>
   </data>
   <data name="ldeviationList" xml:space="preserve">
-    <value>Abweichungliste</value>
+    <value>Abweichungsliste</value>
   </data>
   <data name="lnewDeviation" xml:space="preserve">
     <value>Neue Abweichung</value>
@@ -211,10 +211,10 @@
     <value>Update</value>
   </data>
   <data name="lcreatedIn" xml:space="preserve">
-    <value>Erstellt in</value>
+    <value>Erstellt am</value>
   </data>
   <data name="lref" xml:space="preserve">
-    <value>Ref</value>
+    <value>Bezug</value>
   </data>
   <data name="lalternativeIdMethod" xml:space="preserve">
     <value>Anhang</value>
@@ -226,7 +226,7 @@
     <value>Beschreibung Istzustand</value>
   </data>
   <data name="lothers" xml:space="preserve">
-    <value>Weitere</value>
+    <value />
   </data>
   <data name="lothersBox1" xml:space="preserve">
     <value>Freigabe Regional Quality Director: Bezugnehmend auf FTDS-BM-P-008</value>
@@ -241,7 +241,7 @@
     <value>Freigabe Customer: Bezugnehmend auf FTDS-BM-P-008</value>
   </data>
   <data name="lprint" xml:space="preserve">
-    <value>Ausdrucken</value>
+    <value>Drucken</value>
   </data>
   <data name="lremindGroup" xml:space="preserve">
     <value>Gruppe erinnern</value>
@@ -250,33 +250,39 @@
     <value>Speichern</value>
   </data>
   <data name="laddDeviation" xml:space="preserve">
-    <value>Deviation erstellen</value>
+    <value>Abweichung erstellen</value>
   </data>
   <data name="lcloseDeviation" xml:space="preserve">
-    <value>Deviation schließen</value>
+    <value>Abweichung schließen</value>
   </data>
   <data name="ldate1" xml:space="preserve">
-    <value>Datum 1</value>
+    <value>Datum von</value>
   </data>
   <data name="ldate2" xml:space="preserve">
-    <value>Datum 2</value>
+    <value>Datum bis</value>
   </data>
   <data name="leditDeviation" xml:space="preserve">
-    <value>Deviation überarbeiten</value>
+    <value>Abweichung überarbeiten</value>
   </data>
   <data name="lfilterDeviation" xml:space="preserve">
-    <value>Deviation filtern</value>
+    <value>Abweichung filtern</value>
   </data>
   <data name="lshowDeviation" xml:space="preserve">
-    <value>Deviation anzeigen</value>
+    <value>Abweichung anzeigen</value>
   </data>
   <data name="luseAllInputs" xml:space="preserve">
-    <value>Nutze alle Angaben</value>
+    <value>Alle Angaben</value>
   </data>
   <data name="laddNewDeviation" xml:space="preserve">
-    <value>Erstelle einen Deviation Report</value>
+    <value>Erstelle eine Abweichungserlaubnis</value>
   </data>
   <data name="ldowonloadToolTip" xml:space="preserve">
-    <value>D</value>
+    <value />
+  </data>
+  <data name="lartabweichung" xml:space="preserve">
+    <value>Abweichung</value>
+  </data>
+  <data name="ldeviationFilterBox" xml:space="preserve">
+    <value>Abweichung Suchmaske</value>
   </data>
 </root>

@@ -30,14 +30,15 @@ public class NHibernateHelper
                                 .Username("Visuuser")
                                 .Password("Monaco-91")
               )
-              .ShowSql()
 
             )
+
             .Mappings(m =>
                       m.FluentMappings
                           .AddFromAssemblyOf<DeviationMap>())
-            .ExposeConfiguration(cfg => new SchemaExport(cfg)
-                                            .Create(false, false))
+             //updating schema
+            /*.ExposeConfiguration(cfg => new SchemaUpdate(cfg)
+                                            .Execute(true, true))*/
             .BuildSessionFactory();
     }
 

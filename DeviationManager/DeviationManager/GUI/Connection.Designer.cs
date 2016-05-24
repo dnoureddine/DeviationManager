@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Connection));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.passwordchange = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.passwort = new System.Windows.Forms.TextBox();
             this.lpassword = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +50,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(524, 248);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(277, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Sorry, this feld is protect , a password is required to get in.";
             // 
             // passwordchange
             // 
@@ -74,9 +83,8 @@
             // passwort
             // 
             this.passwort.Location = new System.Drawing.Point(132, 98);
-            this.passwort.Multiline = true;
             this.passwort.Name = "passwort";
-            this.passwort.Size = new System.Drawing.Size(347, 27);
+            this.passwort.Size = new System.Drawing.Size(347, 20);
             this.passwort.TabIndex = 1;
             // 
             // lpassword
@@ -88,15 +96,6 @@
             this.lpassword.Size = new System.Drawing.Size(115, 15);
             this.lpassword.TabIndex = 0;
             this.lpassword.Text = "Enter Password :";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(277, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Sorry, this feld is protect , a password is required to get in.";
             // 
             // Connection
             // 

@@ -62,12 +62,12 @@ namespace DeviationManager.GUI
             this.subject.AppendText(emailSubject);
 
             //generate the email body
-            this.messageContent.AppendText("\nStandard Condition : \n\n");
+            this.messageContent.AppendText("\nSollvorgabe : \n\n");
             this.messageContent.AppendText(this.deviation.detailStandardCondition);
 
             this.messageContent.AppendText("\n\n\n");
 
-            this.messageContent.AppendText("Detail Requested Condition : \n\n");
+            this.messageContent.AppendText("Istzustand : \n\n");
             this.messageContent.AppendText(this.deviation.detailRequestCondition);
         }
 
@@ -77,7 +77,8 @@ namespace DeviationManager.GUI
         {
             if (this.subject.Text != "" && this.messageContent.Text != "")
             {
-                String result = this.emailSender.sendEmailToAllGroups(this.subject.Text, this.messageContent.Text);
+                //String result = this.emailSender.sendEmailToAllGroups(this.subject.Text, this.messageContent.Text);
+                String result = "sent";
                 if (result == "sent")
                 {
                     //Add the New deviation

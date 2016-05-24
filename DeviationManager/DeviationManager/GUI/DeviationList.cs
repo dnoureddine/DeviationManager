@@ -16,6 +16,8 @@ namespace DeviationManager.GUI
         private DeviationModel deviationModel;
         private Autorisation autorisation;
         private EmailSender emailSender;
+        private int n = 1;
+        private int m = 200;
 
         public DeviationList()
         {
@@ -26,6 +28,9 @@ namespace DeviationManager.GUI
             emailSender = new EmailSender();
             //DataGridViw Configuration
             this.DataViewConfiguration();
+
+            //initilize 
+            this.setLabelDeviationNumber();
 
             //show deviation list
             this.showDeviationList();
@@ -39,6 +44,53 @@ namespace DeviationManager.GUI
         }
 
 
+        //initialisation
+        private void setLabelDeviationNumber()
+        {
+            long deviationNumb = deviationModel.getAllDeviationNumber();
+
+            String label = "";
+            if((n * m - m) == 0)
+            {
+                label = "1-";
+            }else
+            {
+                label = (n * m - m) + "-";
+            }
+
+            //***
+            if ((n * m) > deviationNumb)
+            {
+                label = label + (deviationNumb - (n * m - m));
+            }else
+            {
+                label = label + (n * m);
+            }
+
+            label = label + " Von " + deviationNumb;
+
+            this.listdeviationNumber.Text = label;
+
+            //button disable if (devitionNumb/m <n)
+            if ((deviationNumb / m) < n)
+            {
+                this.rightArrow.Enabled = false;
+            }
+            else
+            {
+                this.rightArrow.Enabled = true;
+            }
+
+            if (n == 1)
+            {
+                this.leftArrow.Enabled = false;
+            }
+            else
+            {
+                this.leftArrow.Enabled = true;
+            }
+        }
+
         //set the language
         private void setLanguage()
         {
@@ -46,13 +98,15 @@ namespace DeviationManager.GUI
 
             this.lDeviationNO.Text = languageModel.getString("ldeviationNo");
             this.lRequestedBy.Text = languageModel.getString("lrequestedBy");
-            this.lProduct.Text = languageModel.getString("lproduct");
+            this.lAnlage.Text = languageModel.getString("lproduct");
             this.lRiskCategory.Text = languageModel.getString("lriskCategory");
             this.lDeviationType.Text = languageModel.getString("ldeviationType");
-            this.lAnlage.Text = languageModel.getString("lmachine");
+            this.lProduct.Text = languageModel.getString("lmachine");
             this.lDate1.Text = languageModel.getString("ldate1");
             this.lDate2.Text = languageModel.getString("ldate2");
             this.lUseAllInputs.Text = languageModel.getString("luseAllInputs");
+            this.lartabweichung.Text = languageModel.getString("lartabweichung");
+            this.ldeviationFilterBox.Text = languageModel.getString("ldeviationFilterBox");
 
             this.deviationListUpdate.Text = languageModel.getString("lupdate");
             this.Filter.Text = languageModel.getString("lfilterDeviation");
@@ -66,7 +120,7 @@ namespace DeviationManager.GUI
         //show Deviation List
         private void showDeviationList()
         {
-            var deviations = deviationModel.listDeviations();
+            var deviations = deviationModel.listDeviations(n,m);
             var source = new BindingSource();
             source.DataSource = deviations;
             this.DeviationDataGridView.DataSource = source;
@@ -167,7 +221,7 @@ namespace DeviationManager.GUI
             if (this.DeviationDataGridView.CurrentRow != null)
             {
                 String deviationRef = this.DeviationDataGridView.CurrentRow.Cells[0].Value.ToString();
-                Deviation deviation=autorisation.canUpdateDeviation(deviationRef);
+                Deviation deviation = deviationModel.getDeviationWithRef(deviationRef);
                //The user can update the deviation if signature attribut of the deviation has the user name
                 if (deviation != null)
                 {
@@ -285,7 +339,7 @@ namespace DeviationManager.GUI
             if (this.DeviationDataGridView.CurrentRow != null)
             {
                 String deviationRef = this.DeviationDataGridView.CurrentRow.Cells[0].Value.ToString();
-                Deviation deviation = autorisation.canUpdateDeviation(deviationRef);
+                Deviation deviation = deviationModel.getDeviationWithRef(deviationRef);
                 if (deviation != null)
                 {
                     //send email to Groups that they did not yet approve
@@ -299,8 +353,156 @@ namespace DeviationManager.GUI
             }
 
         }
-        
 
+        //show deviation
+        private void deviationAnzeigenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.DeviationDataGridView.CurrentRow != null)
+            {
+                String deviationRef = this.DeviationDataGridView.CurrentRow.Cells[0].Value.ToString();
+                Deviation deviation = deviationModel.getDeviationWithRef(deviationRef);
+                //The user can update the deviation if signature attribut of the deviation has the user name
+                if (deviation != null)
+                {
+                    //show Deviation
+                    SaveDeviation saveDeviation = new SaveDeviation("showDeviation");
+                    saveDeviation.showDeviation(deviation);
+                }
+                else
+                {
+                    MessageBox.Show("Deviation dos not exist!");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please Choose a Deviation Before makimg this Action!");
+            }
+        }
+
+        //edit deviation
+        private void deviationÜberarbeitenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            String deviationRef = this.DeviationDataGridView.CurrentRow.Cells[0].Value.ToString();
+            Deviation deviation = autorisation.canUpdateDeviation(deviationRef);
+            //The user can update the deviation if signature attribut of the deviation has the user name
+            if (deviation != null)
+            {
+                //dos the user choose the Deviation to update
+                if (deviationRef != "" && deviationRef != null)
+                {
+
+                    //make sure that the deviation is closed
+                    if (!deviationModel.isDeviationClosed(deviation))
+                    {
+                        //update Deviation
+                        SaveDeviation saveDeviation = new SaveDeviation("updateDeviation");
+                        saveDeviation.updateDeviation(deviation);
+                    }
+                    else
+                    {
+                        MessageBox.Show("You Are Not Allowed To Make Any Change On This Item Because Its Already Closed !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("You Are Not Allowed To Update This Item !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        //close deviation
+        private void deviationSchliessenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.DeviationDataGridView.CurrentRow != null)
+            {
+                String deviationRef = this.DeviationDataGridView.CurrentRow.Cells[0].Value.ToString();
+                if (deviationRef != "" || deviationRef != null)
+                {
+                    if (MessageBox.Show("Close Deviation Means You Will Not Be Able Later To Make Any Change On It, Are You Sure You Wish To Make This Action ?", "Close Deviation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        String result = deviationModel.closeDeviation(deviationRef);
+                        if (result == "closed")
+                        {
+                            MessageBox.Show("The Deviation Was Succesfuly Closed.", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error The Deviation Cloud Not Be Closed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
+
+        //remind group
+        private void gruppeErinnernToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.DeviationDataGridView.CurrentRow != null)
+            {
+                String deviationRef = this.DeviationDataGridView.CurrentRow.Cells[0].Value.ToString();
+                Deviation deviation = autorisation.canUpdateDeviation(deviationRef);
+                if (deviation != null)
+                {
+                    //send email to Groups that they did not yet approve
+                    var result = this.emailSender.sentEmailToGroups(deviation);
+                    if (result == "sent")
+                    {
+                        MessageBox.Show("An Email has been sent !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+            }
+        }
+
+        //right arrow
+        private void rightArrow_Click(object sender, EventArgs e)
+        {
+            var deviations = deviationModel.listDeviations(n+1, m);
+            if (deviations.Count == 0)
+            {
+                this.rightArrow.Enabled = false;
+            }else
+            {
+                var source = new BindingSource();
+                source.DataSource = deviations;
+                this.DeviationDataGridView.DataSource = source;
+
+                //increment n
+                this.n = n + 1;
+
+                //set Label for deviation number
+                this.setLabelDeviationNumber();
+            }
+
+
+        }
+
+        //left arrow
+        private void leftArrow_Click(object sender, EventArgs e)
+        {
+            if (n > 1)
+            {
+                var deviations = deviationModel.listDeviations(n - 1, m);
+                if (deviations.Count == 0)
+                {
+                    this.leftArrow.Enabled = false;
+                }
+                else
+                {
+                    var source = new BindingSource();
+                    source.DataSource = deviations;
+                    this.DeviationDataGridView.DataSource = source;
+
+                    //increment n
+                    this.n = n - 1;
+
+                    //set Label for deviation number
+                    this.setLabelDeviationNumber();
+                }
+            }
+        }
 
         /**___________classs _____*****/
 

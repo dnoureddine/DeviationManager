@@ -9,7 +9,7 @@ namespace DeviationManager.Model
     public interface DeviationModelInter
     {
          Deviation addDeviation(Deviation deviation);
-         IList<Deviation> listDeviations();
+         IList<Deviation> listDeviations(int n, int m);
          Deviation getDeviation(int deviationId);
          Deviation getDeviationWithRef(String deviationRef);
          void deleteDeviation(int deviationId);

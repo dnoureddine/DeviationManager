@@ -48,7 +48,7 @@ namespace DeviationManagerTest
 
             model.addDeviation(dev);
 
-            var deviation = model.listDeviations();
+            var deviation = model.listDeviations(1,3);
 
             Assert.IsTrue(deviation.Count>0);
 

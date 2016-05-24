@@ -118,6 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="leftArrow.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAA3NCSVQICAjb4U/gAAAAAXNSR0IArs4c
+        6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAAKgAAACoAXn0s8YAAAAZdEVYdFNvZnR3YXJlAHd3dy5p
+        bmtzY2FwZS5vcmeb7jwaAAAAlUlEQVRIS2P4//8/Ay0xTQ0HOXyYW6Dd91+I0vjBGUQq7f8bVNv/J9DE
+        ApDhKh3//9PEApjhNLEA2XCqW4BuOFUtwGY41SzAZTjIAmpgBoa4sw0Mcef+Y8NCRc+OUGoJOB/gtCT2
+        PPXyAVZLqGkBVp9Q2wIMS2hhAYoltLIAbgktLQBbknyVdsU1pcU0TP8wrzKpEUwA+ZV11VWG/5gAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="rightArrow.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAA3NCSVQICAjb4U/gAAAAAXNSR0IArs4c
+        6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAAKgAAACoAXn0s8YAAAAZdEVYdFNvZnR3YXJlAHd3dy5p
+        bmtzY2FwZS5vcmeb7jwaAAAAlUlEQVRIS2P4//8/Ay0xTQ0HOXzUAgbtvv9C+OKQ4iBSbf+foNL+vwGX
+        JdSxoOP/f1yWUM8CHJZQ1wIsllDfAjRLaGMBkiUMKiAOrTAwdVFsgVDRsyMMcef+Y8dnGygOIobY8wm4
+        DKdKWYTdgrPwjEcDHyAMp4EPUA2nsgWYhlPRAuyGU8eC5Ku0La4J1ecUp6LhbwEAobJ11d8bfOUAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
   <data name="sendMessage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -160,6 +180,9 @@
         iCxBXy4fywAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -223,4 +246,7 @@
         OnMHt8lgIwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>31</value>
+  </metadata>
 </root>

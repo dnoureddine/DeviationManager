@@ -33,4 +33,3 @@ C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Release\DeviationManager.pdb
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Release\DeviationManager.GUI.ChangePassword.resources
 C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Release\DeviationManager.GUI.Connection.resources
-C:\Users\dnoureddin\Desktop\projects .Net 3.5\DeviationManager\DeviationManager\obj\Release\DeviationManager.csprojResolveAssemblyReference.cache

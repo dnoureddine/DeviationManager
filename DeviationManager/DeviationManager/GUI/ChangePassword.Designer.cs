@@ -48,9 +48,8 @@
             // oldPassword
             // 
             this.oldPassword.Location = new System.Drawing.Point(135, 47);
-            this.oldPassword.Multiline = true;
             this.oldPassword.Name = "oldPassword";
-            this.oldPassword.Size = new System.Drawing.Size(347, 29);
+            this.oldPassword.Size = new System.Drawing.Size(347, 20);
             this.oldPassword.TabIndex = 5;
             // 
             // lpassword
@@ -66,9 +65,8 @@
             // newPassword
             // 
             this.newPassword.Location = new System.Drawing.Point(135, 99);
-            this.newPassword.Multiline = true;
             this.newPassword.Name = "newPassword";
-            this.newPassword.Size = new System.Drawing.Size(347, 29);
+            this.newPassword.Size = new System.Drawing.Size(347, 20);
             this.newPassword.TabIndex = 7;
             // 
             // label1

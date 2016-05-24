@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaveDeviation));
             this.deviationHeadPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.laddNewDeviation = new System.Windows.Forms.Label();
             this.logoBox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -114,6 +114,8 @@
             this.valid = new System.Windows.Forms.DataGridViewButtonColumn();
             this.closeDeviation = new System.Windows.Forms.Button();
             this.lperiodDevation = new System.Windows.Forms.GroupBox();
+            this.barcode = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.pFirstTime = new System.Windows.Forms.DateTimePicker();
             this.pSecondTime = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
@@ -152,6 +154,7 @@
             this.anlage = new System.Windows.Forms.TextBox();
             this.standardCondition = new System.Windows.Forms.TextBox();
             this.lDeviationInfo = new System.Windows.Forms.GroupBox();
+            this.lartabweichung = new System.Windows.Forms.Label();
             this.loptional = new System.Windows.Forms.Label();
             this.riskCategory = new System.Windows.Forms.TextBox();
             this.deviationTimeCreation = new System.Windows.Forms.DateTimePicker();
@@ -171,6 +174,7 @@
             this.deviationNO = new System.Windows.Forms.TextBox();
             this.ldeviationNo = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolTipDownload = new System.Windows.Forms.ToolTip(this.components);
             this.deviationHeadPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -199,22 +203,22 @@
             // 
             this.deviationHeadPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.deviationHeadPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.deviationHeadPanel.Controls.Add(this.label1);
+            this.deviationHeadPanel.Controls.Add(this.laddNewDeviation);
             this.deviationHeadPanel.Controls.Add(this.logoBox);
             this.deviationHeadPanel.Location = new System.Drawing.Point(-3, -5);
             this.deviationHeadPanel.Name = "deviationHeadPanel";
             this.deviationHeadPanel.Size = new System.Drawing.Size(927, 78);
             this.deviationHeadPanel.TabIndex = 0;
             // 
-            // label1
+            // laddNewDeviation
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(388, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 29);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Add a new deviation";
+            this.laddNewDeviation.AutoSize = true;
+            this.laddNewDeviation.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.laddNewDeviation.Location = new System.Drawing.Point(388, 25);
+            this.laddNewDeviation.Name = "laddNewDeviation";
+            this.laddNewDeviation.Size = new System.Drawing.Size(248, 29);
+            this.laddNewDeviation.TabIndex = 1;
+            this.laddNewDeviation.Text = "Add a new deviation";
             // 
             // logoBox
             // 
@@ -241,14 +245,14 @@
             this.panel1.Controls.Add(this.lDeviationInfo);
             this.panel1.Location = new System.Drawing.Point(-3, 89);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(936, 1804);
+            this.panel1.Size = new System.Drawing.Size(936, 1896);
             this.panel1.TabIndex = 1;
             // 
             // button4
             // 
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(442, 1763);
+            this.button4.Location = new System.Drawing.Point(467, 1842);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(128, 38);
             this.button4.TabIndex = 8;
@@ -260,7 +264,7 @@
             // 
             this.DeviationSave.Image = ((System.Drawing.Image)(resources.GetObject("DeviationSave.Image")));
             this.DeviationSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DeviationSave.Location = new System.Drawing.Point(790, 1764);
+            this.DeviationSave.Location = new System.Drawing.Point(815, 1843);
             this.DeviationSave.Name = "DeviationSave";
             this.DeviationSave.Size = new System.Drawing.Size(96, 37);
             this.DeviationSave.TabIndex = 5;
@@ -274,12 +278,11 @@
             this.lothers.Controls.Add(this.panel6);
             this.lothers.Controls.Add(this.lRequestApprovedb2);
             this.lothers.Controls.Add(this.panel3);
-            this.lothers.Location = new System.Drawing.Point(15, 1108);
+            this.lothers.Location = new System.Drawing.Point(15, 1192);
             this.lothers.Name = "lothers";
             this.lothers.Size = new System.Drawing.Size(894, 638);
             this.lothers.TabIndex = 5;
             this.lothers.TabStop = false;
-            this.lothers.Text = "Others";
             // 
             // panel8
             // 
@@ -306,27 +309,24 @@
             // 
             this.positionCustomer.BackColor = System.Drawing.Color.White;
             this.positionCustomer.Location = new System.Drawing.Point(504, 110);
-            this.positionCustomer.Multiline = true;
             this.positionCustomer.Name = "positionCustomer";
-            this.positionCustomer.Size = new System.Drawing.Size(352, 25);
+            this.positionCustomer.Size = new System.Drawing.Size(352, 20);
             this.positionCustomer.TabIndex = 20;
             // 
             // signatureCustomer
             // 
             this.signatureCustomer.BackColor = System.Drawing.Color.White;
             this.signatureCustomer.Location = new System.Drawing.Point(504, 76);
-            this.signatureCustomer.Multiline = true;
             this.signatureCustomer.Name = "signatureCustomer";
-            this.signatureCustomer.Size = new System.Drawing.Size(352, 25);
+            this.signatureCustomer.Size = new System.Drawing.Size(352, 20);
             this.signatureCustomer.TabIndex = 19;
             // 
             // nameCustomer
             // 
             this.nameCustomer.BackColor = System.Drawing.Color.White;
             this.nameCustomer.Location = new System.Drawing.Point(504, 42);
-            this.nameCustomer.Multiline = true;
             this.nameCustomer.Name = "nameCustomer";
-            this.nameCustomer.Size = new System.Drawing.Size(352, 25);
+            this.nameCustomer.Size = new System.Drawing.Size(352, 20);
             this.nameCustomer.TabIndex = 18;
             // 
             // lPositionb4
@@ -439,8 +439,8 @@
             // 
             this.yesNoCustomer.FormattingEnabled = true;
             this.yesNoCustomer.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
+            "Ja",
+            "Kein"});
             this.yesNoCustomer.Location = new System.Drawing.Point(801, 3);
             this.yesNoCustomer.Name = "yesNoCustomer";
             this.yesNoCustomer.Size = new System.Drawing.Size(60, 21);
@@ -471,27 +471,24 @@
             // 
             this.positionManufactEng.BackColor = System.Drawing.Color.White;
             this.positionManufactEng.Location = new System.Drawing.Point(504, 110);
-            this.positionManufactEng.Multiline = true;
             this.positionManufactEng.Name = "positionManufactEng";
-            this.positionManufactEng.Size = new System.Drawing.Size(352, 25);
+            this.positionManufactEng.Size = new System.Drawing.Size(352, 20);
             this.positionManufactEng.TabIndex = 20;
             // 
             // signatureManufactEng
             // 
             this.signatureManufactEng.BackColor = System.Drawing.Color.White;
             this.signatureManufactEng.Location = new System.Drawing.Point(504, 76);
-            this.signatureManufactEng.Multiline = true;
             this.signatureManufactEng.Name = "signatureManufactEng";
-            this.signatureManufactEng.Size = new System.Drawing.Size(352, 25);
+            this.signatureManufactEng.Size = new System.Drawing.Size(352, 20);
             this.signatureManufactEng.TabIndex = 19;
             // 
             // nameManufactEng
             // 
             this.nameManufactEng.BackColor = System.Drawing.Color.White;
             this.nameManufactEng.Location = new System.Drawing.Point(504, 42);
-            this.nameManufactEng.Multiline = true;
             this.nameManufactEng.Name = "nameManufactEng";
-            this.nameManufactEng.Size = new System.Drawing.Size(352, 25);
+            this.nameManufactEng.Size = new System.Drawing.Size(352, 20);
             this.nameManufactEng.TabIndex = 18;
             // 
             // lPositionb3
@@ -604,8 +601,8 @@
             // 
             this.yesNoManufactEng.FormattingEnabled = true;
             this.yesNoManufactEng.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
+            "Ja",
+            "Kein"});
             this.yesNoManufactEng.Location = new System.Drawing.Point(801, 3);
             this.yesNoManufactEng.Name = "yesNoManufactEng";
             this.yesNoManufactEng.Size = new System.Drawing.Size(60, 21);
@@ -636,27 +633,24 @@
             // 
             this.positionProductEng.BackColor = System.Drawing.Color.White;
             this.positionProductEng.Location = new System.Drawing.Point(504, 110);
-            this.positionProductEng.Multiline = true;
             this.positionProductEng.Name = "positionProductEng";
-            this.positionProductEng.Size = new System.Drawing.Size(352, 25);
+            this.positionProductEng.Size = new System.Drawing.Size(352, 20);
             this.positionProductEng.TabIndex = 20;
             // 
             // signatureProductEng
             // 
             this.signatureProductEng.BackColor = System.Drawing.Color.White;
             this.signatureProductEng.Location = new System.Drawing.Point(504, 76);
-            this.signatureProductEng.Multiline = true;
             this.signatureProductEng.Name = "signatureProductEng";
-            this.signatureProductEng.Size = new System.Drawing.Size(352, 25);
+            this.signatureProductEng.Size = new System.Drawing.Size(352, 20);
             this.signatureProductEng.TabIndex = 19;
             // 
             // nameProductEng
             // 
             this.nameProductEng.BackColor = System.Drawing.Color.White;
             this.nameProductEng.Location = new System.Drawing.Point(504, 42);
-            this.nameProductEng.Multiline = true;
             this.nameProductEng.Name = "nameProductEng";
-            this.nameProductEng.Size = new System.Drawing.Size(352, 25);
+            this.nameProductEng.Size = new System.Drawing.Size(352, 20);
             this.nameProductEng.TabIndex = 18;
             // 
             // lPositionb2
@@ -769,8 +763,8 @@
             // 
             this.yesNoProductEng.FormattingEnabled = true;
             this.yesNoProductEng.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
+            "Ja",
+            "Kein"});
             this.yesNoProductEng.Location = new System.Drawing.Point(801, 3);
             this.yesNoProductEng.Name = "yesNoProductEng";
             this.yesNoProductEng.Size = new System.Drawing.Size(60, 21);
@@ -801,27 +795,24 @@
             // 
             this.positionRegional.BackColor = System.Drawing.Color.White;
             this.positionRegional.Location = new System.Drawing.Point(504, 110);
-            this.positionRegional.Multiline = true;
             this.positionRegional.Name = "positionRegional";
-            this.positionRegional.Size = new System.Drawing.Size(352, 25);
+            this.positionRegional.Size = new System.Drawing.Size(352, 20);
             this.positionRegional.TabIndex = 20;
             // 
             // signatureRegional
             // 
             this.signatureRegional.BackColor = System.Drawing.Color.White;
             this.signatureRegional.Location = new System.Drawing.Point(504, 76);
-            this.signatureRegional.Multiline = true;
             this.signatureRegional.Name = "signatureRegional";
-            this.signatureRegional.Size = new System.Drawing.Size(352, 25);
+            this.signatureRegional.Size = new System.Drawing.Size(352, 20);
             this.signatureRegional.TabIndex = 19;
             // 
             // nameReginal
             // 
             this.nameReginal.BackColor = System.Drawing.Color.White;
             this.nameReginal.Location = new System.Drawing.Point(504, 42);
-            this.nameReginal.Multiline = true;
             this.nameReginal.Name = "nameReginal";
-            this.nameReginal.Size = new System.Drawing.Size(352, 25);
+            this.nameReginal.Size = new System.Drawing.Size(352, 20);
             this.nameReginal.TabIndex = 18;
             // 
             // lPositionb1
@@ -934,8 +925,8 @@
             // 
             this.yesNoReginal.FormattingEnabled = true;
             this.yesNoReginal.Items.AddRange(new object[] {
-            "Yes",
-            "No"});
+            "Ja",
+            "Kein"});
             this.yesNoReginal.Location = new System.Drawing.Point(801, 3);
             this.yesNoReginal.Name = "yesNoReginal";
             this.yesNoReginal.Size = new System.Drawing.Size(60, 21);
@@ -944,7 +935,7 @@
             // lapprovement
             // 
             this.lapprovement.Controls.Add(this.approvementGroupDataGrid);
-            this.lapprovement.Location = new System.Drawing.Point(15, 914);
+            this.lapprovement.Location = new System.Drawing.Point(15, 1003);
             this.lapprovement.Name = "lapprovement";
             this.lapprovement.Size = new System.Drawing.Size(894, 181);
             this.lapprovement.TabIndex = 4;
@@ -1037,7 +1028,7 @@
             // 
             this.closeDeviation.Image = ((System.Drawing.Image)(resources.GetObject("closeDeviation.Image")));
             this.closeDeviation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.closeDeviation.Location = new System.Drawing.Point(688, 1763);
+            this.closeDeviation.Location = new System.Drawing.Point(713, 1842);
             this.closeDeviation.Name = "closeDeviation";
             this.closeDeviation.Size = new System.Drawing.Size(92, 38);
             this.closeDeviation.TabIndex = 6;
@@ -1047,6 +1038,8 @@
             // 
             // lperiodDevation
             // 
+            this.lperiodDevation.Controls.Add(this.barcode);
+            this.lperiodDevation.Controls.Add(this.label1);
             this.lperiodDevation.Controls.Add(this.pFirstTime);
             this.lperiodDevation.Controls.Add(this.pSecondTime);
             this.lperiodDevation.Controls.Add(this.button1);
@@ -1061,10 +1054,29 @@
             this.lperiodDevation.Controls.Add(this.lperiodBegin);
             this.lperiodDevation.Location = new System.Drawing.Point(15, 628);
             this.lperiodDevation.Name = "lperiodDevation";
-            this.lperiodDevation.Size = new System.Drawing.Size(894, 273);
+            this.lperiodDevation.Size = new System.Drawing.Size(894, 369);
             this.lperiodDevation.TabIndex = 3;
             this.lperiodDevation.TabStop = false;
             this.lperiodDevation.Text = "Deviation Period and Attachement";
+            // 
+            // barcode
+            // 
+            this.barcode.Location = new System.Drawing.Point(16, 99);
+            this.barcode.Multiline = true;
+            this.barcode.Name = "barcode";
+            this.barcode.Size = new System.Drawing.Size(863, 58);
+            this.barcode.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(667, 13);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Erste Tanknummer ab der Abweichung oder alternative Identifikationsmethode zur Rü" +
+    "ckverfolgung (z. B. Produktionsauftrag oder Barcode) :";
             // 
             // pFirstTime
             // 
@@ -1088,11 +1100,12 @@
             // 
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(779, 220);
+            this.button1.Location = new System.Drawing.Point(775, 320);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 37);
             this.button1.TabIndex = 13;
             this.button1.Text = "Show";
+            this.toolTipDownload.SetToolTip(this.button1, "Anzeigen klicken um Diagramme oder Fotos direkt im Programm zu öffnen");
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -1100,7 +1113,6 @@
             // 
             this.uploadFileDataGridView.AllowUserToAddRows = false;
             this.uploadFileDataGridView.AllowUserToDeleteRows = false;
-            this.uploadFileDataGridView.AllowUserToResizeColumns = false;
             this.uploadFileDataGridView.AllowUserToResizeRows = false;
             this.uploadFileDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.uploadFileDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1108,7 +1120,7 @@
             this.fileNameUploadDocument,
             this.dateUploadFile,
             this.attachmentliblle});
-            this.uploadFileDataGridView.Location = new System.Drawing.Point(17, 89);
+            this.uploadFileDataGridView.Location = new System.Drawing.Point(13, 189);
             this.uploadFileDataGridView.Name = "uploadFileDataGridView";
             this.uploadFileDataGridView.Size = new System.Drawing.Size(755, 168);
             this.uploadFileDataGridView.TabIndex = 12;
@@ -1141,11 +1153,12 @@
             // 
             this.downloadDocument.Image = ((System.Drawing.Image)(resources.GetObject("downloadDocument.Image")));
             this.downloadDocument.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.downloadDocument.Location = new System.Drawing.Point(778, 134);
+            this.downloadDocument.Location = new System.Drawing.Point(774, 234);
             this.downloadDocument.Name = "downloadDocument";
             this.downloadDocument.Size = new System.Drawing.Size(102, 37);
             this.downloadDocument.TabIndex = 11;
             this.downloadDocument.Text = "Download";
+            this.toolTipDownload.SetToolTip(this.downloadDocument, "Download klicken um die Datei auf dem PC zu speichern und zu öffnen");
             this.downloadDocument.UseVisualStyleBackColor = true;
             this.downloadDocument.Click += new System.EventHandler(this.downloadDocument_Click);
             // 
@@ -1153,7 +1166,7 @@
             // 
             this.deleteDocument.Image = ((System.Drawing.Image)(resources.GetObject("deleteDocument.Image")));
             this.deleteDocument.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.deleteDocument.Location = new System.Drawing.Point(778, 177);
+            this.deleteDocument.Location = new System.Drawing.Point(774, 277);
             this.deleteDocument.Name = "deleteDocument";
             this.deleteDocument.Size = new System.Drawing.Size(100, 37);
             this.deleteDocument.TabIndex = 10;
@@ -1165,7 +1178,7 @@
             // 
             this.addDocument.Image = ((System.Drawing.Image)(resources.GetObject("addDocument.Image")));
             this.addDocument.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addDocument.Location = new System.Drawing.Point(778, 91);
+            this.addDocument.Location = new System.Drawing.Point(774, 191);
             this.addDocument.Name = "addDocument";
             this.addDocument.Size = new System.Drawing.Size(102, 37);
             this.addDocument.TabIndex = 9;
@@ -1177,7 +1190,7 @@
             // 
             this.lAlternativeIdMethod.AutoSize = true;
             this.lAlternativeIdMethod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lAlternativeIdMethod.Location = new System.Drawing.Point(14, 71);
+            this.lAlternativeIdMethod.Location = new System.Drawing.Point(10, 171);
             this.lAlternativeIdMethod.Name = "lAlternativeIdMethod";
             this.lAlternativeIdMethod.Size = new System.Drawing.Size(87, 15);
             this.lAlternativeIdMethod.TabIndex = 7;
@@ -1239,9 +1252,8 @@
             // reason5
             // 
             this.reason5.Location = new System.Drawing.Point(68, 159);
-            this.reason5.Multiline = true;
             this.reason5.Name = "reason5";
-            this.reason5.Size = new System.Drawing.Size(804, 25);
+            this.reason5.Size = new System.Drawing.Size(804, 20);
             this.reason5.TabIndex = 11;
             // 
             // lwhy5
@@ -1257,9 +1269,8 @@
             // reason4
             // 
             this.reason4.Location = new System.Drawing.Point(68, 128);
-            this.reason4.Multiline = true;
             this.reason4.Name = "reason4";
-            this.reason4.Size = new System.Drawing.Size(804, 25);
+            this.reason4.Size = new System.Drawing.Size(804, 20);
             this.reason4.TabIndex = 9;
             // 
             // lwhy4
@@ -1275,9 +1286,8 @@
             // reason3
             // 
             this.reason3.Location = new System.Drawing.Point(68, 97);
-            this.reason3.Multiline = true;
             this.reason3.Name = "reason3";
-            this.reason3.Size = new System.Drawing.Size(804, 25);
+            this.reason3.Size = new System.Drawing.Size(804, 20);
             this.reason3.TabIndex = 7;
             // 
             // lwhy3
@@ -1293,9 +1303,8 @@
             // reason2
             // 
             this.reason2.Location = new System.Drawing.Point(68, 66);
-            this.reason2.Multiline = true;
             this.reason2.Name = "reason2";
-            this.reason2.Size = new System.Drawing.Size(804, 25);
+            this.reason2.Size = new System.Drawing.Size(804, 20);
             this.reason2.TabIndex = 5;
             // 
             // lwhy2
@@ -1311,9 +1320,8 @@
             // reason1
             // 
             this.reason1.Location = new System.Drawing.Point(68, 37);
-            this.reason1.Multiline = true;
             this.reason1.Name = "reason1";
-            this.reason1.Size = new System.Drawing.Size(804, 25);
+            this.reason1.Size = new System.Drawing.Size(804, 20);
             this.reason1.TabIndex = 3;
             this.reason1.TextChanged += new System.EventHandler(this.reason1_GotFocus);
             // 
@@ -1331,7 +1339,7 @@
             // 
             this.DeviationPrint.Image = ((System.Drawing.Image)(resources.GetObject("DeviationPrint.Image")));
             this.DeviationPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.DeviationPrint.Location = new System.Drawing.Point(576, 1763);
+            this.DeviationPrint.Location = new System.Drawing.Point(601, 1842);
             this.DeviationPrint.Name = "DeviationPrint";
             this.DeviationPrint.Size = new System.Drawing.Size(106, 38);
             this.DeviationPrint.TabIndex = 7;
@@ -1407,17 +1415,15 @@
             // product
             // 
             this.product.Location = new System.Drawing.Point(101, 144);
-            this.product.Multiline = true;
             this.product.Name = "product";
-            this.product.Size = new System.Drawing.Size(321, 25);
+            this.product.Size = new System.Drawing.Size(321, 20);
             this.product.TabIndex = 7;
             // 
             // anlage
             // 
             this.anlage.Location = new System.Drawing.Point(101, 113);
-            this.anlage.Multiline = true;
             this.anlage.Name = "anlage";
-            this.anlage.Size = new System.Drawing.Size(321, 25);
+            this.anlage.Size = new System.Drawing.Size(321, 20);
             this.anlage.TabIndex = 6;
             // 
             // standardCondition
@@ -1432,6 +1438,7 @@
             // 
             // lDeviationInfo
             // 
+            this.lDeviationInfo.Controls.Add(this.lartabweichung);
             this.lDeviationInfo.Controls.Add(this.loptional);
             this.lDeviationInfo.Controls.Add(this.riskCategory);
             this.lDeviationInfo.Controls.Add(this.deviationTimeCreation);
@@ -1458,6 +1465,15 @@
             this.lDeviationInfo.TabStop = false;
             this.lDeviationInfo.Text = "Deviation Infos";
             // 
+            // lartabweichung
+            // 
+            this.lartabweichung.AutoSize = true;
+            this.lartabweichung.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lartabweichung.Location = new System.Drawing.Point(3, 149);
+            this.lartabweichung.Name = "lartabweichung";
+            this.lartabweichung.Size = new System.Drawing.Size(0, 15);
+            this.lartabweichung.TabIndex = 19;
+            // 
             // loptional
             // 
             this.loptional.AutoSize = true;
@@ -1472,10 +1488,9 @@
             // 
             this.riskCategory.BackColor = System.Drawing.Color.White;
             this.riskCategory.Location = new System.Drawing.Point(561, 25);
-            this.riskCategory.Multiline = true;
             this.riskCategory.Name = "riskCategory";
             this.riskCategory.ReadOnly = true;
-            this.riskCategory.Size = new System.Drawing.Size(318, 25);
+            this.riskCategory.Size = new System.Drawing.Size(318, 21);
             this.riskCategory.TabIndex = 17;
             this.riskCategory.Click += new System.EventHandler(this.riskCategory_Click);
             // 
@@ -1492,9 +1507,8 @@
             // 
             this.deviationSignature.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deviationSignature.Location = new System.Drawing.Point(561, 87);
-            this.deviationSignature.Multiline = true;
             this.deviationSignature.Name = "deviationSignature";
-            this.deviationSignature.Size = new System.Drawing.Size(317, 27);
+            this.deviationSignature.Size = new System.Drawing.Size(317, 21);
             this.deviationSignature.TabIndex = 16;
             // 
             // deviationDescription
@@ -1522,7 +1536,8 @@
             this.deviationType.Items.AddRange(new object[] {
             "Spezifikation",
             "Prozess",
-            "Dokumentation"});
+            "Dokumentation",
+            "Sonstiges"});
             this.deviationType.Location = new System.Drawing.Point(113, 131);
             this.deviationType.Name = "deviationType";
             this.deviationType.Size = new System.Drawing.Size(319, 23);
@@ -1533,11 +1548,11 @@
             // 
             this.ldeviationType.AutoSize = true;
             this.ldeviationType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ldeviationType.Location = new System.Drawing.Point(3, 134);
+            this.ldeviationType.Location = new System.Drawing.Point(3, 131);
             this.ldeviationType.Name = "ldeviationType";
-            this.ldeviationType.Size = new System.Drawing.Size(113, 15);
+            this.ldeviationType.Size = new System.Drawing.Size(109, 15);
             this.ldeviationType.TabIndex = 12;
-            this.ldeviationType.Text = "Deviation Type : ";
+            this.ldeviationType.Text = "Deviation Type :";
             // 
             // lsignature
             // 
@@ -1552,9 +1567,8 @@
             // position
             // 
             this.position.Location = new System.Drawing.Point(118, 90);
-            this.position.Multiline = true;
             this.position.Name = "position";
-            this.position.Size = new System.Drawing.Size(315, 25);
+            this.position.Size = new System.Drawing.Size(315, 21);
             this.position.TabIndex = 9;
             this.position.TextChanged += new System.EventHandler(this.position_GotFocus);
             // 
@@ -1587,10 +1601,10 @@
             // 
             // requestedBy
             // 
+            this.requestedBy.Enabled = false;
             this.requestedBy.Location = new System.Drawing.Point(118, 59);
-            this.requestedBy.Multiline = true;
             this.requestedBy.Name = "requestedBy";
-            this.requestedBy.Size = new System.Drawing.Size(315, 25);
+            this.requestedBy.Size = new System.Drawing.Size(315, 21);
             this.requestedBy.TabIndex = 5;
             this.requestedBy.TextChanged += new System.EventHandler(this.requestedBy_GotFocus);
             // 
@@ -1618,9 +1632,8 @@
             // 
             this.deviationNO.BackColor = System.Drawing.Color.White;
             this.deviationNO.Location = new System.Drawing.Point(118, 25);
-            this.deviationNO.Multiline = true;
             this.deviationNO.Name = "deviationNO";
-            this.deviationNO.Size = new System.Drawing.Size(315, 25);
+            this.deviationNO.Size = new System.Drawing.Size(315, 21);
             this.deviationNO.TabIndex = 1;
             // 
             // ldeviationNo
@@ -1642,14 +1655,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(938, 622);
+            this.ClientSize = new System.Drawing.Size(938, 583);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.deviationHeadPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "SaveDeviation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Save Deviation";
+            this.Text = "Neue Abweichung";
             this.deviationHeadPanel.ResumeLayout(false);
             this.deviationHeadPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).EndInit();
@@ -1694,7 +1707,7 @@
 
         private System.Windows.Forms.Panel deviationHeadPanel;
         private System.Windows.Forms.PictureBox logoBox;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label laddNewDeviation;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox lDeviationInfo;
         private System.Windows.Forms.Label lrisckCategroy;
@@ -1833,5 +1846,9 @@
         private System.Windows.Forms.TextBox riskCategory;
         private System.Windows.Forms.Label loptional;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label lartabweichung;
+        private System.Windows.Forms.TextBox barcode;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip toolTipDownload;
     }
 }

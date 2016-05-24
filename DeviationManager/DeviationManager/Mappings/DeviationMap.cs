@@ -30,7 +30,8 @@ namespace DeviationManager.Mappings
             Map(x => x.product);
             Map(x => x.anlage);
             Map(x => x.dateClosed);
-            
+            Map(x => x.barcode);
+
 
 
             HasMany(x => x.reasons).Not.LazyLoad()

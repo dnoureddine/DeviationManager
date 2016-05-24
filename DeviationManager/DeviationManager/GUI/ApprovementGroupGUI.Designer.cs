@@ -63,16 +63,21 @@
             // 
             // approvementGroupsDataGridview
             // 
+            this.approvementGroupsDataGridview.AllowUserToAddRows = false;
+            this.approvementGroupsDataGridview.AllowUserToDeleteRows = false;
             this.approvementGroupsDataGridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.approvementGroupsDataGridview.Location = new System.Drawing.Point(12, 215);
+            this.approvementGroupsDataGridview.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.approvementGroupsDataGridview.Location = new System.Drawing.Point(0, 236);
+            this.approvementGroupsDataGridview.MultiSelect = false;
             this.approvementGroupsDataGridview.Name = "approvementGroupsDataGridview";
             this.approvementGroupsDataGridview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.approvementGroupsDataGridview.Size = new System.Drawing.Size(660, 263);
+            this.approvementGroupsDataGridview.Size = new System.Drawing.Size(684, 263);
             this.approvementGroupsDataGridview.TabIndex = 7;
             this.approvementGroupsDataGridview.SelectionChanged += new System.EventHandler(this.approvementGroupsDataGridview_SelectionChanged);
             // 
             // button2
             // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(490, 153);
@@ -85,6 +90,7 @@
             // 
             // button3
             // 
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(490, 61);
@@ -97,6 +103,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(490, 19);
@@ -119,7 +126,7 @@
             this.groupBox1.Controls.Add(this.lName);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(458, 177);
+            this.groupBox1.Size = new System.Drawing.Size(458, 218);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add new approvement Group";
@@ -140,7 +147,7 @@
             this.groupEmail.Location = new System.Drawing.Point(73, 146);
             this.groupEmail.Multiline = true;
             this.groupEmail.Name = "groupEmail";
-            this.groupEmail.Size = new System.Drawing.Size(308, 25);
+            this.groupEmail.Size = new System.Drawing.Size(308, 66);
             this.groupEmail.TabIndex = 11;
             // 
             // idGroupeApprovement
@@ -148,9 +155,8 @@
             this.idGroupeApprovement.BackColor = System.Drawing.Color.White;
             this.idGroupeApprovement.Enabled = false;
             this.idGroupeApprovement.Location = new System.Drawing.Point(73, 19);
-            this.idGroupeApprovement.Multiline = true;
             this.idGroupeApprovement.Name = "idGroupeApprovement";
-            this.idGroupeApprovement.Size = new System.Drawing.Size(308, 25);
+            this.idGroupeApprovement.Size = new System.Drawing.Size(308, 20);
             this.idGroupeApprovement.TabIndex = 10;
             // 
             // lId
@@ -167,9 +173,8 @@
             // 
             this.role.BackColor = System.Drawing.Color.White;
             this.role.Location = new System.Drawing.Point(73, 105);
-            this.role.Multiline = true;
             this.role.Name = "role";
-            this.role.Size = new System.Drawing.Size(308, 25);
+            this.role.Size = new System.Drawing.Size(308, 20);
             this.role.TabIndex = 8;
             // 
             // lRole
@@ -186,9 +191,8 @@
             // 
             this.liblle.BackColor = System.Drawing.Color.White;
             this.liblle.Location = new System.Drawing.Point(73, 60);
-            this.liblle.Multiline = true;
             this.liblle.Name = "liblle";
-            this.liblle.Size = new System.Drawing.Size(308, 25);
+            this.liblle.Size = new System.Drawing.Size(308, 20);
             this.liblle.TabIndex = 6;
             // 
             // lName
@@ -208,11 +212,10 @@
             this.ClientSize = new System.Drawing.Size(684, 499);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ApprovementGroupGUI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Approvement Group";
+            this.Text = "Freigabegruppe";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.approvementGroupsDataGridview)).EndInit();
             this.groupBox1.ResumeLayout(false);
