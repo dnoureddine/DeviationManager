@@ -476,7 +476,7 @@ namespace DeviationManager.Model
                     {
                         creteria.Add(Restrictions.Eq("deviationType", deviationType));
                     }
-                    if (date1 != date2)
+                    if (DateTime.Compare(date1,date2)!=0)
                     {
                         creteria.Add(Restrictions.Between("dateCreation", date1, date2));
                     }
@@ -588,7 +588,7 @@ namespace DeviationManager.Model
 
         
         //List deviation on pending
-        public IList<Deviation> listPendingDeviation()
+        public IList<Deviation> listPendingDeviation(int n, int m)
         {
             using (var session = NHibernateHelper.OpenSession())
             {
@@ -596,12 +596,14 @@ namespace DeviationManager.Model
                 {
                     var deviations = session.CreateCriteria(typeof(Deviation))
                                      .AddOrder(Order.Desc("deviationId"))
+                                     .SetFirstResult(n * m - m)
+                                     .SetMaxResults(n * m)
                                      .List<Deviation>();
 
                     IList<Deviation> pendingDeviationList = new List<Deviation>();
                     foreach (var deviation in deviations)
                     {
-                        if (deviation.Freigabe == "Pending")
+                        if (deviation.Freigabe == "In Bearbeitung")
                         {
                             pendingDeviationList.Add(deviation);
                         }
@@ -612,8 +614,32 @@ namespace DeviationManager.Model
             }
         }
 
+        //Number of deviation on Pending
+        public int getPendingDeviationNumber()
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var deviations = session.CreateCriteria(typeof(Deviation))
+                                     .List<Deviation>();
+
+                    IList<Deviation> pendingDeviationList = new List<Deviation>();
+                    foreach (var deviation in deviations)
+                    {
+                        if (deviation.Freigabe == "In Bearbeitung")
+                        {
+                            pendingDeviationList.Add(deviation);
+                        }
+                    }
+
+                    return pendingDeviationList.Count;
+                }
+            }
+        }
+        
         //List deviation on Rejected
-        public IList<Deviation> listRejectedDeviation()
+        public IList<Deviation> listRejectedDeviation(int n, int m)
         {
             using (var session = NHibernateHelper.OpenSession())
             {
@@ -621,24 +647,50 @@ namespace DeviationManager.Model
                 {
                     var deviations = session.CreateCriteria(typeof(Deviation))
                         .AddOrder(Order.Desc("deviationId"))
+                        .SetFirstResult(n * m - m)
+                        .SetMaxResults(n * m)
                         .List<Deviation>();
 
                     IList<Deviation> pendingDeviationList = new List<Deviation>();
                     foreach (var deviation in deviations)
                     {
-                        if (deviation.Freigabe == "Rejected" || deviation.Freigabe == "Closed")
+                        if (deviation.Freigabe == "Abgelehnt" || deviation.Freigabe == "Abgeschlossen")
                         {
                             pendingDeviationList.Add(deviation);
                         }
                     }
 
                     return pendingDeviationList;
+                }
+            }
+        }
+
+        //Number od Deviation on Rejected
+        public int getRejectedDeviationNumber()
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var deviations = session.CreateCriteria(typeof(Deviation))
+                        .List<Deviation>();
+
+                    IList<Deviation> pendingDeviationList = new List<Deviation>();
+                    foreach (var deviation in deviations)
+                    {
+                        if (deviation.Freigabe == "Abgelehnt" || deviation.Freigabe == "Abgeschlossen")
+                        {
+                            pendingDeviationList.Add(deviation);
+                        }
+                    }
+
+                    return pendingDeviationList.Count;
                 }
             }
         }
 
         //List deviation on Approvde
-        public IList<Deviation> listApprovedDeviation()
+        public IList<Deviation> listApprovedDeviation(int n, int m)
         {
             using (var session = NHibernateHelper.OpenSession())
             {
@@ -646,12 +698,14 @@ namespace DeviationManager.Model
                 {
                     var deviations = session.CreateCriteria(typeof(Deviation))
                         .AddOrder(Order.Desc("deviationId"))
+                        .SetFirstResult(n * m - m)
+                        .SetMaxResults(n * m)
                         .List<Deviation>();
 
                     IList<Deviation> pendingDeviationList = new List<Deviation>();
                     foreach (var deviation in deviations)
                     {
-                        if (deviation.Freigabe == "Approved")
+                        if (deviation.Freigabe == "Freigegeben")
                         {
                             pendingDeviationList.Add(deviation);
                         }
@@ -662,6 +716,29 @@ namespace DeviationManager.Model
             }
         }
 
+        //Number of approved Deviation
+        public int getApprovedDeviationNumber()
+        {
+            using (var session = NHibernateHelper.OpenSession())
+            {
+                using (var transaction = session.BeginTransaction())
+                {
+                    var deviations = session.CreateCriteria(typeof(Deviation))
+                        .List<Deviation>();
+
+                    IList<Deviation> pendingDeviationList = new List<Deviation>();
+                    foreach (var deviation in deviations)
+                    {
+                        if (deviation.Freigabe == "Freigegeben")
+                        {
+                            pendingDeviationList.Add(deviation);
+                        }
+                    }
+
+                    return pendingDeviationList.Count;
+                }
+            }
+        }
 
         //add a password 
         public bool addPassword(Connection conn)

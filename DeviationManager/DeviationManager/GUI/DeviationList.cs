@@ -32,6 +32,9 @@ namespace DeviationManager.GUI
             //initilize 
             this.setLabelDeviationNumber();
 
+            //init dates
+            this.initdates();
+
             //show deviation list
             this.showDeviationList();
 
@@ -91,6 +94,13 @@ namespace DeviationManager.GUI
             }
         }
 
+        //date initialisation
+        private void initdates()
+        {
+            this.date1.Value = DateTime.Now;
+            this.date2.Value = DateTime.Now;
+        }
+
         //set the language
         private void setLanguage()
         {
@@ -118,7 +128,7 @@ namespace DeviationManager.GUI
         }
 
         //show Deviation List
-        private void showDeviationList()
+        public  void showDeviationList()
         {
             var deviations = deviationModel.listDeviations(n,m);
             var source = new BindingSource();
@@ -151,7 +161,7 @@ namespace DeviationManager.GUI
         /*************************** Event **********************************************************************/
         private void addNewDeviation_Click(object sender, EventArgs e)
         {
-            SaveDeviation saveDeviation = new SaveDeviation("newDeviation");
+            SaveDeviation saveDeviation = new SaveDeviation("newDeviation", this, null);
             saveDeviation.Show();
         }
 
@@ -170,7 +180,7 @@ namespace DeviationManager.GUI
                     if (!deviationModel.isDeviationClosed(deviation))
                     {
                         //update Deviation
-                        SaveDeviation saveDeviation = new SaveDeviation("updateDeviation");
+                        SaveDeviation saveDeviation = new SaveDeviation("updateDeviation", this, null);
                         saveDeviation.updateDeviation(deviation);
                     }
                     else
@@ -226,7 +236,7 @@ namespace DeviationManager.GUI
                 if (deviation != null)
                 {
                     //show Deviation
-                    SaveDeviation saveDeviation = new SaveDeviation("showDeviation");
+                    SaveDeviation saveDeviation = new SaveDeviation("showDeviation", this, null);
                     saveDeviation.showDeviation(deviation);
                 }
                 else
@@ -264,7 +274,11 @@ namespace DeviationManager.GUI
 
             if (this.likeSearch.Checked == false)
             {
-                this.updateDeviationList(deviationModel.filterDeviationByRiskCategory(this.riskCategory.SelectedItem.ToString()));
+                if (this.riskCategory.SelectedIndex != 0)
+                {
+                    this.updateDeviationList(deviationModel.filterDeviationByRiskCategory(this.riskCategory.SelectedItem.ToString()));
+                }
+                
             }
         }
 
@@ -274,14 +288,17 @@ namespace DeviationManager.GUI
         {
             if (this.likeSearch.Checked == false)
             {
-                this.updateDeviationList(deviationModel.filterDeviationByDeviationType(this.deviationType.SelectedItem.ToString()));
+                if (this.deviationType.SelectedIndex != 0)
+                {
+                    this.updateDeviationList(deviationModel.filterDeviationByDeviationType(this.deviationType.SelectedItem.ToString()));
+                }
             }
         }
 
         //search deviation using all  properties
         private void Filter_Click(object sender, EventArgs e)
         {
-
+           
             String deviationRef = this.deviationNO.Text;
             String requestedBy = this.requestedBy.Text;
             String deviationType = "";
@@ -306,6 +323,11 @@ namespace DeviationManager.GUI
         //update deviations list
         private void deviationListUpdate_Click(object sender, EventArgs e)
         {
+            //reset date1 and date2
+            this.date1.Value = DateTime.Now;
+            this.date2.Value = DateTime.Now;
+
+            //update deviation list
             this.showDeviationList();
         }
 
@@ -365,7 +387,7 @@ namespace DeviationManager.GUI
                 if (deviation != null)
                 {
                     //show Deviation
-                    SaveDeviation saveDeviation = new SaveDeviation("showDeviation");
+                    SaveDeviation saveDeviation = new SaveDeviation("showDeviation", this, null);
                     saveDeviation.showDeviation(deviation);
                 }
                 else
@@ -396,7 +418,7 @@ namespace DeviationManager.GUI
                     if (!deviationModel.isDeviationClosed(deviation))
                     {
                         //update Deviation
-                        SaveDeviation saveDeviation = new SaveDeviation("updateDeviation");
+                        SaveDeviation saveDeviation = new SaveDeviation("updateDeviation", this, null);
                         saveDeviation.updateDeviation(deviation);
                     }
                     else
@@ -501,6 +523,32 @@ namespace DeviationManager.GUI
                     //set Label for deviation number
                     this.setLabelDeviationNumber();
                 }
+            }
+        }
+
+        //show deviation double click
+        private void DeviationDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.DeviationDataGridView.CurrentRow != null)
+            {
+                String deviationRef = this.DeviationDataGridView.CurrentRow.Cells[0].Value.ToString();
+                Deviation deviation = deviationModel.getDeviationWithRef(deviationRef);
+                //The user can update the deviation if signature attribut of the deviation has the user name
+                if (deviation != null)
+                {
+                    //show Deviation
+                    SaveDeviation saveDeviation = new SaveDeviation("showDeviation", this, null);
+                    saveDeviation.showDeviation(deviation);
+                }
+                else
+                {
+                    MessageBox.Show("Deviation dos not exist!");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please Choose a Deviation Before makimg this Action!");
             }
         }
 

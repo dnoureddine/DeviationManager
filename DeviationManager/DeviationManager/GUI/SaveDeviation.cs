@@ -12,6 +12,7 @@ using System.Resources;
 using System.Text;
 using System.Windows.Forms;
 using System.DirectoryServices.AccountManagement;
+using System.IO;
 
 namespace DeviationManager.GUI
 {
@@ -21,13 +22,18 @@ namespace DeviationManager.GUI
         private String actionType;
         private Deviation deviation=null;
         private EmailSender emailSender;
+        private DeviationList deviationList = null;
+        private PrincipalWin principalWin = null;
 
-        public SaveDeviation(String actionType)
+        public SaveDeviation(String actionType, DeviationList deviationList, PrincipalWin principalWin)
         {
             InitializeComponent();
             deviationModel = new DeviationModel();
             emailSender = new EmailSender();
             this.actionType = actionType;
+
+            this.deviationList = deviationList;
+            this.principalWin = principalWin;
 
             //set  language
             if (LanguageName.languageName != "DeviationManager.Lang.language_en")
@@ -41,13 +47,28 @@ namespace DeviationManager.GUI
             {
                 addApproval();
                 setSignature();
+
+                //approvement Table readonly
+                this.approvementGroupDataGrid.ReadOnly = true;
+
             }
-
-            String username = System.DirectoryServices.AccountManagement.UserPrincipal.Current.DisplayName;
-            this.requestedBy.Text = username;
-
+           
         }
 
+
+        //update deviation list on Principal and Deviationlist windows
+        public void updateDeviationList()
+        {
+            if (this.deviationList != null)
+            {
+                this.deviationList.showDeviationList();
+            }
+
+            if (this.principalWin != null)
+            {
+                this.principalWin.updateDeviationList();
+            }
+        }
 
         /**************************************************************************************/
 
@@ -88,7 +109,6 @@ namespace DeviationManager.GUI
             this.lperiodBegin.Text = languageModel.getString("lperiodBegin");
             this.lperiodEnd.Text = languageModel.getString("lperiodEnd");
             this.addDocument.Text = languageModel.getString("ladd");
-            this.downloadDocument.Text = languageModel.getString("ldowload");
             this.deleteDocument.Text = languageModel.getString("ldelete");
             //show digramms
             this.button1.Text = languageModel.getString("lshow");
@@ -159,6 +179,9 @@ namespace DeviationManager.GUI
         {
             this.deviationSignature.Text = deviationModel.getUserNameFromActiveDirectory();
             this.deviationSignature.Enabled = false;
+
+            String username = System.DirectoryServices.AccountManagement.UserPrincipal.Current.DisplayName;
+            this.requestedBy.Text = username;
         }
 
 
@@ -482,8 +505,15 @@ namespace DeviationManager.GUI
                     isValid = isValid + "And You Must Reject Or Approve The Deviation !";
                 }
             }
-           
-            return isValid;
+
+
+            //make sure that approved and Rejected are not both checked
+            if (((bool)approved.Value == true) && ((bool)rejected.Value == true))
+            {
+                isValid = "Sorry !, You Can Not Approve And Reject At The Same Time!!";
+            }
+
+                return isValid;
         }
         /***********************    Events  **************************************************************************/
 
@@ -496,6 +526,15 @@ namespace DeviationManager.GUI
             bool detailRequestedDevV = formValidation.isTextBoxNotNull(this.detailRequestedDeviation, errorProvider1);
             bool deviationType = formValidation.isItemFromComoBoxSelected(this.deviationType, errorProvider1);
             int compareDeviationPeriod = this.validateDeviationPeriod();
+
+            bool deviationTypeDescription = true;
+            if (this.deviationType.SelectedItem.ToString() == "Sonstiges")
+            {
+                if (this.deviationDescription.Text == "")
+                {
+                    deviationTypeDescription = formValidation.isTextBoxNotNull(this.deviationDescription, errorProvider1);
+                }
+            }
 
             if (requestedBy && position && standardCondition && detailRequestedDevV && deviationType && compareDeviationPeriod != 0 && compareDeviationPeriod < 0)
             {
@@ -613,28 +652,14 @@ namespace DeviationManager.GUI
         private void addDocument_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
+
             if (fileDialog.ShowDialog() == DialogResult.OK)
             {
-                UploadFile uploadFile = new UploadFile("u288026726","alter6+");
-
-                String fileNameDB = uploadFile.generateFileName(fileDialog.SafeFileName);
                 String fileName = fileDialog.SafeFileName;
                 String filePath = fileDialog.FileName;
 
-
-                String result = uploadFile.UploadFielToFtp("ftp://31.170.165.123/" + fileNameDB, filePath);
-
-
-                if (result == "uploaded")
-                {
-
-                    this.uploadFileDataGridView.Rows.Add(fileName, fileNameDB, DateTime.Now.ToString());
-                }
-                else
-                {
-                    MessageBox.Show(result, "Infos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                
+                this.uploadFileDataGridView.Rows.Add(fileName, filePath, DateTime.Now.ToString());
+                   
             } 
         }
 
@@ -672,8 +697,7 @@ namespace DeviationManager.GUI
         //show diagramms of deviation in other Win
         private void button1_Click(object sender, EventArgs e)
         {
-            String fileSave = this.uploadFileDataGridView.CurrentRow.Cells[1].Value.ToString();
-
+           
             ShowDiagramms showDiagramm = new ShowDiagramms(this.uploadFileDataGridView);
             showDiagramm.Show();
         }
@@ -685,24 +709,17 @@ namespace DeviationManager.GUI
             {
                 if (MessageBox.Show("Are Sure, You Wish to Delete This Attachment ?", "Delete Attachment", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    UploadFile uploadFile = new UploadFile("u288026726", "alter6+");
-                    String fileNameDB = this.uploadFileDataGridView.CurrentRow.Cells[1].Value.ToString();
+                    String filePath = this.uploadFileDataGridView.CurrentRow.Cells[1].Value.ToString();
 
-                    //Delete File using FTP
-                    String result = uploadFile.deleteFileFTP("ftp://31.170.165.123/" + fileNameDB);
-                    if (result == "deleted")
-                    {
-                        //delete File in DB
-                        deviationModel.deleteAttachment(fileNameDB);
+                    //delete File in DB
+                    deviationModel.deleteAttachment(filePath);
 
-                        //remove from DataGridView
-                        this.uploadFileDataGridView.Rows.RemoveAt(this.uploadFileDataGridView.CurrentRow.Index);
-                        MessageBox.Show("File Deleted !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show(result, "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    //remove from DataGridView
+                    this.uploadFileDataGridView.Rows.RemoveAt(this.uploadFileDataGridView.CurrentRow.Index);
+
+                    MessageBox.Show("File Had Been Removed From The List!.");
+
+
                 }
 
             }
@@ -712,6 +729,7 @@ namespace DeviationManager.GUI
         //make the approvement
         private void approvementGroupDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+          
             if (this.actionType == "newDeviation")
             {
                 MessageBox.Show("You Can Not Make This Action Now, You Schould First Save The Deviation !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -759,7 +777,51 @@ namespace DeviationManager.GUI
                     }
 
                 }
-                
+
+                //__ok for approvement
+                DataGridViewRow row = (DataGridViewRow)this.approvementGroupDataGrid.Rows[e.RowIndex];
+
+                DataGridViewCheckBoxCell approved = (DataGridViewCheckBoxCell)row.Cells[3];
+                DataGridViewCheckBoxCell rejected = (DataGridViewCheckBoxCell)row.Cells[4];
+
+                if (e.ColumnIndex == 3)
+                {
+                    if (((bool)approved.Value == false) && ((bool)rejected.Value == true))
+                    {
+                        MessageBox.Show("Sorry !, You Can Not Approve And Reject At The Same Time!!");
+
+                        //interupt checking approved checkbox
+                        this.approvementGroupDataGrid.CancelEdit();
+                    } 
+                }
+
+                if (e.ColumnIndex == 4)
+                {
+                    if (((bool)approved.Value == true) && ((bool)rejected.Value == false))
+                    {
+                        MessageBox.Show("Sorry !, You Can Not Approve And Reject At The Same Time!!");
+
+                        //interupt checking approved checkbox
+                        this.approvementGroupDataGrid.CancelEdit();
+                    }
+
+                }
+
+                if (e.ColumnIndex == 3 || e.ColumnIndex == 4)
+                {
+                   if (((bool)approved.Value == false) && ((bool)rejected.Value == false))
+                    {
+                        //set Username
+                        if (actionType != "newDeviation")
+                        {
+                            String userWinName = System.DirectoryServices.AccountManagement.UserPrincipal.Current.DisplayName;
+                            this.approvementGroupDataGrid.Rows[e.RowIndex].Cells[2].Value = userWinName;
+                        }
+                        
+                    }
+
+                }
+
             }
            
         }
@@ -820,6 +882,57 @@ namespace DeviationManager.GUI
                 }  
             }
 
+        }
+
+        //if  the type of deviation is Sontiges, mqke sure that Description is not  null
+        private void deviationType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.deviationType.SelectedItem.ToString() == "Sonstiges") {
+                this.deviationDescription.BackColor = Color.Red;
+            }
+
+        }
+
+        private void deviationDescription_TextChanged(object sender, EventArgs e)
+        {
+            if(this.deviationDescription.Text == "")
+            {
+                this.deviationDescription.BackColor = Color.Red;
+            }
+            else
+            {
+                this.deviationDescription.BackColor = Color.White;
+            }
+        }
+
+        //open File double click
+        private void uploadFileDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.uploadFileDataGridView.CurrentRow != null)
+            {
+                String filePath = this.uploadFileDataGridView.CurrentRow.Cells[1].Value.ToString();
+                if (File.Exists(filePath))
+                {
+
+                    try
+                    {
+                        Process.Start(filePath);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }else
+                {
+                    MessageBox.Show("This File Dos Not Exist Any More!.");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please Choose Select a Line Before makimg this Action!");
+            }
         }
 
 

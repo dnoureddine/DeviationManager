@@ -113,14 +113,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProcedureTest.exe" size="17296">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ProcedureTest.exe" size="17808">
       <assemblyIdentity name="ProcedureTest" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Xtv3joccBUahmlTB3oT0EEdrLaU=</dsig:DigestValue>
+        <dsig:DigestValue>qE9y9S+dLwjNLDxr9RBJJixrwLs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

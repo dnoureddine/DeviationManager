@@ -21,14 +21,8 @@ namespace ProcedureTest
         static void Main(string[] args)
         {
 
+         
 
-            String email = "dnoureddine11mail.com";
-
-            string[] tab = email.Split('/');
-            foreach (var value in tab)
-            {
-                Console.WriteLine(value);
-            }
 
             Console.Read();
         }

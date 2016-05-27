@@ -23,6 +23,20 @@ namespace DeviationManager.Model
             }
         }
 
+        /******* validate the deviation form '=> true-->input valid ## flase--->input not valid */
+        public bool isTexNotNull(TextBox textBox, ErrorProvider errorProvider)
+        {
+            if (textBox.Text == "")
+            {
+                errorProvider.SetError(textBox, "Text must not be null..!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         /******* validate the deviation form '=> true-->Combobox Item selected ## flase--->input not valid */
         public bool isItemFromComoBoxSelected(ComboBox comboBox, ErrorProvider errorProvider)
         {

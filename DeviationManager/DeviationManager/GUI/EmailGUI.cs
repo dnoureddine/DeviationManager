@@ -77,8 +77,7 @@ namespace DeviationManager.GUI
         {
             if (this.subject.Text != "" && this.messageContent.Text != "")
             {
-                //String result = this.emailSender.sendEmailToAllGroups(this.subject.Text, this.messageContent.Text);
-                String result = "sent";
+                String result = this.emailSender.sendEmailToAllGroups(this.subject.Text, this.messageContent.Text);
                 if (result == "sent")
                 {
                     //Add the New deviation
@@ -87,6 +86,9 @@ namespace DeviationManager.GUI
                     MessageBox.Show("The Deviation Was Successfuly Added", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.saveDeviation.Close();
                     this.Close();
+
+                    //update deiation List on PrincipalWin or DeviationList forms
+                    this.saveDeviation.updateDeviationList();
                 }
                 else
                 {

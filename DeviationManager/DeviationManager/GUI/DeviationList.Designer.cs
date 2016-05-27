@@ -181,6 +181,7 @@
             this.DeviationDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DeviationDataGridView.Size = new System.Drawing.Size(1214, 384);
             this.DeviationDataGridView.TabIndex = 3;
+            this.DeviationDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DeviationDataGridView_CellDoubleClick);
             // 
             // contextMenuStrip1
             // 
@@ -417,8 +418,10 @@
             // 
             // deviationType
             // 
+            this.deviationType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.deviationType.FormattingEnabled = true;
             this.deviationType.Items.AddRange(new object[] {
+            "",
             "Spezifikation",
             "Prozess",
             "Dokumentation"});
@@ -440,8 +443,10 @@
             // 
             // riskCategory
             // 
+            this.riskCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.riskCategory.FormattingEnabled = true;
             this.riskCategory.Items.AddRange(new object[] {
+            "",
             "ROT",
             "GELB",
             "GRÜN"});

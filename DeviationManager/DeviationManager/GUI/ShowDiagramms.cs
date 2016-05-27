@@ -14,36 +14,12 @@ namespace DeviationManager.GUI
     public partial class ShowDiagramms : Form
     {
 
-        private UploadFile uploadFile ;
-        private String hostName;
-
         public ShowDiagramms(DataGridView dataGridView)
         {
             InitializeComponent();
-            this.hostName = "ftp://31.170.165.123/";
-            uploadFile = new UploadFile("u288026726", "alter6+");
 
             this.showDiagramms(dataGridView);
-            //imagePanel.FlowDirection = FlowDirection.TopDown;
-            //imagePanel.WrapContents = false;
-            //this.addDiagramms(hostName);
             
-        }
-
-
-        //add diagramms
-        public void addDiagramms(String hostName)
-        {
-            Stream stream = this.uploadFile.getImageStream(hostName);
-            Image img = Image.FromStream(stream);
-            PictureBox pic = new PictureBox();
-            pic.Image = img;
-            pic.Size = img.Size;
-            pic.Anchor = AnchorStyles.Left;
-            pic.Anchor = AnchorStyles.Right;
-          
-
-            this.imagePanel.Controls.Add(pic);
         }
 
         //add diagramms
@@ -52,14 +28,14 @@ namespace DeviationManager.GUI
             foreach (DataGridViewRow row in dataGridView.Rows)
             {
                 //verify the extention file 
+                String filePath = row.Cells[1].Value.ToString();
                 String fileExtention = Path.GetExtension(row.Cells[0].Value.ToString());
-                if (fileExtention.Equals(".png", StringComparison.InvariantCultureIgnoreCase) || fileExtention.Equals(".png", StringComparison.InvariantCultureIgnoreCase))
+                if (fileExtention.Equals(".png", StringComparison.InvariantCultureIgnoreCase) || fileExtention.Equals(".jpg", StringComparison.InvariantCultureIgnoreCase))
                 {
-                    //Get Image Stream
-                    Stream stream = this.uploadFile.getImageStream(this.hostName + row.Cells[1].Value.ToString());
-                    if (stream != null)
+
+                    if (File.Exists(filePath))
                     {
-                        Image img = Image.FromStream(stream);
+                        Image img = Image.FromFile(filePath);
                         PictureBox pic = new PictureBox();
                         pic.Image = img;
                         pic.Size = img.Size;
@@ -67,16 +43,18 @@ namespace DeviationManager.GUI
                         pic.Anchor = AnchorStyles.Right;
 
                         Label imageLegend = new Label();
-                        imageLegend.Text = row.Cells[3].Value.ToString();
-                        imageLegend.Margin = new Padding(0,0,70,70);
+                        if (row.Cells[3].Value != null)
+                        {
+                            imageLegend.Text = row.Cells[3].Value.ToString();
+                        }
+                        imageLegend.Margin = new Padding(0, 0, 70, 70);
 
                         this.imagePanel.Controls.Add(pic);
                         this.imagePanel.Controls.Add(imageLegend);
-                        
-
                     }
+                 
                 }
-                
+
 
             }
         }

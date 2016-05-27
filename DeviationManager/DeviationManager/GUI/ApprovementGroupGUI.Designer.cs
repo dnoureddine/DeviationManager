@@ -80,7 +80,7 @@
             this.button2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(490, 153);
+            this.button2.Location = new System.Drawing.Point(490, 194);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(182, 36);
             this.button2.TabIndex = 6;

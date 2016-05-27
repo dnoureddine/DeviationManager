@@ -102,6 +102,22 @@ namespace DeviationManager.Entity
                     }
                 }
 
+                if(isApproved == "Pending")
+                {
+                    isApproved = "In Bearbeitung";
+                }
+                if (isApproved == "Closed")
+                {
+                    isApproved = "Abgeschlossen";
+                }
+                if (isApproved == "Rejected")
+                {
+                    isApproved = "Abgelehnt";
+                }
+                if (isApproved == "Approved")
+                {
+                    isApproved = "Freigegeben";
+                }
 
                 return isApproved;
             }

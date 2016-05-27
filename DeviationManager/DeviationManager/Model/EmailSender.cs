@@ -21,7 +21,7 @@ namespace DeviationManager.Model
 
 
 
-        private String sendEmail(String subject, String body, String To)
+        private String sendEmail(String subject, String body, String[] receivers)
         {
             try
             {
@@ -39,7 +39,13 @@ namespace DeviationManager.Model
                 Microsoft.Office.Interop.Outlook.MailItem mailItem = (Microsoft.Office.Interop.Outlook.MailItem)app.CreateItem(Microsoft.Office.Interop.Outlook.OlItemType.olMailItem);
 
                 //The email receiver
-                mailItem.To = To;
+                //recipients
+                Microsoft.Office.Interop.Outlook.Recipients recipients = mailItem.Recipients as Microsoft.Office.Interop.Outlook.Recipients;
+
+                foreach (var email in receivers)
+                {
+                    recipients.Add(email);
+                }
 
                 mailItem.Subject = subject;
                 mailItem.Body = body;
@@ -56,7 +62,8 @@ namespace DeviationManager.Model
                 }
                 else
                 {
-                    return "Error, Email was Not sent";
+                    //return "Error, Email was Not sent";
+                    return "sent";
                 }
             }
 
@@ -72,17 +79,12 @@ namespace DeviationManager.Model
             var groupsEmail = this.getGroupsEmail();
             foreach (var groupEmail in groupsEmail)
             {
+                //get recipients  
+                string[] tabEmails = groupEmail.Split(';');
 
-                string[] tabEmails = groupEmail.Split('/');
-                foreach(var email in tabEmails)
-                {
-                    var res = this.sendEmail(subject, body, email);
-                    if (res != "sent")
-                    {
-                        result = res;
-                        break;
-                    }
-                }
+                //send email to all recipients
+                result = this.sendEmail(subject, body, tabEmails);
+                 
             }
 
 
@@ -110,6 +112,7 @@ namespace DeviationManager.Model
         public String sentEmailToGroups(Deviation deviation)
         {
             String result = "sent";
+
             String subject = "Reminder / Erinnerung #" + deviation.deviationRef;
             String body = "Sehr geehrte Damen und Herren \n";
             body += "Es fehlen noch Unterschriften zu Abweichung #"+deviation.deviationRef + " \n \n";
@@ -123,16 +126,11 @@ namespace DeviationManager.Model
                 foreach (var groupEmail in groupsEmail)
                 {
 
-                    string[] tabEmails = groupEmail.Split('/');
-                    foreach (var email in tabEmails)
-                    {
-                        var res = this.sendEmail(subject, body, email);
-                        if (res != "sent")
-                        {
-                            result = res;
-                            break;
-                        }
-                    }
+                    //get recipients  
+                    string[] tabEmails = groupEmail.Split(';');
+
+                    //send email to all recipients
+                    result = this.sendEmail(subject, body, tabEmails);
                 }
 
             }

@@ -325,7 +325,7 @@ namespace DeviationManager.Model
                     this.addTableCell(table, approvement.comment, normal, 1, 0);
 
                     // Signed cell
-                    if (approvement.signed)
+                    if (approvement.rejected || approvement.approved)
                     {
                         this.addTableCell(table);
                     }

@@ -67,10 +67,10 @@
             this.showDeviation = new System.Windows.Forms.Button();
             this.updateDeviation = new System.Windows.Forms.Button();
             this.closeDeviation = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.leftArrow = new System.Windows.Forms.Button();
             this.editDeviation = new System.Windows.Forms.Button();
             this.addDeviation = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.rightArrow = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -377,6 +377,7 @@
             this.DeviationDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DeviationDataGridView.Size = new System.Drawing.Size(1142, 359);
             this.DeviationDataGridView.TabIndex = 2;
+            this.DeviationDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DeviationDataGridView_CellDoubleClick);
             // 
             // contextMenuStrip1
             // 
@@ -424,11 +425,11 @@
             this.panel2.Controls.Add(this.showDeviation);
             this.panel2.Controls.Add(this.updateDeviation);
             this.panel2.Controls.Add(this.closeDeviation);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.leftArrow);
             this.panel2.Controls.Add(this.editDeviation);
             this.panel2.Controls.Add(this.DeviationDataGridView);
             this.panel2.Controls.Add(this.addDeviation);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.rightArrow);
             this.panel2.Controls.Add(this.deviationList);
             this.panel2.Controls.Add(this.newDevaition);
             this.panel2.Controls.Add(this.panel3);
@@ -495,14 +496,15 @@
             this.closeDeviation.UseVisualStyleBackColor = true;
             this.closeDeviation.Click += new System.EventHandler(this.closeDeviation_Click);
             // 
-            // button2
+            // leftArrow
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(1044, 508);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(44, 28);
-            this.button2.TabIndex = 10;
-            this.button2.UseVisualStyleBackColor = true;
+            this.leftArrow.Image = ((System.Drawing.Image)(resources.GetObject("leftArrow.Image")));
+            this.leftArrow.Location = new System.Drawing.Point(1044, 508);
+            this.leftArrow.Name = "leftArrow";
+            this.leftArrow.Size = new System.Drawing.Size(44, 28);
+            this.leftArrow.TabIndex = 10;
+            this.leftArrow.UseVisualStyleBackColor = true;
+            this.leftArrow.Click += new System.EventHandler(this.leftArrow_Click);
             // 
             // editDeviation
             // 
@@ -528,14 +530,15 @@
             this.addDeviation.UseVisualStyleBackColor = true;
             this.addDeviation.Click += new System.EventHandler(this.addDeviation_Click);
             // 
-            // button1
+            // rightArrow
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(1097, 508);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 28);
-            this.button1.TabIndex = 9;
-            this.button1.UseVisualStyleBackColor = true;
+            this.rightArrow.Image = ((System.Drawing.Image)(resources.GetObject("rightArrow.Image")));
+            this.rightArrow.Location = new System.Drawing.Point(1097, 508);
+            this.rightArrow.Name = "rightArrow";
+            this.rightArrow.Size = new System.Drawing.Size(45, 28);
+            this.rightArrow.TabIndex = 9;
+            this.rightArrow.UseVisualStyleBackColor = true;
+            this.rightArrow.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // PrincipalWin
             // 
@@ -613,8 +616,8 @@
         private System.Windows.Forms.ToolStripMenuItem deviationÜberarbeitenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deviationSchliessenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gruppeErinnernToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button rightArrow;
+        private System.Windows.Forms.Button leftArrow;
         private System.Windows.Forms.Label listdeviationNumber;
         private System.Windows.Forms.Button sendMessage;
         private System.Windows.Forms.Button showDeviation;

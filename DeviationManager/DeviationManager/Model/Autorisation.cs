@@ -58,11 +58,13 @@ namespace DeviationManager.Model
             String toAmpprove = "canApprove";
 
             Approvement approvement = deviationModel.getApprovement(approvementId);
+            bool isAutorized = this.isAutorized(approvement.approvementGroup.role);
+
             if (approvement.deviation.status=="closed")
             {
                 toAmpprove = "Deviation Was Already Closed";
             }
-            if (approvement.signed)
+            if (approvement.approved || approvement.rejected)
             {
                 if (toAmpprove == "canApprove")
                 {
@@ -74,11 +76,41 @@ namespace DeviationManager.Model
                 }
             }
 
+            //if the user is not autorized to approve
+            if (!isAutorized)
+            {
+                toAmpprove = " Sorry, You Are Not Autorrized To Approve!.";
+            }
            
             return toAmpprove;
         }
 
-        
+        //make sure that the user has the role
+        public bool isAutorized(String roles)
+        {
+            bool isAutorized = false;
+            string[] tab = roles.Split(';');
+            foreach (var role in tab)
+            {
+                try
+                {
+                    bool UserIsInGroup = new System.Security.Principal.WindowsPrincipal(new System.Security.Principal.WindowsIdentity(Environment.UserName)).IsInRole(role);
+                    if (UserIsInGroup)
+                    {
+                        isAutorized = true;
+                        break;
+                    }
+
+                }
+                catch (System.Exception ex)
+                {
+
+                }
+
+            }
+
+            return isAutorized;
+        }
 
         /**____ class   ****/
     }

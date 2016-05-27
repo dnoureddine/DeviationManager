@@ -120,10 +120,6 @@
             this.pSecondTime = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.uploadFileDataGridView = new System.Windows.Forms.DataGridView();
-            this.fileSaveUploadDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fileNameUploadDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateUploadFile = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.attachmentliblle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deleteDocument = new System.Windows.Forms.Button();
             this.addDocument = new System.Windows.Forms.Button();
             this.lAlternativeIdMethod = new System.Windows.Forms.Label();
@@ -174,6 +170,10 @@
             this.ldeviationNo = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTipDownload = new System.Windows.Forms.ToolTip(this.components);
+            this.fileSaveUploadDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileNameUploadDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateUploadFile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.attachmentliblle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deviationHeadPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -1127,33 +1127,6 @@
             this.uploadFileDataGridView.TabIndex = 12;
             this.uploadFileDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uploadFileDataGridView_CellDoubleClick);
             // 
-            // fileSaveUploadDocument
-            // 
-            this.fileSaveUploadDocument.HeaderText = "File Name";
-            this.fileSaveUploadDocument.Name = "fileSaveUploadDocument";
-            this.fileSaveUploadDocument.ReadOnly = true;
-            this.fileSaveUploadDocument.Width = 150;
-            // 
-            // fileNameUploadDocument
-            // 
-            this.fileNameUploadDocument.HeaderText = "File Path";
-            this.fileNameUploadDocument.Name = "fileNameUploadDocument";
-            this.fileNameUploadDocument.ReadOnly = true;
-            this.fileNameUploadDocument.Width = 150;
-            // 
-            // dateUploadFile
-            // 
-            this.dateUploadFile.HeaderText = "Date";
-            this.dateUploadFile.Name = "dateUploadFile";
-            this.dateUploadFile.ReadOnly = true;
-            this.dateUploadFile.Width = 112;
-            // 
-            // attachmentliblle
-            // 
-            this.attachmentliblle.HeaderText = "Legend";
-            this.attachmentliblle.Name = "attachmentliblle";
-            this.attachmentliblle.Width = 300;
-            // 
             // deleteDocument
             // 
             this.deleteDocument.Image = ((System.Drawing.Image)(resources.GetObject("deleteDocument.Image")));
@@ -1525,7 +1498,6 @@
             // 
             // deviationType
             // 
-            this.deviationType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.deviationType.FormattingEnabled = true;
             this.deviationType.Items.AddRange(new object[] {
             "Spezifikation",
@@ -1644,6 +1616,33 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // fileSaveUploadDocument
+            // 
+            this.fileSaveUploadDocument.HeaderText = "File Name";
+            this.fileSaveUploadDocument.Name = "fileSaveUploadDocument";
+            this.fileSaveUploadDocument.ReadOnly = true;
+            this.fileSaveUploadDocument.Width = 150;
+            // 
+            // fileNameUploadDocument
+            // 
+            this.fileNameUploadDocument.HeaderText = "File Path";
+            this.fileNameUploadDocument.Name = "fileNameUploadDocument";
+            this.fileNameUploadDocument.ReadOnly = true;
+            this.fileNameUploadDocument.Width = 150;
+            // 
+            // dateUploadFile
+            // 
+            this.dateUploadFile.HeaderText = "Date";
+            this.dateUploadFile.Name = "dateUploadFile";
+            this.dateUploadFile.ReadOnly = true;
+            this.dateUploadFile.Width = 112;
+            // 
+            // attachmentliblle
+            // 
+            this.attachmentliblle.HeaderText = "Legend";
+            this.attachmentliblle.Name = "attachmentliblle";
+            this.attachmentliblle.Width = 300;
             // 
             // SaveDeviation
             // 
