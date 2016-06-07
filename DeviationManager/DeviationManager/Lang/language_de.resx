@@ -286,78 +286,78 @@
     <value>Abweichung Suchmaske</value>
   </data>
   <data name="actionFailed" xml:space="preserve">
-    <value>Action Failed.</value>
+    <value>Fehlgeschlagen</value>
   </data>
   <data name="alertApprovedRejected" xml:space="preserve">
-    <value>Sorry !, You Can Not Approve And Reject At The Same Time!!</value>
+    <value>Sie können nicht zur gleichen Zeit freigeben und ablehnen</value>
   </data>
   <data name="alertCloseDeviation" xml:space="preserve">
-    <value>Close Deviation Means You Will Not Be Able Later To Make Any Change On It, Are You Sure You Wish To Make This Action ?</value>
+    <value>Abweichung zu schliessen bedeutet, dass Sie keine Aktionen mehr durchführen können. Sind Sie sicher?</value>
   </data>
   <data name="alertDeleteAttachment" xml:space="preserve">
-    <value>Are Sure, You Wish to Delete This Attachment ?</value>
+    <value>Sind Sie sicher, dass Sie diesen Anhang löschen möchten?</value>
   </data>
   <data name="alertSaveDeviationFirst" xml:space="preserve">
-    <value>You Can Not Make This Action Now, You Schould First Save The Deviation !</value>
+    <value>Änderungen sind nicht möglich, bitte speichern Sie zuerst die Abweichung</value>
   </data>
   <data name="approvementDone" xml:space="preserve">
-    <value>Your Approvement Was Succesfuly Done !</value>
+    <value>Freigabe erfolgreich</value>
   </data>
   <data name="chooseDeviation" xml:space="preserve">
-    <value>Please Choose a Deviation Before makimg this Action!</value>
+    <value>Bitte wählen Sie eine Abweichung, bevor Sie weitere Aktionen durchführen</value>
   </data>
   <data name="deviationAdded" xml:space="preserve">
-    <value>The Deviation Was Successfuly Added</value>
+    <value>Abweichung wurde erfolgreich hinzugefügt</value>
   </data>
   <data name="deviationAlreadyClosed" xml:space="preserve">
-    <value>You Are Not Allowed To Make Any Change On This Item Because Its Already Closed !</value>
+    <value>Änderungen nicht mehr möglich, da die Abweichung bereits geschlossen wurde</value>
   </data>
   <data name="deviationNegativePeriod" xml:space="preserve">
-    <value>The Deviation Period Has Not Valid !, The Input &lt;&lt;P.Second date&gt;&gt; Must Be Bigger Than the Input &lt;&lt;P.First date&gt;&gt;</value>
+    <value>Abweichungsperiode ungültig, Eingabe &lt;&lt;P.Second date&gt;&gt; muss grösser sein als Abweichungsperiode &lt;&lt;P.First date&gt;&gt;</value>
   </data>
   <data name="deviationNotExist" xml:space="preserve">
-    <value>The Deviation Dos Not Exist.</value>
+    <value>Abweichung nicht vorhanden</value>
   </data>
   <data name="deviationPeriodNull" xml:space="preserve">
-    <value>The Deviation Period Has Not To Be Null!, You Can Choose Different Dates To Avoid This.</value>
+    <value>Abweichungsperiode darf nicht leer sein, bitte wählen Sie eine entsprechende Abweichungsperiode</value>
   </data>
   <data name="deviationupdated" xml:space="preserve">
-    <value>The Deviation Was Successfly Updated.</value>
+    <value>Abweichung erfolgreich aktualisiert</value>
   </data>
   <data name="deviationWasClosed" xml:space="preserve">
-    <value>The Deviation Was Succesfuly Closed.</value>
+    <value>Abweichung wurde erfolgreich geschlossen</value>
   </data>
   <data name="emailSent" xml:space="preserve">
-    <value>An Email has been sent !</value>
+    <value>Email versendet</value>
   </data>
   <data name="errorCloseDeviation" xml:space="preserve">
-    <value>Error, The Deviation Cloud Not Be Closed.</value>
+    <value>Fehler, die Abweichung konnte nicht geschlossen werden</value>
   </data>
   <data name="errorSendEmail" xml:space="preserve">
-    <value>Erros, The Email Was Not Sent Try Again !</value>
+    <value>Fehler, die Email konnte nicht versendet werden, bitte versuchen Sie es erneut</value>
   </data>
   <data name="fileNotExist" xml:space="preserve">
-    <value>This File Dos Not Exist Any More!.</value>
+    <value>Datei nicht mehr vorhanden</value>
   </data>
   <data name="fileRemovedFromList" xml:space="preserve">
-    <value>File Had Been Removed From The List!.</value>
+    <value>Datei wurde aus der Liste entfernt</value>
   </data>
   <data name="formInputsNotValid" xml:space="preserve">
-    <value>The Form Inputs Are Not Valid !</value>
+    <value>Eingaben ungültig</value>
   </data>
   <data name="inputsMissing" xml:space="preserve">
-    <value>Inputs Are Missing !!</value>
+    <value>Eingaben fehlen</value>
   </data>
   <data name="inputsRequired" xml:space="preserve">
-    <value>Some Inputs Are Required .</value>
+    <value>Eingaben benötigt</value>
   </data>
   <data name="notAllowedToChange" xml:space="preserve">
-    <value>You Are Not Allowed To Make Any Change On This Item Because Its Already Closed !</value>
+    <value>Änderungen nicht mehr möglich, da die Abweichung bereits geschlossen wurde</value>
   </data>
   <data name="notAllowedToUpdateItem" xml:space="preserve">
-    <value>You Are Not Allowed To Update This Item !</value>
+    <value>Sie sind nicht berechtigt die Abweichung zu aktualisieren</value>
   </data>
   <data name="selectLine" xml:space="preserve">
-    <value>Please Choose Select a Line Before making this Action!</value>
+    <value>Bitte zuerst Linie auswählen</value>
   </data>
 </root>

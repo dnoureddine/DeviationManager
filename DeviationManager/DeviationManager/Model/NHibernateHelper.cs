@@ -36,7 +36,7 @@ public class NHibernateHelper
             .Mappings(m =>
                       m.FluentMappings
                           .AddFromAssemblyOf<DeviationMap>())
-             //updating schema
+             //updating schema DO NOT DELETE DB!
             /*.ExposeConfiguration(cfg => new SchemaUpdate(cfg)
                                             .Execute(true, true))*/
             .BuildSessionFactory();

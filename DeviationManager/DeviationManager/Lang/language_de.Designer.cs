@@ -61,7 +61,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Action Failed..
+        ///   Looks up a localized string similar to Fehlgeschlagen.
         /// </summary>
         internal static string actionFailed {
             get {
@@ -70,7 +70,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Sorry !, You Can Not Approve And Reject At The Same Time!!.
+        ///   Looks up a localized string similar to Sie können nicht zur gleichen Zeit freigeben und ablehnen.
         /// </summary>
         internal static string alertApprovedRejected {
             get {
@@ -79,7 +79,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Close Deviation Means You Will Not Be Able Later To Make Any Change On It, Are You Sure You Wish To Make This Action ?.
+        ///   Looks up a localized string similar to Abweichung zu schliessen bedeutet, dass Sie keine Aktionen mehr durchführen können. Sind Sie sicher?.
         /// </summary>
         internal static string alertCloseDeviation {
             get {
@@ -88,7 +88,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Are Sure, You Wish to Delete This Attachment ?.
+        ///   Looks up a localized string similar to Sind Sie sicher, dass Sie diesen Anhang löschen möchten?.
         /// </summary>
         internal static string alertDeleteAttachment {
             get {
@@ -97,7 +97,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You Can Not Make This Action Now, You Schould First Save The Deviation !.
+        ///   Looks up a localized string similar to Änderungen sind nicht möglich, bitte speichern Sie zuerst die Abweichung.
         /// </summary>
         internal static string alertSaveDeviationFirst {
             get {
@@ -106,7 +106,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your Approvement Was Succesfuly Done !.
+        ///   Looks up a localized string similar to Freigabe erfolgreich.
         /// </summary>
         internal static string approvementDone {
             get {
@@ -115,7 +115,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please Choose a Deviation Before makimg this Action!.
+        ///   Looks up a localized string similar to Bitte wählen Sie eine Abweichung, bevor Sie weitere Aktionen durchführen.
         /// </summary>
         internal static string chooseDeviation {
             get {
@@ -124,7 +124,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Deviation Was Successfuly Added.
+        ///   Looks up a localized string similar to Abweichung wurde erfolgreich hinzugefügt.
         /// </summary>
         internal static string deviationAdded {
             get {
@@ -133,7 +133,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You Are Not Allowed To Make Any Change On This Item Because Its Already Closed !.
+        ///   Looks up a localized string similar to Änderungen nicht mehr möglich, da die Abweichung bereits geschlossen wurde.
         /// </summary>
         internal static string deviationAlreadyClosed {
             get {
@@ -142,7 +142,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Deviation Period Has Not Valid !, The Input &lt;&lt;P.Second date&gt;&gt; Must Be Bigger Than the Input &lt;&lt;P.First date&gt;&gt;.
+        ///   Looks up a localized string similar to Abweichungsperiode ungültig, Eingabe &lt;&lt;P.Second date&gt;&gt; muss grösser sein als Abweichungsperiode &lt;&lt;P.First date&gt;&gt;.
         /// </summary>
         internal static string deviationNegativePeriod {
             get {
@@ -151,7 +151,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Deviation Dos Not Exist..
+        ///   Looks up a localized string similar to Abweichung nicht vorhanden.
         /// </summary>
         internal static string deviationNotExist {
             get {
@@ -160,7 +160,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Deviation Period Has Not To Be Null!, You Can Choose Different Dates To Avoid This..
+        ///   Looks up a localized string similar to Abweichungsperiode darf nicht leer sein, bitte wählen Sie eine entsprechende Abweichungsperiode.
         /// </summary>
         internal static string deviationPeriodNull {
             get {
@@ -169,7 +169,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Deviation Was Successfly Updated..
+        ///   Looks up a localized string similar to Abweichung erfolgreich aktualisiert.
         /// </summary>
         internal static string deviationupdated {
             get {
@@ -178,7 +178,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Deviation Was Succesfuly Closed..
+        ///   Looks up a localized string similar to Abweichung wurde erfolgreich geschlossen.
         /// </summary>
         internal static string deviationWasClosed {
             get {
@@ -187,7 +187,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to An Email has been sent !.
+        ///   Looks up a localized string similar to Email versendet.
         /// </summary>
         internal static string emailSent {
             get {
@@ -196,7 +196,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Error, The Deviation Cloud Not Be Closed..
+        ///   Looks up a localized string similar to Fehler, die Abweichung konnte nicht geschlossen werden.
         /// </summary>
         internal static string errorCloseDeviation {
             get {
@@ -205,7 +205,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Erros, The Email Was Not Sent Try Again !.
+        ///   Looks up a localized string similar to Fehler, die Email konnte nicht versendet werden, bitte versuchen Sie es erneut.
         /// </summary>
         internal static string errorSendEmail {
             get {
@@ -214,7 +214,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This File Dos Not Exist Any More!..
+        ///   Looks up a localized string similar to Datei nicht mehr vorhanden.
         /// </summary>
         internal static string fileNotExist {
             get {
@@ -223,7 +223,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to File Had Been Removed From The List!..
+        ///   Looks up a localized string similar to Datei wurde aus der Liste entfernt.
         /// </summary>
         internal static string fileRemovedFromList {
             get {
@@ -232,7 +232,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The Form Inputs Are Not Valid !.
+        ///   Looks up a localized string similar to Eingaben ungültig.
         /// </summary>
         internal static string formInputsNotValid {
             get {
@@ -241,7 +241,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Inputs Are Missing !!.
+        ///   Looks up a localized string similar to Eingaben fehlen.
         /// </summary>
         internal static string inputsMissing {
             get {
@@ -250,7 +250,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Some Inputs Are Required ..
+        ///   Looks up a localized string similar to Eingaben benötigt.
         /// </summary>
         internal static string inputsRequired {
             get {
@@ -763,7 +763,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You Are Not Allowed To Make Any Change On This Item Because Its Already Closed !.
+        ///   Looks up a localized string similar to Änderungen nicht mehr möglich, da die Abweichung bereits geschlossen wurde.
         /// </summary>
         internal static string notAllowedToChange {
             get {
@@ -772,7 +772,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to You Are Not Allowed To Update This Item !.
+        ///   Looks up a localized string similar to Sie sind nicht berechtigt die Abweichung zu aktualisieren.
         /// </summary>
         internal static string notAllowedToUpdateItem {
             get {
@@ -781,7 +781,7 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please Choose Select a Line Before making this Action!.
+        ///   Looks up a localized string similar to Bitte zuerst Linie auswählen.
         /// </summary>
         internal static string selectLine {
             get {
