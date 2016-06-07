@@ -17,6 +17,7 @@ namespace DeviationManager.GUI
         private DeviationModel deviationModel;
         private SaveDeviation saveDeviation;
         private EmailSender emailSender;
+        private LanguageModel languageModel;
 
         public EmailGUI(Deviation deviation, SaveDeviation saveDeviation)
         {
@@ -25,6 +26,7 @@ namespace DeviationManager.GUI
             this.saveDeviation = saveDeviation;
             this.deviationModel = new DeviationModel();
             emailSender = new EmailSender();
+            languageModel = new LanguageModel();
 
             //generate email Content from deviation
             this.generateEmailContent();
@@ -83,7 +85,7 @@ namespace DeviationManager.GUI
                     //Add the New deviation
                     this.deviationModel.addDeviation(this.deviation);
 
-                    MessageBox.Show("The Deviation Was Successfuly Added", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this.languageModel.getString("deviationAdded"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.saveDeviation.Close();
                     this.Close();
 
@@ -92,13 +94,13 @@ namespace DeviationManager.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Erros, The Email Was Not Sent Try Again !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this.languageModel.getString("errorSendEmail"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 
             }
             else
             {
-                MessageBox.Show("Inputs Are Missing !!", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this.languageModel.getString("inputsMissing"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }

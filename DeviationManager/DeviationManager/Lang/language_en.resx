@@ -285,4 +285,79 @@
   <data name="laddNewDeviation" xml:space="preserve">
     <value>Add New Deviation</value>
   </data>
+  <data name="actionFailed" xml:space="preserve">
+    <value>Action Failed.</value>
+  </data>
+  <data name="alertApprovedRejected" xml:space="preserve">
+    <value>Sorry !, You Can Not Approve And Reject At The Same Time!!</value>
+  </data>
+  <data name="alertCloseDeviation" xml:space="preserve">
+    <value>Close Deviation Means You Will Not Be Able Later To Make Any Change On It, Are You Sure You Wish To Make This Action ?</value>
+  </data>
+  <data name="alertDeleteAttachment" xml:space="preserve">
+    <value>Are Sure, You Wish to Delete This Attachment ?</value>
+  </data>
+  <data name="alertSaveDeviationFirst" xml:space="preserve">
+    <value>You Can Not Make This Action Now, You Schould First Save The Deviation !</value>
+  </data>
+  <data name="approvementDone" xml:space="preserve">
+    <value>Your Approvement Was Succesfuly Done !</value>
+  </data>
+  <data name="chooseDeviation" xml:space="preserve">
+    <value>Please Choose a Deviation Before makimg this Action!</value>
+  </data>
+  <data name="deviationAdded" xml:space="preserve">
+    <value>The Deviation Was Successfuly Added</value>
+  </data>
+  <data name="deviationAlreadyClosed" xml:space="preserve">
+    <value>You Are Not Allowed To Make Any Change On This Item Because Its Already Closed !</value>
+  </data>
+  <data name="deviationNegativePeriod" xml:space="preserve">
+    <value>The Deviation Period Has Not Valid Inputs !, The Input &lt;&lt;P.Second date&gt;&gt; Must Be Bigger Than the Input &lt;&lt;P.First date&gt;&gt;</value>
+  </data>
+  <data name="deviationNotExist" xml:space="preserve">
+    <value>Deviation Dos Not Exist.</value>
+  </data>
+  <data name="deviationPeriodNull" xml:space="preserve">
+    <value>The Deviation Period Has Not To Be Null!, You Can Choose Different Dates To Avoid This.</value>
+  </data>
+  <data name="deviationupdated" xml:space="preserve">
+    <value>The Deviation Was Successfly Updated.</value>
+  </data>
+  <data name="deviationWasClosed" xml:space="preserve">
+    <value>The Deviation Was Succesfuly Closed.</value>
+  </data>
+  <data name="emailSent" xml:space="preserve">
+    <value>An Email has been sent !</value>
+  </data>
+  <data name="errorCloseDeviation" xml:space="preserve">
+    <value>Error, The Deviation Cloud Not Be Closed.</value>
+  </data>
+  <data name="errorSendEmail" xml:space="preserve">
+    <value>Erros, The Email Was Not Sent Try Again !</value>
+  </data>
+  <data name="fileNotExist" xml:space="preserve">
+    <value>This File Dos Not Exist Any More!.</value>
+  </data>
+  <data name="fileRemovedFromList" xml:space="preserve">
+    <value>File Had Been Removed From The List!.</value>
+  </data>
+  <data name="formInputsNotValid" xml:space="preserve">
+    <value>The Form Inputs Are Not Valid !</value>
+  </data>
+  <data name="inputsMissing" xml:space="preserve">
+    <value>Inputs Are Missing !!</value>
+  </data>
+  <data name="inputsRequired" xml:space="preserve">
+    <value>Some Inputs Are Required .</value>
+  </data>
+  <data name="notAllowedToChange" xml:space="preserve">
+    <value>You Are Not Allowed To Make Any Change On This Item Because Its Already Closed !</value>
+  </data>
+  <data name="notAllowedToUpdateItem" xml:space="preserve">
+    <value>You Are Not Allowed To Update This Item !</value>
+  </data>
+  <data name="selectLine" xml:space="preserve">
+    <value>Please Choose Select a Line Before making this Action!</value>
+  </data>
 </root>

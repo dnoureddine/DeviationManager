@@ -35,6 +35,8 @@ namespace DeviationManager.GUI
             //initilize deviation list
             this.setLabelDeviationNumber();
 
+            this.DeviationDataGridView.Columns[9].DefaultCellStyle.ForeColor = Color.Goldenrod;
+
         }
 
 
@@ -43,6 +45,9 @@ namespace DeviationManager.GUI
         {
             this.n = 1;
             this.m = 200;
+
+            //change font color datagridview
+            this.DeviationDataGridView.Columns[9].DefaultCellStyle.ForeColor = Color.Goldenrod;
 
             var deviations = deviationModel.listPendingDeviation(n, m);
             var source = new BindingSource();
@@ -206,6 +211,9 @@ namespace DeviationManager.GUI
             this.m = 200;
             this.choosenList = "green";
 
+            //change color
+            this.DeviationDataGridView.Columns[9].DefaultCellStyle.ForeColor = Color.Green;
+
             var deviations = deviationModel.listApprovedDeviation(n,m);
             var source = new BindingSource();
             source.DataSource = deviations;
@@ -222,6 +230,9 @@ namespace DeviationManager.GUI
             this.m = 200;
             this.choosenList = "yellow";
 
+            //change color
+            this.DeviationDataGridView.Columns[9].DefaultCellStyle.ForeColor = Color.Goldenrod;
+
             var deviations = deviationModel.listPendingDeviation(n,m);
             var source = new BindingSource();
             source.DataSource = deviations;
@@ -237,6 +248,9 @@ namespace DeviationManager.GUI
             this.n = 1;
             this.m = 200;
             this.choosenList = "red";
+
+            //change color
+            this.DeviationDataGridView.Columns[9].DefaultCellStyle.ForeColor = Color.Red;
 
             var deviations = deviationModel.listRejectedDeviation(n,m);
             var source = new BindingSource();

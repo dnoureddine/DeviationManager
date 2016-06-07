@@ -24,12 +24,15 @@ namespace DeviationManager.GUI
         private EmailSender emailSender;
         private DeviationList deviationList = null;
         private PrincipalWin principalWin = null;
+        private LanguageModel languageModel;
 
         public SaveDeviation(String actionType, DeviationList deviationList, PrincipalWin principalWin)
         {
             InitializeComponent();
             deviationModel = new DeviationModel();
             emailSender = new EmailSender();
+            languageModel = new LanguageModel();
+
             this.actionType = actionType;
 
             this.deviationList = deviationList;
@@ -75,8 +78,7 @@ namespace DeviationManager.GUI
         //set language
         private void setLanguage()
         {
-            LanguageModel languageModel = new LanguageModel();
-
+            
             this.laddNewDeviation.Text = languageModel.getString("laddNewDeviation");
 
             this.lDeviationInfo.Text = languageModel.getString("lDeviationInfo");
@@ -555,7 +557,7 @@ namespace DeviationManager.GUI
                     if (this.deviation != null)
                     {
                         deviationModel.updateDeviation(this.getDeviationObjectToUpdate());
-                        MessageBox.Show("The Deviation Was Successfly Updated.", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(this.languageModel.getString("deviationupdated"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                 
                     }
@@ -565,14 +567,14 @@ namespace DeviationManager.GUI
             }
             else
             {
-                MessageBox.Show("The Form Inputs Are Not Valid !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this.languageModel.getString("formInputsNotValid"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (compareDeviationPeriod == 0)
                 {
-                    MessageBox.Show("The Deviation Period Has Not To Be Null!, You Can Choose Different Dates To Avoid This.", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this.languageModel.getString("deviationPeriodNull"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (compareDeviationPeriod > 0)
                 {
-                    MessageBox.Show("The Deviation Period Has Not Valid !, The Input <<P.Second date>> Must Be Bigger Than the Input <<P.First date>>", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(this.languageModel.getString("deviationNegativePeriod"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
@@ -637,11 +639,11 @@ namespace DeviationManager.GUI
             String deviationRef = this.deviationNO.Text;
             if (deviationRef != "" || deviationRef != null)
             {
-                if (MessageBox.Show("Close Deviation Means You Will Not Be Able Later To Make Any Change On It, Are You Sure You Wish To Make This Action ?", "Close Deviation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show(this.languageModel.getString("alertCloseDeviation"), "Close Deviation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (deviationModel.closeDeviation(deviationRef) == null)
                     {
-                        MessageBox.Show("The Deviation You Are Trying To Close Was Not Found In The Database !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(this.languageModel.getString("deviationNotExist"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }
@@ -707,7 +709,7 @@ namespace DeviationManager.GUI
         {
             if (this.uploadFileDataGridView.CurrentRow != null)
             {
-                if (MessageBox.Show("Are Sure, You Wish to Delete This Attachment ?", "Delete Attachment", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show(this.languageModel.getString("alertDeleteAttachment"), "Delete Attachment", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     String filePath = this.uploadFileDataGridView.CurrentRow.Cells[1].Value.ToString();
 
@@ -717,7 +719,7 @@ namespace DeviationManager.GUI
                     //remove from DataGridView
                     this.uploadFileDataGridView.Rows.RemoveAt(this.uploadFileDataGridView.CurrentRow.Index);
 
-                    MessageBox.Show("File Had Been Removed From The List!.");
+                    MessageBox.Show(this.languageModel.getString("fileRemovedFromList"));
 
 
                 }
@@ -732,7 +734,7 @@ namespace DeviationManager.GUI
           
             if (this.actionType == "newDeviation")
             {
-                MessageBox.Show("You Can Not Make This Action Now, You Schould First Save The Deviation !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this.languageModel.getString("alertSaveDeviationFirst"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -763,17 +765,17 @@ namespace DeviationManager.GUI
                                 }
 
                                 deviationModel.updateApprovement(approvement);
-                                MessageBox.Show("Your Approvement Was Succesfuly Done !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show(this.languageModel.getString("approvementDone"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Action Failed." + toApprove, "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(this.languageModel.getString("actionFailed") + toApprove, "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Some Inputs Are Required ." + approvementValidation, "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(this.languageModel.getString("inputsRequired") + approvementValidation, "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }
@@ -788,7 +790,7 @@ namespace DeviationManager.GUI
                 {
                     if (((bool)approved.Value == false) && ((bool)rejected.Value == true))
                     {
-                        MessageBox.Show("Sorry !, You Can Not Approve And Reject At The Same Time!!");
+                        MessageBox.Show(this.languageModel.getString("alertApprovedRejected"));
 
                         //interupt checking approved checkbox
                         this.approvementGroupDataGrid.CancelEdit();
@@ -799,7 +801,7 @@ namespace DeviationManager.GUI
                 {
                     if (((bool)approved.Value == true) && ((bool)rejected.Value == false))
                     {
-                        MessageBox.Show("Sorry !, You Can Not Approve And Reject At The Same Time!!");
+                        MessageBox.Show(this.languageModel.getString("alertApprovedRejected"));
 
                         //interupt checking approved checkbox
                         this.approvementGroupDataGrid.CancelEdit();
@@ -832,7 +834,7 @@ namespace DeviationManager.GUI
         {
             if (this.actionType == "newDeviation")
             {
-                MessageBox.Show("You Can Not Make This Action Now, You Schould First Save The Deviation !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this.languageModel.getString("alertSaveDeviationFirst"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else{
                 FolderBrowserDialog folderBrowser = new FolderBrowserDialog();
@@ -866,7 +868,7 @@ namespace DeviationManager.GUI
             
             if (this.actionType == "newDeviation")
             {
-                MessageBox.Show("You Can Not Make This Action Now, You Schould First Save The Deviation !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this.languageModel.getString("alertSaveDeviationFirst"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -877,7 +879,7 @@ namespace DeviationManager.GUI
                     var result = this.emailSender.sentEmailToGroups(deviation);
                     if (result == "sent")
                     {
-                        MessageBox.Show("An Email has been sent !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(this.languageModel.getString("emailSent"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }  
             }
@@ -925,13 +927,13 @@ namespace DeviationManager.GUI
 
                 }else
                 {
-                    MessageBox.Show("This File Dos Not Exist Any More!.");
+                    MessageBox.Show(this.languageModel.getString("fileNotExist"));
                 }
 
             }
             else
             {
-                MessageBox.Show("Please Choose Select a Line Before makimg this Action!");
+                MessageBox.Show(this.languageModel.getString("selectLine"));
             }
         }
 

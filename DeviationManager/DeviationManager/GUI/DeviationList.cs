@@ -16,6 +16,8 @@ namespace DeviationManager.GUI
         private DeviationModel deviationModel;
         private Autorisation autorisation;
         private EmailSender emailSender;
+        private LanguageModel languageModel;
+
         private int n = 1;
         private int m = 200;
 
@@ -26,6 +28,8 @@ namespace DeviationManager.GUI
             deviationModel = new DeviationModel();
             autorisation = new Autorisation();
             emailSender = new EmailSender();
+            languageModel = new LanguageModel();
+
             //DataGridViw Configuration
             this.DataViewConfiguration();
 
@@ -44,6 +48,7 @@ namespace DeviationManager.GUI
                 this.setLanguage();
             }
 
+            this.DeviationDataGridView.Columns[9].DefaultCellStyle.ForeColor = Color.Blue;
         }
 
 
@@ -185,14 +190,14 @@ namespace DeviationManager.GUI
                     }
                     else
                     {
-                        MessageBox.Show("You Are Not Allowed To Make Any Change On This Item Because Its Already Closed !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(this.languageModel.getString("deviationAlreadyClosed"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }
             }
             else
             {
-                MessageBox.Show("You Are Not Allowed To Update This Item !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this.languageModel.getString("notAllowedToUpdateItem"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             
@@ -207,16 +212,16 @@ namespace DeviationManager.GUI
                 String deviationRef = this.DeviationDataGridView.CurrentRow.Cells[0].Value.ToString();
                 if (deviationRef != "" || deviationRef != null)
                 {
-                    if (MessageBox.Show("Close Deviation Means You Will Not Be Able Later To Make Any Change On It, Are You Sure You Wish To Make This Action ?", "Close Deviation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show(this.languageModel.getString("alertCloseDeviation"), "Close Deviation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         String result = deviationModel.closeDeviation(deviationRef);
                         if (result == "closed")
                         {
-                            MessageBox.Show("The Deviation Was Succesfuly Closed.","Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(this.languageModel.getString("deviationWasClosed"),"Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("Error The Deviation Cloud Not Be Closed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(this.languageModel.getString("errorCloseDeviation"), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -241,12 +246,12 @@ namespace DeviationManager.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Deviation dos not exist!");
+                    MessageBox.Show(this.languageModel.getString("deviationNotExist"));
                 }
 
             }else
             {
-                MessageBox.Show("Please Choose a Deviation Before makimg this Action!");
+                MessageBox.Show(this.languageModel.getString("chooseDeviation"));
             }
         }
 
@@ -368,7 +373,7 @@ namespace DeviationManager.GUI
                     var result = this.emailSender.sentEmailToGroups(deviation);
                     if (result == "sent")
                     {
-                        MessageBox.Show("An Email has been sent !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(this.languageModel.getString("emailSent"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 
@@ -392,13 +397,13 @@ namespace DeviationManager.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Deviation dos not exist!");
+                    MessageBox.Show(this.languageModel.getString("deviationNotExist"));
                 }
 
             }
             else
             {
-                MessageBox.Show("Please Choose a Deviation Before makimg this Action!");
+                MessageBox.Show(this.languageModel.getString("chooseDeviation"));
             }
         }
 
@@ -423,14 +428,14 @@ namespace DeviationManager.GUI
                     }
                     else
                     {
-                        MessageBox.Show("You Are Not Allowed To Make Any Change On This Item Because Its Already Closed !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(this.languageModel.getString("notAllowedToChange"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }
             }
             else
             {
-                MessageBox.Show("You Are Not Allowed To Update This Item !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(this.languageModel.getString("notAllowedToUpdateItem"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -442,16 +447,16 @@ namespace DeviationManager.GUI
                 String deviationRef = this.DeviationDataGridView.CurrentRow.Cells[0].Value.ToString();
                 if (deviationRef != "" || deviationRef != null)
                 {
-                    if (MessageBox.Show("Close Deviation Means You Will Not Be Able Later To Make Any Change On It, Are You Sure You Wish To Make This Action ?", "Close Deviation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show(this.languageModel.getString("alertCloseDeviation"), "Close Deviation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         String result = deviationModel.closeDeviation(deviationRef);
                         if (result == "closed")
                         {
-                            MessageBox.Show("The Deviation Was Succesfuly Closed.", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show(this.languageModel.getString("deviationWasClosed"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         else
                         {
-                            MessageBox.Show("Error The Deviation Cloud Not Be Closed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(this.languageModel.getString("errorCloseDeviation"), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -471,7 +476,7 @@ namespace DeviationManager.GUI
                     var result = this.emailSender.sentEmailToGroups(deviation);
                     if (result == "sent")
                     {
-                        MessageBox.Show("An Email has been sent !", "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(this.languageModel.getString("emailSent"), "Infos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 
@@ -542,13 +547,13 @@ namespace DeviationManager.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Deviation dos not exist!");
+                    MessageBox.Show(this.languageModel.getString("deviationNotExist"));
                 }
 
             }
             else
             {
-                MessageBox.Show("Please Choose a Deviation Before makimg this Action!");
+                MessageBox.Show(this.languageModel.getString("chooseDeviation"));
             }
         }
 

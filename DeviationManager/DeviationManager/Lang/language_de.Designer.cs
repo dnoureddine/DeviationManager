@@ -61,6 +61,204 @@ namespace DeviationManager.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Action Failed..
+        /// </summary>
+        internal static string actionFailed {
+            get {
+                return ResourceManager.GetString("actionFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorry !, You Can Not Approve And Reject At The Same Time!!.
+        /// </summary>
+        internal static string alertApprovedRejected {
+            get {
+                return ResourceManager.GetString("alertApprovedRejected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close Deviation Means You Will Not Be Able Later To Make Any Change On It, Are You Sure You Wish To Make This Action ?.
+        /// </summary>
+        internal static string alertCloseDeviation {
+            get {
+                return ResourceManager.GetString("alertCloseDeviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are Sure, You Wish to Delete This Attachment ?.
+        /// </summary>
+        internal static string alertDeleteAttachment {
+            get {
+                return ResourceManager.GetString("alertDeleteAttachment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You Can Not Make This Action Now, You Schould First Save The Deviation !.
+        /// </summary>
+        internal static string alertSaveDeviationFirst {
+            get {
+                return ResourceManager.GetString("alertSaveDeviationFirst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Approvement Was Succesfuly Done !.
+        /// </summary>
+        internal static string approvementDone {
+            get {
+                return ResourceManager.GetString("approvementDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Choose a Deviation Before makimg this Action!.
+        /// </summary>
+        internal static string chooseDeviation {
+            get {
+                return ResourceManager.GetString("chooseDeviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Deviation Was Successfuly Added.
+        /// </summary>
+        internal static string deviationAdded {
+            get {
+                return ResourceManager.GetString("deviationAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You Are Not Allowed To Make Any Change On This Item Because Its Already Closed !.
+        /// </summary>
+        internal static string deviationAlreadyClosed {
+            get {
+                return ResourceManager.GetString("deviationAlreadyClosed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Deviation Period Has Not Valid !, The Input &lt;&lt;P.Second date&gt;&gt; Must Be Bigger Than the Input &lt;&lt;P.First date&gt;&gt;.
+        /// </summary>
+        internal static string deviationNegativePeriod {
+            get {
+                return ResourceManager.GetString("deviationNegativePeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Deviation Dos Not Exist..
+        /// </summary>
+        internal static string deviationNotExist {
+            get {
+                return ResourceManager.GetString("deviationNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Deviation Period Has Not To Be Null!, You Can Choose Different Dates To Avoid This..
+        /// </summary>
+        internal static string deviationPeriodNull {
+            get {
+                return ResourceManager.GetString("deviationPeriodNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Deviation Was Successfly Updated..
+        /// </summary>
+        internal static string deviationupdated {
+            get {
+                return ResourceManager.GetString("deviationupdated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Deviation Was Succesfuly Closed..
+        /// </summary>
+        internal static string deviationWasClosed {
+            get {
+                return ResourceManager.GetString("deviationWasClosed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An Email has been sent !.
+        /// </summary>
+        internal static string emailSent {
+            get {
+                return ResourceManager.GetString("emailSent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error, The Deviation Cloud Not Be Closed..
+        /// </summary>
+        internal static string errorCloseDeviation {
+            get {
+                return ResourceManager.GetString("errorCloseDeviation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Erros, The Email Was Not Sent Try Again !.
+        /// </summary>
+        internal static string errorSendEmail {
+            get {
+                return ResourceManager.GetString("errorSendEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This File Dos Not Exist Any More!..
+        /// </summary>
+        internal static string fileNotExist {
+            get {
+                return ResourceManager.GetString("fileNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File Had Been Removed From The List!..
+        /// </summary>
+        internal static string fileRemovedFromList {
+            get {
+                return ResourceManager.GetString("fileRemovedFromList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Form Inputs Are Not Valid !.
+        /// </summary>
+        internal static string formInputsNotValid {
+            get {
+                return ResourceManager.GetString("formInputsNotValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inputs Are Missing !!.
+        /// </summary>
+        internal static string inputsMissing {
+            get {
+                return ResourceManager.GetString("inputsMissing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Some Inputs Are Required ..
+        /// </summary>
+        internal static string inputsRequired {
+            get {
+                return ResourceManager.GetString("inputsRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hinzufügen.
         /// </summary>
         internal static string ladd {
@@ -561,6 +759,33 @@ namespace DeviationManager.Lang {
         internal static string lwhyBox {
             get {
                 return ResourceManager.GetString("lwhyBox", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You Are Not Allowed To Make Any Change On This Item Because Its Already Closed !.
+        /// </summary>
+        internal static string notAllowedToChange {
+            get {
+                return ResourceManager.GetString("notAllowedToChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You Are Not Allowed To Update This Item !.
+        /// </summary>
+        internal static string notAllowedToUpdateItem {
+            get {
+                return ResourceManager.GetString("notAllowedToUpdateItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please Choose Select a Line Before making this Action!.
+        /// </summary>
+        internal static string selectLine {
+            get {
+                return ResourceManager.GetString("selectLine", resourceCulture);
             }
         }
     }
